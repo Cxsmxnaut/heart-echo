@@ -1,5 +1,7 @@
 # Heart Echo integration checks
 
+> **Historical integration record:** the version and completed checks below describe the November 14 port. For the November 15 app/care-chat state, including the physical iPhone conversation checks, see [current results](../docs/RESULTS.md) and [the judge guide](../docs/JUDGE_GUIDE.md). Historical screenshot files are local artifacts, not included in the public snapshot.
+
 Current release: **0.2.1 (3)**, 2026-11-14. The original Chest BPM remains **1.9 (14)**.
 
 ## Completed
@@ -36,7 +38,7 @@ Visual checks: `Previews/settings-consumer.png`, `Previews/consumer-recording.pn
 - The physical Watch is currently unavailable. The new companion is signed and embedded, but its separate physical installation, Health permission, pairing and automatic start/stop have not been verified in this port. Original Watch functionality was preserved in source, with separate bundle IDs and companion routing.
 - No fresh physical chest recording was requested or performed for this port. No original personal audio/logs were copied into Heart Echo, uploaded or used for training.
 - Phone accuracy has not been established. This port does not improve or clinically validate the detector. No AFib or valve-disease detection was added.
-- The assistant is an explicitly labeled local guided explainer. The separate care-assistant service has not been connected. Care listings remain examples.
+- At this historical port stage the assistant was a guided explainer. This was superseded on November 15 by the connected care service and live directory flow described in the current results; the earlier tests alone do not verify that later work.
 - No configured Graphify graph/launcher was found. Current source and pinned origin/model hashes were used for verification.
 
 ## Reproduce the native checks

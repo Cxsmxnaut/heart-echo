@@ -1,4 +1,6 @@
-# Chest BPM care assistant
+# Heart Echo care assistant
+
+For judging, use the [project overview](../README.md), [walkthrough](../docs/JUDGE_GUIDE.md), and [current results](../docs/RESULTS.md). Sections describing earlier Gemma passes preserve historical evidence and do not describe the current Gemini chat mode.
 
 The Heart Echo demo uses Google Gemini when `GEMINI_API_KEY` is set. Run `node scripts/setup-gemini.js` and enter the key in its Mac-only page; it is saved with owner-only permissions in the ignored `.env.gemini.local` file. Restart `Start Heart Echo Demo.command` after saving the key. Gemini generates conversational replies throughout the care flow, including when a person provides location or insurance details. The service substitutes general workflow instructions for detected personal details and does not send the recording summary. Google may use free-tier messages to improve its products, so do not enter personal or health information in free-tier chat. A local keyword check catches some sensitive messages but is not complete. Care-directory searches remain validated application code, and coverage for most insurers cannot be verified.
 
@@ -132,7 +134,7 @@ See [evaluation results and limitations](docs/evaluation.md), `docs/live-smoke-r
 - No exact payer integration beyond The Health Plan Medicare is claimed. Its Medicaid/CHIP endpoints were documented but are not integrated. CMS catalog matching is not exact-network/provider coverage. “Unsupported” means this source did not establish a match, not that a plan is invalid or a provider is out of network.
 - Exact-ZIP results are limited samples, not exhaustive or distance-ranked. A missing listing is not proof that no care is available. Directory timestamps can be old; call to confirm. NPPES identity is not licensure or quality validation.
 - A symptom keyword notice is a conservative interruption, not a medical triage classifier. It can miss or over-trigger symptoms. The emergency notice remains visible regardless of model output.
-- No fine-tuning was performed or claimed. See the evaluation notes for why training was deferred. Do not train on private chats, insurance records or audio.
-- No public deployment, account creation, native integration, signing/device setting change, or git commit was performed. Repository graph tooling was absent, so no Graphify results or refresh are claimed.
+- The original care-service evaluation preceded fine-tuning. A later synthetic-data language-adapter pilot is documented in [finetuning/README.md](finetuning/README.md); it is separate from Gemini and from the phone audio models. Do not train on private chats, insurance records or audio.
+- This is a local demo with native integration and a public source repository, not a publicly hosted patient service. Repository graph tooling was absent, so no Graphify results or refresh are claimed.
 
 Sources, model versions, license attribution, and evidence rules are in [provenance](docs/provenance.md).

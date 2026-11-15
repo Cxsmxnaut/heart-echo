@@ -1,5 +1,7 @@
 # E4B fine-tuning pilot
 
+> Historical experiment record. Serving-default statements below describe that experiment's original state. The current judge path uses Gemini or an explicitly labeled no-key guided mode; see the [judge walkthrough](../../docs/JUDGE_GUIDE.md). The trained adapter is not included in the public repository.
+
 **Real training completed on November 14, 2026 (Pacific time).** The private Kaggle run saved a verified language LoRA adapter after 17 optimizer steps. The adapter was converted to a 36.7 MB GGUF LoRA and completed a frozen comparison with the original model. The original model remains the serving default. The adapter improved validation fields (5/7 → 6/7) and completed both regression journeys (control: 1/2), while held-out scores tied. See [RESULTS.md](RESULTS.md) for the comparison and limits; evaluation reports are under `reports/`.
 
 QLoRA trains a small adapter while keeping the quantized base model fixed. This pilot targets request parsing and native tool selection. It does not train the sound estimator, diagnose disease, learn provider directories, or replace the backend's validation and factual replies. Native/Xcode, estimator, audio, signing and device files were not changed.

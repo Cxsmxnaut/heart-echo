@@ -1,12 +1,14 @@
 # Heart Echo
 
+For judging, start with the [project overview](../README.md), [walkthrough](../docs/JUDGE_GUIDE.md), and [current evidence](../docs/RESULTS.md). This file contains component/developer details.
+
 Heart Echo adopts the new native SwiftUI design and the original Chest BPM measurement features. It is a **separate app** (`app.veritas.heartecho`); Chest BPM (`app.veritas.chestbpm`), its Watch app, frozen models and personal diagnostics remain untouched.
 
 ## Current app
 
 - Summary, real 20-second microphone recording with live accepted BPM, independent on-device murmur analysis, and a persistent local recording history.
 - Saved results retain the actual outcome, model revision, source, duration, measured audio envelope and optional BPM. Reopening a result explains that exact result. No fixed 72 BPM, invented audio-quality grade or decorative ECG is used as measurement data.
-- **Settings → Developer Mode** is OFF by default. Turning it on exposes Live & Diagnostic Tools and the three public test recordings/import controls. The switch persists. Turning it off stops active diagnostics/logging and keeps saved tests. It is unrelated to Apple's device Developer Mode requirement for development-signed apps.
+- **Try a public example** is available directly from Summary, without Developer Mode or microphone access. **Settings → Developer Mode** defaults OFF and exposes diagnostic tools and additional import controls. Turning it off stops diagnostics/logging and keeps saved results. This setting is separate from Apple's device Developer Mode.
 - Live & Diagnostic Tools preserve original Measure / Compare / Murmur, motion/quality checks, replay, positions, participant/consent controls, automatic Watch start/stop, timed diagnostic tests, resumable cycles, Watch reference alignment, archived logs, and sharing.
 - A separate Heart Echo Watch companion uses the original HealthKit/WatchConnectivity implementation and protocol. Neither Watch BPM nor Watch references enter microphone BPM or murmur inference. Temporary workout sessions are discarded.
 - Public samples run the real shipping model; their reference annotations and the model's output can differ. Examples/imports have no microphone BPM. Imports analyze at most the first 60 seconds and do not copy the imported original.

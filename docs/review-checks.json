@@ -1,0 +1,63 @@
+{
+  "reviewed_on": "2026-11-15",
+  "source_commit": "46f8e1b20754b2dfb3c5b4391e7459dc8ee08e24",
+  "scope": "Fresh export of committed source; judge documentation is the only intended change in this pass. No personal recordings or stored credentials copied.",
+  "checks": [
+    {
+      "name": "Fresh dependency install",
+      "command": [
+        "npm",
+        "ci"
+      ],
+      "passed": true,
+      "summary": "added 118 packages, and audited 119 packages in 4s\n\nfound 0 vulnerabilities"
+    },
+    {
+      "name": "Backend tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "passed": true,
+      "summary": "\u2714 actual MCP in-memory transport lists and executes the same validated public tools (8.421458ms)\n\u2139 tests 90\n\u2139 suites 0\n\u2139 pass 90\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1382.312375"
+    },
+    {
+      "name": "Native source/model provenance",
+      "command": [
+        "python3",
+        "Tools/verify_port.py"
+      ],
+      "passed": true,
+      "summary": "38 origin hashes checked; 26 exact copies; shipping model packages compared."
+    },
+    {
+      "name": "Native murmur compilation",
+      "command": [
+        "swiftc",
+        "-module-cache-path",
+        "/tmp/heartecho-module-cache",
+        "Engine/MurmurAnalysis.swift",
+        "Tools/MurmurChecks.swift",
+        "-o",
+        "<fresh-checkout>/murmur-checks"
+      ],
+      "passed": true,
+      "summary": ""
+    },
+    {
+      "name": "Native murmur input checks",
+      "command": [
+        "<fresh-checkout>/murmur-checks",
+        "Models"
+      ],
+      "passed": true,
+      "summary": "PASS: Invalid probability total fails closed\nPASS: Incomplete four-second input has no window\nPASS: Twenty seconds has five full windows\nPASS: Final partial frame never exceeds audio\nPASS: Silence cannot receive an absent result\nPASS: Clipped audio cannot receive a result\nPASS: Full native silence path remains unsure\nPASS: Short native input remains unsure\n0 failure(s). Engineering checks, not clinical validation."
+    },
+    {
+      "name": "Fresh no-key browser service",
+      "passed": true,
+      "summary": "npm start ran with LLM_PROVIDER=guided; /api/health identified guided mode; a chat request succeeded without claiming a generated AI reply. No live directory query or Gemini call made.",
+      "command": []
+    }
+  ]
+}
