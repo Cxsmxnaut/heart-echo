@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>WKApplication</key><true/>
+<key>WKCompanionAppBundleIdentifier</key><string>app.veritas.chestbpm</string>
+<key>WKWatchOnly</key><false/>
+<key>WKBackgroundModes</key><array><string>workout-processing</string></array>
+<key>NSHealthShareUsageDescription</key><string>Read live Watch heart rate to compare it with the iPhone microphone estimate.</string>
+<key>NSHealthUpdateUsageDescription</key><string>Start a temporary measurement session for frequent heart-rate updates. The session is discarded rather than saved as a workout.</string>
+</dict></plist>

@@ -1,0 +1,28 @@
+{
+  "samples": [
+    {
+      "name": "absent",
+      "record": "31737_AV",
+      "reference": "Absent",
+      "source_sha256": "d74f158d84441ac8532bfebc2835578204692a271ae93893f355e9f3f9a2bc5d",
+      "bundled_sha256": "d74f158d84441ac8532bfebc2835578204692a271ae93893f355e9f3f9a2bc5d"
+    },
+    {
+      "name": "present",
+      "record": "14241_AV",
+      "reference": "Present",
+      "source_sha256": "6883a833dc021173d82ab6f3dd5882f7db974c01992b97800680793d89593efb",
+      "bundled_sha256": "813943ed1e2d288c6f13ac0cdc91226bf688620b65f0d88a9a3755fed7b6fb18"
+    },
+    {
+      "name": "unknown",
+      "record": "49607_MV",
+      "reference": "Unknown",
+      "source_sha256": "058a37c7c56d8618b87fa21d8a9ee00e2567067379e78f2f9b1d83fca0bdb512",
+      "bundled_sha256": "6a06375e17e9e2a189a299c01029defed8a552dbbe491411251a609ee2ac0cee"
+    }
+  ],
+  "selection": "First record alphabetically per validation location label; no selection by model correctness.",
+  "citation": "CirCor DigiScope1.0.3,Oliveiraetal.,https://doi.org/10.13026/tshs-mw03",
+  "license": "Open Data Commons Attribution1.0; samples truncated to20seconds and PCM16 encoded."
+}

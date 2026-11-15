@@ -1,0 +1,31 @@
+{
+  "job_version": 1,
+  "status": "COMPLETE",
+  "adapter_downloaded_and_sha_verified": true,
+  "global_steps": 17,
+  "changed_tensor_count_verified": 516,
+  "training_seconds": 116.351,
+  "gpu": {
+    "name": "Tesla T4",
+    "vram_bytes": 15636037632,
+    "cuda": "12.8"
+  },
+  "adapter_sha256": "b454e51ecf79090977bb9e1e11c406af18a95520b2c2a42218da4321cee89c4b",
+  "training_proof": "finetuning/runs/kaggle-artifacts-v1/kaggle-seed-001/training-complete.json",
+  "archive_sha256": "8bc3fa977838625df09b7093ed81fc8310aa38ca0a98188d17a398a932c158de",
+  "data_hashes_match_prepared_train_validation": true,
+  "sealed_test_used": false,
+  "serving_default_changed": false,
+  "scope": "Training-stage proof; original training-complete.json preserved unchanged. Later export and inference are separate evidence.",
+  "GGUF_export_completed": true,
+  "heldout_improvement_proven": false,
+  "later_evidence": [
+    "finetuning/reports/lora-export-verification.json",
+    "finetuning/reports/seed001-control-test.json",
+    "finetuning/reports/seed001-candidate-test.json",
+    "finetuning/reports/sequential-benchmark.json"
+  ],
+  "historical_at_initial_download": {
+    "GGUF_export_or_heldout_improvement_proven": false
+  }
+}

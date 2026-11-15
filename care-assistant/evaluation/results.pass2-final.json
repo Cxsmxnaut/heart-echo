@@ -1,0 +1,617 @@
+{
+  "started_at": "2026-11-14T21:25:02.383Z",
+  "freeze": {
+    "frozen_at": "2026-11-14T21:22:55.964Z",
+    "model": "Gemma 4 E2B instruction, Unsloth Q4_K_M, untuned",
+    "interface": "Flat grounded extraction; constrained tool selection; exact insurance arguments server-bound before validated MCP execution",
+    "hashes": {
+      "src/model.js": "f22597ee35c148b0b73b4827efb282edb72f94bd362a230fcd9f5a9176ed3868",
+      "src/service.js": "6c0c310cb67f5ffe48a8f83492edf134c1597ab18f381d27aeb4f571d2d35298",
+      "src/conversation.js": "9e2903186ea29055296e6376b650f444cdaab3c64bea572b364f0e7bce5bdbe1",
+      "src/schema.js": "18a69c98c76db289ec0862a1b68479e51ebc8fb049f7f80ffe212ae064e60887",
+      "src/knowledge.js": "13c29d2f9ac2dd60870ffa84ae1891c08282639243c23e9b2836372b49e09ada",
+      "src/tools.js": "3594256d957458c2946af272b0c6629b56a80cf495ab3444e938bc2070fc3266",
+      "src/tool-client.js": "292de3af1442c4f282fb21bdb4fb6b6a1997328cdb84377b358aedbc73dcb336",
+      "src/mcp.js": "0a28cac294acfdc78a6c1cc7099ae7968cc1c6cb44f9bf59febb6e97338a1ef2",
+      "src/directories.js": "260a62d85880933cfdac78d5d0bf54439b73c59ac915b4d2f84a57697e224d23",
+      "src/healthplan.js": "f15f23b8feb101ac05953930b097b22a812b3e8562134ba83d3459e40ec7b15c",
+      "src/server.js": "f7b7cacd4d00f6a4cca0f0b99828f8774a1dab9973344aed56804b78cd2dd8a4",
+      "public/index.html": "43660e5fbf648a958b330c6e3fe3cd48c21178a6535b2004129d3124a2fdd4c5",
+      "public/app.js": "cd6483ac3fb43c9d91cdf7d057e79b088fd74f4c1d5215950bb95c2437c05980",
+      "public/style.css": "43e306715af1ba9154891c03d62f93417f0dfcfafbb6eb728ab8db13a1a3320e",
+      "integrations/swift/Sources/ChestBPMCare/CareClient.swift": "4f224a8a59703a92079b58b310928d228057cb3ab66ec20d50b372d2da9e9baf",
+      "integrations/swift/Sources/ChestBPMCare/CareHandoffSession.swift": "82d230f913185cb9b283bf2b5afac0aa79f4d3927bc5676dc1a1060cd37deb82",
+      "integrations/swift/Sources/ChestBPMCare/CareSummarySheet.swift": "f5eb8457b2be221f6b6c39113ac576a40321113c32be150930789fd69ba26b21",
+      "integrations/swift/Sources/ChestBPMCare/ScanSummary.swift": "e561cef33ff4e23bc680611ec18a7c577f8d5e407080871846d5902fae85b6f1"
+    }
+  },
+  "scenario_sha256": "c8f642c7e05e88bb3bac44461bee0a2ad74bf17e1f1ae5dcfb604a5695d660dd",
+  "model": {
+    "mode": "llm",
+    "model": "care-gemma4-e2b",
+    "configured": true,
+    "last_success_at": null,
+    "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference."
+  },
+  "fine_tuned": false,
+  "mode": "One fresh post-freeze set; real Gemma inference; synthetic user/scans and public-directory fixtures; actual MCP",
+  "tool_interface": "Constrained model tool selection. Exact plan arguments are bound from confirmed state by the backend, not independently reconstructed by the model.",
+  "extraction": [
+    {
+      "id": "p2_postal_replacement",
+      "fields_passed": false,
+      "intent_passed": false,
+      "error": "model_unrequested_clear",
+      "elapsed_ms": 7550
+    },
+    {
+      "id": "p2_unknown_network_paraphrase",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "find_care",
+      "actual_intent": "app_help",
+      "failures": [],
+      "elapsed_ms": 6355
+    },
+    {
+      "id": "p2_year_paraphrase",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "find_care",
+      "actual_intent": "other",
+      "failures": [],
+      "elapsed_ms": 6094
+    },
+    {
+      "id": "p2_discount_paraphrase",
+      "fields_passed": false,
+      "intent_passed": false,
+      "error": "model_unrequested_clear",
+      "elapsed_ms": 8951
+    },
+    {
+      "id": "p2_explain_existing_clinics",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "explain_results",
+      "actual_intent": "other",
+      "failures": [],
+      "elapsed_ms": 5860
+    },
+    {
+      "id": "p2_uninsured_present",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "find_care",
+      "actual_intent": "other",
+      "failures": [],
+      "elapsed_ms": 6112
+    },
+    {
+      "id": "p2_decline_coverage_info",
+      "fields_passed": true,
+      "intent_passed": true,
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "failures": [],
+      "elapsed_ms": 6225
+    },
+    {
+      "id": "p2_negated_pain_search",
+      "fields_passed": false,
+      "intent_passed": false,
+      "error": "model_unrequested_clear",
+      "elapsed_ms": 10222
+    },
+    {
+      "id": "p2_two_ai_roles",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "app_help",
+      "actual_intent": "other",
+      "failures": [],
+      "elapsed_ms": 6317
+    },
+    {
+      "id": "p2_clear_does_not_mean_healthy",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "explain_scan",
+      "actual_intent": "explain_results",
+      "failures": [],
+      "elapsed_ms": 5943
+    },
+    {
+      "id": "p2_only_public_plan_label",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "find_care",
+      "actual_intent": "other",
+      "failures": [],
+      "elapsed_ms": 7184
+    },
+    {
+      "id": "p2_explicit_category_choice",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "find_care",
+      "actual_intent": "other",
+      "failures": [],
+      "elapsed_ms": 6079
+    },
+    {
+      "id": "p2_ambiguous_location",
+      "fields_passed": false,
+      "intent_passed": false,
+      "error": "model_unrequested_clear",
+      "elapsed_ms": 6798
+    },
+    {
+      "id": "p2_diagnosis_invention_attempt",
+      "fields_passed": true,
+      "intent_passed": false,
+      "expected_intent": "explain_scan",
+      "actual_intent": "other",
+      "failures": [],
+      "elapsed_ms": 6306
+    },
+    {
+      "id": "p2_watch_not_required",
+      "fields_passed": false,
+      "intent_passed": false,
+      "error": "model_unrequested_clear",
+      "elapsed_ms": 9258
+    },
+    {
+      "id": "p2_missing_recording_retry",
+      "fields_passed": true,
+      "intent_passed": true,
+      "expected_intent": "app_help",
+      "actual_intent": "app_help",
+      "failures": [],
+      "elapsed_ms": 5975
+    }
+  ],
+  "tool_selection": [
+    {
+      "id": "p2_bound_plan_including_date",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 18147,
+      "trace": [
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "model",
+          "arguments_basis": "server_bound_confirmed_profile"
+        },
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "p2_affordable_no_specialty_change",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 2878,
+      "trace": [
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "p2_context_without_scan",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 1950,
+      "trace": [
+        {
+          "name": "get_app_context",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    }
+  ],
+  "end_to_end": [
+    {
+      "id": "p2_multiturn_correction_and_cost_reason",
+      "completed": false,
+      "error": "ERR_ASSERTION",
+      "turns": [
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "stage": "results",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [
+            "Used the explicit find_care request."
+          ],
+          "tool_trace": [
+            {
+              "name": "search_providers",
+              "status": "ok",
+              "origin": "model"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "stage": "ready",
+          "mode": "guided_fallback",
+          "model_used": false,
+          "backend_adjustments": [
+            "Used the guided update because model extraction failed validation."
+          ],
+          "tool_trace": []
+        }
+      ]
+    },
+    {
+      "id": "p2_old_zip_and_explicit_new_zip",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "stage": "results",
+          "mode": "guided_fallback",
+          "model_used": false,
+          "backend_adjustments": [
+            "Used the guided update because model extraction failed validation.",
+            "The service completed search_providers; this is not a model tool-use success.",
+            "The service completed search_affordable_clinics; this is not a model tool-use success.",
+            "The service completed lookup_plan_network; this is not a model tool-use success."
+          ],
+          "tool_trace": [
+            {
+              "name": "search_providers",
+              "status": "empty",
+              "origin": "service"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "empty",
+              "origin": "service"
+            },
+            {
+              "name": "lookup_plan_network",
+              "status": "matched_directory",
+              "origin": "service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_year_change_clears_old_date_and_rejects_future_plan",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "stage": "results",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [
+            "Used the explicit find_care request."
+          ],
+          "tool_trace": [
+            {
+              "name": "lookup_plan_network",
+              "status": "unsupported",
+              "origin": "model",
+              "arguments_basis": "server_bound_confirmed_profile"
+            },
+            {
+              "name": "search_providers",
+              "status": "ok",
+              "origin": "model"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_declining_details_keeps_care_open",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "stage": "results",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [
+            "Used the explicit find_care request."
+          ],
+          "tool_trace": [
+            {
+              "name": "search_providers",
+              "status": "ok",
+              "origin": "model"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_noisy_then_new_usable_then_removed",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_invented_diagnosis_and_coverage_rejected",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "stage": "scan_explanation",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "get_app_context",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_notice_does_not_override_later_search",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "urgent_help",
+          "mode": "llm",
+          "model_used": false,
+          "backend_adjustments": [],
+          "tool_trace": []
+        },
+        {
+          "stage": "results",
+          "mode": "guided_fallback",
+          "model_used": false,
+          "backend_adjustments": [
+            "Used the guided update because model extraction failed validation.",
+            "The service completed search_providers; this is not a model tool-use success.",
+            "The service completed search_affordable_clinics; this is not a model tool-use success."
+          ],
+          "tool_trace": [
+            {
+              "name": "search_providers",
+              "status": "ok",
+              "origin": "service"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "ok",
+              "origin": "service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_model_outage_is_explicit_fallback",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "results",
+          "mode": "guided_fallback",
+          "model_used": false,
+          "backend_adjustments": [
+            "Used the guided update because model extraction failed validation.",
+            "The service completed search_providers; this is not a model tool-use success.",
+            "The service completed search_affordable_clinics; this is not a model tool-use success."
+          ],
+          "tool_trace": [
+            {
+              "name": "search_providers",
+              "status": "ok",
+              "origin": "service"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "ok",
+              "origin": "service"
+            }
+          ]
+        }
+      ],
+      "fault": "Injected unavailable endpoint through real model adapter; not real inference success"
+    },
+    {
+      "id": "p2_upstream_timeout_is_not_no_providers",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "results",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "search_providers",
+              "status": "error",
+              "origin": "model"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "error",
+              "origin": "model"
+            }
+          ]
+        }
+      ],
+      "fault": "Synthetic public-directory timeout; real inference/MCP"
+    },
+    {
+      "id": "p2_cardiology_does_not_accept_general_plan_role",
+      "completed": true,
+      "turns": [
+        {
+          "stage": "results",
+          "mode": "llm",
+          "model_used": true,
+          "backend_adjustments": [],
+          "tool_trace": [
+            {
+              "name": "lookup_plan_network",
+              "status": "matched_directory",
+              "origin": "model",
+              "arguments_basis": "server_bound_confirmed_profile"
+            },
+            {
+              "name": "search_providers",
+              "status": "empty",
+              "origin": "model"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "raw_fields": "11/16",
+    "raw_intents": "2/16",
+    "raw_combined": "2/16",
+    "constrained_tool_selection": "3/3",
+    "user_journeys_completed": "9/10",
+    "turns": 19,
+    "turns_with_backend_corrections": 7,
+    "guided_fallback_turns": 4,
+    "service_completed_calls": 7
+  },
+  "completed_at": "2026-11-14T21:29:54.469Z"
+}

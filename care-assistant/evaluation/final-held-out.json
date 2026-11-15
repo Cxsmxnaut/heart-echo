@@ -1,0 +1,14 @@
+[
+  {"id":"new_postal_paraphrase","message":"My postal code is 60614; could you look for a doctor around there?","expected":{"zip":"60614","intent":"find_care","specialty":null}},
+  {"id":"new_payer_no_network","message":"Find a clinic in 02139. My coverage is with Humana, and I can't recall the product or network name.","expected":{"zip":"02139","insurance":{"payer":"Humana"}},"absent_insurance":["plan","network"]},
+  {"id":"new_plan_three_labels","message":"payer: Mock Harbor Health; plan: Harbor Select EPO; network: Harbor Coastal","expected":{"insurance":{"status":"insured","payer":"Mock Harbor Health","plan":"Harbor Select EPO","network":"Harbor Coastal"}}},
+  {"id":"new_uninsured_paraphrase","message":"I'm uninsured and looking for family medicine in 98103.","expected":{"zip":"98103","specialty":"family_medicine","insurance":{"status":"uninsured"}}},
+  {"id":"new_plan_year_copy","message":"payer: Example Summit; plan: Summit Advantage HMO; network: Summit Regional; coverage year: 2028","expected":{"insurance":{"payer":"Example Summit","plan":"Summit Advantage HMO","network":"Summit Regional","coverage_year":2028}}},
+  {"id":"new_ambiguous_location","message":"I'm in Oregon and would like care options. I haven't supplied a ZIP yet.","expected":{"zip":null,"specialty":null}},
+  {"id":"new_bpm_does_not_diagnose","message":"The app estimated 58 BPM. Does that tell me I have a murmur?","expected":{"specialty":null,"intent":"explain_scan"}},
+  {"id":"new_noisy_wording","message":"There was a lot of background noise in the sound recording. Can I trust the scan?","expected":{"specialty":null,"intent":"explain_scan"}},
+  {"id":"new_explicit_internal","message":"Please search for internal medicine, postal code 30309.","expected":{"zip":"30309","specialty":"internal_medicine","intent":"find_care"}},
+  {"id":"new_missing_plan_field","message":"payer: Mock Garden; plan: Garden Choice PPO","expected":{"insurance":{"payer":"Mock Garden","plan":"Garden Choice PPO"}},"absent_insurance":["network"]},
+  {"id":"new_noncare_greeting","message":"Good morning!","expected":{"zip":null,"insurance":null,"specialty":null,"intent":"other"}},
+  {"id":"new_explicit_date","message":"payer: Mock Coast; plan: Coast Bronze; network: Coast Local; coverage year: 2029; coverage date: 2029-05-01","expected":{"insurance":{"payer":"Mock Coast","plan":"Coast Bronze","network":"Coast Local","coverage_year":2029,"coverage_date":"2029-05-01"}}}
+]

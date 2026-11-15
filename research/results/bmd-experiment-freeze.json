@@ -1,0 +1,9 @@
+{
+  "experiment_source_sha256": "db0b010033487577622c0b9b0823fe848820ae3e5c6372995c95b066e6db2bad",
+  "protocol_sha256": "304fc83f486195d3515bbb11adbce07764ec44fe7f9804af03c6b1625236e723",
+  "acquisition_source_sha256": "e018494eeb7bf5ae9591112e6fa1e641b0c9dca3a906d6a549f7f79cbe32c4ae",
+  "numpy": "2.4.3",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "python": "3.13.5"
+}

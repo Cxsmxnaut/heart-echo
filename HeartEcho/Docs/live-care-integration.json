@@ -1,0 +1,161 @@
+{
+  "checked_at": "2026-11-15T08:09:01.391Z",
+  "status": 200,
+  "elapsed_ms": 14007,
+  "scan_explanation": "Public stethoscope example; this is not your heart recording. No usable BPM estimate is attached. This does not change the murmur finding. The on-device model found a murmur-like sound pattern. It cannot identify the cause or severity. Model: Phase-aware M · 2026-11-14. BPM and murmur analysis are independent. Phone murmur accuracy has not been established. You can find care with any result or without a scan. This project is a prototype and is not medical advice.",
+  "model": {
+    "mode": "llm",
+    "model": "care-gemma4-e4b",
+    "configured": true,
+    "tool_mode": "batch",
+    "last_success_at": "2026-11-15T08:09:00.505Z",
+    "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference.",
+    "elapsed_ms": 4238,
+    "used_this_turn": true,
+    "backend_corrected": false
+  },
+  "tool_trace": [
+    {
+      "name": "search_affordable_clinics",
+      "status": "ok",
+      "origin": "model"
+    }
+  ],
+  "results": {
+    "search_affordable_clinics": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "hrsa:1755",
+          "name": "Ravenswood Family Dentistry",
+          "kind": "health_center",
+          "specialty": "HRSA-listed health center site; confirm services",
+          "address": "1807 Bay Rd, East Palo Alto, CA, 94303-1312",
+          "zip": "94303",
+          "phone": "650-330-7400",
+          "website": null,
+          "source": "HRSA Health Center Sites",
+          "source_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/1755?f=pjson",
+          "query_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/query?f=json&where=SITE_ZIP_CD+LIKE+%2794303%25%27+AND+HCC_STATUS_DESC+%3D+%27Active%27&outFields=OBJECTID%2CSITE_NM%2CSITE_ADDRESS%2CSITE_CITY%2CSITE_STATE_ABBR%2CSITE_ZIP_CD%2CSITE_PHONE_NUM%2CSITE_URL%2CHCC_STATUS_DESC&returnGeometry=false&resultRecordCount=5&orderByFields=SITE_NM",
+          "retrieved_at": "2026-11-15T08:09:01.376Z",
+          "source_updated_at": null,
+          "network_status": "unverified",
+          "network_basis": "HRSA site listing; no exact-plan participation evidence.",
+          "note": "Ask which services this site offers and whether you qualify for a sliding-fee discount. Discounts depend on income, family size, and clinic policies; no price is guaranteed. Network unverified. Call the insurer and this practice with your exact plan/network and this address. Directory inclusion does not establish appointment availability, benefit eligibility, or out-of-pocket cost.",
+          "reason": "HRSA lists this health-center site in ZIP 94303. Ask about self-pay and sliding-fee options; prices and services vary.",
+          "category_match": "unverified",
+          "coverage_relevant": false,
+          "directions_url": "https://www.google.com/maps/dir/?api=1&destination=1807%20Bay%20Rd%2C%20East%20Palo%20Alto%2C%20CA%2C%2094303-1312"
+        },
+        {
+          "id": "hrsa:1761",
+          "name": "Ravenswood Family Dentistry",
+          "kind": "health_center",
+          "specialty": "HRSA-listed health center site; confirm services",
+          "address": "1805 Bay Rd, East Palo Alto, CA, 94303-1312",
+          "zip": "94303",
+          "phone": "510-409-6339",
+          "website": null,
+          "source": "HRSA Health Center Sites",
+          "source_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/1761?f=pjson",
+          "query_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/query?f=json&where=SITE_ZIP_CD+LIKE+%2794303%25%27+AND+HCC_STATUS_DESC+%3D+%27Active%27&outFields=OBJECTID%2CSITE_NM%2CSITE_ADDRESS%2CSITE_CITY%2CSITE_STATE_ABBR%2CSITE_ZIP_CD%2CSITE_PHONE_NUM%2CSITE_URL%2CHCC_STATUS_DESC&returnGeometry=false&resultRecordCount=5&orderByFields=SITE_NM",
+          "retrieved_at": "2026-11-15T08:09:01.376Z",
+          "source_updated_at": null,
+          "network_status": "unverified",
+          "network_basis": "HRSA site listing; no exact-plan participation evidence.",
+          "note": "Ask which services this site offers and whether you qualify for a sliding-fee discount. Discounts depend on income, family size, and clinic policies; no price is guaranteed. Network unverified. Call the insurer and this practice with your exact plan/network and this address. Directory inclusion does not establish appointment availability, benefit eligibility, or out-of-pocket cost.",
+          "reason": "HRSA lists this health-center site in ZIP 94303. Ask about self-pay and sliding-fee options; prices and services vary.",
+          "category_match": "unverified",
+          "coverage_relevant": false,
+          "directions_url": "https://www.google.com/maps/dir/?api=1&destination=1805%20Bay%20Rd%2C%20East%20Palo%20Alto%2C%20CA%2C%2094303-1312"
+        },
+        {
+          "id": "hrsa:1752",
+          "name": "Ravenswood Family Health Center",
+          "kind": "health_center",
+          "specialty": "HRSA-listed health center site; confirm services",
+          "address": "1885 Bay Rd, East Palo Alto, CA, 94303-1312",
+          "zip": "94303",
+          "phone": "650-330-7400",
+          "website": null,
+          "source": "HRSA Health Center Sites",
+          "source_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/1752?f=pjson",
+          "query_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/query?f=json&where=SITE_ZIP_CD+LIKE+%2794303%25%27+AND+HCC_STATUS_DESC+%3D+%27Active%27&outFields=OBJECTID%2CSITE_NM%2CSITE_ADDRESS%2CSITE_CITY%2CSITE_STATE_ABBR%2CSITE_ZIP_CD%2CSITE_PHONE_NUM%2CSITE_URL%2CHCC_STATUS_DESC&returnGeometry=false&resultRecordCount=5&orderByFields=SITE_NM",
+          "retrieved_at": "2026-11-15T08:09:01.376Z",
+          "source_updated_at": null,
+          "network_status": "unverified",
+          "network_basis": "HRSA site listing; no exact-plan participation evidence.",
+          "note": "Ask which services this site offers and whether you qualify for a sliding-fee discount. Discounts depend on income, family size, and clinic policies; no price is guaranteed. Network unverified. Call the insurer and this practice with your exact plan/network and this address. Directory inclusion does not establish appointment availability, benefit eligibility, or out-of-pocket cost.",
+          "reason": "HRSA lists this health-center site in ZIP 94303. Ask about self-pay and sliding-fee options; prices and services vary.",
+          "category_match": "unverified",
+          "coverage_relevant": false,
+          "directions_url": "https://www.google.com/maps/dir/?api=1&destination=1885%20Bay%20Rd%2C%20East%20Palo%20Alto%2C%20CA%2C%2094303-1312"
+        },
+        {
+          "id": "hrsa:1759",
+          "name": "Ravenswood Family Health Center at 1846 Bay Road",
+          "kind": "health_center",
+          "specialty": "HRSA-listed health center site; confirm services",
+          "address": "1846 Bay Rd, East Palo Alto, CA, 94303-1311",
+          "zip": "94303",
+          "phone": "650-330-7400",
+          "website": null,
+          "source": "HRSA Health Center Sites",
+          "source_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/1759?f=pjson",
+          "query_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/query?f=json&where=SITE_ZIP_CD+LIKE+%2794303%25%27+AND+HCC_STATUS_DESC+%3D+%27Active%27&outFields=OBJECTID%2CSITE_NM%2CSITE_ADDRESS%2CSITE_CITY%2CSITE_STATE_ABBR%2CSITE_ZIP_CD%2CSITE_PHONE_NUM%2CSITE_URL%2CHCC_STATUS_DESC&returnGeometry=false&resultRecordCount=5&orderByFields=SITE_NM",
+          "retrieved_at": "2026-11-15T08:09:01.376Z",
+          "source_updated_at": null,
+          "network_status": "unverified",
+          "network_basis": "HRSA site listing; no exact-plan participation evidence.",
+          "note": "Ask which services this site offers and whether you qualify for a sliding-fee discount. Discounts depend on income, family size, and clinic policies; no price is guaranteed. Network unverified. Call the insurer and this practice with your exact plan/network and this address. Directory inclusion does not establish appointment availability, benefit eligibility, or out-of-pocket cost.",
+          "reason": "HRSA lists this health-center site in ZIP 94303. Ask about self-pay and sliding-fee options; prices and services vary.",
+          "category_match": "unverified",
+          "coverage_relevant": false,
+          "directions_url": "https://www.google.com/maps/dir/?api=1&destination=1846%20Bay%20Rd%2C%20East%20Palo%20Alto%2C%20CA%2C%2094303-1311"
+        },
+        {
+          "id": "hrsa:1760",
+          "name": "Ravenswood Family Health Center at 1848A Bay Road",
+          "kind": "health_center",
+          "specialty": "HRSA-listed health center site; confirm services",
+          "address": "1848 Bay Rd, East Palo Alto, CA, 94303-1311",
+          "zip": "94303",
+          "phone": "650-330-7409 x07409",
+          "website": null,
+          "source": "HRSA Health Center Sites",
+          "source_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/1760?f=pjson",
+          "query_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/query?f=json&where=SITE_ZIP_CD+LIKE+%2794303%25%27+AND+HCC_STATUS_DESC+%3D+%27Active%27&outFields=OBJECTID%2CSITE_NM%2CSITE_ADDRESS%2CSITE_CITY%2CSITE_STATE_ABBR%2CSITE_ZIP_CD%2CSITE_PHONE_NUM%2CSITE_URL%2CHCC_STATUS_DESC&returnGeometry=false&resultRecordCount=5&orderByFields=SITE_NM",
+          "retrieved_at": "2026-11-15T08:09:01.376Z",
+          "source_updated_at": null,
+          "network_status": "unverified",
+          "network_basis": "HRSA site listing; no exact-plan participation evidence.",
+          "note": "Ask which services this site offers and whether you qualify for a sliding-fee discount. Discounts depend on income, family size, and clinic policies; no price is guaranteed. Network unverified. Call the insurer and this practice with your exact plan/network and this address. Directory inclusion does not establish appointment availability, benefit eligibility, or out-of-pocket cost.",
+          "reason": "HRSA lists this health-center site in ZIP 94303. Ask about self-pay and sliding-fee options; prices and services vary.",
+          "category_match": "unverified",
+          "coverage_relevant": false,
+          "directions_url": "https://www.google.com/maps/dir/?api=1&destination=1848%20Bay%20Rd%2C%20East%20Palo%20Alto%2C%20CA%2C%2094303-1311"
+        }
+      ],
+      "source": "HRSA Health Center Sites",
+      "source_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/query?f=json&where=SITE_ZIP_CD+LIKE+%2794303%25%27+AND+HCC_STATUS_DESC+%3D+%27Active%27&outFields=OBJECTID%2CSITE_NM%2CSITE_ADDRESS%2CSITE_CITY%2CSITE_STATE_ABBR%2CSITE_ZIP_CD%2CSITE_PHONE_NUM%2CSITE_URL%2CHCC_STATUS_DESC&returnGeometry=false&resultRecordCount=5&orderByFields=SITE_NM",
+      "retrieved_at": "2026-11-15T08:09:01.376Z",
+      "location_basis": "Exact ZIP 94303; site services vary. Not distance-ranked.",
+      "note": "Ask which services this site offers and whether you qualify for a sliding-fee discount. Discounts depend on income, family size, and clinic policies; no price is guaranteed.",
+      "fee_source_url": "https://bphc.hrsa.gov/compliance/compliance-manual/chapter9",
+      "fallbacks": [
+        {
+          "label": "Search the official NPI Registry",
+          "url": "https://npiregistry.cms.hhs.gov/"
+        },
+        {
+          "label": "HRSA Find a Health Center",
+          "url": "https://findahealthcenter.hrsa.gov/"
+        },
+        {
+          "label": "CMS National Provider Directory",
+          "url": "https://directory.cms.gov/"
+        }
+      ]
+    }
+  }
+}

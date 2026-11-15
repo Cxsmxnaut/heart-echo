@@ -1,0 +1,70 @@
+{
+  "started_at": "2026-11-14T22:08:07.925Z",
+  "experimental": true,
+  "deployed": false,
+  "note": "Seen scenarios only; adapter requests parallel native tool calls and asks for one batch. Frozen production source/configuration untouched. Handler still bounds at most four calls and validates every argument before MCP.",
+  "cases": [
+    {
+      "id": "seen_full_plan",
+      "completed": true,
+      "one_batch": true,
+      "elapsed_ms": 14136,
+      "model_requests": [
+        {
+          "elapsed_ms": 14080,
+          "native_calls": [
+            "search_providers",
+            "lookup_plan_network",
+            "search_affordable_clinics"
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "model",
+          "arguments_basis": "server_bound_confirmed_profile"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "seen_uninsured",
+      "completed": true,
+      "one_batch": true,
+      "elapsed_ms": 10996,
+      "model_requests": [
+        {
+          "elapsed_ms": 10979,
+          "native_calls": [
+            "search_providers",
+            "search_affordable_clinics"
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-11-14T22:08:33.113Z"
+}

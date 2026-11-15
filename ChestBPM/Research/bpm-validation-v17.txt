@@ -1,0 +1,72 @@
+BPM improvement protocol — November 14, 2026
+
+Purpose
+Improve the phone-only BPM estimator's useful coverage, resistance to incorrect rates,
+and recovery after noise. Watch readings remain evaluation references; they never
+enter feature extraction, model inference, beat selection or smoothing. No AFib or
+murmur classifier is implemented by this work. Finite tests cannot establish 100%
+accuracy or clinical reliability.
+
+Development and evaluation boundaries
+The saved personal series is local feasibility/development evidence. Its summary
+outcomes have already been inspected, so no part of that series is described as a
+genuinely unseen final test. Keep stopped attempts, rejected readings and participant
+annotations. Raw audio, derived traces and individual results stay in ignored,
+private diagnostic-logs directories. Do not upload these recordings or include them
+in a hackathon submission without separately establishing eligibility and consent.
+
+An additional public cohort is reserved by ML/reserve_validation.py using metadata
+only. Linked patient IDs are resolved before excluding every earlier training,
+development and test group. The seed and checksums make the reservation reproducible.
+Do not download or inspect the new waveforms/annotations until the final source and
+model hashes are frozen. The download tool verifies that freeze. Report the complete
+cohort, missing references, negative controls and every large error. Noise mixtures
+reuse known noise sources; new patients alone do not establish unseen-noise validity.
+
+The user's final prospective device validation is exactly two cycles/eight tests:
+quiet, background sound, brief repositioning and off chest, twice each, in rotating
+order. Retain the exact tested algorithm/model hashes. Do not tune between cycles.
+No further personal recording rounds are assumed or promised by this protocol.
+
+Replay
+Tools/prepare_audio_replay.py produces native audio-only inputs separately from
+evaluation-only Watch references. Tools/AudioReplay.swift runs the actual saved WAV
+through native Core ML and feature extraction. Tools/TimingReplay.swift evaluates
+timing changes on cached states and original energy/mask traces. Record all source,
+model, waveform and output hashes. First compare the unchanged replay with the live
+decisions: saved PCM16 quantization and per-update maximum motion are approximations
+to live floating-point samples and the unsaved 20ms motion history. Measure their
+effect before using replay comparisons. Do not join sample times across masked gaps.
+
+Metrics
+Report accepted and rejected update counts, long gaps, first usable estimate,
+recovery after noise, false BPM returns in all off-chest updates, and the number and
+size of large differences. Overlapping updates are not independent trials. Include
+per-trial and per-condition results; a small average on selected returned readings
+alone is insufficient. Match unique Watch sample timestamps, retain absent phone
+outputs, and show common-pair and newly returned comparisons separately. A Watch
+sample is not ECG ground truth and its internal averaging window is not specified.
+
+For public S1 annotations, retain the historical eight-second median-interval
+reference for regression comparisons. Also report the fixed recent-four-interval
+reference, identical for every estimator: 240 divided by the time between the last
+five annotated S1 onsets. Require five nonnegative-time onsets and a newest annotation
+within 1.5 median intervals; otherwise label that reference missing. This second
+definition measures a shorter recent rate. Report both definitions rather than
+choosing whichever makes a candidate look better. State that public annotations are
+semi-supervised timing references from different recording equipment, not simultaneous
+ECG on this phone. Keep missing and variable-interval recordings visible.
+
+Research basis
+Springer, Tarassenko and Clifford, Logistic Regression-HSMM-based Heart Sound
+Segmentation: https://moody-challenge.physionet.org/2022/refs/LR_HSMM_Segmentation_IEEE_Springer_Tarassenko_Clifford.pdf
+The paper supports checking sound ordering and duration under noisy conditions.
+No reference implementation or trained Springer weights were copied.
+Apple HealthKit sample timestamps: https://developer.apple.com/documentation/healthkit/hksample
+Apple workout sampling: https://developer.apple.com/documentation/healthkit/running-workout-sessions
+Dataset/license/training provenance remain in ML/PROVENANCE.txt.
+
+Repository inspection
+No Graphify configuration/runtime is present in this worktree. Conclusions use the
+current source, verified archives, native replay, explicit tests and physical-device
+results. No graph refresh command applies.

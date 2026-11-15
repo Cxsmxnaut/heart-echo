@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-14T22:18:33.855762+00:00",
+  "passed": true,
+  "data": "synthetic summary only; macOS CLI against actual local E4B batch web backend",
+  "summary": {
+    "schema_version": "1.1",
+    "estimated_bpm": 74.33333,
+    "analysis_window_seconds": 8,
+    "captured_at": "omitted, unknown",
+    "synthetic": true
+  },
+  "response_mode": "llm",
+  "own_session_deleted": true,
+  "stdout": "Synthetic Swift handoff passed. Response mode: llm\nSynthetic example. The supplied scan estimates 74 BPM (beats per minute) from sound timing. Usable timing does not mean a healthy heart, and it does not diagnose AFib, murmurs, or heart disease.\nSynthetic session cleared.\n",
+  "limit": "Isolated package only; not native iOS app/device integration."
+}

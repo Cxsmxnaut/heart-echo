@@ -1,0 +1,8 @@
+{
+  "pass": 2,
+  "attempt": "first live browser attempt after freeze",
+  "passed": false,
+  "failure": "The test expected model-only routing for the live payer form, but the response reported guided_fallback.",
+  "observed": { "expected_mode": "llm", "actual_mode": "guided_fallback" },
+  "note": "Preserved rather than hidden. The subsequent browser harness checks UI task completion and visible fallback separately, and records the actual model mode and tool origins. No frozen model/service behavior was changed."
+}

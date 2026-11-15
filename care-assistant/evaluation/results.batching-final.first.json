@@ -1,0 +1,155 @@
+{
+  "started_at": "2026-11-14T22:11:41.764Z",
+  "freeze": {
+    "frozen_at": "2026-11-14T22:11:01.889Z",
+    "model": "care-gemma4-e4b",
+    "weights_revision": "bfc15c382204943c3a8fff0c750b94ae2364d7a3",
+    "weights_sha256": "85a896a047553e842f25297ee5b031d64ff30147d9c4af17b1e4b394cd1fab87",
+    "runtime": "llama.cpp b12248",
+    "config": {
+      "MODEL_VARIANT": "e4b",
+      "LLM_MODEL": "care-gemma4-e4b",
+      "LLM_TEMPERATURE": 0,
+      "LLM_TIMEOUT_MS": 45000,
+      "context": 8192,
+      "parallel": 1,
+      "threads": 2,
+      "cache_ram": 0,
+      "reasoning": "off",
+      "reasoning_budget": 0,
+      "LLM_TOOL_MODE": "batch"
+    },
+    "hashes": {
+      "src/model.js": "47cf107e243daa99a14b5edf7dd79c35f854432b51905e902caa1211ecb0da12",
+      "src/service.js": "6c0c310cb67f5ffe48a8f83492edf134c1597ab18f381d27aeb4f571d2d35298",
+      "src/conversation.js": "9e2903186ea29055296e6376b650f444cdaab3c64bea572b364f0e7bce5bdbe1",
+      "src/schema.js": "18a69c98c76db289ec0862a1b68479e51ebc8fb049f7f80ffe212ae064e60887",
+      "src/knowledge.js": "13c29d2f9ac2dd60870ffa84ae1891c08282639243c23e9b2836372b49e09ada",
+      "src/tools.js": "3594256d957458c2946af272b0c6629b56a80cf495ab3444e938bc2070fc3266",
+      "src/tool-client.js": "292de3af1442c4f282fb21bdb4fb6b6a1997328cdb84377b358aedbc73dcb336",
+      "src/mcp.js": "0a28cac294acfdc78a6c1cc7099ae7968cc1c6cb44f9bf59febb6e97338a1ef2",
+      "src/directories.js": "260a62d85880933cfdac78d5d0bf54439b73c59ac915b4d2f84a57697e224d23",
+      "src/healthplan.js": "f15f23b8feb101ac05953930b097b22a812b3e8562134ba83d3459e40ec7b15c",
+      "src/server.js": "fde6c0d38be6f778e43e0a8e57501697575c656fc10888d3c85a514c12b4c333",
+      "public/index.html": "43660e5fbf648a958b330c6e3fe3cd48c21178a6535b2004129d3124a2fdd4c5",
+      "public/app.js": "cd6483ac3fb43c9d91cdf7d057e79b088fd74f4c1d5215950bb95c2437c05980",
+      "public/style.css": "43e306715af1ba9154891c03d62f93417f0dfcfafbb6eb728ab8db13a1a3320e",
+      "integrations/swift/Sources/ChestBPMCare/CareClient.swift": "4f224a8a59703a92079b58b310928d228057cb3ab66ec20d50b372d2da9e9baf",
+      "integrations/swift/Sources/ChestBPMCare/CareHandoffSession.swift": "82d230f913185cb9b283bf2b5afac0aa79f4d3927bc5676dc1a1060cd37deb82",
+      "integrations/swift/Sources/ChestBPMCare/CareSummarySheet.swift": "f5eb8457b2be221f6b6c39113ac576a40321113c32be150930789fd69ba26b21",
+      "integrations/swift/Sources/ChestBPMCare/ScanSummary.swift": "e561cef33ff4e23bc680611ec18a7c577f8d5e407080871846d5902fae85b6f1",
+      "scripts/model-artifacts.js": "70e6bfe907f9b1cd8df8e07d48d7f8ecccbd9043c3c79dd676696239d446f771",
+      "scripts/setup-local-model.js": "78941255801232e7d3ca93c3b891ab6f00bee80d755f7ae9a07ff4d9ef305e47",
+      "scripts/start-local-model.js": "fc5e2bb99f1207cf51b98a8c7f4082fb1d28ae4afe6580c782d5b64fa2e8abf4",
+      "package.json": "18170cf9caaee1fb8851c5a9735a4f88cb5fb25841c206bcce63b5ebefe9f76f",
+      "package-lock.json": "0da52fe2cd38acf7c7cf58f697e67cf1791787ea03a7cbefd1f4db60c5777108",
+      ".env.example": "8a204b0bce73b9173f7a176b9e7076f642f5a392c8264d2709047950d1620f62"
+    },
+    "note": "Post-quality-freeze configurable batching candidate. Intent/field prompt strings and all argument checks unchanged. Earlier whole-source freeze is historical."
+  },
+  "scenario_sha256": "8d01914368b757bf7231ccc1c1a777da0539ac3de721b41ae799e3d35411d031",
+  "note": "First new post-batching-freeze tool-selection cases. Real model, actual MCP, synthetic user/directory fixtures. Earlier intent/field final and whole-source freeze remain unchanged historical evidence. No retuning follows.",
+  "cases": [
+    {
+      "id": "batch_fresh_privacy",
+      "passed": false,
+      "error": "ERR_ASSERTION",
+      "elapsed_ms": 4475,
+      "model_requests": [
+        {
+          "elapsed_ms": 4425,
+          "calls": [
+            "get_app_context"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "batch_fresh_only_clinics",
+      "passed": true,
+      "one_model_response": true,
+      "elapsed_ms": 5452,
+      "model_requests": [
+        {
+          "elapsed_ms": 5443,
+          "calls": [
+            "search_affordable_clinics"
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "batch_fresh_supported_plan",
+      "passed": true,
+      "one_model_response": true,
+      "elapsed_ms": 13676,
+      "model_requests": [
+        {
+          "elapsed_ms": 13652,
+          "calls": [
+            "lookup_plan_network",
+            "search_providers",
+            "search_affordable_clinics"
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "model",
+          "arguments_basis": "server_bound_confirmed_profile"
+        },
+        {
+          "name": "search_providers",
+          "status": "empty",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "batch_fresh_skip_stored_plan",
+      "passed": true,
+      "one_model_response": true,
+      "elapsed_ms": 10402,
+      "model_requests": [
+        {
+          "elapsed_ms": 10395,
+          "calls": [
+            "search_providers",
+            "search_affordable_clinics"
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "tool_tasks": "3/4",
+    "one_response_tasks": "3/4"
+  },
+  "completed_at": "2026-11-14T22:12:15.981Z"
+}

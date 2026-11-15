@@ -1,0 +1,1210 @@
+{
+  "freeze": {
+    "model_files": {
+      "Data/com.apple.CoreML/model.mlmodel": "bb3e2cd129ddcc4377195ab79f56949244d12e7b85897e7971959be0647d8bb1",
+      "Data/com.apple.CoreML/weights/weight.bin": "76fed2c566b74e342165a649e9338ccab06a0987b65fb2fa68f32dbaedceda72",
+      "Manifest.json": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa"
+    },
+    "inference_source_sha256": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e",
+    "probe_source_sha256": "f93ea79db39f5cc63c7113d44b6fc1c008f491cbe57aa4b106c214c8137822ed",
+    "evaluator_sha256": "ba89838c6b6f3ecd68d8984d2b644bed6001ab2ad5d389f9b99352fa8ed51071",
+    "native_executable_sha256": "77280b80f04f4d23b4e847ef2e5f4eb30a84e0334772efcb1e677cdd850dff7d",
+    "archive_note": "The extra-heart-sound archive uses Atraining_extrahls internally. V3 adds those 19 controls; the original normal/murmur/artifact cases and inference are unchanged.",
+    "initial_attempt": "The initial probe was given the package instead of its containing directory and failed before producing results; corrected invocation only. Original freeze preserved.",
+    "threshold": 0.6,
+    "protocol": "Use every normal/murmur file from PASCAL A with original archive category as reference. Count short/rejected audio as unsure; report all artifact/extra-sound predictions separately. Do not tune or train on these files. Exact decoded-waveform overlap with all cached CirCor files is excluded and listed. No person IDs available; no patient-independent or clinical accuracy claim."
+  },
+  "archives": {
+    "Atraining_normal.zip": {
+      "source": "https://www.peterjbentley.com/heartchallenge/wav/Atraining_normal.zip",
+      "sha256": "385db504ab2ea2ad38d8c502e94bf0dc037ab18be7b8cc448cf776d9049e003a"
+    },
+    "Atraining_murmur.zip": {
+      "source": "https://www.peterjbentley.com/heartchallenge/wav/Atraining_murmur.zip",
+      "sha256": "0f37212dc3c7e7014273bdb7f4434270487ac9311569393c955e6101b0a9dd0e"
+    },
+    "Atraining_artifact.zip": {
+      "source": "https://www.peterjbentley.com/heartchallenge/wav/Atraining_artifact.zip",
+      "sha256": "43a6effd90400dc537107faa2f3debcc2873eaa75ac90173d39742bf9348ce53"
+    },
+    "Atraining_extrahs.zip": {
+      "source": "https://www.peterjbentley.com/heartchallenge/wav/Atraining_extrahs.zip",
+      "sha256": "cea1bf9d57198e688417670116ee6b85869b004852fb7740906b46aab3725d10"
+    }
+  },
+  "circor_cached_waveforms_checked": 3163,
+  "exact_waveform_overlaps_excluded": [],
+  "matrix": {
+    "normal": {
+      "present": 2,
+      "absent": 15,
+      "unsure": 14
+    },
+    "murmur": {
+      "present": 19,
+      "absent": 7,
+      "unsure": 8
+    },
+    "artifact": {
+      "present": 1,
+      "absent": 0,
+      "unsure": 39
+    },
+    "extrahs": {
+      "present": 1,
+      "absent": 13,
+      "unsure": 5
+    }
+  },
+  "murmur_detection_fraction": 0.5588235294117647,
+  "false_alarm_fraction": 0.06451612903225806,
+  "positive_called_absent": 7,
+  "positive_unsure": 8,
+  "normal_unsure": 14,
+  "always_absent_baseline": {
+    "murmurs_detected": 0,
+    "positive_called_absent": 34,
+    "normal_false_alarms": 0,
+    "unsure": 0
+  },
+  "records": [
+    {
+      "id": "201101070538",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 8.884,
+      "windows": 3,
+      "sha256": "894861fafae5924fb660af7026c1ebf2e707531055c704bb076d6582992e091a"
+    },
+    {
+      "id": "201101151127",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "dd0a41b892fcc5410a6690892f590cc2643bb945d15e50f995d376b393863473"
+    },
+    {
+      "id": "201102081152",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 7.1445,
+      "windows": 2,
+      "sha256": "34e848c3cd8a12b5b62c037b53444b2cea2498a61c1ecdc042a13c8261301c84"
+    },
+    {
+      "id": "201102081321",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 7.8885,
+      "windows": 2,
+      "sha256": "a811d903ad46589440181b3db9dfbf81359b8b7084318c5b94efc113ccf7f703"
+    },
+    {
+      "id": "201102201230",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "4bed41dc3d431eb4fbb2a977d17589eed4685dac59c5f26de714315bab532b20"
+    },
+    {
+      "id": "201102260502",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 6.284,
+      "windows": 2,
+      "sha256": "cff8f2352807a6a970c60b091eb558a0dbf477c41eb30af15eb1a80f9b498d24"
+    },
+    {
+      "id": "201102270940",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "4a64e041067090fd9c5419d18810740bf11bd7daab53040d5982841d3f783ce2"
+    },
+    {
+      "id": "201103090635",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 8.0135,
+      "windows": 2,
+      "sha256": "47b275f4ed6e311674d45661ec1e2e9a84c1868f558c0ce7c246d1de668f3766"
+    },
+    {
+      "id": "201103101140",
+      "reference": "normal",
+      "prediction": "present",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "281a56b3da16191dc3a644009106a6222be586abcc095659c8fe5666177e095d"
+    },
+    {
+      "id": "201103140132",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "e75b3d4dc4ff5b453e6a302f97330f0443c4fb4933ac7764b2c90c743f66c417"
+    },
+    {
+      "id": "201103140135",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 7.947,
+      "windows": 2,
+      "sha256": "cf63b1faab88ea1fea0376fa5abe1c307ec4e03efcf49d1b51abe587293b3ce2"
+    },
+    {
+      "id": "201103140822",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 8.0135,
+      "windows": 2,
+      "sha256": "c73b2e02063484efdf9ee9a77fc559b2ddc188f18e2e79eed9b327dd12f373a2"
+    },
+    {
+      "id": "201103151912",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "4abca76d23217c89146d593ee6871d93b6fd65627d7e3bf2afb2c7d5026a9d21"
+    },
+    {
+      "id": "201103170121",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 8.0305,
+      "windows": 3,
+      "sha256": "8dde94d85b349eac9b4440cdc84bd6a5ff9f5eb54c126908fd5cb8a5717faa49"
+    },
+    {
+      "id": "201103221214",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 3.463,
+      "windows": 0,
+      "sha256": "d805852a2aefd3a2c003a748aea0a81b27dc62ddcb9e73c2ac59318058dbfa62"
+    },
+    {
+      "id": "201104122156",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "16440b908bc3a963b017bb55abb5a4df66293bbdcc560ad2780ea0df3fc4dde1"
+    },
+    {
+      "id": "201104141251",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 7.6375,
+      "windows": 2,
+      "sha256": "97c581953a7d65ca58890c00d0d47434b8616877cc2d8662e3504ee40abf61c5"
+    },
+    {
+      "id": "201105011626",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "c78cef17692996192722693a149657845d6ab60eca7f4ca9086906533493669b"
+    },
+    {
+      "id": "201105021654",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 7.997,
+      "windows": 2,
+      "sha256": "c0b3d912e09857413965086e5387d5bf34814c1cabf8f37f8a81637661b7a059"
+    },
+    {
+      "id": "201105021804",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "ce89d8db77d89ca6798f335e469f2688fa91ee89303c7089382c0ddaf4c6ca18"
+    },
+    {
+      "id": "201105151450",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 7.5375,
+      "windows": 2,
+      "sha256": "2ecfa0f87b25a89ac39bbd77bd0d84d010a717e9f6696f0ca2582143a7665dee"
+    },
+    {
+      "id": "201106111136",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 4.9635,
+      "windows": 2,
+      "sha256": "966c49c1cc98aaa0f22ced01283dadff42733b7bc3f87cc4935b8e560d5a63da"
+    },
+    {
+      "id": "201106141148",
+      "reference": "normal",
+      "prediction": "present",
+      "seconds": 5.9665,
+      "windows": 2,
+      "sha256": "273ff6a8a70d6e1f80509d021d76b468be81b10494e689047706cccca52c22c4"
+    },
+    {
+      "id": "201106151236",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 7.7715,
+      "windows": 2,
+      "sha256": "70c3fdabbab774c5d7a0a0da669af09a8c4e2ef387ec630acbb53c70870f32de"
+    },
+    {
+      "id": "201106210943",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 5.8495,
+      "windows": 2,
+      "sha256": "4e815d7fea88938716f5709fbca4e0eaabcba998f19a0264d21d5adc12f0b82b"
+    },
+    {
+      "id": "201106221418",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 7.0025,
+      "windows": 2,
+      "sha256": "086818584b5c4e3d42d9caa286f0c3b3177d8dc24a7223608bd7086932c7e995"
+    },
+    {
+      "id": "201106221450",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "0758ba22c3077d9dafbc3313593213432dd2a81edb2f0c8d5eaf06d82083c795"
+    },
+    {
+      "id": "201108011112",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "e7960b53b03c9dc8bef51b95fc27e18701db20d46a0c7e73afc3e63d32d659bd"
+    },
+    {
+      "id": "201108011114",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "910b1165437edd560bb8c41860ffbe13a6118ed4023a1706a3f79abd5eff9eea"
+    },
+    {
+      "id": "201108011115",
+      "reference": "normal",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "7a43158928774bf37b30aa2e7276490d01b4c6f9e7c8ba16ea9da39e60e9229c"
+    },
+    {
+      "id": "201108011118",
+      "reference": "normal",
+      "prediction": "absent",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "91356bd34be1d046164dbcf5c341a63254af22df4204406c48265cbc82df46df"
+    },
+    {
+      "id": "201101051104",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 8.884,
+      "windows": 3,
+      "sha256": "3608859334d23e354921725cdfc41f9066d385215d63a103e20d28bea52bb511"
+    },
+    {
+      "id": "201101051108",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 8.884,
+      "windows": 3,
+      "sha256": "56c572ea52318835e6420d414efd227264c8ffadf8627a5ef8c5000a930f4781"
+    },
+    {
+      "id": "201101051114",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 8.884,
+      "windows": 3,
+      "sha256": "8106d2a0dd11ba89c5dba022dbdec592605d34f7118a0e13cd2833bffa3addc6"
+    },
+    {
+      "id": "201101180902",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 8.034,
+      "windows": 3,
+      "sha256": "56a280e91236765e026a470d1f34176e05ff283f578bd9db2aad64e7bdbfa81e"
+    },
+    {
+      "id": "201102051443",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 6.8185,
+      "windows": 2,
+      "sha256": "4d6082c0ba82ead23ddfcb9cd8652e3dca35394743820d5897df7193bd99256f"
+    },
+    {
+      "id": "201102052338",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "f56107fa027f05447e385adec92787b82ce342b7e21ce7edff624d8affac80b4"
+    },
+    {
+      "id": "201103291548",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.504,
+      "windows": 2,
+      "sha256": "9b0ea08078acb3086c8c03dded8ea4682cbbf8defa85a5280b5e9a0d6664a444"
+    },
+    {
+      "id": "201104021355",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 0.936,
+      "windows": 0,
+      "sha256": "ba3da5b7647d1ad3581c0271c5da5724757c49f63b5626240ef1968a1e98ae87"
+    },
+    {
+      "id": "201104241315",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "c6b603a3e7c76140825fb656d7ed7dfe6dc1badafc349892061d2064462e3e65"
+    },
+    {
+      "id": "201104291843",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 4.8265,
+      "windows": 2,
+      "sha256": "4542593ab8f90811b2ac5318b10d554323046a1e12f6e6b1821a8429e211abbf"
+    },
+    {
+      "id": "201106141148",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 5.9665,
+      "windows": 2,
+      "sha256": "a898e3752054d124cb15b5c56c7daafb63bccec53410b48754a5b4b4a8f2261c"
+    },
+    {
+      "id": "201108222221",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "b5f4ef9f6016d9077bc91ece70092c289aa0582fa109d1675402cc7afce7236e"
+    },
+    {
+      "id": "201108222223",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "68db82b4a39ddd9a94bd612b11206cba4e2e99dbc677f9d8c76623dc0d6d375f"
+    },
+    {
+      "id": "201108222224",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "bd329c60f8ae25054f946cbe6f1de0b4447db2995fd4f36cc288ca44f2b793f1"
+    },
+    {
+      "id": "201108222226",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "0eb07dfcb425f1985d4bfea521890e3954a014eb30cb3df7303c5a8eb1510de8"
+    },
+    {
+      "id": "201108222227",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "57b78aca50a0612b6f8d8c77bf89f901c536beb650c2f0491dbb1520d73e6795"
+    },
+    {
+      "id": "201108222231",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "00e4d0e5c926ae643cb4a58a5c5f9e9a502514b4e618ae346b2ba7bf77d0ce78"
+    },
+    {
+      "id": "201108222232",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "d72d6dec8142fd3a5ec164cd0340cfe54b6650c455d816f9ae8ddee9030b049f"
+    },
+    {
+      "id": "201108222233",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "864755f194d33bedfdd88da40777b459e27760adb35b36744770511274d918fc"
+    },
+    {
+      "id": "201108222235",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "49e3c0c8699855cdf8fc0eb64dd8e9eec88a89ce7c686577af86ffe2cd92d20b"
+    },
+    {
+      "id": "201108222236",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "3ee98f5ebf5a644cd0a5ff51ecec4112b4803d0a2ea2dbe74cbb82b45d0b8645"
+    },
+    {
+      "id": "201108222237",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "793873f888bf3ec0af56e311bffe93eb3f2d31e8b6277b2531ece0443cb46626"
+    },
+    {
+      "id": "201108222238",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "ae21bfe543229c32e702427fd5279bc061a08cf9006dc634d227432819941a8c"
+    },
+    {
+      "id": "201108222242",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "acabfbda5343a59d3ec2dccfd9f8546b7df1cfa36acb5f701099ac15e97d4d18"
+    },
+    {
+      "id": "201108222243",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "4ddaaa2af9df159bec2cd74b85793385178fb38d39695a329c3cad48a5e1abd3"
+    },
+    {
+      "id": "201108222245",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "ce5f04621a0576f586948d43446810937e62c3786821ed8b93f26842b50c3ab1"
+    },
+    {
+      "id": "201108222246",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "012d795a1d3190f9f48eac40580a85fe25b787e0cdedfe8d28a8f30332193a18"
+    },
+    {
+      "id": "201108222248",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "3f2d2f97949d5a47d1f37d31cba119867749a27b87d1610d1afb29b3fd0bbd39"
+    },
+    {
+      "id": "201108222251",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "7a11fc6ecda700de97aa0391ff9513a45e2d9f3ed5fa345d713459c2a94730ff"
+    },
+    {
+      "id": "201108222252",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "3664507c8da2dc5d1012c90ca616b3bace32dd291e8a32bfaf4714f515be4c8a"
+    },
+    {
+      "id": "201108222253",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "f292e2f0145a6d7d786334c5d772f3e925c02c09d966f7be051c5cf081141f93"
+    },
+    {
+      "id": "201108222255",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "45353d15290f84dd213b4674aa8190acf5c8483e2a5f9667564a40a26ea1b42f"
+    },
+    {
+      "id": "201108222256",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "8e1a99233ed37caa150cdfeb49e905cfeb2d29456bee8fc44727f640b1df8b6f"
+    },
+    {
+      "id": "201108222258",
+      "reference": "murmur",
+      "prediction": "present",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "9d4b3a98d4c8d5f1f08cbb749a1a18095d069318c06916f047e9aab0adc3f11e"
+    },
+    {
+      "id": "201012172012",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "6df3f38ddc76bd5e7ad7d688803fe869def4a67a023a0b2c0179e74c0fefa0c1"
+    },
+    {
+      "id": "201105040918",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 2,
+      "sha256": "f6626e6c3801f4301cc72729e4417ca59951786e258613890b2bf42395f7af93"
+    },
+    {
+      "id": "201105041959",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "f3dac4681a1f493576bf6855b6f621aeabdb71ed9e1fd8cc20023c450f51711b"
+    },
+    {
+      "id": "201105051017",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "fc07540ba24d88f6c3ee05ae803bc7fd36ed504f72803e7c82fe0c5942e117ed"
+    },
+    {
+      "id": "201105060108",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "5cb1567de821245a7566b19fcbeea5b4c65d5b85f9a64de895abb22197dda7a3"
+    },
+    {
+      "id": "201105061143",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 2,
+      "sha256": "9ad5c59cc85e1c769d13014a4073ba8f49c1d95d944dafbefb9ce33c02ac7657"
+    },
+    {
+      "id": "201105190800",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "ae4335b7a548df1e3590442b206faef6d795d24f08a1a4248e74ec2476a1f718"
+    },
+    {
+      "id": "201105280851",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "eb8b330c5d7887616fad2bb6d20ec6cece4a4ff2905c66310ddf761306bd5ee5"
+    },
+    {
+      "id": "201106010559",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "5cd1c847f9ece9db6490e4ee1faffb4915d0b758b984fe7532a04ab96dad8de1"
+    },
+    {
+      "id": "201106010602",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "4e6cd22e3412d2d800d77979dcf5370757b083169006b66487da936415c5b279"
+    },
+    {
+      "id": "201106021541",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "a3087943bc4ff0c3ab710ec17d505cffda15bf4a0a6ecbf0913e242f524da3ca"
+    },
+    {
+      "id": "201106030612",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 1,
+      "sha256": "f78b924e00b7d87cb7036f12b8550081770f2e1786142b4659e5e5d4c689ce82"
+    },
+    {
+      "id": "201106031558",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "802dd263e81e7619a81bad7ec553a69237338962f9071712a35272bd44fa810f"
+    },
+    {
+      "id": "201106040722",
+      "reference": "artifact",
+      "prediction": "present",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "3388b286d7687236ed7efa9cb012c89192c9fc6d1eef4b6bcd678c477fe49446"
+    },
+    {
+      "id": "201106040933",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "ecacd2add74ada9ba640c4d3a9407e08df930da43118819892d828a0046fb16b"
+    },
+    {
+      "id": "201106040947",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "94ddff35aa531561812ef6f3e4059f4b1d1e6750fc542c6878774bc7696d7959"
+    },
+    {
+      "id": "201106041452",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "0d99c9a9341a5e88af08a61f985c9b6e18379426e1ac63ac9879af2ee3171270"
+    },
+    {
+      "id": "201106050353",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "943fd8a64923a590a3cf7a702ce0f178c265c5f5f5cbb226a4432f104a61d6c4"
+    },
+    {
+      "id": "201106061233",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "7bde40f8ea99e3c9f02d81d243f5eaf4426408953930365c21b1e1904cbf4293"
+    },
+    {
+      "id": "201106070537",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "7877572d2c3b69fa95e229f5f51ae5980d598370d62dee409153cdf062b41c7e"
+    },
+    {
+      "id": "201106070949",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "dc022e9a0223c398d08793e69db3be40d015ec6aafb9b28142b4b3cb51bf07e0"
+    },
+    {
+      "id": "201106101314",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "bafd30c11a1e86c1b2646e80fbcda22f9d4cddaaf01be4f43a52511406e8d37b"
+    },
+    {
+      "id": "201106101955",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "b8ab03b8c98da9fc555b72b50938876b0477307fb2fb91cd39ab7ffd463b4892"
+    },
+    {
+      "id": "201106110909",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "a7b804959c273793afbb0bd817baa597cb0412b7e8eabff6f313944b6b72467b"
+    },
+    {
+      "id": "201106111119",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "4cc0dc0d02e9756657ab2ebd8ee8f1d725f695072b0e51fc32b036a89ead1341"
+    },
+    {
+      "id": "201106121242",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "7e00a1ebcd573940f9ee25aef9c81a6d55bb66bfc5f82aa550f1155c76a79475"
+    },
+    {
+      "id": "201106121445",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 1,
+      "sha256": "459a123e7a4fc90dcc7ceb9d53feafd92df530e8b800407459b1eaef1bf96547"
+    },
+    {
+      "id": "201106131834",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "9cb2d5af4edac7828055cb41bc6a75a0655f29b0944f8f0dd16320df54fa9b31"
+    },
+    {
+      "id": "201106131835",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "2439c45a2352eeb3df511b2a6d36c071580462389e7875f404d6015a5563b8d8"
+    },
+    {
+      "id": "201106141701",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "a51bd1f07ea59f73bd73768a0767880ef21ec5daf97575ddacf966f572bc889a"
+    },
+    {
+      "id": "201106161016",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "7313e8323cccc68617a9e1516ac0a2b0e8dc8fc6f8a4850d2163dc34447a6269"
+    },
+    {
+      "id": "201106161019",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "9ff7ec810e4f83a75c28e7b30016b820a61dc12d77ebc92853d3805f467b287a"
+    },
+    {
+      "id": "201106161219",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "bba28e2e326824da818f2f10a4325b22e19985c9b80c48e2a7de6dae4cf1feb8"
+    },
+    {
+      "id": "201106171003",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "48cbc4d0caf3a71353845f9a4da23f7088ab732b4db87b150b3cdf9cd760f1c9"
+    },
+    {
+      "id": "201106190520",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "a4c669f97ce928d9fcf39eaae1c592870a25428a3b75914f07c2a3fb36e8e096"
+    },
+    {
+      "id": "201106211041",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 2,
+      "sha256": "918bf9684471bbe77ae0c2714b1d993895ddb5c4b2dab1d85bb270d9e6df1fb5"
+    },
+    {
+      "id": "201106211430",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "b53696b46726271e2943697d629a4677052b9e287387bf9f49aebe229dde9a67"
+    },
+    {
+      "id": "201106212112",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "43f0c19c9218b2dc27b8e47eedc066be64d75be921cb372507c7f470a4ea0eba"
+    },
+    {
+      "id": "201106220340",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "28069ec24d6706b36b7090f40d13a61485c6abb1357e1d214e7673a68f015266"
+    },
+    {
+      "id": "201106221254",
+      "reference": "artifact",
+      "prediction": "unsure",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "45a876d653a00513db87b5a204553fd3454c0c2ccb4c78c9a6716d374448005f"
+    },
+    {
+      "id": "201101070953",
+      "reference": "extrahs",
+      "prediction": "unsure",
+      "seconds": 8.884,
+      "windows": 3,
+      "sha256": "ff893d68522e751db29317077e1215fb3445b7dfd83ad66e99998c81232d618b"
+    },
+    {
+      "id": "201101091153",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "bfc480d90bdc28e845cebaddee8dcfb107a3a60c99f7ff854a2d23f5317bf5c6"
+    },
+    {
+      "id": "201101152255",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 8.026,
+      "windows": 3,
+      "sha256": "3b40e6b8f1b85eb35edd40cf6ffe9b2f134df8a29b25902103677839a4d205b2"
+    },
+    {
+      "id": "201101160804",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 7.017,
+      "windows": 2,
+      "sha256": "f647db2e2583f57d43c0f52e59e6ea15de3ad32e7873bfbe49ddd9bd33f5f5f5"
+    },
+    {
+      "id": "201101160808",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 6.167,
+      "windows": 2,
+      "sha256": "a394a4c2f858df1dd947c7458e93e76e408f2a3d8204cb64a017110dbeae2c80"
+    },
+    {
+      "id": "201101161027",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 5.9555,
+      "windows": 2,
+      "sha256": "053b678f875e8ba6ffbfaa5e24df12ab3bb99107b7c6eb3e991f86a52d3ba019"
+    },
+    {
+      "id": "201101241423",
+      "reference": "extrahs",
+      "prediction": "present",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "aa72fa39f05ef72848390d132d744723cdec54a37acbeb60f4efb3522edb8f4e"
+    },
+    {
+      "id": "201101241433",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "aad6f53df7ad258f733f1b59aa5865eaaf498ec2c938ec832769458f294544db"
+    },
+    {
+      "id": "201102070251",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 8.0135,
+      "windows": 2,
+      "sha256": "3fd5470e471cb878ebda45fddc7a47c5bf630ee84e729623a16718ca5315e431"
+    },
+    {
+      "id": "201102071835",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 7.8635,
+      "windows": 2,
+      "sha256": "794ae058bca3c2fca4393c0a14e18deadc225b64ac597b57a7f245ed6f45f5d1"
+    },
+    {
+      "id": "201102241217",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "5a0cac5c5f4998ba81e79bfe615269e85b6d14765b926b4ea48224b3f9e96cca"
+    },
+    {
+      "id": "201103150114",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "277eede8e722df5d8a013a7d919618e39c3b0f3f3a00ddd843b20cd960b6baa5"
+    },
+    {
+      "id": "201103170134",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 7.88,
+      "windows": 2,
+      "sha256": "1bd421aad83be2a935501e574ac270475dfb7390eada97e9272decdab556e211"
+    },
+    {
+      "id": "201103182227",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "d02cc934afcb282dada356ef3f2afd082b10dca98fe8e3ac77e35d9aba865b21"
+    },
+    {
+      "id": "201103200218",
+      "reference": "extrahs",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "0bd71579067a3b3e10c5bf1e23d27cb147e05b76c6f9b85eb1d5ee0c0e9f2a49"
+    },
+    {
+      "id": "201104021355",
+      "reference": "extrahs",
+      "prediction": "unsure",
+      "seconds": 0.936,
+      "windows": 0,
+      "sha256": "4320a9aca416754c55c07b30ba6b38a41932e1bcd2d52040b5677924144f4043"
+    },
+    {
+      "id": "201104140118",
+      "reference": "extrahs",
+      "prediction": "unsure",
+      "seconds": 1.947,
+      "windows": 0,
+      "sha256": "7ea6628926f94a45ca218ac90b4e1ac0adac617d7baa807313c6132b8e9ec294"
+    },
+    {
+      "id": "201104270458",
+      "reference": "extrahs",
+      "prediction": "unsure",
+      "seconds": 3.235,
+      "windows": 0,
+      "sha256": "66869a00dbcbdb3e9fa5afc82c470e415302542bcb815f1757e8db5d187705e0"
+    },
+    {
+      "id": "201104270459",
+      "reference": "extrahs",
+      "prediction": "unsure",
+      "seconds": 1.645,
+      "windows": 0,
+      "sha256": "01daf8f867f7c79652af364742375245becebd4583f235f48e145e54090c1b56"
+    }
+  ],
+  "errors": [
+    {
+      "id": "201103101140",
+      "reference": "normal",
+      "prediction": "present",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "281a56b3da16191dc3a644009106a6222be586abcc095659c8fe5666177e095d"
+    },
+    {
+      "id": "201106141148",
+      "reference": "normal",
+      "prediction": "present",
+      "seconds": 5.9665,
+      "windows": 2,
+      "sha256": "273ff6a8a70d6e1f80509d021d76b468be81b10494e689047706cccca52c22c4"
+    },
+    {
+      "id": "201101051104",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 8.884,
+      "windows": 3,
+      "sha256": "3608859334d23e354921725cdfc41f9066d385215d63a103e20d28bea52bb511"
+    },
+    {
+      "id": "201101051108",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 8.884,
+      "windows": 3,
+      "sha256": "56c572ea52318835e6420d414efd227264c8ffadf8627a5ef8c5000a930f4781"
+    },
+    {
+      "id": "201101051114",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 8.884,
+      "windows": 3,
+      "sha256": "8106d2a0dd11ba89c5dba022dbdec592605d34f7118a0e13cd2833bffa3addc6"
+    },
+    {
+      "id": "201101180902",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 8.034,
+      "windows": 3,
+      "sha256": "56a280e91236765e026a470d1f34176e05ff283f578bd9db2aad64e7bdbfa81e"
+    },
+    {
+      "id": "201102051443",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 6.8185,
+      "windows": 2,
+      "sha256": "4d6082c0ba82ead23ddfcb9cd8652e3dca35394743820d5897df7193bd99256f"
+    },
+    {
+      "id": "201102052338",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "f56107fa027f05447e385adec92787b82ce342b7e21ce7edff624d8affac80b4"
+    },
+    {
+      "id": "201104021355",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 0.936,
+      "windows": 0,
+      "sha256": "ba3da5b7647d1ad3581c0271c5da5724757c49f63b5626240ef1968a1e98ae87"
+    },
+    {
+      "id": "201104241315",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 9,
+      "windows": 3,
+      "sha256": "c6b603a3e7c76140825fb656d7ed7dfe6dc1badafc349892061d2064462e3e65"
+    },
+    {
+      "id": "201104291843",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 4.8265,
+      "windows": 2,
+      "sha256": "4542593ab8f90811b2ac5318b10d554323046a1e12f6e6b1821a8429e211abbf"
+    },
+    {
+      "id": "201108222221",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "b5f4ef9f6016d9077bc91ece70092c289aa0582fa109d1675402cc7afce7236e"
+    },
+    {
+      "id": "201108222224",
+      "reference": "murmur",
+      "prediction": "absent",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "bd329c60f8ae25054f946cbe6f1de0b4447db2995fd4f36cc288ca44f2b793f1"
+    },
+    {
+      "id": "201108222226",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "0eb07dfcb425f1985d4bfea521890e3954a014eb30cb3df7303c5a8eb1510de8"
+    },
+    {
+      "id": "201108222227",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "57b78aca50a0612b6f8d8c77bf89f901c536beb650c2f0491dbb1520d73e6795"
+    },
+    {
+      "id": "201108222245",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "ce5f04621a0576f586948d43446810937e62c3786821ed8b93f26842b50c3ab1"
+    },
+    {
+      "id": "201108222256",
+      "reference": "murmur",
+      "prediction": "unsure",
+      "seconds": 7.9355,
+      "windows": 2,
+      "sha256": "8e1a99233ed37caa150cdfeb49e905cfeb2d29456bee8fc44727f640b1df8b6f"
+    }
+  ],
+  "limitations": [
+    "Original archive categories are challenge reference labels, not verified diagnoses.",
+    "Public iStethoscope Pro recordings are different from our capture method. This does not establish current-iPhone murmur accuracy.",
+    "Unknown participant identities prevent proving patient independence or patient-level metrics.",
+    "Only exact decoded-waveform overlap is checked; transformed or partial duplicates can remain.",
+    "Challenge page invites research and specifies citation, but an explicit redistribution license was not found. Audio is not included in the release."
+  ],
+  "citation": "Bentley P, Nordehn G, Coimbra M, Mannor S. PASCAL Classifying Heart Sounds Challenge 2011. https://www.peterjbentley.com/heartchallenge/"
+}

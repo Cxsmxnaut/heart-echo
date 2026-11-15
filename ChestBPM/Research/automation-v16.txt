@@ -1,0 +1,32 @@
+Chest BPM 1.6 (11) — automatic Watch control and five-cycle logging
+November 14, 2026
+
+Installed
+The signed phone build and matching Watch companion are installed. The BPM estimator, feature pipeline and model package still match the frozen 1.5 (7) hashes. These changes improve coordination and data collection; they do not establish better medical accuracy.
+
+Phone-led tests
+The phone requests a fresh, trial-scoped Watch session through Apple's HealthKit companion launch API. It sends commands through both immediate and queued WatchConnectivity delivery, retries while waiting for acknowledgement, and waits for three fresh sensor timestamps before a five-second preparation countdown. It requires acknowledgement of the exact Watch stop deadline before beginning a normal recording. The Watch stores and enforces its own deadline; the phone sends a backup stop if it has not seen the Watch stop after a short grace period. Cancelling sends a queued stop immediately.
+
+Unique trial IDs, expiry checks, persisted completed-trial IDs and ordered command phases prevent duplicate or delayed requests from restarting a completed trial or affecting the next wearer. A stop that arrives before its matching prepare is remembered as a cancellation. Wrong-deadline duplicate commands are rejected. The Watch also checks expired deadlines when its sensor callback runs.
+
+Five cycles
+Set up five cycles creates 20 steps: five quiet, five background-sound, five brief-repositioning and five off-chest tests. Orders rotate between cycles. Chest tests last about 90 seconds; off-chest tests about 20. Each step needs a ready tap after changing the physical environment. Completion advances the plan; interrupted/failed attempts remain logged and require retry. The saved plan survives app relaunch without silently restarting a microphone. Participant changes end the current plan. Friend consent is still required. Under this user's explicit testing consent, wearer-A series setup enables local raw audio; its toggle can be turned off before any trial.
+
+Logs
+Every run remains in Diagnostics/Runs with a manifest recording closed state, rows and bytes. status.json is an atomically replaced small live snapshot. Late reference packets are also retained in a separate phone reference log, and the Watch archives its own readings. Files remain local and backup-excluded. Tools/collect_study.py reads snapshots, fetches closed archives, checks run identities/sequences/counts/bytes and deduplicates retries. Invalid archives are retained for review rather than treated as valid data. The old growing-file reader remains available for historical captures. No new HTTP server, cloud uploader, permanent service or global configuration was introduced.
+
+Checks
+112 deterministic engineering checks passed, including the 168 frozen original estimator snapshots. They cover command reordering, expiry, duplicate deadlines, cancellation-before-prepare, stale stops after a newer trial, saved progress, all five sets of conditions, archives and truthful cancelled/stopped status. Thirteen Python tests passed. Two simulator UI tests passed for plan persistence, consent controls and denied microphone handling. The final keyboard shortcut was additionally operated on the real phone through iPhone Mirroring. Strict signing verification passed. No configured Graphify graph or launcher was found; current source and tests were used directly.
+
+Physical evidence
+An ordinary 20-second phone recording verified automatic Watch start, fresh sensor warm-up, exact-deadline acknowledgement and coordinated stop. It was recorded before the final refinements. A later Watch-only check was started by the agent through Mirroring on phone build 11, using the compatible companion with the final independent-timer code. Its log reports watch_deadline_stop_confirmed, no backup stop, and a cleanly closed 87-event run with every sequence present. It contains no phone microphone start or estimate frames and is not counted as a chest/negative-control accuracy test. The matching companion build 11 was installed afterward. Private supporting evidence stays in ignored diagnostic directories. One earlier mirrored attempt timed out before Watch readiness and remains in the archives.
+
+Mirroring limit
+Apple does not provide iPhone camera/microphone access during iPhone Mirroring. Mirroring can therefore control setup and the Watch-only check; real chest recordings require taking over the physical phone. The user does not need to start/stop the Watch manually for each normal trial. Apple permission prompts and an unlocked worn Watch remain prerequisites; user consent cannot bypass those OS requirements.
+
+Primary documentation
+https://developer.apple.com/documentation/healthkit/hkhealthstore/startwatchapp(with:completion:)
+https://developer.apple.com/documentation/watchconnectivity/wcsession/transferuserinfo(_:)
+https://support.apple.com/en-us/120421
+
+Ready-state handoff: the wearer-A five-cycle plan was staged and visually verified on the actual phone at Cycle 1/5, Test 1/20, Quiet. Local audio is enabled under the user's explicit consent and can be disabled before a trial. Mirroring was closed after verification. One-hour bounded collectors for phone and Watch archives were started; raw audio retrieval is deferred until after recording to reduce transfer load. Individual device connections may still be intermittent; authoritative archives remain on each device.

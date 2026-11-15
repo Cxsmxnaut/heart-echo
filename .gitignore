@@ -1,0 +1,33 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.demo-pairing.local.json
+*.pem
+*.key
+*.p12
+*.mobileprovision
+
+# Dependencies, build products and local captures
+.DS_Store
+node_modules/
+.venv*/
+__pycache__/
+*.pyc
+build*/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.log
+*.ndjson
+diagnostic-logs/
+*.wav
+!ChestBPM/MurmurSamples/*.wav
+!HeartEcho/Resources/MurmurSamples/*.wav
+
+# Internal work notes, historical captures and generated cloud-job copies
+/WORK-STATUS.md
+/roadmap.md
+/veritas-ai-afib-project.md
+/HeartEcho/Previews/
+/care-assistant/finetuning/kaggle/cli-run/

@@ -1,0 +1,135 @@
+{
+  "name": "e2b-split-t1-probe",
+  "started_at": "2026-11-14T21:44:26.492Z",
+  "data_status": "development, includes seen pass2 final cases; not held out",
+  "raw_model": {
+    "mode": "llm",
+    "model": "care-gemma4-e2b",
+    "configured": true,
+    "last_success_at": null,
+    "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference."
+  },
+  "temperature": 1,
+  "source_sha256": "5624ceeaeec1195c44e07334b7b6cbcb1ef904433b119197e9240febae45ee4a",
+  "extraction": [
+    {
+      "id": "p2_postal_replacement",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 9110
+    },
+    {
+      "id": "p2_unknown_network_paraphrase",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 7507
+    },
+    {
+      "id": "p2_year_paraphrase",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 7871
+    },
+    {
+      "id": "p2_discount_paraphrase",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "cheaper_options",
+      "expected_intent": "cheaper_options",
+      "field_failures": [],
+      "elapsed_ms": 7599
+    },
+    {
+      "id": "p2_explain_existing_clinics",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "explain_results",
+      "expected_intent": "explain_results",
+      "field_failures": [],
+      "elapsed_ms": 9070
+    },
+    {
+      "id": "p2_uninsured_present",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 8178
+    },
+    {
+      "id": "p2_decline_coverage_info",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 8161
+    },
+    {
+      "id": "p2_negated_pain_search",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 10823
+    },
+    {
+      "id": "p2_two_ai_roles",
+      "intent_passed": false,
+      "fields_passed": true,
+      "actual_intent": "explain_results",
+      "expected_intent": "app_help",
+      "field_failures": [],
+      "elapsed_ms": 8015
+    },
+    {
+      "id": "p2_clear_does_not_mean_healthy",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "explain_scan",
+      "expected_intent": "explain_scan",
+      "field_failures": [],
+      "elapsed_ms": 7025
+    },
+    {
+      "id": "p2_only_public_plan_label",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 7029
+    },
+    {
+      "id": "p2_explicit_category_choice",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 5560
+    }
+  ],
+  "journeys": [],
+  "summary": {
+    "intents": "11/12",
+    "fields": "12/12",
+    "combined": "11/12",
+    "median_ms": 8015,
+    "rejected_fields": 0,
+    "guided_turns": 0,
+    "corrected_turns": 0
+  },
+  "completed_at": "2026-11-14T21:46:04.512Z"
+}

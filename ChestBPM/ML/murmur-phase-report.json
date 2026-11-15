@@ -1,0 +1,936 @@
+{
+  "model": "M: phase-aware positive-evidence addition",
+  "schema": "chestbpm-murmur-wave-2k-v1",
+  "labels": [
+    "Absent",
+    "Present",
+    "Unknown/Unsure"
+  ],
+  "source": "CirCor1.0.3,ODCAttribution1.0,https://doi.org/10.13026/tshs-mw03",
+  "split": {
+    "training": {
+      "linked_people": 652,
+      "patient_visit_entries": 702,
+      "recordings": 2356
+    },
+    "selection": {
+      "linked_people": 50,
+      "patient_visit_entries": 55,
+      "recordings": 180
+    },
+    "calibration": {
+      "linked_people": 50,
+      "patient_visit_entries": 58,
+      "recordings": 187
+    },
+    "test": {
+      "linked_people": 120,
+      "patient_visit_entries": 127,
+      "recordings": 440
+    }
+  },
+  "weights_sha256": "21cb4a7a4d8e98a43929fec55ea8dbc4c71704d742e7cba6730c92c5b130b0a1",
+  "package_manifest_sha256": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa",
+  "model_freeze_sha256": "067fd9c2879f06c46cfbfc42feecfbf4cf0b9c88b584ada84ecf8fc5cbe1b90c",
+  "package_files_sha256": {
+    "Manifest.json": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa",
+    "Data/com.apple.CoreML/model.mlmodel": "bb3e2cd129ddcc4377195ab79f56949244d12e7b85897e7971959be0647d8bb1",
+    "Data/com.apple.CoreML/weights/weight.bin": "76fed2c566b74e342165a649e9338ccab06a0987b65fb2fa68f32dbaedceda72"
+  },
+  "preserved_v1_report_sha256": "9d83ede48fa9b3a76ff8dddd2101f0b3b69fcdfc53d72ffacd9a2607c0fd0b4f",
+  "report_generator_sha256": "9aa7454b73d92e212404d6f904ad745d4a966a5c3aaff6506ee7fe2d9411c404",
+  "accepted": true,
+  "roles": {
+    "selection": {
+      "eligible": true,
+      "criteria": {
+        "positive_detection_gain": true,
+        "false_alarm_increase_within_2pp": true,
+        "unsure_increase_within_5pp": true,
+        "no_extra_positive_as_absent": true,
+        "negative_confidence_bound_verified": true,
+        "positive_confidence_bound_verified": true,
+        "no_extra_patient_positive_as_absent": true,
+        "no_lost_patient_positives": true,
+        "known_noise_controls_unsure": true
+      },
+      "baseline": {
+        "confusion_true_rows": [
+          [
+            91,
+            1,
+            44
+          ],
+          [
+            7,
+            19,
+            8
+          ],
+          [
+            2,
+            0,
+            8
+          ]
+        ],
+        "balanced_recall": 0.6759803921568629,
+        "recall": [
+          0.6691176470588235,
+          0.5588235294117647,
+          0.8
+        ],
+        "accuracy": 0.6555555555555556,
+        "known_positive_cases": 34,
+        "missed_positive_as_absent": 7,
+        "positive_unsure": 8,
+        "known_negative_cases": 136,
+        "false_alarms": 1,
+        "negative_unsure": 44,
+        "decisive_sensitivity": 0.5588235294117647,
+        "decisive_specificity": 0.6691176470588235,
+        "unsure": 60,
+        "total": 180
+      },
+      "candidate": {
+        "confusion_true_rows": [
+          [
+            88,
+            1,
+            47
+          ],
+          [
+            3,
+            25,
+            6
+          ],
+          [
+            1,
+            0,
+            9
+          ]
+        ],
+        "balanced_recall": 0.7607843137254902,
+        "recall": [
+          0.6470588235294118,
+          0.7352941176470589,
+          0.9
+        ],
+        "accuracy": 0.6777777777777778,
+        "known_positive_cases": 34,
+        "missed_positive_as_absent": 3,
+        "positive_unsure": 6,
+        "known_negative_cases": 136,
+        "false_alarms": 1,
+        "negative_unsure": 47,
+        "decisive_sensitivity": 0.7352941176470589,
+        "decisive_specificity": 0.6470588235294118,
+        "unsure": 62,
+        "total": 180
+      },
+      "baseline_patient": {
+        "confusion_true_rows": [
+          [
+            16,
+            1,
+            22
+          ],
+          [
+            1,
+            8,
+            3
+          ],
+          [
+            0,
+            0,
+            4
+          ]
+        ],
+        "balanced_recall": 0.6923076923076922,
+        "recall": [
+          0.41025641025641024,
+          0.6666666666666666,
+          1.0
+        ],
+        "accuracy": 0.509090909090909,
+        "known_positive_cases": 12,
+        "missed_positive_as_absent": 1,
+        "positive_unsure": 3,
+        "known_negative_cases": 39,
+        "false_alarms": 1,
+        "negative_unsure": 22,
+        "decisive_sensitivity": 0.6666666666666666,
+        "decisive_specificity": 0.41025641025641024,
+        "unsure": 29,
+        "total": 55
+      },
+      "candidate_patient": {
+        "confusion_true_rows": [
+          [
+            14,
+            1,
+            24
+          ],
+          [
+            0,
+            10,
+            2
+          ],
+          [
+            0,
+            0,
+            4
+          ]
+        ],
+        "balanced_recall": 0.7307692307692308,
+        "recall": [
+          0.358974358974359,
+          0.8333333333333334,
+          1.0
+        ],
+        "accuracy": 0.509090909090909,
+        "known_positive_cases": 12,
+        "missed_positive_as_absent": 0,
+        "positive_unsure": 2,
+        "known_negative_cases": 39,
+        "false_alarms": 1,
+        "negative_unsure": 24,
+        "decisive_sensitivity": 0.8333333333333334,
+        "decisive_specificity": 0.358974358974359,
+        "unsure": 30,
+        "total": 55
+      },
+      "phase_known_accuracy": 0.8440608543007607,
+      "phase_annotation_coverage": 0.3915234822451317,
+      "maximum_absent_probability_increase": 6.811959396557654e-08,
+      "maximum_present_probability_decrease": 0.0,
+      "evidence": "Development selection/calibration; not independent clinical validation.",
+      "linked_people_any_visit": {
+        "baseline": {
+          "confusion_true_rows": [
+            [
+              14,
+              0,
+              21
+            ],
+            [
+              1,
+              7,
+              3
+            ],
+            [
+              0,
+              1,
+              3
+            ]
+          ],
+          "balanced_recall": 0.5954545454545455,
+          "recall": [
+            0.4,
+            0.6363636363636364,
+            0.75
+          ],
+          "accuracy": 0.48,
+          "known_positive_cases": 11,
+          "missed_positive_as_absent": 1,
+          "positive_unsure": 3,
+          "known_negative_cases": 35,
+          "false_alarms": 0,
+          "negative_unsure": 21,
+          "decisive_sensitivity": 0.6363636363636364,
+          "decisive_specificity": 0.4,
+          "unsure": 27,
+          "total": 50
+        },
+        "candidate": {
+          "confusion_true_rows": [
+            [
+              12,
+              0,
+              23
+            ],
+            [
+              0,
+              9,
+              2
+            ],
+            [
+              0,
+              1,
+              3
+            ]
+          ],
+          "balanced_recall": 0.637012987012987,
+          "recall": [
+            0.34285714285714286,
+            0.8181818181818182,
+            0.75
+          ],
+          "accuracy": 0.48,
+          "known_positive_cases": 11,
+          "missed_positive_as_absent": 0,
+          "positive_unsure": 2,
+          "known_negative_cases": 35,
+          "false_alarms": 0,
+          "negative_unsure": 23,
+          "decisive_sensitivity": 0.8181818181818182,
+          "decisive_specificity": 0.34285714285714286,
+          "unsure": 28,
+          "total": 50
+        }
+      },
+      "linked_people_count": 50,
+      "patient_visit_entries": 55,
+      "patient_unit_note": "baseline_patient/candidate_patient count source patient/visit IDs, which can include linked repeat visits. linked_people_any_visit collapses AdditionalID links: any Present truth/prediction wins, else Unknown/Unsure, else Absent. This across-visit analysis is descriptive, not prospective clinical diagnosis.",
+      "paired_record_difference_intervals": {
+        "positive_detection": {
+          "percentage_points": 17.647058823529413,
+          "interval95": [
+            8.333333333333332,
+            29.411764705882355
+          ]
+        },
+        "false_alarm": {
+          "percentage_points": 0.0,
+          "interval95": [
+            0.0,
+            0.0
+          ]
+        },
+        "unsure": {
+          "percentage_points": 1.1111111111111112,
+          "interval95": [
+            -2.688535309503051,
+            5.454793840039742
+          ]
+        },
+        "positive_as_absent": {
+          "percentage_points": -11.76470588235294,
+          "interval95": [
+            -34.29395604395604,
+            0.0
+          ]
+        }
+      },
+      "known_noise_controls": {
+        "total": 20,
+        "baseline": {
+          "unsure": 20
+        },
+        "candidate": {
+          "unsure": 20
+        },
+        "note": "Same previously tested synthetic/knownnoise files; not unseen-noise validation."
+      }
+    },
+    "calibration": {
+      "eligible": true,
+      "criteria": {
+        "positive_detection_gain": true,
+        "false_alarm_increase_within_2pp": true,
+        "unsure_increase_within_5pp": true,
+        "no_extra_positive_as_absent": true,
+        "negative_confidence_bound_verified": true,
+        "positive_confidence_bound_verified": true,
+        "no_extra_patient_positive_as_absent": true,
+        "no_lost_patient_positives": true,
+        "known_noise_controls_unsure": true
+      },
+      "baseline": {
+        "confusion_true_rows": [
+          [
+            95,
+            3,
+            40
+          ],
+          [
+            6,
+            23,
+            7
+          ],
+          [
+            3,
+            0,
+            10
+          ]
+        ],
+        "balanced_recall": 0.6988418184070357,
+        "recall": [
+          0.6884057971014492,
+          0.6388888888888888,
+          0.7692307692307693
+        ],
+        "accuracy": 0.6844919786096256,
+        "known_positive_cases": 36,
+        "missed_positive_as_absent": 6,
+        "positive_unsure": 7,
+        "known_negative_cases": 138,
+        "false_alarms": 3,
+        "negative_unsure": 40,
+        "decisive_sensitivity": 0.6388888888888888,
+        "decisive_specificity": 0.6884057971014492,
+        "unsure": 57,
+        "total": 187
+      },
+      "candidate": {
+        "confusion_true_rows": [
+          [
+            90,
+            4,
+            44
+          ],
+          [
+            5,
+            24,
+            7
+          ],
+          [
+            3,
+            2,
+            8
+          ]
+        ],
+        "balanced_recall": 0.6447417316982534,
+        "recall": [
+          0.6521739130434783,
+          0.6666666666666666,
+          0.6153846153846154
+        ],
+        "accuracy": 0.6524064171122995,
+        "known_positive_cases": 36,
+        "missed_positive_as_absent": 5,
+        "positive_unsure": 7,
+        "known_negative_cases": 138,
+        "false_alarms": 4,
+        "negative_unsure": 44,
+        "decisive_sensitivity": 0.6666666666666666,
+        "decisive_specificity": 0.6521739130434783,
+        "unsure": 59,
+        "total": 187
+      },
+      "baseline_patient": {
+        "confusion_true_rows": [
+          [
+            15,
+            0,
+            23
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            1,
+            0,
+            5
+          ]
+        ],
+        "balanced_recall": 0.6950710108604845,
+        "recall": [
+          0.39473684210526316,
+          0.8571428571428571,
+          0.8333333333333334
+        ],
+        "accuracy": 0.5517241379310345,
+        "known_positive_cases": 14,
+        "missed_positive_as_absent": 2,
+        "positive_unsure": 0,
+        "known_negative_cases": 38,
+        "false_alarms": 0,
+        "negative_unsure": 23,
+        "decisive_sensitivity": 0.8571428571428571,
+        "decisive_specificity": 0.39473684210526316,
+        "unsure": 28,
+        "total": 58
+      },
+      "candidate_patient": {
+        "confusion_true_rows": [
+          [
+            14,
+            0,
+            24
+          ],
+          [
+            1,
+            12,
+            1
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "balanced_recall": 0.575187969924812,
+        "recall": [
+          0.3684210526315789,
+          0.8571428571428571,
+          0.5
+        ],
+        "accuracy": 0.5,
+        "known_positive_cases": 14,
+        "missed_positive_as_absent": 1,
+        "positive_unsure": 1,
+        "known_negative_cases": 38,
+        "false_alarms": 0,
+        "negative_unsure": 24,
+        "decisive_sensitivity": 0.8571428571428571,
+        "decisive_specificity": 0.3684210526315789,
+        "unsure": 28,
+        "total": 58
+      },
+      "phase_known_accuracy": 0.8636893442120115,
+      "phase_annotation_coverage": 0.4493356855394454,
+      "maximum_absent_probability_increase": 5.960464477539063e-08,
+      "maximum_present_probability_decrease": 0.0,
+      "evidence": "Development selection/calibration; not independent clinical validation.",
+      "linked_people_any_visit": {
+        "baseline": {
+          "confusion_true_rows": [
+            [
+              13,
+              0,
+              22
+            ],
+            [
+              2,
+              9,
+              0
+            ],
+            [
+              1,
+              0,
+              3
+            ]
+          ],
+          "balanced_recall": 0.6465367965367966,
+          "recall": [
+            0.37142857142857144,
+            0.8181818181818182,
+            0.75
+          ],
+          "accuracy": 0.5,
+          "known_positive_cases": 11,
+          "missed_positive_as_absent": 2,
+          "positive_unsure": 0,
+          "known_negative_cases": 35,
+          "false_alarms": 0,
+          "negative_unsure": 22,
+          "decisive_sensitivity": 0.8181818181818182,
+          "decisive_specificity": 0.37142857142857144,
+          "unsure": 25,
+          "total": 50
+        },
+        "candidate": {
+          "confusion_true_rows": [
+            [
+              12,
+              0,
+              23
+            ],
+            [
+              1,
+              9,
+              1
+            ],
+            [
+              1,
+              0,
+              3
+            ]
+          ],
+          "balanced_recall": 0.637012987012987,
+          "recall": [
+            0.34285714285714286,
+            0.8181818181818182,
+            0.75
+          ],
+          "accuracy": 0.48,
+          "known_positive_cases": 11,
+          "missed_positive_as_absent": 1,
+          "positive_unsure": 1,
+          "known_negative_cases": 35,
+          "false_alarms": 0,
+          "negative_unsure": 23,
+          "decisive_sensitivity": 0.8181818181818182,
+          "decisive_specificity": 0.34285714285714286,
+          "unsure": 27,
+          "total": 50
+        }
+      },
+      "linked_people_count": 50,
+      "patient_visit_entries": 58,
+      "patient_unit_note": "baseline_patient/candidate_patient count source patient/visit IDs, which can include linked repeat visits. linked_people_any_visit collapses AdditionalID links: any Present truth/prediction wins, else Unknown/Unsure, else Absent. This across-visit analysis is descriptive, not prospective clinical diagnosis.",
+      "paired_record_difference_intervals": {
+        "positive_detection": {
+          "percentage_points": 2.7777777777777777,
+          "interval95": [
+            0.0,
+            8.697559115179258
+          ]
+        },
+        "false_alarm": {
+          "percentage_points": 0.7246376811594203,
+          "interval95": [
+            0.0,
+            2.4203463775780047
+          ]
+        },
+        "unsure": {
+          "percentage_points": 1.06951871657754,
+          "interval95": [
+            -2.6048519736842106,
+            4.678591008771931
+          ]
+        },
+        "positive_as_absent": {
+          "percentage_points": -2.7777777777777777,
+          "interval95": [
+            -10.526315789473683,
+            0.0
+          ]
+        }
+      },
+      "known_noise_controls": {
+        "total": 20,
+        "baseline": {
+          "unsure": 20
+        },
+        "candidate": {
+          "unsure": 20
+        },
+        "note": "Same previously tested synthetic/knownnoise files; not unseen-noise validation."
+      }
+    },
+    "test": {
+      "eligible": true,
+      "criteria": {
+        "positive_detection_gain": true,
+        "false_alarm_increase_within_2pp": true,
+        "unsure_increase_within_5pp": true,
+        "no_extra_positive_as_absent": true,
+        "negative_confidence_bound_verified": true,
+        "positive_confidence_bound_verified": true,
+        "no_extra_patient_positive_as_absent": true,
+        "no_lost_patient_positives": true,
+        "known_noise_controls_unsure": true
+      },
+      "baseline": {
+        "confusion_true_rows": [
+          [
+            234,
+            10,
+            77
+          ],
+          [
+            6,
+            75,
+            23
+          ],
+          [
+            5,
+            0,
+            10
+          ]
+        ],
+        "balanced_recall": 0.705597491812445,
+        "recall": [
+          0.7289719626168224,
+          0.7211538461538461,
+          0.6666666666666666
+        ],
+        "accuracy": 0.725,
+        "known_positive_cases": 104,
+        "missed_positive_as_absent": 6,
+        "positive_unsure": 23,
+        "known_negative_cases": 321,
+        "false_alarms": 10,
+        "negative_unsure": 77,
+        "decisive_sensitivity": 0.7211538461538461,
+        "decisive_specificity": 0.7289719626168224,
+        "unsure": 110,
+        "total": 440
+      },
+      "candidate": {
+        "confusion_true_rows": [
+          [
+            226,
+            12,
+            83
+          ],
+          [
+            4,
+            87,
+            13
+          ],
+          [
+            5,
+            0,
+            10
+          ]
+        ],
+        "balanced_recall": 0.7357516574806294,
+        "recall": [
+          0.7040498442367601,
+          0.8365384615384616,
+          0.6666666666666666
+        ],
+        "accuracy": 0.7340909090909091,
+        "known_positive_cases": 104,
+        "missed_positive_as_absent": 4,
+        "positive_unsure": 13,
+        "known_negative_cases": 321,
+        "false_alarms": 12,
+        "negative_unsure": 83,
+        "decisive_sensitivity": 0.8365384615384616,
+        "decisive_specificity": 0.7040498442367601,
+        "unsure": 106,
+        "total": 440
+      },
+      "baseline_patient": {
+        "confusion_true_rows": [
+          [
+            40,
+            6,
+            36
+          ],
+          [
+            1,
+            29,
+            7
+          ],
+          [
+            3,
+            0,
+            5
+          ]
+        ],
+        "balanced_recall": 0.6321962206108548,
+        "recall": [
+          0.4878048780487805,
+          0.7837837837837838,
+          0.625
+        ],
+        "accuracy": 0.5826771653543307,
+        "known_positive_cases": 37,
+        "missed_positive_as_absent": 1,
+        "positive_unsure": 7,
+        "known_negative_cases": 82,
+        "false_alarms": 6,
+        "negative_unsure": 36,
+        "decisive_sensitivity": 0.7837837837837838,
+        "decisive_specificity": 0.4878048780487805,
+        "unsure": 48,
+        "total": 127
+      },
+      "candidate_patient": {
+        "confusion_true_rows": [
+          [
+            37,
+            6,
+            39
+          ],
+          [
+            0,
+            31,
+            6
+          ],
+          [
+            3,
+            0,
+            5
+          ]
+        ],
+        "balanced_recall": 0.6380191166776533,
+        "recall": [
+          0.45121951219512196,
+          0.8378378378378378,
+          0.625
+        ],
+        "accuracy": 0.5748031496062992,
+        "known_positive_cases": 37,
+        "missed_positive_as_absent": 0,
+        "positive_unsure": 6,
+        "known_negative_cases": 82,
+        "false_alarms": 6,
+        "negative_unsure": 39,
+        "decisive_sensitivity": 0.8378378378378378,
+        "decisive_specificity": 0.45121951219512196,
+        "unsure": 50,
+        "total": 127
+      },
+      "phase_known_accuracy": 0.8645195214933614,
+      "phase_annotation_coverage": 0.4455834114339269,
+      "maximum_absent_probability_increase": 1.1920928955078125e-07,
+      "maximum_present_probability_decrease": 0.0,
+      "evidence": "Previously inspected original test: retrospective regression, not independent validation.",
+      "linked_people_any_visit": {
+        "baseline": {
+          "confusion_true_rows": [
+            [
+              39,
+              6,
+              35
+            ],
+            [
+              1,
+              25,
+              6
+            ],
+            [
+              3,
+              0,
+              5
+            ]
+          ],
+          "balanced_recall": 0.63125,
+          "recall": [
+            0.4875,
+            0.78125,
+            0.625
+          ],
+          "accuracy": 0.575,
+          "known_positive_cases": 32,
+          "missed_positive_as_absent": 1,
+          "positive_unsure": 6,
+          "known_negative_cases": 80,
+          "false_alarms": 6,
+          "negative_unsure": 35,
+          "decisive_sensitivity": 0.78125,
+          "decisive_specificity": 0.4875,
+          "unsure": 46,
+          "total": 120
+        },
+        "candidate": {
+          "confusion_true_rows": [
+            [
+              36,
+              6,
+              38
+            ],
+            [
+              0,
+              26,
+              6
+            ],
+            [
+              3,
+              0,
+              5
+            ]
+          ],
+          "balanced_recall": 0.6291666666666667,
+          "recall": [
+            0.45,
+            0.8125,
+            0.625
+          ],
+          "accuracy": 0.5583333333333333,
+          "known_positive_cases": 32,
+          "missed_positive_as_absent": 0,
+          "positive_unsure": 6,
+          "known_negative_cases": 80,
+          "false_alarms": 6,
+          "negative_unsure": 38,
+          "decisive_sensitivity": 0.8125,
+          "decisive_specificity": 0.45,
+          "unsure": 49,
+          "total": 120
+        }
+      },
+      "linked_people_count": 120,
+      "patient_visit_entries": 127,
+      "patient_unit_note": "baseline_patient/candidate_patient count source patient/visit IDs, which can include linked repeat visits. linked_people_any_visit collapses AdditionalID links: any Present truth/prediction wins, else Unknown/Unsure, else Absent. This across-visit analysis is descriptive, not prospective clinical diagnosis.",
+      "paired_record_difference_intervals": {
+        "positive_detection": {
+          "percentage_points": 11.538461538461538,
+          "interval95": [
+            4.544430794430795,
+            19.230769230769234
+          ]
+        },
+        "false_alarm": {
+          "percentage_points": 0.6230529595015576,
+          "interval95": [
+            0.0,
+            1.6339869281045754
+          ]
+        },
+        "unsure": {
+          "percentage_points": -0.9090909090909091,
+          "interval95": [
+            -3.2038450234081415,
+            1.2441991722061976
+          ]
+        },
+        "positive_as_absent": {
+          "percentage_points": -1.9230769230769231,
+          "interval95": [
+            -4.800192307692307,
+            0.0
+          ]
+        }
+      },
+      "known_noise_controls": {
+        "total": 20,
+        "baseline": {
+          "unsure": 20
+        },
+        "candidate": {
+          "unsure": 20
+        },
+        "note": "Same previously tested synthetic/knownnoise files; not unseen-noise validation."
+      }
+    }
+  },
+  "conversion": {
+    "maximum_probability_differences": [
+      1.1920928955078125e-07,
+      8.344650268554688e-07,
+      3.2782554626464844e-07
+    ],
+    "examples": 7,
+    "shared_vs_independent_maximum_difference": 0.0,
+    "real_selection_examples": 3
+  },
+  "public_samples": [
+    {
+      "sample": "absent",
+      "finding": "unsure",
+      "probabilities": [
+        0.4232095678647359,
+        0.5459869007269541,
+        0.030803543825944264
+      ]
+    },
+    {
+      "sample": "present",
+      "finding": "present",
+      "probabilities": [
+        0.026415929105132817,
+        0.8345742166042328,
+        0.13900986120570452
+      ]
+    },
+    {
+      "sample": "unknown",
+      "finding": "unsure",
+      "probabilities": [
+        0.15826162695884705,
+        0.23901817873120307,
+        0.6027202069759369
+      ]
+    }
+  ],
+  "limitations": [
+    "All100development groups were reused during research, including architecture/calibration choices.",
+    "Original120test groups were inspected in v1; v2test is retrospective regression, not fresh independent validation.",
+    "Public stethoscope results do not establish bare-phone or clinical accuracy. No new personal recordings, private audio or Watch inputs were used.",
+    "ExpertUnknown labels are uncertain, not known healthy/noise. All uncertain/invalid inputs remain in evaluation denominators.",
+    "Phase accuracy concerns only annotated frames in one first4secondwindow per recording; unannotated spans are excluded and coverage is reported. Phase labels are semi-supervised.",
+    "Weak murmur timing supervision approximates early/mid/late/holo timing; it is not dense clinical murmur truth.",
+    "Paired linked-group bootstrap3000percentile intervals are exploratory and do not correct for research/model selection.",
+    "Twenty nonheart controls reuse known synthetic/speech sources; they are not unseen-noise validation.",
+    "Bundled NoMurmurAnnotated demo now returnsUnsure; fixed samples were not replaced to improve the demonstration.",
+    "No AFib, valve-disease or disease-probability output is implemented."
+  ]
+}

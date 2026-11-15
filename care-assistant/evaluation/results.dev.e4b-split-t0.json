@@ -1,0 +1,296 @@
+{
+  "name": "e4b-split-t0",
+  "started_at": "2026-11-14T21:48:02.701Z",
+  "data_status": "development, includes seen pass2 final cases; not held out",
+  "raw_model": {
+    "mode": "llm",
+    "model": "care-gemma4-e4b",
+    "configured": true,
+    "last_success_at": null,
+    "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference."
+  },
+  "temperature": 0,
+  "source_sha256": "5624ceeaeec1195c44e07334b7b6cbcb1ef904433b119197e9240febae45ee4a",
+  "extraction": [
+    {
+      "id": "p2_postal_replacement",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 19836
+    },
+    {
+      "id": "p2_unknown_network_paraphrase",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 13983
+    },
+    {
+      "id": "p2_year_paraphrase",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 15547
+    },
+    {
+      "id": "p2_discount_paraphrase",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "cheaper_options",
+      "expected_intent": "cheaper_options",
+      "field_failures": [],
+      "elapsed_ms": 14854
+    },
+    {
+      "id": "p2_explain_existing_clinics",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "explain_results",
+      "expected_intent": "explain_results",
+      "field_failures": [],
+      "elapsed_ms": 13668
+    },
+    {
+      "id": "p2_uninsured_present",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 14745
+    },
+    {
+      "id": "p2_decline_coverage_info",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 12635
+    },
+    {
+      "id": "p2_negated_pain_search",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 15275
+    },
+    {
+      "id": "p2_two_ai_roles",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "app_help",
+      "expected_intent": "app_help",
+      "field_failures": [],
+      "elapsed_ms": 14489
+    },
+    {
+      "id": "p2_clear_does_not_mean_healthy",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "explain_scan",
+      "expected_intent": "explain_scan",
+      "field_failures": [],
+      "elapsed_ms": 12461
+    },
+    {
+      "id": "p2_only_public_plan_label",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 13265
+    },
+    {
+      "id": "p2_explicit_category_choice",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 16484
+    },
+    {
+      "id": "p2_ambiguous_location",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 11853
+    },
+    {
+      "id": "p2_diagnosis_invention_attempt",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "explain_scan",
+      "expected_intent": "explain_scan",
+      "field_failures": [],
+      "elapsed_ms": 12131
+    },
+    {
+      "id": "p2_watch_not_required",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "app_help",
+      "expected_intent": "app_help",
+      "field_failures": [],
+      "elapsed_ms": 13541
+    },
+    {
+      "id": "p2_missing_recording_retry",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "app_help",
+      "expected_intent": "app_help",
+      "field_failures": [],
+      "elapsed_ms": 14634
+    },
+    {
+      "id": "dev_neighborhood_search",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 18939
+    },
+    {
+      "id": "dev_forgot_plan",
+      "intent_passed": true,
+      "fields_passed": false,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [
+        "clear_fields"
+      ],
+      "elapsed_ms": 15794
+    },
+    {
+      "id": "dev_cannot_afford_visit",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "cheaper_options",
+      "expected_intent": "cheaper_options",
+      "field_failures": [],
+      "elapsed_ms": 12390
+    },
+    {
+      "id": "dev_partial_labels",
+      "intent_passed": true,
+      "fields_passed": false,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [
+        "insurance.plan",
+        "insurance.network"
+      ],
+      "elapsed_ms": 15106
+    },
+    {
+      "id": "dev_explicit_coverage_year",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "find_care",
+      "expected_intent": "find_care",
+      "field_failures": [],
+      "elapsed_ms": 13393
+    },
+    {
+      "id": "dev_unclear_meaning",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "explain_scan",
+      "expected_intent": "explain_scan",
+      "field_failures": [],
+      "elapsed_ms": 15633
+    },
+    {
+      "id": "dev_selection_reason",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "explain_results",
+      "expected_intent": "explain_results",
+      "field_failures": [],
+      "elapsed_ms": 15305
+    },
+    {
+      "id": "dev_thanks",
+      "intent_passed": true,
+      "fields_passed": true,
+      "actual_intent": "other",
+      "expected_intent": "other",
+      "field_failures": [],
+      "elapsed_ms": 15004
+    }
+  ],
+  "journeys": [
+    {
+      "id": "development_cost_continuity",
+      "completed": true,
+      "elapsed_ms": 89464,
+      "turns": [
+        {
+          "message": "I can't recall the network name.",
+          "stage": "results",
+          "mode": "llm",
+          "adjustments": [],
+          "trace": [
+            {
+              "name": "search_providers",
+              "status": "ok",
+              "origin": "model"
+            },
+            {
+              "name": "search_affordable_clinics",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "message": "Only health centers with possible sliding discounts, please.",
+          "stage": "results",
+          "preference": "affordable",
+          "mode": "llm",
+          "adjustments": [],
+          "trace": [
+            {
+              "name": "search_affordable_clinics",
+              "status": "ok",
+              "origin": "model"
+            }
+          ]
+        },
+        {
+          "message": "Why are these clinics on the list?",
+          "stage": "explain_results",
+          "preference": "affordable",
+          "mode": "llm",
+          "adjustments": [],
+          "trace": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "intents": "24/24",
+    "fields": "22/24",
+    "combined": "22/24",
+    "median_ms": 14745,
+    "rejected_fields": 0,
+    "guided_turns": 0,
+    "corrected_turns": 0
+  },
+  "completed_at": "2026-11-14T21:55:24.593Z"
+}

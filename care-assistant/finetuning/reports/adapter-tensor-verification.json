@@ -1,0 +1,9 @@
+{
+  "status": "actual_saved_tensor_values_independently_verified",
+  "saved_tensors": 588,
+  "all_finite": true,
+  "all_match_after_update_hashes": true,
+  "nonzero_B_tensors": 258,
+  "total_B_tensors": 294,
+  "no_tensor_modified_by_verification": true
+}

@@ -1,0 +1,43 @@
+Chest BPM 1.5 (7) validation record — 2026-11-14
+
+Result
+Signed Release build passed; installed wirelessly on the iPhone 16, with matching build 7 companion installed on the Watch. No claim of bulletproof measurement is supported. Processing on a real iPhone and new physical chest/noise tests still need checking. This is an experimental BPM estimator, not a diagnostic test.
+
+What changed
+The phone now runs a small locally trained sound-state model. It identifies candidate S1/S2 sequences and requires repeating timing in the original audio, usable cycle spacing, enough recent clear signal and consistent window halves. It masks short loud transients at their original times; it never joins the samples on either side of a gap. Core Motion contributes a movement cue to transient checks. Movement sensing cannot recover audio hidden by rubbing. The old estimator remains in logs for comparison. The public-data neural denoiser was tested but excluded from the app because it worsened development results.
+
+Live Watch differences now match phone and Watch timestamps, including model/filter delay, rather than subtracting the latest two displays. Different averaging windows can still disagree. Switching A/B clears comparisons and requires a newer Watch session. Friend timed tests require the consent toggle. Timed tests stop after 90 seconds (20 seconds for Off chest), stop microphone and request Watch stop. The screen locks out test-setting changes while listening. The audio queue is bounded; if processing falls behind, capture stops with an error instead of silently skipping sound or accumulating old readings. Microphone capture stops when the app leaves the foreground.
+
+Logs include participant label, condition, timing, model decision reasons, masks, energy traces, model-state probabilities, Watch readings and total audio-processing work. Audio remains opt-in, timed-test-only, local and limited to 120 seconds. Raw audio is separate from JSON, excluded from backup, file-protected, and deleted with diagnostic files. A log copy on this Mac is separate and must also be deleted when no longer wanted. The personal-data directory is ignored by Git. No personal audio has been used to train the model.
+
+Engineering checks
+87 deterministic signal/protocol/logging checks passed, including all 168 original-version golden snapshots. Eight Python tool tests passed (five replay checks, three live-poll/audio-copy checks). Simulator UI test passed, including default-off audio saving, A/B switch, missing friend consent blocking the timed test, comparison screen and denied microphone handling. Native features matched Python exactly across 400 frames. Core ML conversion maximum absolute logit difference 1.90735e-6. Signed app and embedded companion passed strict code-sign verification. Build/sign success does not establish real-heart accuracy.
+
+Final held-out public benchmark — build 7 (frozen before evaluating)
+After the initial evaluation, an engineering recovery test found a real bug: after silence, the transient-reference values could remain zero and mask later sound forever. The new test failed on build 6 and passes on build 7. The fix updates the reference even during marked bursts, without joining or deleting sample times. A second group of twelve untouched public patients was reserved before evaluating build 7. No thresholds or weights were changed based on these final results.
+
+Final cohort: 12 recordings x 13 variants + 5 negative controls = 161 cases. 2,002 warmed heart-source updates; 1,352 reference-eligible and 650 missing enough annotation intervals.
+New: 345/1352 returned (25.5%); returned/reference-eligible MAE 2.463 BPM, maximum 20.264, 44 updates over 5 BPM. Another 58 returned without a reference; accuracy unknown.
+Old: 144/1352 returned (10.7%); MAE 1.345 BPM, maximum 14.461, 6 over 5 BPM. No returned updates without a reference.
+Five simple controls: 0/65 returned. Repeated final-code independent synthetic controls: 0/280 returned across 14 cases.
+These results do NOT establish improved accuracy. The new path increases returned coverage and also returned errors. Further physical data must decide whether it is useful; 20 BPM errors are material. No further tuning was performed after this final evaluation. The checks of phone audio-processing speed and actual wearer performance remain pending.
+
+Initial held-out public benchmark — build 6 (historical, now exploratory)
+12 linked-patient public recordings, 13 variants each, plus 5 simple noise-only controls: 161 cases. 1,963 warmed updates from heart-source cases; 975 had enough S1 annotation intervals to calculate a reference, 988 did not. Updates are overlapping/correlated, NOT 975 independent trials. Reference is annotation timing, NOT ECG.
+
+New model path: 129/975 returned (13.2% coverage), mean absolute error 0.826 BPM among returned/reference-eligible updates; max 9.170 BPM; 2 updates over 5 BPM. Another 121 updates returned without sufficient reference annotations; their accuracy is unknown.
+Old app path: 45/975 returned (4.6%), mean absolute error 0.541 BPM; max 0.982 BPM; none over 5 BPM. Another 46 returned without sufficient reference annotations.
+
+The model returned more readings at a cost of more errors. Low overall coverage means most difficult windows still show unsure. Heavy speech at 0 dB had zero returned/reference-eligible updates. The two large errors occurred in the simulated contact-gain case; they remain in the report. It would be misleading to describe 0.826 BPM as the app's general accuracy.
+
+Five simple controls: 0/65 returned. Fourteen additional independently seeded synthetic noise/hum/sweeps/beeps/taps controls: 0/280 returned. These are limited controls, not evidence that every real background sound is rejected. Speech/babble mixtures reuse training noise sources. Public equipment differs from iPhone chest capture. See ML/test-report.json for final results and ML/initial-test-report.json for the initial cohort; both show every condition, ML/PROVENANCE.txt for splits, licenses and reproduction, and ML/algorithm-freeze.json for hashes.
+
+Development comparison (used to select the approach)
+On twelve development recordings with the same variants, early neural raw path returned 833/1690 reference-eligible updates, mean 1.521 BPM, 19 errors >5 BPM. Adding LU-Net returned 871/1692, mean 1.576, 26 >5. Subsequent cycle-completeness/window-half checks reduced the raw path to 725/1690, mean 1.513, 11 >5; worst remained 22.363 BPM in an irregular/partly annotated recording. This development evidence is NOT held-out validation. The denoiser was disabled and decoder rules frozen before inspecting the 12 original test groups. No thresholds will be tuned during the new A/B physical series.
+
+Planned physical series
+For each consenting wearer: Quiet 90 seconds, Background sound 90 seconds using ordinary room sounds, Brief repositioning 90 seconds with one brief normal position adjustment near the middle, and Off chest 20 seconds as a false-positive control. Begin with Quiet, inspect results and phone processing load before continuing. No exercise, breath holding or symptom provocation. Each timed test automatically stops. Keep failed/unsure trials in the report; any early stop is reported as such.
+
+Use the same phone position, bare skin, supported arms and gentle pressure. Watch and microphone must be on the same person. Stop Watch measurement before swapping wearers, then restart and wait for a fresh steady Watch BPM. Apple may also store friend's heart-rate samples in the owner's Health history; workout is discarded on completion, which does not promise erasure of Apple's independent sensor records. Use pseudonyms A and B, obtain friend's agreement before testing and do not add names. Two volunteers can reveal obvious failures; they cannot establish clinical reliability or validate AFib/murmur detection.
+
+Private series update: four wearer-A tests (quiet, background sound, movement with a user-reported final cough, off chest) completed. All phone-log sequences were recovered despite intermittent wireless file-copy failures. Personal results, raw audio, timeline plot and full review stay in the ignored diagnostics directory. Watch reference delivery was incomplete during the movement run; that accuracy remains unverified. Watch-local logging was enabled afterward, and its later stopped/discarded event was confirmed. No B trial has started. On the user's request for a recommendation, existing data were analyzed first; a friend is best retained for a fresh later check. The Mac reader is stopped; estimator/model hashes still match the frozen build. No new accuracy or generalization claim follows.

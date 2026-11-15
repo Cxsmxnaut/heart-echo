@@ -1,0 +1,125 @@
+{
+  "tested_at": "2026-11-14T19:15:03.777Z",
+  "model": {
+    "mode": "llm",
+    "model": "care-gemma4-e2b",
+    "configured": true,
+    "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data."
+  },
+  "model_is_fine_tuned": false,
+  "data": "held-out synthetic scenarios, synthetic directory fixtures; real inference and real MCP transport",
+  "extraction": [
+    {
+      "id": "location_only",
+      "passed": true,
+      "elapsed_ms": 1189,
+      "failures": []
+    },
+    {
+      "id": "insurer_is_not_plan",
+      "passed": false,
+      "elapsed_ms": 1766,
+      "error": "model_invented_plan"
+    },
+    {
+      "id": "exact_labels",
+      "passed": false,
+      "elapsed_ms": 1689,
+      "failures": [
+        {
+          "field": "insurance.status",
+          "expected": "insured",
+          "actual": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "uninsured",
+      "passed": false,
+      "elapsed_ms": 1176,
+      "error": "model_inferred_specialty"
+    },
+    {
+      "id": "unknown_network",
+      "passed": false,
+      "elapsed_ms": 1599,
+      "error": "model_invented_plan"
+    },
+    {
+      "id": "scan_limits",
+      "passed": true,
+      "elapsed_ms": 929,
+      "failures": []
+    },
+    {
+      "id": "noisy_scan",
+      "passed": false,
+      "elapsed_ms": 883,
+      "failures": [
+        {
+          "field": "intent",
+          "expected": "explain_scan",
+          "actual": "other"
+        }
+      ]
+    },
+    {
+      "id": "bpm_not_specialty",
+      "passed": true,
+      "elapsed_ms": 1027,
+      "failures": []
+    },
+    {
+      "id": "explicit_specialist",
+      "passed": true,
+      "elapsed_ms": 983,
+      "failures": []
+    },
+    {
+      "id": "privacy_help",
+      "passed": true,
+      "elapsed_ms": 964,
+      "failures": []
+    },
+    {
+      "id": "plan_year",
+      "passed": true,
+      "elapsed_ms": 1831,
+      "failures": []
+    },
+    {
+      "id": "no_location_guess",
+      "passed": true,
+      "elapsed_ms": 954,
+      "failures": []
+    }
+  ],
+  "tools": [
+    {
+      "id": "app_capabilities_tool",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 960,
+      "tool_trace": [
+        {
+          "name": "get_app_context",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "uninsured_care_tools",
+      "passed": false,
+      "error": "model_invalid_tool"
+    },
+    {
+      "id": "exact_plan_tools",
+      "passed": false,
+      "error": "model_invalid_tool"
+    }
+  ],
+  "extraction_score": "7/12",
+  "tool_score": "1/3",
+  "extraction_median_ms": 1176
+}

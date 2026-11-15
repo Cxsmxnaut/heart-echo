@@ -1,0 +1,148 @@
+Current implementation update, 2026-11-14: see validation-v15.txt and ../ML/PROVENANCE.txt. The app now includes our locally trained sound-timing model and transient masking. LU-Net was evaluated and excluded from the default app because development errors increased. The earlier research discussion below describes proposals, not proof of current physical performance.
+
+HEART-SOUND NOISE RESEARCH AND NEXT IMPLEMENTATION
+Reviewed November 14, 2026. Research only: no new denoiser installed or tested.
+
+FINDING
+
+The current app needs better noise handling and more robust beat identification.
+A narrower bandpass alone is unlikely to solve its movement sensitivity. No
+source reviewed demonstrates guaranteed recovery of every heartbeat from all
+background sounds and phone-on-skin contact artifacts.
+
+The current estimator uses a 25–160 Hz bandpass, an RMS envelope, autocorrelation,
+and an alternating-peak heuristic. It has no learned audio denoiser or motion
+input. One unacceptable candidate-sound gap rejects the cycle window; a missed
+or extra peak can disturb the alternating labels. These are current-source facts.
+They do not establish which rejected windows contain true usable heartbeats.
+
+In the latest controlled private test, the original repeating-pattern check
+accepted every warmed update while the cycle check rejected a substantial
+subset. This supports investigating the peak/sequence logic as well as cleaning
+the sound. Private counts and measurements remain in diagnostic-logs.
+
+PRIMARY SOURCES CHECKED
+
+1. Echoes iPhone study (2022)
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9708017/
+https://doi.org/10.1093/ehjdh/ztac044
+
+The study assessed phone-recorded heart-sound quality in non-medical users.
+Over 80% obtained at least one recording judged good quality. This is not a BPM
+accuracy rate, a murmur-detection result, or evidence of immunity to movement.
+Guidance and retries were part of the approach. No complete denoising
+implementation was established from this paper during this review.
+
+2. FonoCheck hospital smartphone study (2025)
+https://academic.oup.com/ehjdh/article/6/3/486/8006140
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12088729/
+https://doi.org/10.1093/ehjdh/ztaf007
+
+Phone recordings were assessed in hospitalized participants. Conversation,
+breathing, equipment and movement remained noise sources. A 20–150 Hz bandpass
+was used in assessment; our BPM filter is already similar in range. The authors
+explicitly distinguish recognizable first/second heart sounds from demonstrating
+murmur capture. Their limitations discuss the loss of relevant higher-frequency
+murmur information under a narrow assessment filter. Thus copying that cutoff
+would not establish a noise-robust or murmur-capable phone pipeline.
+
+3. LU-Net heart-sound denoising (2023 paper and author repository)
+https://ieeexplore.ieee.org/document/10173517/
+https://github.com/ShamsNafisaAli/LU-Net-Heart-Sound-Denoising-
+
+The paper describes learned suppression of lung/ambient noise and evaluates
+synthetic noise mixtures plus real noisy PASCAL recordings. Those conditions
+must not be presented as validation of phone-on-skin rubbing or our iPhone app.
+
+Repository tree inspected at commit:
+ffb0d6b7ad901ea5e6fe9140a6f935b6a4231fe4
+The author repository actually lists pretrained LU-Net, U-Net and FCN .h5 files.
+LU-Net.h5 is 16,100,512 bytes. This review verified file metadata, not a successful
+model download or execution. Codes/config.py specifies 800-sample / 0.8-second
+windows at 1000 Hz. Codes/model.py implements a convolutional encoder/decoder
+with bidirectional LSTM branches. Python/Keras execution, preprocessing fidelity,
+iPhone conversion, latency and behavior on our captures remain untested.
+
+The model.py header declares MIT licensing; the inspected tree has no standalone
+license file and the binary weights have no separate terms established here.
+Verify the intended source/weight redistribution terms before bundling. No
+external code or trained weights were copied into this project in this review.
+
+The 1 kHz input also limits retained frequency information to below 500 Hz.
+Consequently, do not silently use this output as the sole input for a future
+murmur classifier. Keep a separate wider-band original path and validate the
+actual clinical target on its own appropriate data.
+
+4. Schmidt spike removal / Springer heart-sound segmentation
+https://physionet.org/content/hss/1.0/
+https://github.com/davidspringer/Springer-Segmentation-Code/blob/master/schmidt_spike_removal.m
+
+The source explicitly detects unusually large transients in short audio windows
+relative to a robust amplitude reference and removes the local transient. The
+package also supplies a trained sequence-model approach to heart-sound states.
+This provides concrete reference methods for isolated clicks and sound timing;
+neither guarantees recovery during sustained rubbing or lost contact. The
+reference implementation is MATLAB and GPL-3.0. No implementation was copied.
+
+RECOMMENDED BUILD ORDER — ENGINEERING PROPOSALS, NOT MEASURED IMPROVEMENTS
+
+A. Make contamination local rather than poisoning the whole window.
+   Detect brief abnormal transients in the waveform before envelope extraction.
+   Keep an explicit time mask for contaminated sections. Exclude masked pairs
+   from correlation and avoid timing a beat interval across a corrupted gap.
+   Preserve real timestamps: concatenating clean fragments would change BPM.
+   Require enough clean cycles and current evidence; long corruption stays unsure.
+
+B. Replace fragile alternating-peak logic.
+   Evaluate a robust sequence/beat tracker that can label extra peaks as noise
+   and handle a missing candidate, rather than assigning every detected sound
+   alternately forever. Compare against the current method and the published
+   sequence-model baseline. Do not just remove the existing rejection checks.
+
+C. Benchmark a learned heart-specific denoiser.
+   Run the author LU-Net pipeline on a Mac against public licensed heart sounds
+   with controlled noise. Compare it with the current bandpass, transient
+   suppression and a conventional adaptive/spectral baseline. Confirm source
+   preprocessing and chunk-boundary behavior before drawing conclusions. Convert
+   to an iPhone model only if it preserves target information and improves the
+   actual measurement task at an acceptable runtime cost.
+
+D. Evaluate phone-motion input as an additional quality cue.
+   Core Motion can provide processed movement information:
+   https://developer.apple.com/documentation/coremotion/getting-processed-device-motion-data
+   Test whether it identifies handling artifacts usefully. It is not an ambient
+   noise microphone and cannot by itself reconstruct missing heart audio. Its
+   benefit for this app remains a hypothesis.
+
+E. Define success with a noise benchmark before another tuning session.
+   Separate conditions: quiet, steady fan/hum, speech, short taps, rubbing,
+   brief repositioning, and lost contact. Use measured clean public recordings
+   and documented synthetic mixtures first; label synthetic contact noise as a
+   simulation rather than real movement validation. Split source people and
+   recordings before making variations, so derivatives do not leak across sets.
+   Measure BPM difference, returned/unsure coverage, false beats on noise-only
+   inputs, and time to recover after a transient. For the murmur model, also
+   check false negatives/positives and preservation of murmur-relevant details.
+   A cleaner-sounding output or an unchanged number on screen is insufficient.
+
+PRACTICAL LIMITS
+
+One microphone receives a mixture, and movement/contact noise can overlap the
+heart signal. Fully buried or clipped information cannot be guaranteed recoverable
+from that one mixture; a model output is an estimate, not proof of the hidden
+waveform. Heart-like artifacts and altered/removed abnormal sounds are failure
+cases to test explicitly.
+
+The existing private logs store derived features, not original audio. They can
+evaluate the current feature-level counters but cannot establish that a new raw
+audio denoiser works. Start with public audio; any later personal audio retention
+should be explicitly opt-in, local, separate from logs and off by default. No
+personal recordings were requested or collected by this research task.
+
+VERIFICATION STATUS
+
+Verified: current estimator source, local rejection summaries, primary studies,
+author repository model/configuration source and pretrained-file metadata.
+Not verified: LU-Net inference here, pretrained numerical outputs, phone runtime,
+movement resilience of any proposed replacement, or improved accuracy.
+No app code, model weights, phone installation, or recording settings changed.

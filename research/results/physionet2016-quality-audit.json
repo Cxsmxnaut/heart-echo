@@ -1,0 +1,71 @@
+{
+  "note": "Post-run reporting audit only. Class labels agree where present; no retraining or tuning. Original protocol/results remain unchanged. Updated source E omits 87 archive records. Five source-F recordings are marked quality unsure.",
+  "source": "https://physionet.org/files/challenge-2016/1.0.0/annotations/updated/",
+  "sources": {
+    "a": {
+      "rows": 409,
+      "sha256": "5ca8a5931bca09608d151778e4ffd3aaf8ef26da55e6935deaf2defe1c78b20a",
+      "classification_changes": 0,
+      "unavailable_in_updated": 0,
+      "unsure_quality": 17
+    },
+    "b": {
+      "rows": 490,
+      "sha256": "d8087d15d8bd60c894e544e49a90d451316bcc2942f2ad0685f3e7fda8a31e6e",
+      "classification_changes": 0,
+      "unavailable_in_updated": 0,
+      "unsure_quality": 122
+    },
+    "c": {
+      "rows": 31,
+      "sha256": "f1b264782e94cf87df75242ae02f304bcecdb5200e7d4820b48a0e0f754f61ee",
+      "classification_changes": 0,
+      "unavailable_in_updated": 0,
+      "unsure_quality": 4
+    },
+    "d": {
+      "rows": 55,
+      "sha256": "3559441540975bd08978cf387d1fc297e09561ce8d086efe6a82896582c990b7",
+      "classification_changes": 0,
+      "unavailable_in_updated": 0,
+      "unsure_quality": 3
+    },
+    "e": {
+      "rows": 2054,
+      "sha256": "fcf1d386e5e56dd283a7d6ab24eb6e4a2c2a6e428cd5defd0feabbf343b9c4a2",
+      "classification_changes": 0,
+      "unavailable_in_updated": 87,
+      "unsure_quality": 128
+    },
+    "f": {
+      "rows": 114,
+      "sha256": "46249404573b61936bf08d5c5f90e97ceed9c5aed69a55fb4a15acfab1c0c5d8",
+      "classification_changes": 0,
+      "unavailable_in_updated": 0,
+      "unsure_quality": 5
+    }
+  },
+  "test_quality_usable_count": 109,
+  "unchanged_model_on_quality_usable_test": {
+    "tp": 20,
+    "fn": 11,
+    "fp": 49,
+    "tn": 29,
+    "sensitivity": 0.6451612903225806,
+    "specificity": 0.3717948717948718,
+    "precision": 0.2898550724637681,
+    "f1": 0.4,
+    "accuracy": 0.44954128440366975
+  },
+  "baseline_on_quality_usable_test": {
+    "tp": 0,
+    "fn": 31,
+    "fp": 0,
+    "tn": 78,
+    "sensitivity": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": 0.0,
+    "accuracy": 0.7155963302752294
+  }
+}

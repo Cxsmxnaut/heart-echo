@@ -1,0 +1,14 @@
+[
+  {"id":"location_only","message":"Please find care in ZIP 12345.","expected":{"zip":"12345","intent":"find_care","specialty":null}},
+  {"id":"insurer_is_not_plan","message":"I have Aetna. Find care in 12345.","expected":{"zip":"12345","insurance":{"payer":"Aetna"}},"absent_insurance":["plan","network"]},
+  {"id":"exact_labels","message":"payer: Synthetic Mutual; plan: Synthetic Silver HMO; network: Synthetic Narrow Network","expected":{"insurance":{"status":"insured","payer":"Synthetic Mutual","plan":"Synthetic Silver HMO","network":"Synthetic Narrow Network"}}},
+  {"id":"uninsured","message":"I have no insurance. Can you find primary care in 12345?","expected":{"zip":"12345","insurance":{"status":"uninsured"},"specialty":"family_medicine"}},
+  {"id":"unknown_network","message":"My insurer is Cigna but I don't know my network.","expected":{"insurance":{"payer":"Cigna"}},"absent_insurance":["network","plan"]},
+  {"id":"scan_limits","message":"Can my scan diagnose AFib?","expected":{"zip":null,"specialty":null,"intent":"explain_scan"}},
+  {"id":"noisy_scan","message":"My recording was unclear. What does that mean?","expected":{"zip":null,"specialty":null,"intent":"explain_scan"}},
+  {"id":"bpm_not_specialty","message":"My experimental BPM is 165. Find me care in 12345.","expected":{"zip":"12345","specialty":null,"intent":"find_care"}},
+  {"id":"explicit_specialist","message":"I choose cardiology. Search ZIP 12345.","expected":{"zip":"12345","specialty":"cardiology","intent":"find_care"}},
+  {"id":"privacy_help","message":"Are my recordings used for training?","expected":{"zip":null,"specialty":null,"intent":"app_help"}},
+  {"id":"plan_year","message":"payer: Synthetic Payer; plan: Synthetic Choice; network: Synthetic Network. My plan year is 2027.","expected":{"insurance":{"payer":"Synthetic Payer","plan":"Synthetic Choice","coverage_year":2027}}},
+  {"id":"no_location_guess","message":"I live in a city in California. Find care without guessing my ZIP.","expected":{"zip":null,"specialty":null,"intent":"find_care"}}
+]

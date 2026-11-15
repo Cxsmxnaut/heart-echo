@@ -1,0 +1,24 @@
+{
+  "time": 1794704206.204056,
+  "sha256": {
+    "ChestBPM/ML/murmur-manifest.json": "81c4ed817900aa8f12547b52637c98c3ebce3a5225e5254905686c7d831304e1",
+    "ChestBPM/ML/murmur_data.py": "63e54bc9eb6c62e3862abfb84512d2d75b048fae5af2aae3705de35bbeb4fd42",
+    "ChestBPM/ML/murmur_model.py": "4b9f4be0df1eec98cd5be515c8cadf71f9f2b422cbfe083f3ceb8a0243450506",
+    "ChestBPM/ML/murmur_evaluate.py": "b4ef6517805d8616830796847ba5df63851bc87034092414035ef55046afbd59",
+    "ChestBPM/ChestBPM/MurmurAnalysis.swift": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e",
+    "ChestBPM/Tools/MurmurProbe.swift": "f93ea79db39f5cc63c7113d44b6fc1c008f491cbe57aa4b106c214c8137822ed",
+    "ChestBPM/ML/test_murmur.py": "85e9f297708494414eac56fdd7644e3158c2e683041e78b2f795d98d38bc5a1f",
+    "ChestBPM/ML/generated/murmur-v1/training.json": "0d7f6a37b004eb602d9b2e6b3e98b4ee3705b8cca2caead60b7c0e4e56be26a1",
+    "ChestBPM/ML/generated/murmur-v1/training-sources.json": "ba15a3d54b405c35524b569d140fa175b67fda98287e48771f9989950073b65a",
+    "ChestBPM/ML/generated/murmur-v1/Murmur.pt": "b5e7baebc79654a270920ec9ba535b0092990c11553b76ab5fcfc012252f632c",
+    "ChestBPM/ML/generated/murmur-v1/protocol.json": "041cac02e475655984d2cc8d286dc75366165c4c3d84f84cfcae864632ed6e2a",
+    "ChestBPM/ML/generated/murmur-v1/conversion.json": "4338a428140b845770bd8fcd4a518faec5f688fa1d1806bdc14045a147b1dcee",
+    "ChestBPM/ML/generated/murmur-v1/Murmur.mlpackage/Manifest.json": "c34a6929b38e10fa4a17bb9ff613245f1a53e14c579340ea4342af06cb256721",
+    "ChestBPM/ML/generated/murmur-v1/Murmur.mlpackage/Data/com.apple.CoreML/model.mlmodel": "0e967acecf568fdf55cd59d4246bb9678904e5e39beb151396825b6885959311",
+    "ChestBPM/ML/generated/murmur-v1/Murmur.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "df0646fa6bae01cee4ebb2a080ba2fef2a0c9c09a25067138668e528a7586843",
+    "ChestBPM/ML/results/murmur-v1/murmur-probe": "c800e0bd3414344ed4e1646c1d6da7ba1208d311ca3044e10536ca277ec7bf3c",
+    "ChestBPM/ML/results/murmur-v1/runtime.txt": "0af0f883884b84447a9212e8f3527df7d21dd474f543681dabff7ff0523daa2c"
+  },
+  "decision": "Native three-class argmax only if winningAbsent/Present>=0.60, otherwiseUnsure. Silence/clipping gates, full recording mean. Report all known/unknown/unsure, separate missedpositives and falsealarms. No tuning after test.",
+  "model": "Murmur.pt selected on validation only; exact Core ML model included. No BPM/Watch input."
+}

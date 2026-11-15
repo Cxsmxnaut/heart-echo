@@ -1,0 +1,8 @@
+{
+  "tested_at": "2026-11-14T21:41:03.411521+00:00",
+  "scenario": "Synthetic Swift v1.1 handoff using acceptedBPM 74.33333 and 8-second analysis window; capture timestamp omitted",
+  "passed": true,
+  "response_mode": "llm",
+  "session_deleted": true,
+  "native_app_installed_or_changed": false
+}

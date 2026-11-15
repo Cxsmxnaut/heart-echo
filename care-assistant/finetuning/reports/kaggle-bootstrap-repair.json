@@ -1,0 +1,38 @@
+{
+  "status": "prepared_NOT_executed_on_Kaggle",
+  "reported_first_failure": "Python3.13.16 stdlib venv ensurepip exit1 before package installation; first output ZIP1262bytes reported by coordinating chat",
+  "cause": "Unconfirmed until diagnostic stdout/stderr is captured; no assumption that ensurepip is absent",
+  "scope": "isolated venv bootstrap only; no training/model pin change",
+  "old_runner_sha256": "c645953b5dfd286676070fe9cdaa159407c371aec838765add4170cb0a518d11",
+  "patched_runner_sha256": "b7974f03d4653fd2722216f97671d92f855ea5a48759cc096fd6ded33d97c5af",
+  "helper_sha256": "f07a2fd1ad521462ff13e67aded3a183dbc908d792be6644957f4f0e7e168458",
+  "repair_cell_sha256": "4af8ee4b3bcfb52763e965250c71b8c1bc4fa1daa72469dfc5f7d5c4a327222a",
+  "repair_cell_bytes": 5569,
+  "bootstrap_pins": {
+    "uv": {
+      "version": "0.13.8",
+      "filename": "uv-0.13.8-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/c5/32/52ee34636aea1ab3f8baeeae1c3599461b8cddfb379862cc72ac61b8d91c/uv-0.13.8-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "e18a57b8b352eb7c8feb317b9f6f533c8f0ad9673fd6cf34bbe3cf1a9f6a8984",
+      "source": "https://pypi.org/pypi/uv/0.13.8/json",
+      "requires_python": ">=3.8"
+    },
+    "pip": {
+      "version": "26.3",
+      "filename": "pip-26.3-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/07/25/ee8c38ae72d66b844ce8eb9711ba905dba21ca1a8a0c960057c41cd23337/pip-26.3-py3-none-any.whl",
+      "sha256": "f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13",
+      "source": "https://pypi.org/pypi/pip/26.3/json",
+      "requires_python": ">=3.10"
+    }
+  },
+  "original_imported_notebook_preserved": true,
+  "local_checks": {
+    "python_syntax": "passed",
+    "mocked_behavior_tests": "3/3 passed; no binaries/packages downloaded or executed",
+    "original_notebook_sha256": "0d6b3c92bc8d4540cdefdfdb294c1dd4335b4bb03404cd5ec19f2306f44a63cb"
+  },
+  "serving_app_source_unchanged": true,
+  "first_archive_preservation": "Original 1262-byte archive overwritten by a second setup retry before any diagnostic/repair cell ran; only coordinating UI transcript retains first failure.",
+  "reported_second_failure": "Partial-venv guard skipped creation because Python existed, then 01-cuda-packages pip exited1; current archive1485bytes. Cause still needs stderr."
+}

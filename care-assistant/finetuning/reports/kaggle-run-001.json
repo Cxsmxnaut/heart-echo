@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-11-15T01:00:49.221532+00:00",
+  "version": 1,
+  "privacy": "remote metadata verified private",
+  "notebook_source": "remote cells verified equal local v2",
+  "stages_observed_complete": [
+    "embedded bundle validation",
+    "T4/Python3.13.16 GPU/resource preflight",
+    "uv/pip venv repair",
+    "01 CUDA packages",
+    "02 pinned training packages",
+    "03 pip check",
+    "04 CUDA/import smoke",
+    "05 environment lock",
+    "06 training: 17 optimizer steps, 516 changed tensors",
+    "adapter proof and output packaging",
+    "private output download and independent tensor verification"
+  ],
+  "stage_observed_running": null,
+  "ensurepip_diagnostic": "Actual missing ensurepip module; separate wrapt warning from Kaggle sitecustomize",
+  "old_interactive_session": "Coordinating chat reports it stopped only the old task-owned interactive session; batch left running",
+  "adapter_saved": true,
+  "heldout_runtime_comparison_completed": true,
+  "serving_default_changed": false,
+  "status": "COMPLETE",
+  "artifact_downloaded": true,
+  "training_verification": "finetuning/reports/kaggle-training-verification.json",
+  "GGUF_export_completed": true,
+  "GGUF_export_verification": "finetuning/reports/lora-export-verification.json",
+  "heldout_summary": {
+    "control": {
+      "raw_intents": "7/7",
+      "raw_fields": "6/7",
+      "constrained_tools": "2/3"
+    },
+    "candidate": {
+      "raw_intents": "7/7",
+      "raw_fields": "6/7",
+      "constrained_tools": "2/3"
+    }
+  },
+  "regression_and_browser_comparison_status": "complete: candidate 2/2 regression journeys and 4/4 live browser checks; original baseline restored",
+  "comparison_report": "finetuning/reports/comparison-seed001.json",
+  "serving_restoration": "finetuning/reports/serving-restoration.json"
+}

@@ -1,0 +1,21 @@
+{
+  "frozen_at": 1794693008.103321,
+  "purpose": "Lock final algorithm, model, cohort selection, mixture generation and both reference metrics before new public content access.",
+  "sha256": {
+    "ChestBPM/ChestBPM/DeviceSoundModels.swift": "eb8396445f66a8dad94ac7fbb5d8d07406e594adb543977260961befbc88c280",
+    "ChestBPM/ChestBPM/HeartRateEstimator.swift": "5a12a7944519a8ba62ace892d171d296ad5ce337c8ed78e3a123d6b529750731",
+    "ChestBPM/ChestBPM/HeartRateMonitor.swift": "820b5a1c0a0cc5f62a87306cc8d0ba197e4927f0acb225de87bf3bdaaed5ff79",
+    "ChestBPM/ChestBPM/NeuralSignal.swift": "d51c81c2de2cd940d8562de762c26a78c1824347b24bf4875b17e8740803e778",
+    "ChestBPM/ChestBPM/NoiseAnalysis.swift": "c6dc6e6341e979743c3a4aae726e5db28c86aca87a6d94d336c764db03d30d4a",
+    "ChestBPM/ML/Models/BeatStates.mlpackage/Data/com.apple.CoreML/model.mlmodel": "3c401436ac512fb983ddaa987dffa6c252dfa61b9d3524d84ea18f9c51730c0d",
+    "ChestBPM/ML/Models/BeatStates.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "e971a903a5fdc0736461e34d6c885abc065a1cbd27079e553f4bcf96230b9f12",
+    "ChestBPM/ML/Models/BeatStates.mlpackage/Manifest.json": "f026b9338f030ab7e902d4e90061f69383044ae4e975f5217fb0d40f058940a1",
+    "ChestBPM/ML/NeuralBenchmark.swift": "9f048d76a6dd200e2c7420f72c1153396c82829aa05c855904ac19bb25dae99b",
+    "ChestBPM/ML/summarize.py": "e7685e7503db475c0d064f46a507a7690de6e6fd235c12900483b8c604b9cd04",
+    "ChestBPM/ML/validation-v17-manifest.json": "28d0adbe4933b5942c93d1f60104b379de9fbaef756971589a9a9c11063aca6e",
+    "ChestBPM/Shared/TrialProtocol.swift": "0bcf06eb12edb2417202a0c022345c11d1462da4428de2cfb62491108689044e",
+    "ChestBPM/ML/prepare_cases.py": "568a8727c6facc4a3ebd8033054dcbdfd6fe81c32398ff8c4dadf05ba419259c",
+    "ChestBPM/ML/reserve_validation.py": "a4d28d780781174e405fb3f0463a1ccc9bf2f6a22ff4cd3df94309f55ad79f89",
+    "ChestBPM/ML/algorithm-freeze-v17.json": "42eab128e68a53aa59d96e50509de9f23fba0cdbc59abd8ba1c42361b2fc7816"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "base_tensor_count": 720,
+  "adapter_tensor_count": 588,
+  "missing_base_targets": [],
+  "adapter_bytes": 36740928,
+  "adapter_gguf_sha256": "513abc53c84f42116bec06877c6691de83d6c224e921f15039315121fc9ea6e3",
+  "base_and_adapter_architecture": [
+    "[103 101 109 109  97  52]",
+    "[103 101 109 109  97  52]"
+  ],
+  "note": "GGUF metadata target check only; no inference or tensor values from the base model loaded."
+}

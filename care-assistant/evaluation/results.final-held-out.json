@@ -1,0 +1,179 @@
+{
+  "tested_at": "2026-11-14T19:21:46.791Z",
+  "suite": "final-held-out.json",
+  "source_sha256": "446ee81e9cac48fafa155822f97f901c9f8d4a00c05ba851ef62f11e67698245",
+  "model": {
+    "mode": "llm",
+    "model": "care-gemma4-e2b",
+    "configured": true,
+    "last_success_at": null,
+    "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference."
+  },
+  "model_is_fine_tuned": false,
+  "data": "fresh held-out synthetic scenarios, synthetic directory fixtures; real inference and real MCP transport",
+  "extraction": [
+    {
+      "id": "new_postal_paraphrase",
+      "passed": true,
+      "elapsed_ms": 1184,
+      "failures": []
+    },
+    {
+      "id": "new_payer_no_network",
+      "passed": true,
+      "elapsed_ms": 2137,
+      "failures": []
+    },
+    {
+      "id": "new_plan_three_labels",
+      "passed": true,
+      "elapsed_ms": 2252,
+      "failures": []
+    },
+    {
+      "id": "new_uninsured_paraphrase",
+      "passed": true,
+      "elapsed_ms": 2348,
+      "failures": []
+    },
+    {
+      "id": "new_plan_year_copy",
+      "passed": true,
+      "elapsed_ms": 2560,
+      "failures": []
+    },
+    {
+      "id": "new_ambiguous_location",
+      "passed": true,
+      "elapsed_ms": 940,
+      "failures": []
+    },
+    {
+      "id": "new_bpm_does_not_diagnose",
+      "passed": true,
+      "elapsed_ms": 1032,
+      "failures": []
+    },
+    {
+      "id": "new_noisy_wording",
+      "passed": true,
+      "elapsed_ms": 1021,
+      "failures": []
+    },
+    {
+      "id": "new_explicit_internal",
+      "passed": true,
+      "elapsed_ms": 1169,
+      "failures": []
+    },
+    {
+      "id": "new_missing_plan_field",
+      "passed": true,
+      "elapsed_ms": 2367,
+      "failures": []
+    },
+    {
+      "id": "new_noncare_greeting",
+      "passed": true,
+      "elapsed_ms": 1160,
+      "failures": []
+    },
+    {
+      "id": "new_explicit_date",
+      "passed": true,
+      "elapsed_ms": 2531,
+      "failures": []
+    }
+  ],
+  "tools": [
+    {
+      "id": "fresh_help_without_scan",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 646,
+      "tool_trace": [
+        {
+          "name": "get_app_context",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "fresh_unknown_insurance_empty_zip",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 1931,
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "empty",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "empty",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "fresh_future_payer_unavailable_scan",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 6066,
+      "tool_trace": [
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "model"
+        },
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    }
+  ],
+  "backend": [
+    {
+      "id": "fresh_absent_scan_and_partial_insurance",
+      "passed": true,
+      "mode": "llm",
+      "raw_model_error": null,
+      "stage": "ask_plan"
+    },
+    {
+      "id": "fresh_current_year_rejects_future_payer_record",
+      "passed": true,
+      "status": "unsupported"
+    },
+    {
+      "id": "fresh_plan_change_does_not_reuse_old_network",
+      "passed": true,
+      "stage": "ask_plan"
+    },
+    {
+      "id": "fresh_noisy_scan_with_directory_failure",
+      "passed": true,
+      "mode": "llm",
+      "raw_model_error": null,
+      "directory_status": "error"
+    },
+    {
+      "id": "fresh_invented_plan_tool_call_rejected",
+      "passed": true,
+      "synthetic_adversarial_double": true,
+      "rejected": "model_changed_plan"
+    }
+  ],
+  "extraction_score": "12/12",
+  "tool_score": "3/3",
+  "extraction_median_ms": 2137
+}

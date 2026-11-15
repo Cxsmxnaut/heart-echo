@@ -1,0 +1,794 @@
+{
+  "requirements": {
+    "baseline_preserved": true,
+    "v4_false_alarms_investigated": true,
+    "controlled_v5_training_completed_and_frozen": true,
+    "recording_and_person_comparisons_recomputed": true,
+    "unsupported_replacement_rejected": true,
+    "documented_model_choice": true,
+    "coreml_conversion_parity_on_mac": true,
+    "physical_phone_public_sample_parity": true,
+    "representative_independent_clinician_labeled_phone_validation": false,
+    "high_reliability_goal_proven": false,
+    "v6_controlled_probe_frozen_and_rejected": true,
+    "v7_controlled_probe_frozen_and_rejected": true,
+    "v8_controlled_run_frozen_converted_and_rejected": true
+  },
+  "baseline_reused_development": {
+    "recordings": {
+      "matrix": [
+        [
+          178,
+          5,
+          91
+        ],
+        [
+          8,
+          49,
+          13
+        ],
+        [
+          4,
+          2,
+          17
+        ]
+      ],
+      "detected_positive": 49,
+      "positive_called_absent": 8,
+      "positive_unsure": 13,
+      "positive_count": 70,
+      "false_alarms": 5,
+      "correct_absent": 178,
+      "negative_unsure": 91,
+      "negative_count": 274,
+      "expert_unknown_outputs": [
+        4,
+        2,
+        17
+      ],
+      "total_unsure": 121,
+      "total": 367,
+      "positive_detection_all": 0.7,
+      "negative_clearance_all": 0.6496350364963503,
+      "false_alarm_fraction": 0.01824817518248175,
+      "known_coverage": 0.6976744186046512,
+      "positive_detection_answered_only": 0.8596491228070176,
+      "specificity_answered_only": 0.9726775956284153,
+      "positive_detection_wilson95_descriptive": [
+        0.5845568276122731,
+        0.79463394742362
+      ],
+      "negative_clearance_wilson95_descriptive": [
+        0.5914303897288259,
+        0.7037019506643297
+      ]
+    },
+    "linked_people": {
+      "matrix": [
+        [
+          24,
+          0,
+          46
+        ],
+        [
+          1,
+          18,
+          3
+        ],
+        [
+          1,
+          1,
+          6
+        ]
+      ],
+      "detected_positive": 18,
+      "positive_called_absent": 1,
+      "positive_unsure": 3,
+      "positive_count": 22,
+      "false_alarms": 0,
+      "correct_absent": 24,
+      "negative_unsure": 46,
+      "negative_count": 70,
+      "expert_unknown_outputs": [
+        1,
+        1,
+        6
+      ],
+      "total_unsure": 55,
+      "total": 100,
+      "positive_detection_all": 0.8181818181818182,
+      "negative_clearance_all": 0.34285714285714286,
+      "false_alarm_fraction": 0.0,
+      "known_coverage": 0.4673913043478261,
+      "positive_detection_answered_only": 0.9473684210526315,
+      "specificity_answered_only": 1.0,
+      "positive_detection_wilson95_descriptive": [
+        0.6148339256287345,
+        0.9269311541657794
+      ],
+      "negative_clearance_wilson95_descriptive": [
+        0.2424598880226688,
+        0.4596045030205579
+      ]
+    },
+    "people": [
+      {
+        "group": "14241",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "31737",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "40058",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "44514",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "45843",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 8
+      },
+      {
+        "group": "46532",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 1
+      },
+      {
+        "group": "46579",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 6
+      },
+      {
+        "group": "49572",
+        "target": 1,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "49607",
+        "target": 2,
+        "prediction": 2,
+        "recordings": 1
+      },
+      {
+        "group": "49745",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "49776",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 6
+      },
+      {
+        "group": "49824",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 3
+      },
+      {
+        "group": "49838",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "49876",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 8
+      },
+      {
+        "group": "49960",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "50027",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "50034",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "50076",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "50080",
+        "target": 2,
+        "prediction": 1,
+        "recordings": 5
+      },
+      {
+        "group": "50117",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "50141",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 1
+      },
+      {
+        "group": "50142",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "50160",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "50204",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "50217",
+        "target": 2,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "50220",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 6
+      },
+      {
+        "group": "50285",
+        "target": 1,
+        "prediction": 2,
+        "recordings": 1
+      },
+      {
+        "group": "50291",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 7
+      },
+      {
+        "group": "50326",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 8
+      },
+      {
+        "group": "50327",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "50332",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "50341",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "50375",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 2
+      },
+      {
+        "group": "50388",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "50659",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 8
+      },
+      {
+        "group": "50664",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 6
+      },
+      {
+        "group": "50668",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "50671",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 5
+      },
+      {
+        "group": "50676",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "50685",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 3
+      },
+      {
+        "group": "50722",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 3
+      },
+      {
+        "group": "50731",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "50736",
+        "target": 1,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "50739",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "50740",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "50743",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "50744",
+        "target": 1,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "50774",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "50797",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "50807",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "50818",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "68186",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "68255",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "68347",
+        "target": 2,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "68363",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 2
+      },
+      {
+        "group": "68419",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "68698",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "68755",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "68831",
+        "target": 2,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "68887",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "74417",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "75440",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "81297",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "81501",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "84695",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "84735",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "84742",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "84743",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "84746",
+        "target": 2,
+        "prediction": 0,
+        "recordings": 1
+      },
+      {
+        "group": "84764",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "84824",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "84852",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "84882",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "84885",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 2
+      },
+      {
+        "group": "84887",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "84912",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "84939",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "84946",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "84992",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "85037",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "85044",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "85057",
+        "target": 1,
+        "prediction": 1,
+        "recordings": 4
+      },
+      {
+        "group": "85077",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "85093",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "85112",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "85136",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "85175",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "85180",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "85182",
+        "target": 2,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "85202",
+        "target": 2,
+        "prediction": 2,
+        "recordings": 2
+      },
+      {
+        "group": "85212",
+        "target": 0,
+        "prediction": 0,
+        "recordings": 4
+      },
+      {
+        "group": "85213",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "85226",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "85235",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "85287",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "85299",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 4
+      },
+      {
+        "group": "85313",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 3
+      },
+      {
+        "group": "85317",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 1
+      },
+      {
+        "group": "85323",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 1
+      },
+      {
+        "group": "85332",
+        "target": 0,
+        "prediction": 2,
+        "recordings": 2
+      }
+    ]
+  },
+  "ambition_comparisons": {
+    "recordings": {
+      "answered_sensitivity": {
+        "observed_on_reused_development": 0.8596491228070176,
+        "ambition_not_clinical_standard": 0.99,
+        "point_estimate_meets_ambition": false
+      },
+      "answered_specificity": {
+        "observed_on_reused_development": 0.9726775956284153,
+        "ambition_not_clinical_standard": 0.99,
+        "point_estimate_meets_ambition": false
+      },
+      "coverage_of_independently_assessed_usable_recordings": {
+        "observed_on_reused_development": 0.6976744186046512,
+        "ambition_not_clinical_standard": 0.95,
+        "point_estimate_meets_ambition": false
+      },
+      "all_positive_detection_including_unsure_denominator": {
+        "observed_on_reused_development": 0.7,
+        "ambition_not_clinical_standard": 0.95,
+        "point_estimate_meets_ambition": false
+      },
+      "all_negative_clearance_including_unsure_denominator": {
+        "observed_on_reused_development": 0.6496350364963503,
+        "ambition_not_clinical_standard": 0.95,
+        "point_estimate_meets_ambition": false
+      }
+    },
+    "linked_people": {
+      "answered_sensitivity": {
+        "observed_on_reused_development": 0.9473684210526315,
+        "ambition_not_clinical_standard": 0.99,
+        "point_estimate_meets_ambition": false
+      },
+      "answered_specificity": {
+        "observed_on_reused_development": 1.0,
+        "ambition_not_clinical_standard": 0.99,
+        "point_estimate_meets_ambition": true
+      },
+      "coverage_of_independently_assessed_usable_recordings": {
+        "observed_on_reused_development": 0.4673913043478261,
+        "ambition_not_clinical_standard": 0.95,
+        "point_estimate_meets_ambition": false
+      },
+      "all_positive_detection_including_unsure_denominator": {
+        "observed_on_reused_development": 0.8181818181818182,
+        "ambition_not_clinical_standard": 0.95,
+        "point_estimate_meets_ambition": false
+      },
+      "all_negative_clearance_including_unsure_denominator": {
+        "observed_on_reused_development": 0.34285714285714286,
+        "ambition_not_clinical_standard": 0.95,
+        "point_estimate_meets_ambition": false
+      }
+    }
+  },
+  "independent_phone_validation_records_verified": 0,
+  "limitations": [
+    "All measured accuracy here is reused development evidence, not a generalization estimate.",
+    "Known coverage is shown for all known-label development cases; independently assessed usable-audio coverage is unavailable. Do not treat the two denominators as equivalent.",
+    "Recording confidence intervals ignore within-person correlation. Person intervals treat linked groups as independent; neither corrects development-selection bias.",
+    "Phone parity uses bundled public stethoscope audio. It proves execution agreement on those inputs, not phone-microphone capture accuracy."
+  ],
+  "evidence_sha256": {
+    "results/murmur-focus-decision.json": "298ec06f17cf9e0607d7d2b8930160076e44e94d4089466f9884aeb2e3cc7b73",
+    "results/murmur-v4-diagnosis.json": "1f65c96348a0abe6afdb4144d4b20cf9f998f07a1292e5b755ed0101bb71fb61",
+    "results/murmur-v5-native-development.json": "eb0493bcb15a4f3d56a2d77d99e3ad287ca99a8c6f9e06708da46165dfa7eb5d",
+    "phone-evidence-review.md": "a05bbebfe861c9dd5783f76527ef15fa6c4537c7766fcaf62db56041e7cc30c0",
+    "murmur_focus_acceptance.json": "4a040f8705ac9d822e5ee10d6dd1e0a9571ab42c471f9c5140b6ff2b4c986332",
+    "results/murmur-baseline-phone.json": "68cdc6c74215208afe136d252cceb7fd4ba7b49bb8e26ede03148b2dff047d45",
+    "results/murmur-v6-pretrained-probe.json": "39b09b85ae3a42ba466362ff130bf1288c0c0b2bff020913be80e58c670dedf4",
+    "generated/murmur-v6-pretrained-probe/classifier-freeze.json": "0d316fda8d1faaf9a41b7fb9bdade4267eab32addb3ae2b06596b7249ed06375",
+    "results/murmur-v7-heartband-probe.json": "8ea5880d255f621555e82a4c342957001111f1e378b138e9064d69e5bfd8a120",
+    "generated/murmur-v7-heartband-probe/classifier-freeze.json": "bab7de8ca2858a0db2ef822c156ead9873baf36dc54b42b434ad8e1b7809b658",
+    "results/murmur-v8-native-development.json": "6fdeb5364a52675dc02c965d609e6748e7a749b75d9a1051a95b7978ff7ea825"
+  },
+  "completion": "NOT ACHIEVED: model choice and engineering checks do not establish the requested high reliability."
+}

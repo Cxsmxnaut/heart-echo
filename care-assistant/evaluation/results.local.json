@@ -1,0 +1,139 @@
+{
+  "tested_at": "2026-11-14T19:17:07.859Z",
+  "model": {
+    "mode": "llm",
+    "model": "care-gemma4-e2b",
+    "configured": true,
+    "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data."
+  },
+  "model_is_fine_tuned": false,
+  "data": "development/regression synthetic scenarios, synthetic directory fixtures; real inference and real MCP transport",
+  "extraction": [
+    {
+      "id": "location_only",
+      "passed": true,
+      "elapsed_ms": 1208,
+      "failures": []
+    },
+    {
+      "id": "insurer_is_not_plan",
+      "passed": true,
+      "elapsed_ms": 1984,
+      "failures": []
+    },
+    {
+      "id": "exact_labels",
+      "passed": true,
+      "elapsed_ms": 2325,
+      "failures": []
+    },
+    {
+      "id": "uninsured",
+      "passed": true,
+      "elapsed_ms": 2325,
+      "failures": []
+    },
+    {
+      "id": "unknown_network",
+      "passed": true,
+      "elapsed_ms": 2071,
+      "failures": []
+    },
+    {
+      "id": "scan_limits",
+      "passed": true,
+      "elapsed_ms": 881,
+      "failures": []
+    },
+    {
+      "id": "noisy_scan",
+      "passed": false,
+      "elapsed_ms": 1060,
+      "error": "model_invalid_extraction"
+    },
+    {
+      "id": "bpm_not_specialty",
+      "passed": false,
+      "elapsed_ms": 978,
+      "failures": [
+        {
+          "field": "intent",
+          "expected": "find_care",
+          "actual": "explain_scan"
+        }
+      ]
+    },
+    {
+      "id": "explicit_specialist",
+      "passed": true,
+      "elapsed_ms": 1006,
+      "failures": []
+    },
+    {
+      "id": "privacy_help",
+      "passed": false,
+      "elapsed_ms": 944,
+      "failures": [
+        {
+          "field": "intent",
+          "expected": "app_help",
+          "actual": "explain_scan"
+        }
+      ]
+    },
+    {
+      "id": "plan_year",
+      "passed": true,
+      "elapsed_ms": 3005,
+      "failures": []
+    },
+    {
+      "id": "no_location_guess",
+      "passed": true,
+      "elapsed_ms": 1080,
+      "failures": []
+    }
+  ],
+  "tools": [
+    {
+      "id": "app_capabilities_tool",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 3091,
+      "tool_trace": [
+        {
+          "name": "get_app_context",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "uninsured_care_tools",
+      "passed": true,
+      "missing": [],
+      "elapsed_ms": 3521,
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "id": "exact_plan_tools",
+      "passed": false,
+      "error": "model_changed_plan"
+    }
+  ],
+  "extraction_score": "9/12",
+  "tool_score": "2/3",
+  "extraction_median_ms": 1208,
+  "evaluation_note": "This set was used to adjust the adapter; these improved scores are not untouched held-out validation."
+}

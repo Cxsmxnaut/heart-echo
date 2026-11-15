@@ -1,0 +1,146 @@
+{
+  "source_sha256": "bffd73dedb33344cf1e4ed67589e19092176eed4399402da42005c4fcd0c0508",
+  "harness_sha256": "fba08a5ae3f45375e72cd81c1f81e1568bcb33a220c598f35bf2c02c12026fbc",
+  "baseline_freeze_sha256": "da496ca691ce073365746a1144db716c8139f91433ed7149252d0b84a8fec68f",
+  "fixture": {
+    "cases": [
+      {
+        "id": "absent",
+        "milliseconds": 16.883015632629395,
+        "reading": {
+          "finding": "unsure",
+          "probabilities": [
+            0.4232095678647359,
+            0.5459869007269541,
+            0.030803543825944264
+          ],
+          "seconds": 8.896,
+          "windows": 3
+        }
+      },
+      {
+        "id": "present",
+        "milliseconds": 1.5050172805786133,
+        "reading": {
+          "finding": "present",
+          "probabilities": [
+            0.026415929105132817,
+            0.8345742166042328,
+            0.13900986120570452
+          ],
+          "seconds": 20,
+          "windows": 5
+        }
+      },
+      {
+        "id": "unknown",
+        "milliseconds": 1.3250112533569336,
+        "reading": {
+          "finding": "unsure",
+          "probabilities": [
+            0.15826162695884705,
+            0.23901817873120307,
+            0.6027202069759369
+          ],
+          "seconds": 20,
+          "windows": 5
+        }
+      }
+    ],
+    "input_sha256": {
+      "absent": "d74f158d84441ac8532bfebc2835578204692a271ae93893f355e9f3f9a2bc5d",
+      "present": "813943ed1e2d288c6f13ac0cdc91226bf688620b65f0d88a9a3755fed7b6fb18",
+      "unknown": "6a06375e17e9e2a189a299c01029defed8a552dbbe491411251a609ee2ac0cee"
+    },
+    "baseline_model_files": {
+      "Data/com.apple.CoreML/model.mlmodel": "bb3e2cd129ddcc4377195ab79f56949244d12e7b85897e7971959be0647d8bb1",
+      "Data/com.apple.CoreML/weights/weight.bin": "76fed2c566b74e342165a649e9338ccab06a0987b65fb2fa68f32dbaedceda72",
+      "Manifest.json": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa"
+    },
+    "native_reader_sha256": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e"
+  },
+  "app_source_changed": false,
+  "app_model_changed": false,
+  "normal_app_restored": true,
+  "phone": {
+    "cases": [
+      {
+        "finding": "unsure",
+        "id": "absent",
+        "maximum_probability_difference_from_mac_native": 0,
+        "milliseconds": 14.54958333488321,
+        "passed": true,
+        "probabilities": [
+          0.4232095678647359,
+          0.5459869007269541,
+          0.030803543825944264
+        ],
+        "seconds": 8.896,
+        "windows": 3
+      },
+      {
+        "finding": "present",
+        "id": "present",
+        "maximum_probability_difference_from_mac_native": 0,
+        "milliseconds": 8.80699999834178,
+        "passed": true,
+        "probabilities": [
+          0.026415929105132817,
+          0.8345742166042328,
+          0.13900986120570452
+        ],
+        "seconds": 20,
+        "windows": 5
+      },
+      {
+        "finding": "unsure",
+        "id": "unknown",
+        "maximum_probability_difference_from_mac_native": 0,
+        "milliseconds": 8.597791667853016,
+        "passed": true,
+        "probabilities": [
+          0.15826162695884705,
+          0.23901817873120307,
+          0.6027202069759369
+        ],
+        "seconds": 20,
+        "windows": 5
+      }
+    ],
+    "controls": [
+      {
+        "name": "silence",
+        "passed": true
+      },
+      {
+        "name": "short",
+        "passed": true
+      },
+      {
+        "name": "clipped",
+        "passed": true
+      },
+      {
+        "name": "nonfinite_audio",
+        "passed": true
+      },
+      {
+        "name": "invalid_total",
+        "passed": true
+      },
+      {
+        "name": "nonfinite_probability",
+        "passed": true
+      },
+      {
+        "name": "expert_unknown",
+        "passed": true
+      }
+    ],
+    "device_family": "iPhone",
+    "note": "Public sample parity and invalid-input engineering checks only. No microphone captures or private recordings. Not clinical validation.",
+    "os_version": "27.0.1",
+    "passed": true,
+    "physical_device": true
+  }
+}

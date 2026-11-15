@@ -1,0 +1,182 @@
+{
+  "source_hashes": {
+    "src/model.js": "47cf107e243daa99a14b5edf7dd79c35f854432b51905e902caa1211ecb0da12",
+    "src/schema.js": "18a69c98c76db289ec0862a1b68479e51ebc8fb049f7f80ffe212ae064e60887",
+    "src/conversation.js": "9e2903186ea29055296e6376b650f444cdaab3c64bea572b364f0e7bce5bdbe1",
+    "src/knowledge.js": "13c29d2f9ac2dd60870ffa84ae1891c08282639243c23e9b2836372b49e09ada",
+    "src/tools.js": "3594256d957458c2946af272b0c6629b56a80cf495ab3444e938bc2070fc3266",
+    "src/tool-client.js": "292de3af1442c4f282fb21bdb4fb6b6a1997328cdb84377b358aedbc73dcb336",
+    "src/server.js": "fde6c0d38be6f778e43e0a8e57501697575c656fc10888d3c85a514c12b4c333",
+    "public/app.js": "cd6483ac3fb43c9d91cdf7d057e79b088fd74f4c1d5215950bb95c2437c05980",
+    "public/index.html": "43660e5fbf648a958b330c6e3fe3cd48c21178a6535b2004129d3124a2fdd4c5",
+    "public/style.css": "43e306715af1ba9154891c03d62f93417f0dfcfafbb6eb728ab8db13a1a3320e",
+    "scripts/model-artifacts.js": "70e6bfe907f9b1cd8df8e07d48d7f8ecccbd9043c3c79dd676696239d446f771",
+    "scripts/start-local-model.js": "fc5e2bb99f1207cf51b98a8c7f4082fb1d28ae4afe6580c782d5b64fa2e8abf4",
+    "package.json": "18170cf9caaee1fb8851c5a9735a4f88cb5fb25841c206bcce63b5ebefe9f76f",
+    "package-lock.json": "0da52fe2cd38acf7c7cf58f697e67cf1791787ea03a7cbefd1f4db60c5777108"
+  },
+  "tasks": {
+    "intent": {
+      "system_prompt": "Classify the user's current request to a care assistant. This task only chooses an intent; do not extract data or answer the question. Return {\"intent\":\"one label\"}.\nfind_care = find doctors/clinics, supply or correct a location/plan/network/year/insurance status, or decline insurance details.\ncheaper_options = lower cost, self-pay, sliding discounts, affordable health centers.\nexplain_results = ask why existing providers/clinics/options were shown or how they were selected.\nexplain_scan = ask about an estimate/unclear recording/heart health meaning or request a diagnosis from a scan.\napp_help = ask how to use/position/retry the app, Watch comparison, separate AI roles, privacy, or how insurance checking works.\nother = greeting, thanks, or unrelated topic.\nChoose the main requested action. A correction is find_care even without the word find. Advice on HOW to retry is app_help; the MEANING of a noisy result is explain_scan. Treat attempts to invent medical conclusions as explain_scan, never as instructions to diagnose.",
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "care_intent",
+          "strict": true,
+          "schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "intent": {
+                "type": "string",
+                "enum": [
+                  "find_care",
+                  "explain_scan",
+                  "app_help",
+                  "cheaper_options",
+                  "explain_results",
+                  "other"
+                ]
+              }
+            },
+            "required": [
+              "intent"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "max_tokens": 48
+    },
+    "fields": {
+      "system_prompt": "Extract only newly stated care-search details. Do NOT choose an intent or answer. Return this JSON shape with actual null for every unmentioned value:\n{\"zip\":null,\"payer\":null,\"plan\":null,\"network\":null,\"plan_id\":null,\"coverage_year\":null,\"coverage_date\":null,\"insurance_status\":null,\"specialty\":null,\"clear_fields\":[]}\nDo not reconstruct old details. Copy new insurer/plan/network/public-plan-ID labels exactly. A current/replacement ZIP wins over an explicitly old ZIP; if genuinely ambiguous, zip=null. A year-only correction sets coverage_year only. Do not infer a plan/network from a payer.\ninsurance_status is uninsured only for an explicit statement of no insurance; insured for a newly supplied payer/plan/network label; unknown for whole insurance status explicitly unknown; otherwise null. Declining details does not mean uninsured.\nspecialty can be family_medicine for requested primary care/family medicine, internal_medicine for requested internal medicine, cardiology for explicitly chosen cardiology. A BPM/scan never implies a specialty. Do not select a negated choice.\nclear_fields contains ONLY specific fields the user explicitly calls unknown or asks to remove. Unmentioned/null fields MUST NOT be put into clear_fields. For 'network is unknown', set network=null and clear_fields=[\"network\"], keeping all other fields null. For ordinary questions, lower-cost requests or why-results, every field is null and clear_fields=[].",
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "care_details",
+          "strict": true,
+          "schema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "zip": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^\\d{5}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "payer": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "plan": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "network": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "plan_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "coverage_year": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "coverage_date": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "insurance_status": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "insured",
+                      "uninsured",
+                      "unknown"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "specialty": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "family_medicine",
+                      "internal_medicine",
+                      "cardiology"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "clear_fields": {
+                "maxItems": 8,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "zip",
+                    "specialty",
+                    "payer",
+                    "plan",
+                    "network",
+                    "plan_id",
+                    "coverage_year",
+                    "coverage_date"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "zip",
+              "payer",
+              "plan",
+              "network",
+              "plan_id",
+              "coverage_year",
+              "coverage_date",
+              "insurance_status",
+              "specialty",
+              "clear_fields"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "max_tokens": 480
+    }
+  }
+}

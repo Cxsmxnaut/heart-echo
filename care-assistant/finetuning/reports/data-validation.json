@@ -1,0 +1,57 @@
+{
+  "compiled_hashes": {
+    "train": "cbcff729de86170b76fc037350810c55e93321eff1cc5930386f4310c5a827b7",
+    "validation": "cfe1887d5568dc76ec0669159c5bbf0424593ce25c52b1c3eab0e599c6f7d6d0",
+    "test": "f49ec67d78131c230ca34d6704b67324f7e59c35deb21a1fc4b3851e6fd33560"
+  },
+  "checked_at": "2026-11-14T22:44:53.378Z",
+  "executed": "Local structural/grounding/schema/native-tool-protocol doubles only; NO training, model inference, tokenizer rendering, export, or tensor update.",
+  "passed": true,
+  "unique_scenarios": 56,
+  "unique_families": 52,
+  "counts": {
+    "train": {
+      "scenarios": 36,
+      "families": 32,
+      "task_records": 66
+    },
+    "validation": {
+      "scenarios": 10,
+      "families": 10,
+      "task_records": 17
+    },
+    "test": {
+      "scenarios": 10,
+      "families": 10,
+      "task_records": 17
+    }
+  },
+  "review": "Agent-authored and agent-reviewed policy labels with rationale, not clinician or human annotation. JSON intent/fields are separate projections of the same scenario; counts are not independent paraphrases.",
+  "seen_validation_warnings": [],
+  "failures": [],
+  "leakage_limits": "Family assignments are explicit and reviewed; exact/token-overlap checks cannot prove absence of semantic leakage. Previous evaluation inputs are fingerprints only, not training sources.",
+  "source_hashes": {
+    "src/model.js": "47cf107e243daa99a14b5edf7dd79c35f854432b51905e902caa1211ecb0da12",
+    "src/schema.js": "18a69c98c76db289ec0862a1b68479e51ebc8fb049f7f80ffe212ae064e60887",
+    "src/conversation.js": "9e2903186ea29055296e6376b650f444cdaab3c64bea572b364f0e7bce5bdbe1",
+    "src/knowledge.js": "13c29d2f9ac2dd60870ffa84ae1891c08282639243c23e9b2836372b49e09ada",
+    "src/tools.js": "3594256d957458c2946af272b0c6629b56a80cf495ab3444e938bc2070fc3266",
+    "src/tool-client.js": "292de3af1442c4f282fb21bdb4fb6b6a1997328cdb84377b358aedbc73dcb336",
+    "src/server.js": "fde6c0d38be6f778e43e0a8e57501697575c656fc10888d3c85a514c12b4c333",
+    "public/app.js": "cd6483ac3fb43c9d91cdf7d057e79b088fd74f4c1d5215950bb95c2437c05980",
+    "public/index.html": "43660e5fbf648a958b330c6e3fe3cd48c21178a6535b2004129d3124a2fdd4c5",
+    "public/style.css": "43e306715af1ba9154891c03d62f93417f0dfcfafbb6eb728ab8db13a1a3320e",
+    "scripts/model-artifacts.js": "70e6bfe907f9b1cd8df8e07d48d7f8ecccbd9043c3c79dd676696239d446f771",
+    "scripts/start-local-model.js": "fc5e2bb99f1207cf51b98a8c7f4082fb1d28ae4afe6580c782d5b64fa2e8abf4",
+    "package.json": "18170cf9caaee1fb8851c5a9735a4f88cb5fb25841c206bcce63b5ebefe9f76f",
+    "package-lock.json": "0da52fe2cd38acf7c7cf58f697e67cf1791787ea03a7cbefd1f4db60c5777108"
+  },
+  "seed_hashes": {
+    "seed.train.jsonl": "97c81aca0e64dd49607d3607dd57a54ff3b65ad27717b236eb402dfe6638ba88",
+    "seed.validation.jsonl": "9b40aea417a88ddbfb01fe406a8f2fd67c641ea39ef9f8de5b09900c1246445f",
+    "sealed-test.jsonl": "2a64d24acc5e144e7c0447b096a1f645d704d59430fabf6cf5822751f56f53c2",
+    "tools.train.jsonl": "de606a622a7ae79afb9ea0cdd6fc3f693d9fc7beae190d48344dd4d43681ae51",
+    "tools.validation.jsonl": "d77fe2a6c4cc3a5bf5947b6fe41cbbc506609a720ccee632e8fcbc698b24d90e",
+    "tools.test.jsonl": "f79d8bf27f01d93d497d83e8ac57f655e326fd6ab667ad1ae1c8cfc69f8a29a7"
+  }
+}

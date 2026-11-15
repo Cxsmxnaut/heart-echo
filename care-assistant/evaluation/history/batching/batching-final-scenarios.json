@@ -1,0 +1,9 @@
+{
+ "created_after_batching_freeze":true,
+ "cases":[
+  {"id":"batch_fresh_privacy","message":"Which parts of my information does the care assistant keep, and can I clear them?","intent":"app_help","profile":{},"expected":["get_app_context"],"context_topic":"privacy"},
+  {"id":"batch_fresh_only_clinics","message":"Use my current area, but give me only health centers with possible income-based fees.","intent":"cheaper_options","profile":{"zip":"12345","specialty":"cardiology","insurance":{"status":"uninsured"}},"expected":["search_affordable_clinics"]},
+  {"id":"batch_fresh_supported_plan","message":"Check the confirmed plan for October 16, 2027 and retrieve both the regular practices and health centers near my ZIP.","intent":"find_care","confirmed_plan":true,"profile":{"zip":"12345","specialty":"internal_medicine"},"expected":["search_providers","search_affordable_clinics","lookup_plan_network"]},
+  {"id":"batch_fresh_skip_stored_plan","message":"Find primary care and clinic choices, but skip the insurance lookup this time.","intent":"find_care","confirmed_plan":true,"profile":{"zip":"12345","specialty":"family_medicine","coverage_preference":"skip"},"expected":["search_providers","search_affordable_clinics"]}
+ ]
+}

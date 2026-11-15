@@ -1,0 +1,141 @@
+{
+  "completed_at": "2026-11-15T00:59:21.283070+00:00",
+  "status": "real_training_export_and_frozen_comparison_complete",
+  "decision": "keep_original_default; adapter available experimentally",
+  "reason": "Specific validation and seen workflow gain; held-out outcomes tied; small synthetic set and slower observed held-out latency do not establish broad benefit. No scored raw regression found in this set.",
+  "training": {
+    "optimizer_steps": 17,
+    "changed_trainable_tensors": 516,
+    "seconds": 116.351
+  },
+  "splits": {
+    "validation": {
+      "control": {
+        "scores": {
+          "raw_intents": "7/7",
+          "raw_fields": "5/7",
+          "constrained_tools": "3/3",
+          "backend_corrections": "not applied to raw scores",
+          "service_completed_calls": 0
+        },
+        "median_message_pair_ms": 18295,
+        "median_tool_task_ms": 13005,
+        "failed_field_cases": [
+          "validation_narrated_plan_correction_01",
+          "validation_paired_partial_labels_01"
+        ],
+        "failed_tool_cases": []
+      },
+      "candidate": {
+        "scores": {
+          "raw_intents": "7/7",
+          "raw_fields": "6/7",
+          "constrained_tools": "3/3",
+          "backend_corrections": "not applied to raw scores",
+          "service_completed_calls": 0
+        },
+        "median_message_pair_ms": 17371,
+        "median_tool_task_ms": 13937,
+        "failed_field_cases": [
+          "validation_paired_partial_labels_01"
+        ],
+        "failed_tool_cases": []
+      },
+      "changed_raw_outputs": [
+        "validation_narrated_plan_correction_01"
+      ]
+    },
+    "test": {
+      "control": {
+        "scores": {
+          "raw_intents": "7/7",
+          "raw_fields": "6/7",
+          "constrained_tools": "2/3",
+          "backend_corrections": "not applied to raw scores",
+          "service_completed_calls": 0
+        },
+        "median_message_pair_ms": 16044,
+        "median_tool_task_ms": 13129,
+        "failed_field_cases": [
+          "test_test_only_named_forgetting_01"
+        ],
+        "failed_tool_cases": [
+          "test_tool_test_ignored_override"
+        ]
+      },
+      "candidate": {
+        "scores": {
+          "raw_intents": "7/7",
+          "raw_fields": "6/7",
+          "constrained_tools": "2/3",
+          "backend_corrections": "not applied to raw scores",
+          "service_completed_calls": 0
+        },
+        "median_message_pair_ms": 18474,
+        "median_tool_task_ms": 15049,
+        "failed_field_cases": [
+          "test_test_only_named_forgetting_01"
+        ],
+        "failed_tool_cases": [
+          "test_tool_test_ignored_override"
+        ]
+      },
+      "changed_raw_outputs": []
+    }
+  },
+  "regression": {
+    "control": {
+      "completed": "1/2",
+      "turns": 5,
+      "guided_turns": 0,
+      "backend_corrected_turns": 0,
+      "service_completed_calls": 0
+    },
+    "candidate": {
+      "completed": "2/2",
+      "turns": 8,
+      "guided_turns": 0,
+      "backend_corrected_turns": 0,
+      "service_completed_calls": 0
+    }
+  },
+  "browser": {
+    "passed": true,
+    "passed_checks": 4,
+    "observed_turns": 5,
+    "guided_turns": 0,
+    "backend_corrected_turns": 0,
+    "service_completed_calls": 0,
+    "note": "Candidate live public-source smoke check; not a contemporaneous paired browser comparison. Synthetic user, no native device check."
+  },
+  "restoration": {
+    "checked_at": "2026-11-15T00:59:56.655255+00:00",
+    "status": "baseline_restored_and_healthy",
+    "restored_model_pid": 22705,
+    "verified_command": ".cache/runtime/llama-b12248/llama-server -m .cache/models/e4b/gemma-4-E4B-it-Q4_K_M.gguf --alias care-gemma4-e4b --host 127.0.0.1 -c 8192 -np 1 -t 2 -tb 2 --cache-ram 0 --jinja --reasoning off --reasoning-budget 0 --no-webui --log-disable --port 4320",
+    "verified_cwd": "/Users/slolakap/Documents/ChatGPT/Hackathon/care-assistant",
+    "model_health": {
+      "status": "ok"
+    },
+    "lora_adapters": [],
+    "web_health": {
+      "status": "ok",
+      "version": "0.3.0",
+      "model": {
+        "mode": "llm",
+        "model": "care-gemma4-e4b",
+        "configured": true,
+        "tool_mode": "batch",
+        "last_success_at": "2026-11-14T22:18:35.237Z",
+        "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference."
+      },
+      "storage": "memory_only_30_minutes"
+    },
+    "evaluation_port_4324_closed": true,
+    "frozen_source_and_test_files_match": true,
+    "verified_files": 16,
+    "default_model_promoted": false,
+    "benchmark_report": "finetuning/reports/sequential-benchmark.json"
+  },
+  "no_test_driven_retuning": true
+}

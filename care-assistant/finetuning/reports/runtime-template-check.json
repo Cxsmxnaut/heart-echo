@@ -1,0 +1,544 @@
+{
+  "checked_at": "2026-11-14T22:41:07.599Z",
+  "scope": "Training split only; llama.cpp /apply-template + /tokenize. No model generation, training or HF tokenizer download. This does not prove HF training-template parity.",
+  "cases": [
+    {
+      "id": "train_direct_primary_search_01:intent",
+      "prompt_token_count": 262,
+      "completion_budget": 48,
+      "token_upper_bound": 310,
+      "has_native_turn": true,
+      "prompt_sha256": "707b8ce335272d2b40b461aae072c4c11b0e3c8503e997dea96844b27a484d20"
+    },
+    {
+      "id": "train_direct_primary_search_01:fields",
+      "prompt_token_count": 344,
+      "completion_budget": 480,
+      "token_upper_bound": 824,
+      "has_native_turn": true,
+      "prompt_sha256": "9489e97e5eacb748bedbb820d1e1652fe3405fbd90c439255d12958bbc0ff8ca"
+    },
+    {
+      "id": "train_direct_primary_search_02:intent",
+      "prompt_token_count": 261,
+      "completion_budget": 48,
+      "token_upper_bound": 309,
+      "has_native_turn": true,
+      "prompt_sha256": "c80846fb2cc7594d657f3db8a72f29289c1a0bfd85aa4ccfde3c36b355eda093"
+    },
+    {
+      "id": "train_direct_primary_search_02:fields",
+      "prompt_token_count": 343,
+      "completion_budget": 480,
+      "token_upper_bound": 823,
+      "has_native_turn": true,
+      "prompt_sha256": "8caa11bda93f538790f4fbeb52f7036f25456de94dc8de222094a6cb37b3facc"
+    },
+    {
+      "id": "train_payer_label_fragment_01:intent",
+      "prompt_token_count": 255,
+      "completion_budget": 48,
+      "token_upper_bound": 303,
+      "has_native_turn": true,
+      "prompt_sha256": "9e52c6bf6d298a516853633fa419b5add09facc611d7e5c020fbfd80698b16e2"
+    },
+    {
+      "id": "train_payer_label_fragment_01:fields",
+      "prompt_token_count": 337,
+      "completion_budget": 480,
+      "token_upper_bound": 817,
+      "has_native_turn": true,
+      "prompt_sha256": "9071ee1f9bfedd527a803a998193027046cf2580a49bd99bb5b45cfac54e6eb8"
+    },
+    {
+      "id": "train_plan_label_fragment_01:intent",
+      "prompt_token_count": 255,
+      "completion_budget": 48,
+      "token_upper_bound": 303,
+      "has_native_turn": true,
+      "prompt_sha256": "1ffc24902855971305c0e8071e51dcad356241b7b642fa2616a327f2cdee6e7a"
+    },
+    {
+      "id": "train_plan_label_fragment_01:fields",
+      "prompt_token_count": 337,
+      "completion_budget": 480,
+      "token_upper_bound": 817,
+      "has_native_turn": true,
+      "prompt_sha256": "6dd81530d39aec5a42fa9f0d8a2fba5adced80eddd8cfcce3554c9ad86df2710"
+    },
+    {
+      "id": "train_network_label_fragment_01:intent",
+      "prompt_token_count": 255,
+      "completion_budget": 48,
+      "token_upper_bound": 303,
+      "has_native_turn": true,
+      "prompt_sha256": "c2ee1ab8bf07829a1f593e58aba6644ce7012b430cc99e758e2894d47609eb54"
+    },
+    {
+      "id": "train_network_label_fragment_01:fields",
+      "prompt_token_count": 337,
+      "completion_budget": 480,
+      "token_upper_bound": 817,
+      "has_native_turn": true,
+      "prompt_sha256": "0b813b827ea5b8a73376f7c2a756c674f28fbb16e5a0640233194441d4d9cd98"
+    },
+    {
+      "id": "train_named_unknown_statement_01:intent",
+      "prompt_token_count": 254,
+      "completion_budget": 48,
+      "token_upper_bound": 302,
+      "has_native_turn": true,
+      "prompt_sha256": "dbe78e147d470161a73482d470cbe01928b8a33f58135119956be26f7591e75d"
+    },
+    {
+      "id": "train_named_unknown_statement_01:fields",
+      "prompt_token_count": 336,
+      "completion_budget": 480,
+      "token_upper_bound": 816,
+      "has_native_turn": true,
+      "prompt_sha256": "a4abfdcda1917255fe0c1094b5c022f7059e298920a49a2bb94747399db86fc0"
+    },
+    {
+      "id": "train_named_unknown_statement_02:intent",
+      "prompt_token_count": 253,
+      "completion_budget": 48,
+      "token_upper_bound": 301,
+      "has_native_turn": true,
+      "prompt_sha256": "945f76ba8187cbea420c8b0583cecb8af09dfb882f7d039156f3c7a2056962ba"
+    },
+    {
+      "id": "train_named_unknown_statement_02:fields",
+      "prompt_token_count": 335,
+      "completion_budget": 480,
+      "token_upper_bound": 815,
+      "has_native_turn": true,
+      "prompt_sha256": "f8708968f17657954b6cc916df517709dbe8f6fe1ff34c77c833f86cba3872f3"
+    },
+    {
+      "id": "train_remove_named_command_01:intent",
+      "prompt_token_count": 253,
+      "completion_budget": 48,
+      "token_upper_bound": 301,
+      "has_native_turn": true,
+      "prompt_sha256": "35bd6796a019871b1d759e14898f7146d8c64068c33a2055a3de413ffc22a1ce"
+    },
+    {
+      "id": "train_remove_named_command_01:fields",
+      "prompt_token_count": 335,
+      "completion_budget": 480,
+      "token_upper_bound": 815,
+      "has_native_turn": true,
+      "prompt_sha256": "b525d3177369e08a70e8207af7d97544a2dde9d4b7882e1c6467e6b7242c2f3e"
+    },
+    {
+      "id": "train_remove_named_command_02:intent",
+      "prompt_token_count": 252,
+      "completion_budget": 48,
+      "token_upper_bound": 300,
+      "has_native_turn": true,
+      "prompt_sha256": "11bc6ef8d4bdab5ada38b013379043d2bff581fd11c56fbdcfdbd02c9bd29be7"
+    },
+    {
+      "id": "train_remove_named_command_02:fields",
+      "prompt_token_count": 334,
+      "completion_budget": 480,
+      "token_upper_bound": 814,
+      "has_native_turn": true,
+      "prompt_sha256": "e86794c56417bb1eae1b9d091b90b25feb8445caa0bf74f8c49a5d82542d3fb1"
+    },
+    {
+      "id": "train_year_label_fragment_01:intent",
+      "prompt_token_count": 256,
+      "completion_budget": 48,
+      "token_upper_bound": 304,
+      "has_native_turn": true,
+      "prompt_sha256": "97b8fd5d5c029540890e157ba08b4bb53669227b3c968b904da6e740383f10e9"
+    },
+    {
+      "id": "train_year_label_fragment_01:fields",
+      "prompt_token_count": 338,
+      "completion_budget": 480,
+      "token_upper_bound": 818,
+      "has_native_turn": true,
+      "prompt_sha256": "addb5a9c8e32e223947af8f2bd5c32245a10dba6d923e41e5854623662fb46de"
+    },
+    {
+      "id": "train_two_zip_unresolved_01:intent",
+      "prompt_token_count": 274,
+      "completion_budget": 48,
+      "token_upper_bound": 322,
+      "has_native_turn": true,
+      "prompt_sha256": "2b0572e323d0284ccf87b590ea8f35aec3f0dc9e5e882d8b5616d0738514620e"
+    },
+    {
+      "id": "train_two_zip_unresolved_01:fields",
+      "prompt_token_count": 356,
+      "completion_budget": 480,
+      "token_upper_bound": 836,
+      "has_native_turn": true,
+      "prompt_sha256": "6dd089095524220bb08f70c98b2275cb5d8e0052591fa61dd96c9d3252232903"
+    },
+    {
+      "id": "train_replace_zip_command_01:intent",
+      "prompt_token_count": 266,
+      "completion_budget": 48,
+      "token_upper_bound": 314,
+      "has_native_turn": true,
+      "prompt_sha256": "a373f805240a0f7df410054f9e7beea09f77f19fce314703f4ce15b89bd1a4c3"
+    },
+    {
+      "id": "train_replace_zip_command_01:fields",
+      "prompt_token_count": 348,
+      "completion_budget": 480,
+      "token_upper_bound": 828,
+      "has_native_turn": true,
+      "prompt_sha256": "c2228bb579d260ba952fc2a099237c5aded1d897fb64f02814e3307387d04df3"
+    },
+    {
+      "id": "train_uninsured_declaration_01:intent",
+      "prompt_token_count": 263,
+      "completion_budget": 48,
+      "token_upper_bound": 311,
+      "has_native_turn": true,
+      "prompt_sha256": "b9bdb62723d64b26c27fd7dc0fa828dd4aa45b521c4fec347506966042a308b1"
+    },
+    {
+      "id": "train_uninsured_declaration_01:fields",
+      "prompt_token_count": 345,
+      "completion_budget": 480,
+      "token_upper_bound": 825,
+      "has_native_turn": true,
+      "prompt_sha256": "f09810ef894f89f516990195035cda38f05f2844d06b0bd7551be0462992011a"
+    },
+    {
+      "id": "train_coverage_decline_01:intent",
+      "prompt_token_count": 257,
+      "completion_budget": 48,
+      "token_upper_bound": 305,
+      "has_native_turn": true,
+      "prompt_sha256": "9243e512f1bccd017c6f8825c6439aca3a360d8b9b970674982f9cecd6c32720"
+    },
+    {
+      "id": "train_coverage_decline_01:fields",
+      "prompt_token_count": 339,
+      "completion_budget": 480,
+      "token_upper_bound": 819,
+      "has_native_turn": true,
+      "prompt_sha256": "dfa13ce58b98b5c6ce140379f07b7404a5f8b08f82332a5d6699fd8800f73eee"
+    },
+    {
+      "id": "train_budget_direct_01:intent",
+      "prompt_token_count": 255,
+      "completion_budget": 48,
+      "token_upper_bound": 303,
+      "has_native_turn": true,
+      "prompt_sha256": "d24b4a63191cf4ad6025f382edcdea39558ad4ad029a303f2d69d846f08533ad"
+    },
+    {
+      "id": "train_budget_direct_01:fields",
+      "prompt_token_count": 337,
+      "completion_budget": 480,
+      "token_upper_bound": 817,
+      "has_native_turn": true,
+      "prompt_sha256": "24db1f8bd16df5c84200f81b78139b6c46e0012d373ec262ce1f536a1df9cba3"
+    },
+    {
+      "id": "train_budget_direct_02:intent",
+      "prompt_token_count": 260,
+      "completion_budget": 48,
+      "token_upper_bound": 308,
+      "has_native_turn": true,
+      "prompt_sha256": "d299319d59ce5819f8fc78e775faa4f5d700b79456a9e0378d905e8659a16147"
+    },
+    {
+      "id": "train_budget_direct_02:fields",
+      "prompt_token_count": 342,
+      "completion_budget": 480,
+      "token_upper_bound": 822,
+      "has_native_turn": true,
+      "prompt_sha256": "519817b6dbecf2c5b6e5c90076af59643d756afebd6755a3e4665b183d1da57d"
+    },
+    {
+      "id": "train_saved_result_reason_01:intent",
+      "prompt_token_count": 256,
+      "completion_budget": 48,
+      "token_upper_bound": 304,
+      "has_native_turn": true,
+      "prompt_sha256": "28115113f8abcd2fd5fb67ece55ab66d0874bb19ed52fc0abb847945a6875415"
+    },
+    {
+      "id": "train_saved_result_reason_01:fields",
+      "prompt_token_count": 338,
+      "completion_budget": 480,
+      "token_upper_bound": 818,
+      "has_native_turn": true,
+      "prompt_sha256": "aff816811a3abf27b2a1b5bdef66712f63d8406a16bc1039309c8c6126ae4963"
+    },
+    {
+      "id": "train_timing_health_meaning_01:intent",
+      "prompt_token_count": 258,
+      "completion_budget": 48,
+      "token_upper_bound": 306,
+      "has_native_turn": true,
+      "prompt_sha256": "6f0338697e7680454cdc56bcd61c7a4c17546ea576df28c6fa76d9c94ce9d04e"
+    },
+    {
+      "id": "train_timing_health_meaning_01:fields",
+      "prompt_token_count": 340,
+      "completion_budget": 480,
+      "token_upper_bound": 820,
+      "has_native_turn": true,
+      "prompt_sha256": "b8efe1bdcdb82d9c260e0237a37dcdaef2a01b87b7132adadc5cadd22d6eae61"
+    },
+    {
+      "id": "train_unclear_health_meaning_01:intent",
+      "prompt_token_count": 259,
+      "completion_budget": 48,
+      "token_upper_bound": 307,
+      "has_native_turn": true,
+      "prompt_sha256": "d908585bb8b5498a85744521ee06c022502484a1103d03f746745f6092a5530d"
+    },
+    {
+      "id": "train_unclear_health_meaning_01:fields",
+      "prompt_token_count": 341,
+      "completion_budget": 480,
+      "token_upper_bound": 821,
+      "has_native_turn": true,
+      "prompt_sha256": "508cb5e0e026f5e071b14181ee6846830deff0978dce14efa3bad7f9d97013aa"
+    },
+    {
+      "id": "train_retry_instruction_01:intent",
+      "prompt_token_count": 260,
+      "completion_budget": 48,
+      "token_upper_bound": 308,
+      "has_native_turn": true,
+      "prompt_sha256": "51166f514cfd33f06436c0b7a4dd38e0c140c9e884582289b0b1f67d355d9da7"
+    },
+    {
+      "id": "train_retry_instruction_01:fields",
+      "prompt_token_count": 342,
+      "completion_budget": 480,
+      "token_upper_bound": 822,
+      "has_native_turn": true,
+      "prompt_sha256": "cc253b1352469a47c8aef446acd70d434d5fd084e8b6035f3dea9724d16f65a5"
+    },
+    {
+      "id": "train_watch_dependency_01:intent",
+      "prompt_token_count": 258,
+      "completion_budget": 48,
+      "token_upper_bound": 306,
+      "has_native_turn": true,
+      "prompt_sha256": "a9694faf1bdef586c00696dfcc038fd8eadfd834f364e1106888aa128830b957"
+    },
+    {
+      "id": "train_watch_dependency_01:fields",
+      "prompt_token_count": 340,
+      "completion_budget": 480,
+      "token_upper_bound": 820,
+      "has_native_turn": true,
+      "prompt_sha256": "d4cda8d5b25a8b8fcee1d7bb63d37f8fe14246a169e0331a404c61ca5ba18a54"
+    },
+    {
+      "id": "train_storage_question_01:intent",
+      "prompt_token_count": 261,
+      "completion_budget": 48,
+      "token_upper_bound": 309,
+      "has_native_turn": true,
+      "prompt_sha256": "b3d560344ade05eb81f48336f5f7b8afc7a511cdf2d82999286f4edf60367c88"
+    },
+    {
+      "id": "train_storage_question_01:fields",
+      "prompt_token_count": 343,
+      "completion_budget": 480,
+      "token_upper_bound": 823,
+      "has_native_turn": true,
+      "prompt_sha256": "36d051564e5169be18d49f406fe9aeff5d42d94592246b8fb2fcd4629d5969c6"
+    },
+    {
+      "id": "train_greeting_01:intent",
+      "prompt_token_count": 251,
+      "completion_budget": 48,
+      "token_upper_bound": 299,
+      "has_native_turn": true,
+      "prompt_sha256": "b7cb1b52c901ae1b2c1a460412362fe97eb78062d97db9e5aa20302233403594"
+    },
+    {
+      "id": "train_greeting_01:fields",
+      "prompt_token_count": 333,
+      "completion_budget": 480,
+      "token_upper_bound": 813,
+      "has_native_turn": true,
+      "prompt_sha256": "1a8315c4df266a68afb3b3b72c7e54c3051389d05825cb2644eb8587283d4f89"
+    },
+    {
+      "id": "train_unrelated_topic_01:intent",
+      "prompt_token_count": 257,
+      "completion_budget": 48,
+      "token_upper_bound": 305,
+      "has_native_turn": true,
+      "prompt_sha256": "c287e24c5c07304b1aca546a0bc0baab2d22965a34d1a474d2d194aceac97eee"
+    },
+    {
+      "id": "train_unrelated_topic_01:fields",
+      "prompt_token_count": 339,
+      "completion_budget": 480,
+      "token_upper_bound": 819,
+      "has_native_turn": true,
+      "prompt_sha256": "056ce57ebf018bc66edb42aea40b96a130b556854618ba14b3fdd6ceede8164e"
+    },
+    {
+      "id": "train_injection_diagnosis_01:intent",
+      "prompt_token_count": 260,
+      "completion_budget": 48,
+      "token_upper_bound": 308,
+      "has_native_turn": true,
+      "prompt_sha256": "c4345242eac0c0e69eb50b3c5f88311b5d6d43c946d49a887f61c3de83754f94"
+    },
+    {
+      "id": "train_injection_diagnosis_01:fields",
+      "prompt_token_count": 342,
+      "completion_budget": 480,
+      "token_upper_bound": 822,
+      "has_native_turn": true,
+      "prompt_sha256": "d7d34b6c6875695e991c6a184444be4f05b89bfafd8184901ab5b0e8a991db8d"
+    },
+    {
+      "id": "train_injection_fabricate_fields_01:intent",
+      "prompt_token_count": 259,
+      "completion_budget": 48,
+      "token_upper_bound": 307,
+      "has_native_turn": true,
+      "prompt_sha256": "8e65e039a1536223e776e497d06fcd0a1390ee2308094eb57bd44ea11ea00602"
+    },
+    {
+      "id": "train_injection_fabricate_fields_01:fields",
+      "prompt_token_count": 341,
+      "completion_budget": 480,
+      "token_upper_bound": 821,
+      "has_native_turn": true,
+      "prompt_sha256": "d3aa45ac240d9c0476a8566e4e91545887f32267e6f5236ee1c1f435718a25e5"
+    },
+    {
+      "id": "train_explicit_category_01:intent",
+      "prompt_token_count": 261,
+      "completion_budget": 48,
+      "token_upper_bound": 309,
+      "has_native_turn": true,
+      "prompt_sha256": "397b46a5c5688e9f4d1808ad6039fb44ce8e7f1e492718394a8f3d79f98f2ede"
+    },
+    {
+      "id": "train_explicit_category_01:fields",
+      "prompt_token_count": 343,
+      "completion_budget": 480,
+      "token_upper_bound": 823,
+      "has_native_turn": true,
+      "prompt_sha256": "bfc5a061f352b65421ad14743a4f4ae1993e448962419628fd541c5c579ce16f"
+    },
+    {
+      "id": "train_negated_category_01:intent",
+      "prompt_token_count": 264,
+      "completion_budget": 48,
+      "token_upper_bound": 312,
+      "has_native_turn": true,
+      "prompt_sha256": "0cbf37a76e7123b17cd787ef555d52c0078ef2c49156ee65c5810c228fad37ab"
+    },
+    {
+      "id": "train_negated_category_01:fields",
+      "prompt_token_count": 346,
+      "completion_budget": 480,
+      "token_upper_bound": 826,
+      "has_native_turn": true,
+      "prompt_sha256": "73bcdc1076186cd3bd59e68ae83e69d054357619e123a9f6519db839cded6190"
+    },
+    {
+      "id": "train_explicit_date_01:intent",
+      "prompt_token_count": 262,
+      "completion_budget": 48,
+      "token_upper_bound": 310,
+      "has_native_turn": true,
+      "prompt_sha256": "59a7b5bb3e02f5c65db9bcc571de1dbaa6b750603c4a5f0b3626126881652590"
+    },
+    {
+      "id": "train_explicit_date_01:fields",
+      "prompt_token_count": 344,
+      "completion_budget": 480,
+      "token_upper_bound": 824,
+      "has_native_turn": true,
+      "prompt_sha256": "4a212c5f59ed70e41b0c90ca2a95a7a1caec297e27fa11337b27fa82657f4355"
+    },
+    {
+      "id": "train_public_identifier_01:intent",
+      "prompt_token_count": 266,
+      "completion_budget": 48,
+      "token_upper_bound": 314,
+      "has_native_turn": true,
+      "prompt_sha256": "c19ff3c70b0fd954973a2c912f68fe55ce04bf16d4362eb62d39e9ed973eb3ea"
+    },
+    {
+      "id": "train_public_identifier_01:fields",
+      "prompt_token_count": 348,
+      "completion_budget": 480,
+      "token_upper_bound": 828,
+      "has_native_turn": true,
+      "prompt_sha256": "05e99c5c6eae062317d82d650352c48397cfed67fb832024d7c2198d394a24d9"
+    },
+    {
+      "id": "train_tool_generic_both:tools",
+      "prompt_token_count": 498,
+      "completion_budget": 480,
+      "token_upper_bound": 978,
+      "has_native_turn": true,
+      "has_native_tool_declaration": true,
+      "prompt_sha256": "7e3b1a50297ba34c374e8b7231681f3a44c5c53c97e6cff2e78ba8abf8c3ef8a"
+    },
+    {
+      "id": "train_tool_budget_only:tools",
+      "prompt_token_count": 387,
+      "completion_budget": 480,
+      "token_upper_bound": 867,
+      "has_native_turn": true,
+      "has_native_tool_declaration": true,
+      "prompt_sha256": "fd3a4441b846842f03ff099a30138edb5d7b3b82e6f677c340d9ef34a0a95550"
+    },
+    {
+      "id": "train_tool_stored_affordable:tools",
+      "prompt_token_count": 385,
+      "completion_budget": 480,
+      "token_upper_bound": 865,
+      "has_native_turn": true,
+      "has_native_tool_declaration": true,
+      "prompt_sha256": "971fde44f78c6d3b3cef6f5879fbdac3f420ff1c26ff16a567b255281596d860"
+    },
+    {
+      "id": "train_tool_bound_insurance:tools",
+      "prompt_token_count": 657,
+      "completion_budget": 480,
+      "token_upper_bound": 1137,
+      "has_native_turn": true,
+      "has_native_tool_declaration": true,
+      "prompt_sha256": "a3e3bfc9a3d92d10e1d82bf139ce9e02e12ed4cd13fa9c3cc77799d4340e02c6"
+    },
+    {
+      "id": "train_tool_product_retry:tools",
+      "prompt_token_count": 372,
+      "completion_budget": 480,
+      "token_upper_bound": 852,
+      "has_native_turn": true,
+      "has_native_tool_declaration": true,
+      "prompt_sha256": "c27384f5f2e954755dce09dd596ff4df34908b3e9220f2758f752c0b4c296cc0"
+    },
+    {
+      "id": "train_tool_injection_scan:tools",
+      "prompt_token_count": 375,
+      "completion_budget": 480,
+      "token_upper_bound": 855,
+      "has_native_turn": true,
+      "has_native_tool_declaration": true,
+      "prompt_sha256": "aa0a7efada0da8f2016e9f53889cea83473680efd100f656ff657903b23c5f26"
+    }
+  ],
+  "target_rendering": "Not proven: this llama.cpp apply-template endpoint rejects continuing an assistant tool-call turn. HF full-target rendering and exact completion masking remain gated pre-training checks. Initial full-target API probes returned HTTP 400; prompts below use the supported generation form.",
+  "max_prompt_tokens": 657,
+  "max_tokens": 1137,
+  "passed": true
+}

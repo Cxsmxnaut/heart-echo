@@ -1,0 +1,1178 @@
+[
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 1,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 2,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 3,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 4,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 5,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.999372414383693,
+    "periodicity" : 0.99405699432481953,
+    "rate" : 44100,
+    "second" : 6,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.999370484424603,
+    "periodicity" : 0.99598878961412307,
+    "rate" : 44100,
+    "second" : 7,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.999164898860791,
+    "periodicity" : 0.99154789445094627,
+    "rate" : 44100,
+    "second" : 8,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.999619099448331,
+    "periodicity" : 0.9965998124662403,
+    "rate" : 44100,
+    "second" : 9,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.999767247924453,
+    "periodicity" : 0.99606630131861873,
+    "rate" : 44100,
+    "second" : 10,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.9982906684738,
+    "periodicity" : 0.99739348583117549,
+    "rate" : 44100,
+    "second" : 11,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.998264952866265,
+    "periodicity" : 0.99154685773800788,
+    "rate" : 44100,
+    "second" : 12,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 1,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 2,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 3,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 4,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 5,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.006176078167755,
+    "periodicity" : 0.99355188342364487,
+    "rate" : 44100,
+    "second" : 6,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.005679435654287,
+    "periodicity" : 0.99466929813100946,
+    "rate" : 44100,
+    "second" : 7,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.005400373225257,
+    "periodicity" : 0.99545716578278287,
+    "rate" : 44100,
+    "second" : 8,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.004609597821712,
+    "periodicity" : 0.99549007115799348,
+    "rate" : 44100,
+    "second" : 9,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.004346723726613,
+    "periodicity" : 0.99546692958412686,
+    "rate" : 44100,
+    "second" : 10,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.004111413447696,
+    "periodicity" : 0.99547927198703245,
+    "rate" : 44100,
+    "second" : 11,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.004005365214411,
+    "periodicity" : 0.99540928042046595,
+    "rate" : 44100,
+    "second" : 12,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 1,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 2,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 3,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 4,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 5,
+    "target" : 72
+  },
+  {
+    "bpm" : 72.001828498830619,
+    "periodicity" : 0.99681807299313896,
+    "rate" : 44100,
+    "second" : 6,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.999110787375741,
+    "periodicity" : 0.9968355162662621,
+    "rate" : 44100,
+    "second" : 7,
+    "target" : 72
+  },
+  {
+    "bpm" : 72.000291016612977,
+    "periodicity" : 0.996866752870749,
+    "rate" : 44100,
+    "second" : 8,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.998467395442873,
+    "periodicity" : 0.99713448342950806,
+    "rate" : 44100,
+    "second" : 9,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.998391566936618,
+    "periodicity" : 0.9961738970533891,
+    "rate" : 44100,
+    "second" : 10,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.998326912629125,
+    "periodicity" : 0.99808321866397287,
+    "rate" : 44100,
+    "second" : 11,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.996979561766082,
+    "periodicity" : 0.99756254543389167,
+    "rate" : 44100,
+    "second" : 12,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 1,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 2,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 3,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 4,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 5,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.008211957498105,
+    "periodicity" : 0.9956588954258776,
+    "rate" : 44100,
+    "second" : 6,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.009914515411253,
+    "periodicity" : 0.9970331303910358,
+    "rate" : 44100,
+    "second" : 7,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.008494756713304,
+    "periodicity" : 0.99633104533586203,
+    "rate" : 44100,
+    "second" : 8,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.008222857430383,
+    "periodicity" : 0.99742931100434329,
+    "rate" : 44100,
+    "second" : 9,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.00652480905346,
+    "periodicity" : 0.99634423794104221,
+    "rate" : 44100,
+    "second" : 10,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.007411788055578,
+    "periodicity" : 0.99743048629367248,
+    "rate" : 44100,
+    "second" : 11,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.006213718313489,
+    "periodicity" : 0.9963124751598097,
+    "rate" : 44100,
+    "second" : 12,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 1,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 2,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 3,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 4,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 5,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.95827609853652,
+    "periodicity" : 0.99830178065394382,
+    "rate" : 44100,
+    "second" : 6,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96128320318675,
+    "periodicity" : 0.99854180778566382,
+    "rate" : 44100,
+    "second" : 7,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96470725663735,
+    "periodicity" : 0.9986853488715931,
+    "rate" : 44100,
+    "second" : 8,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96626355242803,
+    "periodicity" : 0.99867734805584463,
+    "rate" : 44100,
+    "second" : 9,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96660120963332,
+    "periodicity" : 0.99868367045780693,
+    "rate" : 44100,
+    "second" : 10,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96698857754866,
+    "periodicity" : 0.99866613190198961,
+    "rate" : 44100,
+    "second" : 11,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96729602257128,
+    "periodicity" : 0.99872166803440221,
+    "rate" : 44100,
+    "second" : 12,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 1,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 2,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 3,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 4,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 5,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01830813567227,
+    "periodicity" : 0.99906181619106627,
+    "rate" : 44100,
+    "second" : 6,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01752418891289,
+    "periodicity" : 0.99946864464788632,
+    "rate" : 44100,
+    "second" : 7,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01523999527026,
+    "periodicity" : 0.9992700763591128,
+    "rate" : 44100,
+    "second" : 8,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01297741904961,
+    "periodicity" : 0.99970743726730238,
+    "rate" : 44100,
+    "second" : 9,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01127127498916,
+    "periodicity" : 0.99924655606946056,
+    "rate" : 44100,
+    "second" : 10,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01134680103712,
+    "periodicity" : 0.99972455311427599,
+    "rate" : 44100,
+    "second" : 11,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01140544705947,
+    "periodicity" : 0.99927000781305764,
+    "rate" : 44100,
+    "second" : 12,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 1,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 2,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 3,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 4,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 44100,
+    "second" : 5,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01008320955989,
+    "periodicity" : 0.99510468862744428,
+    "rate" : 44100,
+    "second" : 6,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01127955042742,
+    "periodicity" : 0.99511388009709578,
+    "rate" : 44100,
+    "second" : 7,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01242458886915,
+    "periodicity" : 0.9951578302644406,
+    "rate" : 44100,
+    "second" : 8,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01364060788922,
+    "periodicity" : 0.99538195716589595,
+    "rate" : 44100,
+    "second" : 9,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01342719832388,
+    "periodicity" : 0.99540570372384196,
+    "rate" : 44100,
+    "second" : 10,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01240029585793,
+    "periodicity" : 0.99524404179160586,
+    "rate" : 44100,
+    "second" : 11,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.00736375811374,
+    "periodicity" : 0.99540175363786965,
+    "rate" : 44100,
+    "second" : 12,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 1,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 2,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 3,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 4,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 5,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.998971540836386,
+    "periodicity" : 0.99406167176054727,
+    "rate" : 48000,
+    "second" : 6,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.99894427394527,
+    "periodicity" : 0.99600574332381464,
+    "rate" : 48000,
+    "second" : 7,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.998828594167961,
+    "periodicity" : 0.99151381256507842,
+    "rate" : 48000,
+    "second" : 8,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.999553556450863,
+    "periodicity" : 0.99661622859381838,
+    "rate" : 48000,
+    "second" : 9,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.999806400855526,
+    "periodicity" : 0.99605311244492389,
+    "rate" : 48000,
+    "second" : 10,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.998320607299434,
+    "periodicity" : 0.9974172359801351,
+    "rate" : 48000,
+    "second" : 11,
+    "target" : 45
+  },
+  {
+    "bpm" : 44.998329352082365,
+    "periodicity" : 0.99152486014845786,
+    "rate" : 48000,
+    "second" : 12,
+    "target" : 45
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 1,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 2,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 3,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 4,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 5,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.006539548154002,
+    "periodicity" : 0.9935816679867423,
+    "rate" : 48000,
+    "second" : 6,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.005976700217914,
+    "periodicity" : 0.99462213511374253,
+    "rate" : 48000,
+    "second" : 7,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.00541973798245,
+    "periodicity" : 0.9954538764676939,
+    "rate" : 48000,
+    "second" : 8,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.004901703538103,
+    "periodicity" : 0.99544403597150954,
+    "rate" : 48000,
+    "second" : 9,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.004514762532665,
+    "periodicity" : 0.99546383660218163,
+    "rate" : 48000,
+    "second" : 10,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.004325759288378,
+    "periodicity" : 0.99548509678618369,
+    "rate" : 48000,
+    "second" : 11,
+    "target" : 60
+  },
+  {
+    "bpm" : 60.003967088991757,
+    "periodicity" : 0.99547066472321055,
+    "rate" : 48000,
+    "second" : 12,
+    "target" : 60
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 1,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 2,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 3,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 4,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 5,
+    "target" : 72
+  },
+  {
+    "bpm" : 72.001196977035619,
+    "periodicity" : 0.9968173479522332,
+    "rate" : 48000,
+    "second" : 6,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.99867606204927,
+    "periodicity" : 0.99682509160334765,
+    "rate" : 48000,
+    "second" : 7,
+    "target" : 72
+  },
+  {
+    "bpm" : 72.000128883444688,
+    "periodicity" : 0.9968410668606259,
+    "rate" : 48000,
+    "second" : 8,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.998462030899844,
+    "periodicity" : 0.99712081485510307,
+    "rate" : 48000,
+    "second" : 9,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.998149104145597,
+    "periodicity" : 0.99614579945586335,
+    "rate" : 48000,
+    "second" : 10,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.997962007803949,
+    "periodicity" : 0.99808818914362429,
+    "rate" : 48000,
+    "second" : 11,
+    "target" : 72
+  },
+  {
+    "bpm" : 71.996795052265526,
+    "periodicity" : 0.99757206048527236,
+    "rate" : 48000,
+    "second" : 12,
+    "target" : 72
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 1,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 2,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 3,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 4,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 5,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.00713754606906,
+    "periodicity" : 0.99569534305134688,
+    "rate" : 48000,
+    "second" : 6,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.008830243916805,
+    "periodicity" : 0.99702774245674231,
+    "rate" : 48000,
+    "second" : 7,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.007589071432548,
+    "periodicity" : 0.9963537735515775,
+    "rate" : 48000,
+    "second" : 8,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.008081593131806,
+    "periodicity" : 0.99741384440392944,
+    "rate" : 48000,
+    "second" : 9,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.006955869037867,
+    "periodicity" : 0.99635755513353041,
+    "rate" : 48000,
+    "second" : 10,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.007543592809157,
+    "periodicity" : 0.9974209838511946,
+    "rate" : 48000,
+    "second" : 11,
+    "target" : 90
+  },
+  {
+    "bpm" : 90.006270720766935,
+    "periodicity" : 0.9963170809788382,
+    "rate" : 48000,
+    "second" : 12,
+    "target" : 90
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 1,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 2,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 3,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 4,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 5,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.95885926411333,
+    "periodicity" : 0.9982852558849088,
+    "rate" : 48000,
+    "second" : 6,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.9612447857952,
+    "periodicity" : 0.99855685340419742,
+    "rate" : 48000,
+    "second" : 7,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96491610685658,
+    "periodicity" : 0.99866909347725619,
+    "rate" : 48000,
+    "second" : 8,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96645847328483,
+    "periodicity" : 0.99868988291008898,
+    "rate" : 48000,
+    "second" : 9,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96725625098955,
+    "periodicity" : 0.99866949204794808,
+    "rate" : 48000,
+    "second" : 10,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96770065581836,
+    "periodicity" : 0.99867450532674029,
+    "rate" : 48000,
+    "second" : 11,
+    "target" : 120
+  },
+  {
+    "bpm" : 119.96745034215371,
+    "periodicity" : 0.99867065851583281,
+    "rate" : 48000,
+    "second" : 12,
+    "target" : 120
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 1,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 2,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 3,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 4,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 5,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01682934441519,
+    "periodicity" : 0.99904295429835654,
+    "rate" : 48000,
+    "second" : 6,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01663797185083,
+    "periodicity" : 0.99944956908947569,
+    "rate" : 48000,
+    "second" : 7,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01488246993515,
+    "periodicity" : 0.99926342051326966,
+    "rate" : 48000,
+    "second" : 8,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.013515193621,
+    "periodicity" : 0.99970469697166986,
+    "rate" : 48000,
+    "second" : 9,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01261878000594,
+    "periodicity" : 0.99927186444104688,
+    "rate" : 48000,
+    "second" : 10,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01212887228718,
+    "periodicity" : 0.99971214642853556,
+    "rate" : 48000,
+    "second" : 11,
+    "target" : 150
+  },
+  {
+    "bpm" : 150.01138369427332,
+    "periodicity" : 0.99925899526601691,
+    "rate" : 48000,
+    "second" : 12,
+    "target" : 150
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 1,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 2,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 3,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 4,
+    "target" : 175
+  },
+  {
+    "bpm" : null,
+    "periodicity" : 0,
+    "rate" : 48000,
+    "second" : 5,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.0080229374463,
+    "periodicity" : 0.99506866417324413,
+    "rate" : 48000,
+    "second" : 6,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.00966079035004,
+    "periodicity" : 0.99508963942330908,
+    "rate" : 48000,
+    "second" : 7,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01191710803019,
+    "periodicity" : 0.99511584347463478,
+    "rate" : 48000,
+    "second" : 8,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.0140175854128,
+    "periodicity" : 0.99533472548149304,
+    "rate" : 48000,
+    "second" : 9,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01363554406151,
+    "periodicity" : 0.99538328615015315,
+    "rate" : 48000,
+    "second" : 10,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.01362539381429,
+    "periodicity" : 0.99518909033548364,
+    "rate" : 48000,
+    "second" : 11,
+    "target" : 175
+  },
+  {
+    "bpm" : 175.00789704226833,
+    "periodicity" : 0.99538450370414444,
+    "rate" : 48000,
+    "second" : 12,
+    "target" : 175
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "frozen_at": "2026-11-14T21:22:55.964Z",
+  "model": "Gemma 4 E2B instruction, Unsloth Q4_K_M, untuned",
+  "interface": "Flat grounded extraction; constrained tool selection; exact insurance arguments server-bound before validated MCP execution",
+  "hashes": {
+    "src/model.js": "f22597ee35c148b0b73b4827efb282edb72f94bd362a230fcd9f5a9176ed3868",
+    "src/service.js": "6c0c310cb67f5ffe48a8f83492edf134c1597ab18f381d27aeb4f571d2d35298",
+    "src/conversation.js": "9e2903186ea29055296e6376b650f444cdaab3c64bea572b364f0e7bce5bdbe1",
+    "src/schema.js": "18a69c98c76db289ec0862a1b68479e51ebc8fb049f7f80ffe212ae064e60887",
+    "src/knowledge.js": "13c29d2f9ac2dd60870ffa84ae1891c08282639243c23e9b2836372b49e09ada",
+    "src/tools.js": "3594256d957458c2946af272b0c6629b56a80cf495ab3444e938bc2070fc3266",
+    "src/tool-client.js": "292de3af1442c4f282fb21bdb4fb6b6a1997328cdb84377b358aedbc73dcb336",
+    "src/mcp.js": "0a28cac294acfdc78a6c1cc7099ae7968cc1c6cb44f9bf59febb6e97338a1ef2",
+    "src/directories.js": "260a62d85880933cfdac78d5d0bf54439b73c59ac915b4d2f84a57697e224d23",
+    "src/healthplan.js": "f15f23b8feb101ac05953930b097b22a812b3e8562134ba83d3459e40ec7b15c",
+    "src/server.js": "f7b7cacd4d00f6a4cca0f0b99828f8774a1dab9973344aed56804b78cd2dd8a4",
+    "public/index.html": "43660e5fbf648a958b330c6e3fe3cd48c21178a6535b2004129d3124a2fdd4c5",
+    "public/app.js": "cd6483ac3fb43c9d91cdf7d057e79b088fd74f4c1d5215950bb95c2437c05980",
+    "public/style.css": "43e306715af1ba9154891c03d62f93417f0dfcfafbb6eb728ab8db13a1a3320e",
+    "integrations/swift/Sources/ChestBPMCare/CareClient.swift": "4f224a8a59703a92079b58b310928d228057cb3ab66ec20d50b372d2da9e9baf",
+    "integrations/swift/Sources/ChestBPMCare/CareHandoffSession.swift": "82d230f913185cb9b283bf2b5afac0aa79f4d3927bc5676dc1a1060cd37deb82",
+    "integrations/swift/Sources/ChestBPMCare/CareSummarySheet.swift": "f5eb8457b2be221f6b6c39113ac576a40321113c32be150930789fd69ba26b21",
+    "integrations/swift/Sources/ChestBPMCare/ScanSummary.swift": "e561cef33ff4e23bc680611ec18a7c577f8d5e407080871846d5902fae85b6f1"
+  }
+}

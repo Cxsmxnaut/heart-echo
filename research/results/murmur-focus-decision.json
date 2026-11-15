@@ -1,0 +1,169 @@
+{
+  "decision": "Keep the existing phase-aware M app model. Reject V4, V5, V6, V7 and V8.",
+  "reliability_established": false,
+  "baseline_freeze_sha256": "da496ca691ce073365746a1144db716c8139f91433ed7149252d0b84a8fec68f",
+  "baseline_weights_sha256": "21cb4a7a4d8e98a43929fec55ea8dbc4c71704d742e7cba6730c92c5b130b0a1",
+  "v5_weights_sha256": "0564697e8aab06c637d112328f8a66ebd0fefd5cec3a8d4fce9cca05afe47fb8",
+  "v5_evaluation_freeze_sha256": "5002ac449c85747ce8e3c584f87dfd965a6da976318df16a401f3e23916eabc5",
+  "v4_diagnosis_sha256": "1f65c96348a0abe6afdb4144d4b20cf9f998f07a1292e5b755ed0101bb71fb61",
+  "v5_development_report_sha256": "eb0493bcb15a4f3d56a2d77d99e3ad287ca99a8c6f9e06708da46165dfa7eb5d",
+  "source_sha256": "a6ef6b80e3b2403cab7fe32be96e08a69779c9b9fed36428e3dba3813ee76a26",
+  "control_binary_sha256": "8846d427d5197d1c77e3b5fa4f20adbdf2eddc0378a879800594b10ac8125e4f",
+  "control_source_sha256": {
+    "MurmurAnalysis.swift": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e",
+    "MurmurChecks.swift": "d34a7c68bf80b6a0876e1cd6793786ee2a70c3415740be50544c930e1ac4e385"
+  },
+  "noise_input_sha256": {
+    "speech": "17c4b9935a0d336478d97a60c3f737e80cdb4cc334c9b411050a8e32e2c2ec88",
+    "babble": "68c7c30f242df769349ff75f4d8afbf228c5ad269c7399f696c550a7247e795e"
+  },
+  "controls": {
+    "baseline": {
+      "native_engineering_assertions": 13,
+      "engineering_output": "PASS: Strong absent label is recording-specific\nPASS: Strong present label is murmur-like\nPASS: Low confidence remains unsure\nPASS: Unknown annotation is not normal\nPASS: Nonfinite probabilities fail closed\nPASS: Invalid probability total fails closed\nPASS: Incomplete four-second input has no window\nPASS: Twenty seconds has five full windows\nPASS: Final partial frame never exceeds audio\nPASS: Silence cannot receive an absent result\nPASS: Clipped audio cannot receive a result\nPASS: Full native silence path remains unsure\nPASS: Short native input remains unsure\n0 failure(s). Engineering checks, not clinical validation.\n",
+      "noise_outputs": {
+        "speech": {
+          "id": "speech",
+          "milliseconds": 1.175999641418457,
+          "reading": {
+            "finding": "unsure",
+            "probabilities": [
+              0,
+              0,
+              1
+            ],
+            "seconds": 3.4,
+            "windows": 0
+          }
+        },
+        "babble": {
+          "id": "babble",
+          "milliseconds": 1.412034034729004,
+          "reading": {
+            "finding": "unsure",
+            "probabilities": [
+              0.0005638292423100211,
+              0.0003470575393293984,
+              0.9990891218185425
+            ],
+            "seconds": 5,
+            "windows": 2
+          }
+        }
+      },
+      "noise_decisive_errors": 0,
+      "note": "Noise controls are engineering checks, not a signal-quality validation set."
+    },
+    "v5": {
+      "native_engineering_assertions": 13,
+      "engineering_output": "PASS: Strong absent label is recording-specific\nPASS: Strong present label is murmur-like\nPASS: Low confidence remains unsure\nPASS: Unknown annotation is not normal\nPASS: Nonfinite probabilities fail closed\nPASS: Invalid probability total fails closed\nPASS: Incomplete four-second input has no window\nPASS: Twenty seconds has five full windows\nPASS: Final partial frame never exceeds audio\nPASS: Silence cannot receive an absent result\nPASS: Clipped audio cannot receive a result\nPASS: Full native silence path remains unsure\nPASS: Short native input remains unsure\n0 failure(s). Engineering checks, not clinical validation.\n",
+      "noise_outputs": {
+        "speech": {
+          "id": "speech",
+          "milliseconds": 1.2270212173461914,
+          "reading": {
+            "finding": "unsure",
+            "probabilities": [
+              0,
+              0,
+              1
+            ],
+            "seconds": 3.4,
+            "windows": 0
+          }
+        },
+        "babble": {
+          "id": "babble",
+          "milliseconds": 2.102971076965332,
+          "reading": {
+            "finding": "unsure",
+            "probabilities": [
+              0.005383600248023868,
+              0.0009345676517114043,
+              0.993681788444519
+            ],
+            "seconds": 5,
+            "windows": 2
+          }
+        }
+      },
+      "noise_decisive_errors": 0,
+      "note": "Noise controls are engineering checks, not a signal-quality validation set."
+    },
+    "v8": {
+      "native_engineering_assertions": 13,
+      "engineering_output": "PASS: Strong absent label is recording-specific\nPASS: Strong present label is murmur-like\nPASS: Low confidence remains unsure\nPASS: Unknown annotation is not normal\nPASS: Nonfinite probabilities fail closed\nPASS: Invalid probability total fails closed\nPASS: Incomplete four-second input has no window\nPASS: Twenty seconds has five full windows\nPASS: Final partial frame never exceeds audio\nPASS: Silence cannot receive an absent result\nPASS: Clipped audio cannot receive a result\nPASS: Full native silence path remains unsure\nPASS: Short native input remains unsure\n0 failure(s). Engineering checks, not clinical validation.\n",
+      "noise_outputs": {
+        "speech": {
+          "id": "speech",
+          "milliseconds": 1.156926155090332,
+          "reading": {
+            "finding": "unsure",
+            "probabilities": [
+              0,
+              0,
+              1
+            ],
+            "seconds": 3.4,
+            "windows": 0
+          }
+        },
+        "babble": {
+          "id": "babble",
+          "milliseconds": 2.0639896392822266,
+          "reading": {
+            "finding": "unsure",
+            "probabilities": [
+              0.015809625620022416,
+              0.009440339403226972,
+              0.9747500419616699
+            ],
+            "seconds": 5,
+            "windows": 2
+          }
+        }
+      },
+      "noise_decisive_errors": 0,
+      "note": "Noise controls are engineering checks, not a signal-quality validation set."
+    }
+  },
+  "regression_scored_for_v5": false,
+  "app_model_changed": false,
+  "conversion": {
+    "baseline": {
+      "maximum_absolute_differences": [
+        5.364418029785156e-07,
+        1.1324882507324219e-06,
+        5.960464477539062e-07
+      ],
+      "examples": 22,
+      "real_public_development_examples": 18,
+      "passed": true
+    },
+    "v5": {
+      "maximum_absolute_differences": [
+        1.7881393432617188e-06,
+        9.834766387939453e-06,
+        5.364418029785156e-06
+      ],
+      "examples": 22,
+      "real_public_development_examples": 18,
+      "passed": true
+    },
+    "v8": {
+      "maximum_absolute_differences": [
+        3.5762786865234375e-06,
+        8.881092071533203e-06,
+        4.380941390991211e-06
+      ],
+      "examples": 22,
+      "real_public_development_examples": 18,
+      "passed": true
+    }
+  },
+  "remaining": "Independent clinician-labeled phone evaluation and substantially better detection/coverage are still required. Development and historical test cohorts already inspected cannot provide fresh validation.",
+  "v6_development_report_sha256": "39b09b85ae3a42ba466362ff130bf1288c0c0b2bff020913be80e58c670dedf4",
+  "v7_development_report_sha256": "8ea5880d255f621555e82a4c342957001111f1e378b138e9064d69e5bfd8a120",
+  "v8_development_report_sha256": "6fdeb5364a52675dc02c965d609e6748e7a749b75d9a1051a95b7978ff7ea825",
+  "v8_weights_sha256": "9ac69c70408f19bf739b51db580bd4857a2be73d5312d6cebc6b3b25f54a3096"
+}

@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-11-14T22:07:04.334994+00:00",
+  "node": {
+    "passed": 58,
+    "failed": 0,
+    "evidence": "npm test; initial sandbox run blocked four loopback HTTP tests with EPERM, approved loopback rerun passed all 58"
+  },
+  "browser_fixture": {
+    "tested_at": "2026-11-14T22:02:47.421Z",
+    "mode": "isolated Chrome; synthetic fixtures; real backend/MCP; guided mode",
+    "passed": true,
+    "checks": [
+      "Keyboard focus follows labeled form inputs",
+      "Loading state and source-backed synthetic provider/clinic cards",
+      "Noisy scan explained without diagnosis",
+      "Enter sends chat message",
+      "390px mobile layout has no horizontal overflow",
+      "Visible source/date, actual match reasons, and directions",
+      "Why follow-up retains the current cards",
+      "Clear scan removes the attached synthetic snapshot",
+      "Mobile jump control reaches and sends a follow-up after ten result cards",
+      "Empty results offer official directory fallback",
+      "Upstream failure is not displayed as no providers",
+      "Full reset clears chat, profile, results and scan",
+      "Failed server deletion stays visible and retries the same session ID",
+      "Model outage uses plain-language guided help with codes behind details",
+      "Request error is visible and controls recover",
+      "No browser JavaScript errors"
+    ]
+  },
+  "swift": {
+    "passed": 11,
+    "failed": 0,
+    "target": "macOS SDK, isolated integrations/swift package; no device/native app runtime",
+    "command": "swift test --jobs 2 --package-path integrations/swift --scratch-path .cache/swift-build -Xswiftc -module-cache-path -Xswiftc <care-assistant>/.cache/swift-modules"
+  },
+  "post_batching_checked_at": "2026-11-14T22:15:36.069903+00:00",
+  "post_batching_node": {
+    "passed": 60,
+    "failed": 0
+  },
+  "post_batching_browser_fixture": {
+    "tested_at": "2026-11-14T22:13:31.209Z",
+    "mode": "isolated Chrome; synthetic fixtures; real backend/MCP; guided mode",
+    "passed": true,
+    "checks": [
+      "Keyboard focus follows labeled form inputs",
+      "Loading state and source-backed synthetic provider/clinic cards",
+      "Noisy scan explained without diagnosis",
+      "Enter sends chat message",
+      "390px mobile layout has no horizontal overflow",
+      "Visible source/date, actual match reasons, and directions",
+      "Why follow-up retains the current cards",
+      "Clear scan removes the attached synthetic snapshot",
+      "Mobile jump control reaches and sends a follow-up after ten result cards",
+      "Empty results offer official directory fallback",
+      "Upstream failure is not displayed as no providers",
+      "Full reset clears chat, profile, results and scan",
+      "Failed server deletion stays visible and retries the same session ID",
+      "Model outage uses plain-language guided help with codes behind details",
+      "Request error is visible and controls recover",
+      "No browser JavaScript errors"
+    ]
+  },
+  "loading_test_note": "Initial timed loading assertion failed; deterministic fixture gate recheck passed. Failure log retained separately."
+}

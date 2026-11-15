@@ -1,0 +1,180 @@
+{
+  "tested_at": "2026-11-14T21:34:13.509Z",
+  "mode": "isolated Chrome; actual local Gemma 4; real MCP; LIVE public sources; synthetic user scenario only; UI completion and raw model success reported separately",
+  "passed": true,
+  "checks": [
+    {
+      "name": "Browser task: app question → ZIP → insurance → live care results",
+      "passed": true,
+      "model": "care-gemma4-e2b",
+      "response_mode": "guided_fallback",
+      "all_searches_selected_by_model": false,
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "service"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "service"
+        }
+      ],
+      "live_cards": 9
+    },
+    {
+      "name": "Browser form: explicit future plan year and real payer-linked practice cards",
+      "passed": true,
+      "response_mode": "guided_fallback",
+      "all_calls_selected_by_model": false,
+      "effective_date": "2027-01-01",
+      "plan_period": {
+        "start": "2027-01-01T00:00:00.000Z",
+        "end": "2027-12-31T00:00:00.000Z"
+      },
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "service"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "service"
+        },
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "service"
+        }
+      ]
+    },
+    {
+      "name": "Why follow-up explains saved live cards and visibly qualifies the unverified category",
+      "passed": true,
+      "mode": "llm",
+      "results_reused": true
+    },
+    {
+      "name": "Live payer results at 390px with no horizontal overflow",
+      "passed": true
+    }
+  ],
+  "model_observations": [
+    {
+      "stage": "scan_explanation",
+      "model": {
+        "mode": "guided_fallback",
+        "model": "care-gemma4-e2b",
+        "configured": true,
+        "last_success_at": "2026-11-14T21:33:19.469Z",
+        "note": "The model was unavailable or its output failed validation. Guided help and public directory results remain available.",
+        "error": "model_unrequested_clear",
+        "used_this_turn": false,
+        "backend_corrected": true
+      },
+      "backend_adjustments": [
+        "Used the guided update because model extraction failed validation."
+      ],
+      "tool_trace": []
+    },
+    {
+      "stage": "ask_plan",
+      "model": {
+        "mode": "guided_fallback",
+        "model": "care-gemma4-e2b",
+        "configured": true,
+        "last_success_at": "2026-11-14T21:33:30.119Z",
+        "note": "The model was unavailable or its output failed validation. Guided help and public directory results remain available.",
+        "error": "model_unrequested_clear",
+        "used_this_turn": false,
+        "backend_corrected": true
+      },
+      "backend_adjustments": [
+        "Used the guided update because model extraction failed validation."
+      ],
+      "tool_trace": []
+    },
+    {
+      "stage": "results",
+      "model": {
+        "mode": "guided_fallback",
+        "model": "care-gemma4-e2b",
+        "configured": true,
+        "last_success_at": "2026-11-14T21:33:45.389Z",
+        "note": "The model was unavailable or its output failed validation. Guided help and public directory results remain available.",
+        "error": "model_unrequested_clear",
+        "used_this_turn": false,
+        "backend_corrected": true
+      },
+      "backend_adjustments": [
+        "Used the guided update because model extraction failed validation.",
+        "The service completed search_providers; this is not a model tool-use success.",
+        "The service completed search_affordable_clinics; this is not a model tool-use success."
+      ],
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "service"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "service"
+        }
+      ]
+    },
+    {
+      "stage": "results",
+      "model": {
+        "mode": "guided_fallback",
+        "model": "care-gemma4-e2b",
+        "configured": true,
+        "last_success_at": "2026-11-14T21:34:02.513Z",
+        "note": "The model was unavailable or its output failed validation. Guided help and public directory results remain available.",
+        "error": "model_changed_search",
+        "used_this_turn": false,
+        "backend_corrected": true
+      },
+      "backend_adjustments": [
+        "The service completed search_providers; this is not a model tool-use success.",
+        "The service completed search_affordable_clinics; this is not a model tool-use success.",
+        "The service completed lookup_plan_network; this is not a model tool-use success."
+      ],
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "service"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "service"
+        },
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "service"
+        }
+      ]
+    },
+    {
+      "stage": "explain_results",
+      "model": {
+        "mode": "llm",
+        "model": "care-gemma4-e2b",
+        "configured": true,
+        "last_success_at": "2026-11-14T21:34:11.493Z",
+        "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference.",
+        "used_this_turn": true,
+        "backend_corrected": false
+      },
+      "backend_adjustments": [],
+      "tool_trace": []
+    }
+  ]
+}

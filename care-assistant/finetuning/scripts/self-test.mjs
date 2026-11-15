@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {capture,emptyFields} from './runtime-contract.mjs';
+const checks=[];
+await assert.rejects(capture('fields',{message:'Find care near me.',fields:{...emptyFields(),payer:'Invented insurer',insurance_status:'insured'}}),e=>e.code==='model_invented_plan');checks.push('Invented training labels are rejected by current grounded validator');
+await assert.rejects(capture('fields',{message:'Please explain my scan.',fields:{...emptyFields(),clear_fields:['network']}}),e=>e.code==='model_unrequested_clear');checks.push('Unrequested clearing is rejected');
+await assert.rejects(capture('tools',{profile:{zip:'04401'},intent:'cheaper_options',message:'clinics',calls:[{name:'search_affordable_clinics',arguments:{zip:'99999',limit:5}}]}),e=>e.code==='model_changed_search');checks.push('Native target cannot change confirmed ZIP');
+await assert.rejects(capture('tools',{profile:{zip:'04401'},intent:'find_care',message:'care',calls:Array.from({length:5},()=>({name:'search_affordable_clinics',arguments:{zip:'04401',limit:5}}))}),e=>e.code==='model_tool_limit');checks.push('Native target call-count bound enforced');
+const report=JSON.parse(await readFile(new URL('../reports/data-validation.json',import.meta.url)));assert.equal(report.passed,true);assert.equal(report.failures.length,0);checks.push('All seed schemas, family boundaries and overlap checks pass');
+console.log(JSON.stringify({passed:true,checks},null,2));

@@ -1,0 +1,163 @@
+{
+  "selection": {
+    "shipping": {
+      "confusion_true_rows": [
+        [
+          88,
+          1,
+          47
+        ],
+        [
+          3,
+          25,
+          6
+        ],
+        [
+          1,
+          0,
+          9
+        ]
+      ],
+      "balanced_recall": 0.7607843137254902,
+      "recall": [
+        0.6470588235294118,
+        0.7352941176470589,
+        0.9
+      ],
+      "accuracy": 0.6777777777777778,
+      "known_positive_cases": 34,
+      "missed_positive_as_absent": 3,
+      "positive_unsure": 6,
+      "known_negative_cases": 136,
+      "false_alarms": 1,
+      "negative_unsure": 47,
+      "decisive_sensitivity": 0.7352941176470589,
+      "decisive_specificity": 0.6470588235294118,
+      "unsure": 62,
+      "total": 180
+    },
+    "candidate": {
+      "confusion_true_rows": [
+        [
+          68,
+          2,
+          66
+        ],
+        [
+          3,
+          20,
+          11
+        ],
+        [
+          1,
+          0,
+          9
+        ]
+      ],
+      "balanced_recall": 0.6627450980392157,
+      "recall": [
+        0.5,
+        0.5882352941176471,
+        0.9
+      ],
+      "accuracy": 0.5388888888888889,
+      "known_positive_cases": 34,
+      "missed_positive_as_absent": 3,
+      "positive_unsure": 11,
+      "known_negative_cases": 136,
+      "false_alarms": 2,
+      "negative_unsure": 66,
+      "decisive_sensitivity": 0.5882352941176471,
+      "decisive_specificity": 0.5,
+      "unsure": 86,
+      "total": 180
+    }
+  },
+  "calibration": {
+    "shipping": {
+      "confusion_true_rows": [
+        [
+          90,
+          4,
+          44
+        ],
+        [
+          5,
+          24,
+          7
+        ],
+        [
+          3,
+          2,
+          8
+        ]
+      ],
+      "balanced_recall": 0.6447417316982534,
+      "recall": [
+        0.6521739130434783,
+        0.6666666666666666,
+        0.6153846153846154
+      ],
+      "accuracy": 0.6524064171122995,
+      "known_positive_cases": 36,
+      "missed_positive_as_absent": 5,
+      "positive_unsure": 7,
+      "known_negative_cases": 138,
+      "false_alarms": 4,
+      "negative_unsure": 44,
+      "decisive_sensitivity": 0.6666666666666666,
+      "decisive_specificity": 0.6521739130434783,
+      "unsure": 59,
+      "total": 187
+    },
+    "candidate": {
+      "confusion_true_rows": [
+        [
+          62,
+          3,
+          73
+        ],
+        [
+          5,
+          22,
+          9
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "balanced_recall": 0.6611544655022916,
+      "recall": [
+        0.4492753623188406,
+        0.6111111111111112,
+        0.9230769230769231
+      ],
+      "accuracy": 0.5133689839572193,
+      "known_positive_cases": 36,
+      "missed_positive_as_absent": 5,
+      "positive_unsure": 9,
+      "known_negative_cases": 138,
+      "false_alarms": 3,
+      "negative_unsure": 73,
+      "decisive_sensitivity": 0.6111111111111112,
+      "decisive_specificity": 0.4492753623188406,
+      "unsure": 94,
+      "total": 187
+    }
+  },
+  "native_models_sha256": {
+    "shipping": {
+      "Murmur.mlpackage/Manifest.json": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa",
+      "Murmur.mlpackage/Data/com.apple.CoreML/model.mlmodel": "bb3e2cd129ddcc4377195ab79f56949244d12e7b85897e7971959be0647d8bb1",
+      "Murmur.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "76fed2c566b74e342165a649e9338ccab06a0987b65fb2fa68f32dbaedceda72"
+    },
+    "candidate": {
+      "Murmur.mlpackage/Manifest.json": "2bafff9d51ccff4d967e3ccddc8801a60f068316931baa3b14f37d4bf243af90",
+      "Murmur.mlpackage/Data/com.apple.CoreML/model.mlmodel": "23d74eac75fb77b89a3808116b7657d9585bc70a04ccdc6f8cc6cb427a1c5147",
+      "Murmur.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "b6f7a060a26d62440741b5bb49b947d709d459ff5ca7690ab6e33e3c34f0dbf3"
+    }
+  },
+  "note": "Development partitions were reused in prior research. Same native input checks, audio conversion, window positions and threshold. No regression data read by this gate."
+}

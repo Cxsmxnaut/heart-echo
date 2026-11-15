@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-15T00:59:56.655255+00:00",
+  "status": "baseline_restored_and_healthy",
+  "restored_model_pid": 22705,
+  "verified_command": ".cache/runtime/llama-b12248/llama-server -m .cache/models/e4b/gemma-4-E4B-it-Q4_K_M.gguf --alias care-gemma4-e4b --host 127.0.0.1 -c 8192 -np 1 -t 2 -tb 2 --cache-ram 0 --jinja --reasoning off --reasoning-budget 0 --no-webui --log-disable --port 4320",
+  "verified_cwd": "/Users/slolakap/Documents/ChatGPT/Hackathon/care-assistant",
+  "model_health": {
+    "status": "ok"
+  },
+  "lora_adapters": [],
+  "web_health": {
+    "status": "ok",
+    "version": "0.3.0",
+    "model": {
+      "mode": "llm",
+      "model": "care-gemma4-e4b",
+      "configured": true,
+      "tool_mode": "batch",
+      "last_success_at": "2026-11-14T22:18:35.237Z",
+      "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference."
+    },
+    "storage": "memory_only_30_minutes"
+  },
+  "evaluation_port_4324_closed": true,
+  "frozen_source_and_test_files_match": true,
+  "verified_files": 16,
+  "default_model_promoted": false,
+  "benchmark_report": "finetuning/reports/sequential-benchmark.json"
+}

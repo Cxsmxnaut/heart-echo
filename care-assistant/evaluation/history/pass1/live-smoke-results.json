@@ -1,0 +1,82 @@
+{
+  "started_at": "2026-11-14T19:20:05.165Z",
+  "data": "live public directories; synthetic user/scans only",
+  "checks": [
+    {
+      "name": "NPPES exact ZIP",
+      "passed": true,
+      "status": "ok",
+      "items": 4,
+      "linked_practices": 0,
+      "elapsed_ms": 291,
+      "source_url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&postal_code=94303&address_purpose=LOCATION&taxonomy_description=Family+Medicine&limit=5",
+      "retrieved_at": "2026-11-14T19:20:05.458Z"
+    },
+    {
+      "name": "HRSA exact ZIP",
+      "passed": true,
+      "status": "ok",
+      "items": 5,
+      "linked_practices": 0,
+      "elapsed_ms": 391,
+      "source_url": "https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/query?f=json&where=SITE_ZIP_CD+LIKE+%2794303%25%27+AND+HCC_STATUS_DESC+%3D+%27Active%27&outFields=OBJECTID%2CSITE_NM%2CSITE_ADDRESS%2CSITE_CITY%2CSITE_STATE_ABBR%2CSITE_ZIP_CD%2CSITE_PHONE_NUM%2CSITE_URL%2CHCC_STATUS_DESC&returnGeometry=false&resultRecordCount=5&orderByFields=SITE_NM",
+      "retrieved_at": "2026-11-14T19:20:05.850Z"
+    },
+    {
+      "name": "CMS unsupported plan remains unverified",
+      "passed": true,
+      "status": "unsupported",
+      "items": 0,
+      "linked_practices": 0,
+      "elapsed_ms": 459,
+      "source_url": "https://directory.cms.gov/fhir/InsurancePlan?name=Synthetic+nonexistent+test+plan+891&status=active&_count=5",
+      "retrieved_at": "2026-11-14T19:20:06.310Z"
+    },
+    {
+      "name": "The Health Plan 2027 exact directory chain",
+      "passed": true,
+      "status": "matched_directory",
+      "items": 1,
+      "linked_practices": 1,
+      "elapsed_ms": 1076,
+      "source_url": "https://api.thehealthplanfhir.com/r4/public/InsurancePlan?status=active&name=The+Health+Plan+SecureCare+Integrity+Plan+3+%28HMO%29&_count=100",
+      "retrieved_at": "2026-11-14T19:20:06.310Z"
+    },
+    {
+      "name": "The Health Plan 2026 rejects future plan",
+      "passed": true,
+      "status": "unsupported",
+      "items": 1,
+      "linked_practices": 0,
+      "elapsed_ms": 141,
+      "source_url": "https://api.thehealthplanfhir.com/r4/public/InsurancePlan?status=active&name=The+Health+Plan+SecureCare+Integrity+Plan+3+%28HMO%29&_count=100",
+      "retrieved_at": "2026-11-14T19:20:07.386Z"
+    },
+    {
+      "name": "Real model conversation + MCP execution + live directory results",
+      "passed": true,
+      "model": "care-gemma4-e2b",
+      "elapsed_ms": 11924,
+      "turns": 2,
+      "tool_trace": [
+        {
+          "name": "get_app_context",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "completed_at": "2026-11-14T19:20:19.453Z"
+}

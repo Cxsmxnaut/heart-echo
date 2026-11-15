@@ -1,0 +1,28 @@
+// REVIEW MATERIAL ONLY — do not auto-apply during active native work.
+// Prerequisite: add the local ChestBPMCare product to the desired target.
+// The host must inject a separately configured CareClient. No guessed IP/secret.
+import ChestBPMCare
+
+// Inside ContentView, alongside its existing state:
+// let careClient: CareClient  // supplied after separate connection review
+@State private var showCare = false
+@State private var careSummary: CareScanSummary?
+
+// In the existing Form, add an independent optional section:
+Section("Next steps") {
+    Button("Explain estimate & find care") {
+        careSummary = ChestBPMCareSnapshot(
+            acceptedBPM: r.bpm,
+            analysisWindowSeconds: r.seconds,
+            capturedAt: nil // only supply a genuine measurement timestamp
+        ).summary(quality: r.bpm == nil ? .unclear : .usable)
+        showCare = true
+    }
+}
+
+// Attach to the host view after careClient is explicitly configured:
+.sheet(isPresented: $showCare) {
+    CareSummarySheet(summary: careSummary, client: careClient)
+}
+// Not a standalone source file. Check types/placement at merge time.
+// No monitor/study/Watch/diagnostic object is serialized. No capture is started.

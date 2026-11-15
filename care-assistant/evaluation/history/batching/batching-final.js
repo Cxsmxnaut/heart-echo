@@ -1,0 +1,20 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {createModel,modelConfig} from '../src/model.js';
+import {createTools} from '../src/tools.js';
+import {createMcpTools} from '../src/tool-client.js';
+import {createDirectories} from '../src/directories.js';
+import {fixtureFetch,syntheticInsurance} from '../test/fixtures.js';
+const freeze=JSON.parse(await readFile(new URL('./batching-freeze.json',import.meta.url)));
+async function check(){for(const[p,h]of Object.entries(freeze.hashes))assert.equal(createHash('sha256').update(await readFile(new URL('../'+p,import.meta.url))).digest('hex'),h,p);}
+await check();const bytes=await readFile(new URL('./batching-final-scenarios.json',import.meta.url));
+const suite=JSON.parse(bytes);
+const privacyRecheck=process.argv.includes('--privacy-recheck');
+if(privacyRecheck)suite.cases=suite.cases.filter(s=>s.id==='batch_fresh_privacy');
+const reproduction=process.argv.includes('--reproduction');
+const output=privacyRecheck?'results.batching-privacy-recheck.json':reproduction?'results.batching-reproduction.json':'results.batching-final.json';
+const report={started_at:new Date().toISOString(),freeze,scenario_sha256:createHash('sha256').update(bytes).digest('hex'),scorer_recheck:privacyRecheck, reproduction, note:'First new post-batching-freeze tool-selection cases. Real model, actual MCP, synthetic user/directory fixtures. Earlier intent/field final and whole-source freeze remain unchanged historical evidence. No retuning follows.',cases:[]};let requests=[];
+const model=createModel({...modelConfig(),toolMode:'batch'},async(url,options)=>{const start=performance.now();const r=await fetch(url,options);const raw=await r.clone().json();requests.push({elapsed_ms:Math.round(performance.now()-start),calls:raw.choices?.[0]?.message?.tool_calls?.map(c=>c.function?.name)||[]});return r;});
+for(const s of suite.cases){requests=[];const start=performance.now();let profile={...s.profile,...(s.confirmed_plan?{insurance:{...syntheticInsurance,coverage_date:'2027-10-16'}}:{})};try{const tools=createMcpTools(createTools(createDirectories({fetchImpl:fixtureFetch})));const r=await model.runTools({...s,profile,scan:null,tools});const names=[...r.results.keys()];assert.deepEqual([...names].sort(),[...s.expected].sort());assert.ok(r.trace.every(t=>t.origin==='model'&&t.status!=='rejected_arguments'));if(s.confirmed_plan&&s.expected.includes('lookup_plan_network'))assert.equal(r.results.get('lookup_plan_network').status,'matched_directory');if(s.context_topic)assert.ok(r.results.get('get_app_context').sections[s.context_topic]);report.cases.push({id:s.id,passed:true,one_model_response:requests.length===1,elapsed_ms:Math.round(performance.now()-start),model_requests:requests,trace:r.trace});}catch(e){report.cases.push({id:s.id,passed:false,error:e.code||e.message,elapsed_ms:Math.round(performance.now()-start),model_requests:requests});}await writeFile(new URL('./'+output,import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report.cases.at(-1)));}
+await check();report.summary={tool_tasks:`${report.cases.filter(c=>c.passed).length}/${report.cases.length}`,one_response_tasks:`${report.cases.filter(c=>c.passed&&c.one_model_response).length}/${report.cases.length}`};report.completed_at=new Date().toISOString();await writeFile(new URL('./'+output,import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report.summary));if(report.cases.some(c=>!c.passed))process.exitCode=1;

@@ -1,0 +1,20 @@
+{
+  "status": "normalized copy for float LoRA export only",
+  "source_revision": "6f10b2aa522ba471321d8246fd71a3dfa8c5b9a2",
+  "source_config_sha256": "3d56f90c46f2e7cda79bdb02411525690edcaa87bf473ab00bd8e08d695b8372",
+  "normalized_config_sha256": "b96e1388375eabe213da2d881c02601c11a704264f754e3943ecae0fe2c82969",
+  "removed_top_level_fields": [
+    "quantization_config"
+  ],
+  "removed_quantization_method": "bitsandbytes",
+  "all_other_fields_identical": true,
+  "adapter_weights_modified": false,
+  "base_weights_downloaded_or_dequantized": false,
+  "unquantized_config_trial": {
+    "path": "finetuning/exports/base-config-unquantized/config.json",
+    "reason": "Not selected: eos_token_id differs from training config",
+    "training_eos_token_id": 1,
+    "other_eos_token_id": 106
+  },
+  "note": "LoRA tensors independently verified float32. Converter must not attempt bnb dequantization. Preserve all architecture and EOS values from training config; no vendor edits."
+}

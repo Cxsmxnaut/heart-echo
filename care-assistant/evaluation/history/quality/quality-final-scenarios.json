@@ -1,0 +1,13 @@
+{
+  "created_after_freeze": true,
+  "extraction": [
+    {"id":"fresh_move","message":"I moved: use ZIP 02139 for primary care now.","intent":"find_care","expected":{"zip":"02139","specialty":"family_medicine","insurance":null}},
+    {"id":"fresh_budget","message":"Can you show me places with fees based on what my family earns?","intent":"cheaper_options","expected":{"zip":null,"insurance":null,"specialty":null,"clear_fields":[]}},
+    {"id":"fresh_reason","message":"What made those particular offices appear in my results?","intent":"explain_results","expected":{"zip":null,"insurance":null,"specialty":null,"clear_fields":[]}},
+    {"id":"fresh_retry","message":"My recording failed twice. How should I try again?","intent":"app_help","expected":{"zip":null,"insurance":null,"specialty":null}},
+    {"id":"fresh_unknown_network","message":"Keep the plan, but remove the network because I do not know it.","intent":"find_care","expected":{"zip":null,"insurance":null,"clear_fields":["network"]}},
+    {"id":"fresh_plan_fields","message":"My insurer is Demo Cedar. My plan is Cedar Silver. My network is Cedar Local. Check coverage for 2029.","intent":"find_care","expected":{"insurance":{"payer":"Demo Cedar","plan":"Cedar Silver","network":"Cedar Local","coverage_year":2029}}},
+    {"id":"fresh_scan_limit","message":"If the estimate is 77 BPM, can this recording prove that my heart has no disease?","intent":"explain_scan","expected":{"zip":null,"insurance":null,"specialty":null}},
+    {"id":"fresh_watch","message":"Will the phone measurement still work if I leave my Apple Watch at home?","intent":"app_help","expected":{"zip":null,"insurance":null,"specialty":null}}
+  ]
+}

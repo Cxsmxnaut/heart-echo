@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Chest BPM · Care assistant</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="Chest BPM care assistant home"><span class="brand-mark" aria-hidden="true">♡</span> Chest BPM <span class="brand-by">Care assistant</span></a><span id="model-badge" class="badge" role="status">Opening assistant…</span><button type="button" id="jump-chat" class="mobile-jump">Jump to chat ↓</button></header>
+  <main class="layout">
+    <aside class="sidebar" aria-label="Your care-search details">
+      <div class="eyebrow">After your heart-sound check</div>
+      <h1>Your scan.<br><span>Your next step.</span></h1>
+      <p class="intro">Understand your Chest BPM estimate and find care you can contact. A clear scan is optional.</p>
+      <section class="context-card" aria-labelledby="scan-heading"><div class="section-title"><h2 id="scan-heading">Your scan summary</h2><span id="scan-origin" class="tiny-label">No scan</span></div><p id="scan-summary">No scan attached. You can search for care anyway.</p><p id="scan-age" class="field-note"></p><label for="scan-scenario">Try a synthetic example</label><select id="scan-scenario"><option value="none">No scan</option><option value="usable">Synthetic · 74 BPM</option><option value="unclear">Synthetic · unclear recording</option><option value="older">Synthetic · earlier 74 BPM snapshot</option></select><div class="scan-actions"><button type="button" class="text-button" id="explain">Explain this scan</button><button type="button" class="text-button" id="clear-scan">Clear scan</button></div></section>
+      <details class="details-panel" open><summary>Care details <span>ZIP + plan, no member ID</span></summary>
+        <form id="care-form">
+          <label for="zip">US ZIP code</label><input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" placeholder="e.g. 94303" required>
+          <label for="insurance-status">Insurance</label><select id="insurance-status"><option value="unknown">I’m not sure / skip for now</option><option value="insured">I know my plan and network</option><option value="uninsured">No insurance</option></select>
+          <div id="plan-fields" hidden>
+            <label for="payer">Insurer / payer</label><input id="payer" maxlength="160" placeholder="Exact insurer name">
+            <label for="plan">Full plan name</label><input id="plan" maxlength="160" placeholder="As listed in your plan documents">
+            <label for="network">Network name</label><input id="network" maxlength="160" placeholder="Exact network, if known">
+            <div class="split"><div><label for="coverage-year">Plan year</label><input id="coverage-year" type="number" min="2020" max="2100"></div><div><label for="plan-id">Public CMS plan ID</label><input id="plan-id" maxlength="13" placeholder="Optional · H0000-000-000" pattern="H[0-9]{4}-[0-9]{3}-[0-9]{3}"></div></div>
+            <p class="field-note">A public plan ID identifies a plan, never a member. Leave it blank if unknown. Direct plan checks currently cover The Health Plan Medicare; other coverage stays unverified.</p>
+          </div>
+          <label for="specialty">Search category</label><select id="specialty"><option value="family_medicine">Family medicine / primary care</option><option value="internal_medicine">Internal medicine</option><option value="cardiology">Cardiology · my choice</option></select>
+          <p class="field-note">The scan does not choose a specialist for you. Searches use exact ZIP, not distance.</p>
+          <button type="submit" class="primary" id="search-button">Find care options <span aria-hidden="true">↗</span></button>
+        </form>
+      </details>
+      <details class="privacy"><summary>How this assistant works</summary><p>The iPhone app records heart sounds and estimates timing. This care page does not record audio. The care service runs on this Mac; public directory searches need internet. A Watch is optional.</p><p>If Gemini is selected, general chat is sent to Google. Google may use free-tier messages to improve its products, so do not enter personal or health information. The recorded result is not sent to Gemini. Chat sessions remain in server memory for up to 30 minutes of inactivity.</p><details><summary>Technical status &amp; provenance</summary><pre id="technical-status">Checking configuration…</pre></details></details>
+    </aside>
+    <section class="conversation" aria-labelledby="chat-heading">
+      <div class="chat-top"><div><div class="eyebrow">Chest BPM care assistant</div><h2 id="chat-heading">What would help next?</h2></div><button id="reset" class="secondary" type="button">Clear everything</button></div>
+      <p class="persistent-limit">Chest BPM estimates BPM and sound timing. A usable estimate is not a healthy-heart result or a disease screen.</p>
+      <div id="messages" role="log" aria-label="Conversation" aria-live="polite" aria-relevant="additions"></div>
+      <div id="results" aria-label="Care directory results" aria-busy="false"></div><p id="clear-warning" class="fallback-notice" role="status" hidden></p>
+      <div class="composer-wrap"><div id="quick-actions"><button type="button" class="chip" data-action="affordable">Lower-cost options</button><button type="button" class="chip" data-action="why">Why these options?</button><button type="button" class="chip" id="skip-insurance">Skip insurance</button><button type="button" class="chip" id="app-help">How do I take a reading?</button></div><p id="model-fallback" class="fallback-notice" hidden>Using guided help because the care model could not complete this request. Public directory search still works.</p><div id="request-status" role="status" class="request-status"></div><div id="error" role="alert" hidden></div>
+        <form id="chat-form"><label class="sr-only" for="message">Your message</label><textarea id="message" rows="2" maxlength="2000" placeholder="Ask about your scan, or tell me your ZIP and plan…"></textarea><button type="submit" class="send" aria-label="Send message">↑</button></form>
+        <p class="composer-note">Summary only · No audio uploads · Source-linked care options</p>
+      </div>
+    </section>
+  </main>
+  <footer>If you have chest pain, severe trouble breathing, or fainting, call <a href="tel:911">911</a>. Don’t wait for this demo. <a href="https://www.nhlbi.nih.gov/health/heart-attack/symptoms" target="_blank" rel="noopener noreferrer">Emergency guidance ↗</a></footer>
+</body>
+</html>

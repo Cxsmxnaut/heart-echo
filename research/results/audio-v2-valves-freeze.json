@@ -1,0 +1,7 @@
+{
+  "complete_sha256": "189d7fd0d774a9a65c0a9a93b8438342a1147eedde365d02fe2fe9855c468645",
+  "weights_sha256": "3f2b2492cc4b6dde648c2c13e1f8b62f09bd678d8238cc496d488e00ee580cea",
+  "training_source_sha256": "00334942afc4a7f2a7da9a717ea1f81477a51e77b5c0d233b804ee46fe8c25bf",
+  "evaluation_source_sha256": "239af1a0a55da2b59bb21ff90e7c23acaf7454b4bc74862d41475a3c7821c7e4",
+  "test_status": "Previously inspected regression data; not fresh independent evaluation. Candidate selected on development only."
+}

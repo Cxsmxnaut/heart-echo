@@ -1,0 +1,46 @@
+{
+  "status": "actual_adapter_only_GGUF_conversion_completed",
+  "source": {
+    "runtime_tag": "b12248",
+    "source_commit": "3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+    "archive_url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+    "archive_sha256": "e0c02b6e31c46a84474f75436730562024cb8edc1d2c0baa8e57cb51e1d62e23",
+    "converter_sha256": "ddb143ac34022b0646e51d9c35e9cfa3ec3d0a36091975ebc88f553dd18ca350",
+    "source_path": ".cache/finetuning-references/llama.cpp-3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+    "scope": "Official pinned LoRA converter source; no full model weights downloaded",
+    "status": "pinned source verified; selected conversion completed"
+  },
+  "gguf_lora_sha256": "513abc53c84f42116bec06877c6691de83d6c224e921f15039315121fc9ea6e3",
+  "gguf_lora_bytes": 36740928,
+  "tensors": 588,
+  "target_check": "all588tensoroutputs map to existing base targets",
+  "tokenizer_probes": "7/7 fixed probes match; not full vocabulary proof",
+  "normalization": "copy of pinned training config; only quantization_config removed; other fields identical",
+  "original_PEFT_weights_modified": false,
+  "vendor_code_modified": false,
+  "full_base_weights_downloaded_or_merged": false,
+  "attempt_history": [
+    {
+      "attempt": 1,
+      "status": "failed",
+      "reason": "Config fetch saved HTTP redirect text; corrected with redirect-following and JSON validation"
+    },
+    {
+      "attempt": 2,
+      "status": "failed",
+      "reason": "Converter attempted unsupported bnb dequantization because quantization_config was present"
+    },
+    {
+      "attempt": 3,
+      "status": "converted_but_not_selected",
+      "reason": "Unquantized config had different eos_token_id; its output excluded. Shell continued after failed config comparison; later steps separated to enforce validation before conversion."
+    },
+    {
+      "attempt": 4,
+      "status": "success_selected",
+      "reason": "Normalized copy preserves all training architecture/EOS fields and omits only irrelevant bnb metadata"
+    }
+  ],
+  "reproducer": "Run .cache/lora-convert-venv/bin/python finetuning/scripts/export-lora.py --out <new-output.gguf>; pinned original config and source manifest required",
+  "inference_quality": "Frozen paired held-out scores tied: 7/7 intents, 6/7 fields, 2/3 tools; validation fields improved 5/7 to 6/7. Final regression/browser results recorded separately."
+}

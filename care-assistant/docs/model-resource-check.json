@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-14T22:05:43.287259+00:00",
+  "hardware": "Apple M4, arm64 macOS, 16 GiB RAM",
+  "selected_model": "care-gemma4-e4b",
+  "models_loaded": 1,
+  "memory_free_percent": 28,
+  "swap_total_MiB": 9216,
+  "swap_used_MiB": 8721.81,
+  "disk_available_GiB_approx": 14,
+  "model_pid": 80518,
+  "web_pid": 80557,
+  "model_port": 4320,
+  "web_port": 4318,
+  "temporary_4322_listening": false,
+  "note": "Shared machine with other work. Swap is system-wide with no clean before-load baseline, so it cannot be attributed to this model. Some ordinary command calls took several seconds. Fresh evaluation command probes separately record process-start/read latency. E2B is the faster option for concurrent workloads.",
+  "final_check": {
+    "checked_at": "2026-11-14T22:18:33.855762+00:00",
+    "memory_free_percent": 34,
+    "swap_used_MiB": 9644.75,
+    "swap_total_MiB": 10240,
+    "web_pid": 85353,
+    "model_pid": 80518,
+    "web_port": 4318,
+    "model_port": 4320,
+    "tool_mode": "batch",
+    "temporary_4322_listening": false,
+    "model_health": "ok",
+    "web_health": "ok",
+    "note": "Swap remains substantial; no isolated baseline or attribution to one process. Both services are ordinary task-local processes, with one model loaded."
+  }
+}

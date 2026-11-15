@@ -1,0 +1,49 @@
+{
+  "scope": "Seven fixed text/control/native-tool probes; not proof of complete vocabulary equality",
+  "all_passed": true,
+  "checks": [
+    {
+      "text_sha256": "185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969",
+      "matches": true,
+      "hf_length": 1,
+      "runtime_length": 1
+    },
+    {
+      "text_sha256": "6520848225a49bb558574294cd82d6992662db87c16cbf2886a6048b53352a4f",
+      "matches": true,
+      "hf_length": 5,
+      "runtime_length": 5
+    },
+    {
+      "text_sha256": "c342a0662ae09676f8dd3ff2ccdee664bc2bd7f7fa2947c2dc6dae53e5515482",
+      "matches": true,
+      "hf_length": 7,
+      "runtime_length": 7
+    },
+    {
+      "text_sha256": "ef6c747344b3c5ec593e127786c46942cb0618f5d073d5fb830abe003d2f2146",
+      "matches": true,
+      "hf_length": 1,
+      "runtime_length": 1
+    },
+    {
+      "text_sha256": "99dd22c7a979d651887cef69268d4a9db4dbce8cc2d768d229f0cbeb6f9980bb",
+      "matches": true,
+      "hf_length": 5,
+      "runtime_length": 5
+    },
+    {
+      "text_sha256": "0d0b1cabac67c295a663e7603a5fa93797422f6877e49f280c31b4964df68632",
+      "matches": true,
+      "hf_length": 4,
+      "runtime_length": 4
+    },
+    {
+      "text_sha256": "b1b32bfe88d72bca3e9235a8aa2c18b200a396371da9b3ebda5cecf5bb9d6c6e",
+      "matches": true,
+      "hf_length": 25,
+      "runtime_length": 25
+    }
+  ],
+  "no_model_generation": true
+}

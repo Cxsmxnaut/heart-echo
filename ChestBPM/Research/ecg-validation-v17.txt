@@ -1,0 +1,95 @@
+Additional simultaneous ECG/PCG check — November 14, 2026
+
+Purpose
+Check the unchanged v1.6 and v1.7 production estimators against a reference
+independent of heart audio and the Apple Watch's unspecified averaging window.
+This uses public data only. The participant ended personal testing after the Watch
+battery died; no further personal recordings or device measurements were started.
+
+Source and scope
+EPHNOGRAM 1.0.0, Kazemnejad, Gordany and Sameni, PhysioNet (2021),
+https://doi.org/10.13026/tjtq-5911 ; Open Data Commons Attribution License v1.0.
+Dataset: https://physionet.org/content/ephnogram/1.0.0/
+Paper: https://doi.org/10.1088/1361-6579/ad43af
+ECG detectors: WFDB Python 4.3.1 XQRS and GQRS,
+https://wfdb.readthedocs.io/en/latest/processing.html
+GQRS has documented known issues. Agreement between two automated detectors is
+a reference-quality screen, not clinician-reviewed annotation or proof of truth.
+
+Protocol and integrity
+ML/ecg_validation.py reserves three different participants per rest, walking,
+treadmill and bicycle category, seed 17142026, using metadata only. It selects one
+30-minute record per linked participant. Noisy and saturated records are retained.
+Source/model/evaluation hashes, this tool, package versions, metadata, selected
+records, and both actual native production executables were frozen before any
+selected waveform access. All twelve MATLAB files match published SHA256 values.
+The initial pre-download freeze is retained alongside the final pre-download freeze;
+the latter also pins the existing baseline sources and executable artifacts.
+
+Each record contributes fixed 30-second clips starting at 120, 720 and 1440 seconds.
+Every clip is replayed at all three predeclared RMS levels: .01, .03 and .1. Only PCG
+is provided to the estimator. PCG median removal, fixed RMS scaling, 48-kHz
+resampling and PCM16 conversion are documented; they are not phone microphone
+calibration. Motion is zero because this dataset has no matching phone motion data.
+There are 108 audio cases and 5,292 overlapping post-warm-up updates per estimator.
+
+ECG is processed separately, with eight seconds of detector context on each side.
+Corrected XQRS and GQRS events must agree one-to-one within 50ms. Reference windows
+require five peaks, plausible intervals, no obvious skipped-beat gap, and a recent
+last event. Missing or disputed references are not filled in. Both frozen reference
+definitions are reported: eight-second median interval and latest four intervals.
+Both estimators use identical reference times; their logged analysis ages agree.
+
+Results: eight-second median ECG reference
+Available reference: 3,891 / 5,292 updates; 1,401 missing. No available reference
+was outside the documented 40–176 BPM estimator range in this selected sample.
+v1.6: 2,264 returned, 58.19% coverage, mean absolute difference .7179 BPM,
+maximum 13.0615 BPM; 61 differences above 5 BPM and nine above 10 BPM.
+v1.7: 2,262 returned, 58.13% coverage, mean absolute difference .7121 BPM,
+maximum 11.1233 BPM; 52 differences above 5 BPM and one above 10 BPM.
+Returns without a usable reference remain reported separately: 602 and 598.
+
+Results: latest-four-interval ECG reference
+Available reference: 4,311 / 5,292 updates; 981 missing.
+v1.6: 2,416 returned, 56.04% coverage, mean absolute difference 1.9826 BPM,
+maximum 15.4140 BPM; 215 differences above 5 BPM and 37 above 10 BPM.
+v1.7: 2,409 returned, 55.88% coverage, mean absolute difference 1.7987 BPM,
+maximum 15.4140 BPM; 167 differences above 5 BPM and 23 above 10 BPM.
+Returns without a usable reference: 450 and 451. All cases, gains, missing
+references and large errors remain in the machine-readable local reports.
+
+Uncertainty and failure inspection
+All twelve selected participants remain in the report; eleven had usable reference
+windows. The participant with persistent detector disagreement contributes missing
+references, not invented accuracy scores. An exploratory 4,000-replicate participant
+bootstrap keeps all windows and gains in each participant cluster. The 95% interval
+for the returned-only latest-reference mean difference (v1.7 minus v1.6) is
+[-.4164, -.0452] BPM. For the median reference it is [-.1289, .0925] BPM. These are
+descriptive intervals for a small selected cohort, not population guarantees.
+
+Fixed ECG-only quality plots were inspected for all twelve participants. Targeted
+inspection of four large-error cases preserves the original complete-cohort scores.
+Some audio rates that disagree with ECG have strong periodic support and plausible model states.
+Searching for the strongest audio repetition alone would confirm the same rhythm
+or its harmonic in the inspected examples. Simply requiring 85% matched sound pairs
+would remove many readings close to the ECG reference too: in a post-hoc screen, median-reference
+returns fell from 2,262 to 1,645. This screen was not shipped or presented as a fix.
+
+Conclusion
+The extra check supports a modest improvement against recent ECG-derived rate,
+with nearly unchanged external-data availability. It also confirms unresolved
+large errors and substantial abstention on some exercise recordings. These are
+stethoscope recordings, not bare-iPhone recordings. The dataset's demographic,
+hardware and activity limits, automated reference errors, repeated gains and
+overlapping windows prevent a claim of universal or 100% accuracy. No model or
+algorithm tuning occurred during this additional evaluation. v1.7 remains unchanged.
+
+Reproduction
+Use the project's ML environment and ML/ecg-requirements.txt. Preserve the earlier
+frozen v1.6/v1.7 production executables and their source snapshots first. From the
+workspace root, run ML/ecg_validation.py with reserve, download, prepare, then run
+each frozen ProductionReplay executable on its matching audio-only-v16.json or
+audio-only-v17.json and ML/Models. Finally run ecg_validation.py evaluate. Reservation
+refuses to overwrite an existing freeze. Exact runtime versions, protocols, source
+hashes, requests, waveform checksums, comparisons, participant summaries and quality
+plots remain in the ignored diagnostic-logs/2026-11-14-v17-ecg-validation folder.

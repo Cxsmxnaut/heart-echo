@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0",
+        "1.1"
+      ]
+    },
+    "measurement": {
+      "type": "string",
+      "const": "experimental_heart_sound_timing"
+    },
+    "quality": {
+      "type": "string",
+      "enum": [
+        "usable",
+        "unclear",
+        "unavailable"
+      ]
+    },
+    "estimated_bpm": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 20,
+          "maximum": 300
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "duration_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 300
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "analysis_window_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 30
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "timing_counters": {
+      "type": "object",
+      "properties": {
+        "pattern_bpm": {
+          "type": "number",
+          "minimum": 20,
+          "maximum": 300
+        },
+        "cycle_bpm": {
+          "type": "number",
+          "minimum": 20,
+          "maximum": 300
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "measurement",
+    "quality",
+    "estimated_bpm",
+    "synthetic"
+  ],
+  "additionalProperties": false,
+  "$id": "urn:chest-bpm:scan-summary:1.1",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "quality": {
+            "const": "usable"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "estimated_bpm": {
+            "type": "number",
+            "minimum": 20,
+            "maximum": 300
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "estimated_bpm": {
+            "type": "null"
+          }
+        },
+        "not": {
+          "required": [
+            "timing_counters"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "1.1"
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "required": [
+            "duration_seconds"
+          ]
+        }
+      },
+      "else": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "timing_counters"
+              ]
+            },
+            {
+              "required": [
+                "analysis_window_seconds"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

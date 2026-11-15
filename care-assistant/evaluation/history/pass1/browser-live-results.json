@@ -1,0 +1,60 @@
+{
+  "tested_at": "2026-11-14T19:25:24.513Z",
+  "mode": "isolated Chrome; actual local Gemma 4; real MCP; LIVE public sources; synthetic user scenario only",
+  "passed": true,
+  "checks": [
+    {
+      "name": "Actual browser chat: app question → ZIP → insurance → live care results",
+      "passed": true,
+      "model": "care-gemma4-e2b",
+      "tool_trace": [
+        {
+          "name": "get_app_context",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ],
+      "live_cards": 9
+    },
+    {
+      "name": "Browser form: explicit future plan year and real payer-linked practice cards",
+      "passed": true,
+      "effective_date": "2027-01-01",
+      "plan_period": {
+        "start": "2027-01-01T00:00:00.000Z",
+        "end": "2027-12-31T00:00:00.000Z"
+      },
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "name": "Live payer results at 390px with no horizontal overflow",
+      "passed": true
+    }
+  ]
+}

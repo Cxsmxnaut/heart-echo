@@ -1,0 +1,15 @@
+{
+  "feature_check": {
+    "max_absolute_difference": 0.0,
+    "frames": 400
+  },
+  "conversion_check": {
+    "max_absolute_logit_error": 1.9073486328125e-06
+  },
+  "negative_cases": 14,
+  "negative_frames": 280,
+  "negative_bpm_returns": 0,
+  "engineering_checks": 87,
+  "python_tool_tests": 8,
+  "ui_test_passed": true
+}

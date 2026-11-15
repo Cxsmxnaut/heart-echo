@@ -1,0 +1,15 @@
+{
+  "model_files": {
+    "Data/com.apple.CoreML/model.mlmodel": "bb3e2cd129ddcc4377195ab79f56949244d12e7b85897e7971959be0647d8bb1",
+    "Data/com.apple.CoreML/weights/weight.bin": "76fed2c566b74e342165a649e9338ccab06a0987b65fb2fa68f32dbaedceda72",
+    "Manifest.json": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa"
+  },
+  "native_reader_sha256": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e",
+  "label_order": [
+    "Absent",
+    "Present",
+    "Unknown"
+  ],
+  "threshold": 0.6,
+  "scope": "Current app baseline; original artifacts must remain unchanged throughout murmur-only work."
+}

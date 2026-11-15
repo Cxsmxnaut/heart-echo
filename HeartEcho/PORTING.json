@@ -1,0 +1,227 @@
+{
+  "original_app": "app.veritas.chestbpm",
+  "new_app": "app.veritas.heartecho",
+  "origin_files": {
+    "Engine/HeartRateEstimator.swift": {
+      "source": "ChestBPM/ChestBPM/HeartRateEstimator.swift",
+      "source_sha256": "5a12a7944519a8ba62ace892d171d296ad5ce337c8ed78e3a123d6b529750731"
+    },
+    "Engine/NoiseAnalysis.swift": {
+      "source": "ChestBPM/ChestBPM/NoiseAnalysis.swift",
+      "source_sha256": "c6dc6e6341e979743c3a4aae726e5db28c86aca87a6d94d336c764db03d30d4a"
+    },
+    "Engine/NeuralSignal.swift": {
+      "source": "ChestBPM/ChestBPM/NeuralSignal.swift",
+      "source_sha256": "d51c81c2de2cd940d8562de762c26a78c1824347b24bf4875b17e8740803e778"
+    },
+    "Engine/DeviceSoundModels.swift": {
+      "source": "ChestBPM/ChestBPM/DeviceSoundModels.swift",
+      "source_sha256": "eb8396445f66a8dad94ac7fbb5d8d07406e594adb543977260961befbc88c280"
+    },
+    "Engine/HeartRateMonitor.swift": {
+      "source": "ChestBPM/ChestBPM/HeartRateMonitor.swift",
+      "source_sha256": "820b5a1c0a0cc5f62a87306cc8d0ba197e4927f0acb225de87bf3bdaaed5ff79"
+    },
+    "Engine/MurmurAnalysis.swift": {
+      "source": "ChestBPM/ChestBPM/MurmurAnalysis.swift",
+      "source_sha256": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e"
+    },
+    "Engine/MurmurView.swift": {
+      "source": "ChestBPM/ChestBPM/MurmurView.swift",
+      "source_sha256": "ca79db26335e2f8fbb1b95ca1159c3b9f8db983f1c5576aa4e08052d0bc80a11"
+    },
+    "Engine/WatchLink.swift": {
+      "source": "ChestBPM/Shared/WatchLink.swift",
+      "source_sha256": "b6a9ee4617675d6d1d2752a3bc00aa8c2d544fd851b48fa828eb5449b39fe2b6"
+    },
+    "Engine/TrialProtocol.swift": {
+      "source": "ChestBPM/Shared/TrialProtocol.swift",
+      "source_sha256": "0bcf06eb12edb2417202a0c022345c11d1462da4428de2cfb62491108689044e"
+    },
+    "Engine/DiagnosticLog.swift": {
+      "source": "ChestBPM/Shared/DiagnosticLog.swift",
+      "source_sha256": "2249a9834d91999b91821a9a5127dc9b61710a23f88e182c5f4f6e3d92d9ee3c"
+    },
+    "Engine/LegacyDiagnosticsView.swift": {
+      "source": "ChestBPM/ChestBPM/ChestBPMApp.swift",
+      "source_sha256": "222cc17a4b95295550d937703ed3ee4ad66f7d5ca2af2e4fcb3cb07fd0d46520",
+      "adaptation": "Removed @main, injected shared monitor and moved Watch/scene subscriptions to app store; original controls retained."
+    },
+    "Models/BeatStates.mlpackage/Manifest.json": {
+      "source": "ChestBPM/ML/Models/BeatStates.mlpackage/Manifest.json",
+      "source_sha256": "f026b9338f030ab7e902d4e90061f69383044ae4e975f5217fb0d40f058940a1"
+    },
+    "Models/BeatStates.mlpackage/Data/com.apple.CoreML/model.mlmodel": {
+      "source": "ChestBPM/ML/Models/BeatStates.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+      "source_sha256": "3c401436ac512fb983ddaa987dffa6c252dfa61b9d3524d84ea18f9c51730c0d"
+    },
+    "Models/BeatStates.mlpackage/Data/com.apple.CoreML/weights/weight.bin": {
+      "source": "ChestBPM/ML/Models/BeatStates.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+      "source_sha256": "e971a903a5fdc0736461e34d6c885abc065a1cbd27079e553f4bcf96230b9f12"
+    },
+    "Models/Murmur.mlpackage/Manifest.json": {
+      "source": "ChestBPM/ML/PhaseModels/Murmur.mlpackage/Manifest.json",
+      "source_sha256": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa"
+    },
+    "Models/Murmur.mlpackage/Data/com.apple.CoreML/model.mlmodel": {
+      "source": "ChestBPM/ML/PhaseModels/Murmur.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+      "source_sha256": "bb3e2cd129ddcc4377195ab79f56949244d12e7b85897e7971959be0647d8bb1"
+    },
+    "Models/Murmur.mlpackage/Data/com.apple.CoreML/weights/weight.bin": {
+      "source": "ChestBPM/ML/PhaseModels/Murmur.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+      "source_sha256": "76fed2c566b74e342165a649e9338ccab06a0987b65fb2fa68f32dbaedceda72"
+    },
+    "Resources/MurmurSamples/sources.json": {
+      "source": "ChestBPM/MurmurSamples/sources.json",
+      "source_sha256": "d7fccbc3abcd98c27eee0640aaeb79e3402d242de4233a1f90472db6634eb989"
+    },
+    "Resources/MurmurSamples/unknown.wav": {
+      "source": "ChestBPM/MurmurSamples/unknown.wav",
+      "source_sha256": "6a06375e17e9e2a189a299c01029defed8a552dbbe491411251a609ee2ac0cee"
+    },
+    "Resources/MurmurSamples/present.wav": {
+      "source": "ChestBPM/MurmurSamples/present.wav",
+      "source_sha256": "813943ed1e2d288c6f13ac0cdc91226bf688620b65f0d88a9a3755fed7b6fb18"
+    },
+    "Resources/MurmurSamples/absent.wav": {
+      "source": "ChestBPM/MurmurSamples/absent.wav",
+      "source_sha256": "d74f158d84441ac8532bfebc2835578204692a271ae93893f355e9f3f9a2bc5d"
+    },
+    "Resources/MurmurSamples/LICENSE.txt": {
+      "source": "ChestBPM/MurmurSamples/LICENSE.txt",
+      "source_sha256": "86c0ad300f6d380591298bc03652e30b81f65954bbf22435812bcfd46812ab06"
+    },
+    "Watch/HeartEchoWatch.swift": {
+      "source": "ChestBPM/Watch/ChestBPMWatch.swift",
+      "source_sha256": "3108ca3490b86c64dc6a4cedf90f3e47e8405e4dcea1572288dfc47b738890fa"
+    },
+    "Watch/Info.plist": {
+      "source": "ChestBPM/Watch/Info.plist",
+      "source_sha256": "8138b4952e2ab196182c4bef3a25a6fe9e5058c6b534910eeeb3191da40f4803"
+    },
+    "Watch/Watch.entitlements": {
+      "source": "ChestBPM/Watch/Watch.entitlements",
+      "source_sha256": "712b35d104b24b1c2468d13a08f5e5e2eb5c78855613b660777138a5f1554b6b"
+    },
+    "HeartEchoApp/HeartEchoApp.entitlements": {
+      "source": "ChestBPM/ChestBPM/ChestBPM.entitlements",
+      "source_sha256": "712b35d104b24b1c2468d13a08f5e5e2eb5c78855613b660777138a5f1554b6b"
+    },
+    "Tools/collect_study.py": {
+      "source": "ChestBPM/Tools/collect_study.py",
+      "source_sha256": "02b6d1dfbf7d2164d0e00ff3ec085bf681c5d439a2ddffe3567203f7e2696be1"
+    },
+    "Tools/dashboard.py": {
+      "source": "ChestBPM/Tools/dashboard.py",
+      "source_sha256": "88a0107c922e6176065942e8de9cfd1509b7a7295a3a357d0e38881b5b560a10"
+    },
+    "Tools/dashboard.html": {
+      "source": "ChestBPM/Tools/dashboard.html",
+      "source_sha256": "a29b1340cd827d311119cc474546f7d0da3eb65e80a8b8a4239408ba7bce68bf"
+    },
+    "Tools/poll_diagnostics.py": {
+      "source": "ChestBPM/Tools/poll_diagnostics.py",
+      "source_sha256": "f71b9b1d80700922ee6916e18fdb638f426c13d1acee298c2ae1f05df0fdc3cc"
+    },
+    "Tools/watch_study.py": {
+      "source": "ChestBPM/Tools/watch_study.py",
+      "source_sha256": "343e6320d4ca2a892c05e268acbcb9df3419bc6d01d6a1b4dce8144ff239f1f1"
+    },
+    "Tools/report_trials.py": {
+      "source": "ChestBPM/Tools/report_trials.py",
+      "source_sha256": "bac2b1fc8eda5006962ec09e09512ad93e03d18f9fed12259544e30a0e3d995a"
+    },
+    "Tools/test_collector.py": {
+      "source": "ChestBPM/Tools/test_collector.py",
+      "source_sha256": "2fff051fe17c99cd4c1b544298ba39afffc0821890d322441f032aba2e0d4270"
+    },
+    "Tools/test_poll.py": {
+      "source": "ChestBPM/Tools/test_poll.py",
+      "source_sha256": "bf70245c53c6562cca3825885694cb2c7894fcf3bd237d60d7e70ffd25247d61"
+    },
+    "Tests/main.swift": {
+      "source": "ChestBPM/Tests/main.swift",
+      "source_sha256": "55bd283a653ed79c7e00c91d5914bc43e1fbeffc59335a212446a52c32d4f74d"
+    },
+    "Tests/v1-golden.json": {
+      "source": "ChestBPM/Tests/v1-golden.json",
+      "source_sha256": "9e19663a91758adc368691c8861e8d4727470babbc4e24494b09f6075c8c42e5"
+    },
+    "Tools/MurmurChecks.swift": {
+      "source": "ChestBPM/Tools/MurmurChecks.swift",
+      "source_sha256": "d34a7c68bf80b6a0876e1cd6793786ee2a70c3415740be50544c930e1ac4e385"
+    },
+    "UITests/HeartEchoDiagnosticsUITests.swift": {
+      "source": "ChestBPM/UITests/ChestBPMUITests.swift",
+      "source_sha256": "16cfe6edbcceeecda59d210c63cf9bee2ebb0914ded4a7a6b57144589b53dd73"
+    }
+  },
+  "note": "Original sources and data are read-only for this port. Engine copies retain signal/model logic; branding and UI adaptations documented.",
+  "adaptations": {
+    "Engine/HeartRateMonitor.swift": "Only capture transport/lifecycle: explicit output URL; drain/close artifact with sample count/rate/write error; cancellation token guards. DSP/estimator/model calculations unchanged.",
+    "Engine/CaptureArtifact.swift": "New final capture metadata/completeness validation for product recording.",
+    "Engine/LegacyDiagnosticsView.swift": "Original tabs preserved; inject shared monitor, move Watch/lifecycle subscriptions to app store.",
+    "Engine/WatchLink.swift": "Visible Watch-install label changed to Heart Echo; wire keys/schema untouched.",
+    "Watch/HeartEchoWatch.swift": "App entry name and display text only.",
+    "Watch/Info.plist": "Companion bundle points to app.veritas.heartecho.",
+    "Tools/collect_study.py": "New bundle default; require current audio deletion manifest before audio downloads; skip deleted files and remove local copies.",
+    "Tools/dashboard.py": "Default localhost port 8766 and visible title.",
+    "Tools/dashboard.html": "Heart Echo visible title.",
+    "Tools/poll_diagnostics.py": "New bundle default.",
+    "UITests/HeartEchoDiagnosticsUITests.swift": "DEBUG diagnostic entry; child-switch taps and deliberate scrolling for virtualized/disabled controls."
+  },
+  "release": {
+    "version": "0.2.1",
+    "build": "3",
+    "bundle": "app.veritas.heartecho",
+    "watch_bundle": "app.veritas.heartecho.watchkitapp",
+    "signed_release_build": true,
+    "strict_deep_signature_verified": true,
+    "iPhone16_installed_version_verified": true,
+    "iPhone_launch_verified": true,
+    "original_iPhone_version_verified": "1.9(14)",
+    "separate_watch_installation_verified": false,
+    "app_executable_sha256": "f816e75a003e5c08a2fe882338ccaa880ce3b2347a8da398704eb11118a95ee6"
+  },
+  "knowledge_tools": "No configured Graphify graph or managed launcher was found in this repository. Important conclusions verified against current source and origin hashes.",
+  "new_storage": "RecordingFiles stages/protects metadata before atomic rename, journals retention/deletion, preserves retry ownership, recovers only known product files, and maintains a persistent diagnostic-audio deletion manifest.",
+  "checks": {
+    "BPM_engineering": 125,
+    "native_murmur": 13,
+    "record_outcome_and_capture": 14,
+    "native_storage_failure_and_recovery": 16,
+    "python_collector_poller": 14,
+    "dashboard_HTTP_smoke": 3,
+    "final_product_UI_passed": 3,
+    "final_diagnostic_controls_UI_passed": 1,
+    "earlier_diagnostic_plan_and_public_sample_UI_passed": 2,
+    "physical_new_Watch_verified": false,
+    "fresh_personal_recording_used": false
+  },
+  "integrated_source_sha256": {
+    "Engine/CaptureArtifact.swift": "322d5da45087e1d30a6eb1f5f15ced5683f5bc5364a4e08dc1cab730afcac3fb",
+    "Engine/DeviceSoundModels.swift": "eb8396445f66a8dad94ac7fbb5d8d07406e594adb543977260961befbc88c280",
+    "Engine/DiagnosticLog.swift": "2249a9834d91999b91821a9a5127dc9b61710a23f88e182c5f4f6e3d92d9ee3c",
+    "Engine/HeartRateEstimator.swift": "5a12a7944519a8ba62ace892d171d296ad5ce337c8ed78e3a123d6b529750731",
+    "Engine/HeartRateMonitor.swift": "f2551524c6fca54c385350351afaa3f07f8423f716380c37a5da394dcd91b5ed",
+    "Engine/LegacyDiagnosticsView.swift": "7202faec21bb73bb16a8b0ec8d6ec351b06ea856b2ec9f8b3f6d904f22a88093",
+    "Engine/MurmurAnalysis.swift": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e",
+    "Engine/MurmurView.swift": "ca79db26335e2f8fbb1b95ca1159c3b9f8db983f1c5576aa4e08052d0bc80a11",
+    "Engine/NeuralSignal.swift": "d51c81c2de2cd940d8562de762c26a78c1824347b24bf4875b17e8740803e778",
+    "Engine/NoiseAnalysis.swift": "c6dc6e6341e979743c3a4aae726e5db28c86aca87a6d94d336c764db03d30d4a",
+    "Engine/TrialProtocol.swift": "0bcf06eb12edb2417202a0c022345c11d1462da4428de2cfb62491108689044e",
+    "Engine/WatchLink.swift": "a0aaaba4849ef74b9e18d5655cff5444f263c1eb04a7b0f0263dd4c3877a08bd",
+    "HeartEchoApp/AssistantView.swift": "593c82f49209aaa1b875a916f0a25699bcd854eebfd7467f45f5e022521eeff5",
+    "HeartEchoApp/CareView.swift": "4d895d7413cd97636a868735f1f6a62f78dbeaec0228a6ed5da8d5e83ca98c2b",
+    "HeartEchoApp/DesignSystem.swift": "c29ad1af38b7a8bd12d2b136b7936bc4cff8d65a1d2c843900d0856c259b7fa7",
+    "HeartEchoApp/HeartEchoApp.swift": "e8e779dfd9e0c1af5bee6d78254d4b88dd7ed69fec4e9e3d976a1346b1d394da",
+    "HeartEchoApp/HeartEchoStore.swift": "7e22a18605fd6320dd0d9b394bd7c2798cfaf64b8181a5f1ce859376dabd4ba4",
+    "HeartEchoApp/HeartRecording.swift": "4af7ff1b298c59888b933e64e4c74f3f041ccc318dbe421b6ca4c69fd04b3bd0",
+    "HeartEchoApp/RecordingFiles.swift": "edd66a8b5ed19be6bc7da6a06919590deb4d20b63864cb0e9250e2b77440dd3f",
+    "HeartEchoApp/RecordingFlowView.swift": "fbe31bc4380b49d812c27818390ce0ed80d0d2c38f1b2fdefc58a638fdbb6b78",
+    "HeartEchoApp/RecordingsView.swift": "ab684442968b76a7d90ed505f28e6360b692ef831d9e9f75186cbdb9a09ad369",
+    "HeartEchoApp/SampleData.swift": "c1e37e8366698c863891a507540e2f82d77da698f11d5961e7124ead2fb20d63",
+    "HeartEchoApp.xcodeproj/project.pbxproj": "66e21a1e1ef47ee656418f7a7f6fe56d358a4672fa09647ccaccd3302c8e3a40",
+    "Watch/HeartEchoWatch.swift": "b7b9762ebccac0375159a14a2cc4850544d43fa766a029d706bf0151c24203bf"
+  }
+}

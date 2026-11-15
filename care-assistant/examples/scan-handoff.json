@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "measurement": "experimental_heart_sound_timing",
+  "quality": "usable",
+  "estimated_bpm": 74,
+  "duration_seconds": 20,
+  "synthetic": true
+}

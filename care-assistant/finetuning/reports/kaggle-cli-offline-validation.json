@@ -1,0 +1,11 @@
+{
+  "status": "offline_validation_passed_AUTH_APPROVAL_PENDING",
+  "nbformat_validation": "passed",
+  "private_metadata": true,
+  "sealed_test_content_embedded": false,
+  "notebook_sha256": "235a57c073091e2b632cc22947c9607404d4793521836f4d295e6f79f055e993",
+  "bundle_sha256": "18694e51c3dbd09ef8121cc167a90185604a08dc26ee219adb0135e2235f2737",
+  "actual_upload": false,
+  "actual_gpu_job_started_by_cli": false,
+  "note": "User action-time answer required before OAuth grant/upload; no credentials or authorization codes inspected."
+}

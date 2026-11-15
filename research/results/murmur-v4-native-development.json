@@ -1,0 +1,174 @@
+{
+  "selection": {
+    "shipping": {
+      "confusion_true_rows": [
+        [
+          88,
+          1,
+          47
+        ],
+        [
+          3,
+          25,
+          6
+        ],
+        [
+          1,
+          0,
+          9
+        ]
+      ],
+      "balanced_recall": 0.7607843137254902,
+      "recall": [
+        0.6470588235294118,
+        0.7352941176470589,
+        0.9
+      ],
+      "accuracy": 0.6777777777777778,
+      "known_positive_cases": 34,
+      "missed_positive_as_absent": 3,
+      "positive_unsure": 6,
+      "known_negative_cases": 136,
+      "false_alarms": 1,
+      "negative_unsure": 47,
+      "decisive_sensitivity": 0.7352941176470589,
+      "decisive_specificity": 0.6470588235294118,
+      "unsure": 62,
+      "total": 180
+    },
+    "candidate": {
+      "confusion_true_rows": [
+        [
+          84,
+          2,
+          50
+        ],
+        [
+          2,
+          25,
+          7
+        ],
+        [
+          3,
+          0,
+          7
+        ]
+      ],
+      "balanced_recall": 0.684313725490196,
+      "recall": [
+        0.6176470588235294,
+        0.7352941176470589,
+        0.7
+      ],
+      "accuracy": 0.6444444444444445,
+      "known_positive_cases": 34,
+      "missed_positive_as_absent": 2,
+      "positive_unsure": 7,
+      "known_negative_cases": 136,
+      "false_alarms": 2,
+      "negative_unsure": 50,
+      "decisive_sensitivity": 0.7352941176470589,
+      "decisive_specificity": 0.6176470588235294,
+      "unsure": 64,
+      "total": 180
+    },
+    "gates": {
+      "detected_not_lower": true,
+      "false_alarm_bound": true,
+      "negative_misses_not_higher": true,
+      "unsure_bound": true
+    }
+  },
+  "calibration": {
+    "shipping": {
+      "confusion_true_rows": [
+        [
+          90,
+          4,
+          44
+        ],
+        [
+          5,
+          24,
+          7
+        ],
+        [
+          3,
+          2,
+          8
+        ]
+      ],
+      "balanced_recall": 0.6447417316982534,
+      "recall": [
+        0.6521739130434783,
+        0.6666666666666666,
+        0.6153846153846154
+      ],
+      "accuracy": 0.6524064171122995,
+      "known_positive_cases": 36,
+      "missed_positive_as_absent": 5,
+      "positive_unsure": 7,
+      "known_negative_cases": 138,
+      "false_alarms": 4,
+      "negative_unsure": 44,
+      "decisive_sensitivity": 0.6666666666666666,
+      "decisive_specificity": 0.6521739130434783,
+      "unsure": 59,
+      "total": 187
+    },
+    "candidate": {
+      "confusion_true_rows": [
+        [
+          72,
+          8,
+          58
+        ],
+        [
+          4,
+          26,
+          6
+        ],
+        [
+          2,
+          1,
+          10
+        ]
+      ],
+      "balanced_recall": 0.6710640406292581,
+      "recall": [
+        0.5217391304347826,
+        0.7222222222222222,
+        0.7692307692307693
+      ],
+      "accuracy": 0.5775401069518716,
+      "known_positive_cases": 36,
+      "missed_positive_as_absent": 4,
+      "positive_unsure": 6,
+      "known_negative_cases": 138,
+      "false_alarms": 8,
+      "negative_unsure": 58,
+      "decisive_sensitivity": 0.7222222222222222,
+      "decisive_specificity": 0.5217391304347826,
+      "unsure": 74,
+      "total": 187
+    },
+    "gates": {
+      "detected_not_lower": true,
+      "false_alarm_bound": false,
+      "negative_misses_not_higher": true,
+      "unsure_bound": false
+    }
+  },
+  "development_gate_passed": false,
+  "additional_positive_detections": 2,
+  "conversion": {
+    "maximum_absolute_differences": [
+      7.8580342233181e-09,
+      9.5367431640625e-06,
+      1.4081597328186035e-06
+    ],
+    "cases": 4,
+    "weights_sha256": "183d422b11c516ee59da6a80349e79fd282cbb5bd3b1507d1284ff6b3465ff66"
+  },
+  "note": "Reused development partitions; neither clinical nor phone validation. No regression data used in checkpoint selection."
+}

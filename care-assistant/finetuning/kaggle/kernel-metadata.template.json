@@ -1,0 +1,14 @@
+{
+  "id": "__EXISTING_KAGGLE_OWNER__/chest-bpm-e4b-qlora-pilot",
+  "title": "Chest BPM E4B QLoRA private pilot",
+  "code_file": "care-e4b-qlora-private-v2.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

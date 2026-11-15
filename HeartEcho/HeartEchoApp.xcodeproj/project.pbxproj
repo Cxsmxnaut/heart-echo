@@ -1,0 +1,766 @@
+// !$*UTF8*$!
+{
+"archiveVersion" = "1";
+"classes" = {
+};
+"objectVersion" = "56";
+"objects" = {
+"6DA5650218944C5A2FA3787A" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/AssistantView.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"3E48235950C45DD924A873E2" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/AudioAssessment.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"67E81B6F0C7E2610E1056701" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/CareService.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"DD76CB52756D1F618B328584" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/CareView.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"115D0D44F6AB20DB99403943" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/DesignSystem.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"E8E9278B0620B2082DD7842B" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/HeartEchoApp.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"8BC27924F4E320F38C51E52D" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/HeartEchoStore.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"7DA9A280D75B12F8DD66F52A" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/HeartRecording.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"647ADE140DF41316BD572476" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/NativeCareDirectory.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"5778B8047137FF9650712251" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/PublicExamplesView.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"ACF1DF76C2A966496A2A0ECD" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/RecordingFiles.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"052D9C71F88B9B0F0732BF90" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/RecordingFlowView.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"EAD019E9B56EC45763733C54" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/RecordingsView.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"E0F406609C0E8231E0DED2E8" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/SampleData.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"64FCEC53D82AEEDE046FCD0B" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/CaptureArtifact.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"C71F3F32B0E036ED1306F841" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/DeviceSoundModels.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"8EC3AA3EA0C32A14D234FF73" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/DiagnosticLog.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"732F541D6B0D41AFEECAAD2B" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/HeartRateEstimator.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"98865A85A5E352CE9A92374F" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/HeartRateMonitor.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"32DDE6843BA7ED5DD559687F" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/LegacyDiagnosticsView.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"5D46830CBBE92B5CF950BE8D" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/MurmurAnalysis.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"07669706626E9A7E93C09CE3" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/MurmurView.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"A5691674FF16FADDCD8F28DA" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/NeuralSignal.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"6EF0D726FF1FD9A9A6A69D15" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/NoiseAnalysis.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"F8EB212203BCD5E0B6AED831" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/TrialProtocol.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"21BC6EBA955DF77E1E301AAC" = {
+"isa" = "PBXFileReference";
+"path" = "Engine/WatchLink.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"AA13A415BACFD7D94486A29C" = {
+"isa" = "PBXFileReference";
+"path" = "Watch/HeartEchoWatch.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"0BED349E949927E1A197E2D7" = {
+"isa" = "PBXFileReference";
+"path" = "UITests/HeartEchoCareUITests.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"5B9E1075E67E6D8368FFD1EC" = {
+"isa" = "PBXFileReference";
+"path" = "UITests/HeartEchoDiagnosticsUITests.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"CC3CAB1E56A4F106AC0097C9" = {
+"isa" = "PBXFileReference";
+"path" = "UITests/HeartEchoProductUITests.swift";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "sourcecode.swift";
+};
+"8D764C411E3BD93F4DE7E548" = {
+"isa" = "PBXFileReference";
+"path" = "Models/BeatStates.mlpackage";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "folder.mlpackage";
+};
+"815D62C2E60A461263C28A74" = {
+"isa" = "PBXFileReference";
+"path" = "Models/Murmur.mlpackage";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "folder.mlpackage";
+};
+"8E39E89713B0B90B35D0EB9F" = {
+"isa" = "PBXFileReference";
+"path" = "Resources/MurmurSamples";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "folder";
+};
+"FB0D71CD0AFC88785A7887C0" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp/Assets.xcassets";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "folder.assetcatalog";
+};
+"7B8A5DB5FE07B8F7946DBDBD" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoApp.app";
+"sourceTree" = "BUILT_PRODUCTS_DIR";
+"explicitFileType" = "wrapper.application";
+};
+"C8A0D894B46FC34857B4D2FA" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoWatch.app";
+"sourceTree" = "BUILT_PRODUCTS_DIR";
+"explicitFileType" = "wrapper.application";
+};
+"E79634A1AB7C9A9ADF0DCBE3" = {
+"isa" = "PBXFileReference";
+"path" = "HeartEchoUITests.xctest";
+"sourceTree" = "BUILT_PRODUCTS_DIR";
+"explicitFileType" = "wrapper.cfbundle";
+};
+"B07C58FD472F1C786AB8DBE2" = {
+"isa" = "PBXContainerItemProxy";
+"containerPortal" = "000000000000000000000001";
+"proxyType" = "1";
+"remoteGlobalIDString" = "7838FD9226842EF72C425A78";
+"remoteInfo" = "HeartEchoWatch";
+};
+"CCC06A62180FBE37F143C88D" = {
+"isa" = "PBXTargetDependency";
+"target" = "7838FD9226842EF72C425A78";
+"targetProxy" = "B07C58FD472F1C786AB8DBE2";
+};
+"B16942FC8AFA7C122346AB63" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "C8A0D894B46FC34857B4D2FA";
+"settings" = {
+"ATTRIBUTES" = ("RemoveHeadersOnCopy");
+};
+};
+"8BCF85F9DE49BA50AD5EDC9A" = {
+"isa" = "PBXCopyFilesBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ("B16942FC8AFA7C122346AB63");
+"runOnlyForDeploymentPostprocessing" = "0";
+"dstPath" = "$(CONTENTS_FOLDER_PATH)/Watch";
+"dstSubfolderSpec" = "16";
+"name" = "Embed Watch App";
+};
+"FD1AE8B17F822DDBAF654AE5" = {
+"isa" = "XCBuildConfiguration";
+"name" = "Debug";
+"buildSettings" = {
+"CODE_SIGN_STYLE" = "Automatic";
+"DEVELOPMENT_TEAM" = "6L2L492NHQ";
+"GENERATE_INFOPLIST_FILE" = "YES";
+"PRODUCT_NAME" = "$(TARGET_NAME)";
+"SWIFT_VERSION" = "5.0";
+"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
+"PRODUCT_BUNDLE_IDENTIFIER" = "app.veritas.heartecho";
+"CURRENT_PROJECT_VERSION" = "5";
+"MARKETING_VERSION" = "0.4.0";
+"CODE_SIGN_ENTITLEMENTS" = "HeartEchoApp/HeartEchoApp.entitlements";
+"TARGETED_DEVICE_FAMILY" = "1";
+"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
+"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+"SUPPORTS_MACCATALYST" = "NO";
+"INFOPLIST_KEY_CFBundleDisplayName" = "Heart Echo";
+"INFOPLIST_KEY_LSApplicationCategoryType" = "public.app-category.healthcare-fitness";
+"INFOPLIST_KEY_UILaunchScreen_Generation" = "YES";
+"INFOPLIST_KEY_UIApplicationSceneManifest_Generation" = "YES";
+"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents" = "YES";
+"INFOPLIST_KEY_UISupportedInterfaceOrientations" = "UIInterfaceOrientationPortrait";
+"INFOPLIST_KEY_NSMicrophoneUsageDescription" = "Heart Echo records heart sounds for on-device BPM and murmur exploration. Audio is kept on this device only when you choose to retain it. Raw audio stays on this iPhone.";
+"INFOPLIST_KEY_NSLocalNetworkUsageDescription" = "Connect to your chosen Heart Echo care service on the same trusted Wi-Fi. Audio stays on this iPhone.";
+"INFOPLIST_FILE" = "HeartEchoApp/Info.plist";
+"INFOPLIST_KEY_NSMotionUsageDescription" = "Heart Echo uses phone motion to help identify handling noise while listening.";
+"INFOPLIST_KEY_NSHealthShareUsageDescription" = "Coordinate an optional heart-rate comparison with your paired Apple Watch.";
+"INFOPLIST_KEY_NSHealthUpdateUsageDescription" = "Ask the Watch to start a temporary measurement session. Workouts are discarded.";
+};
+};
+"DC45B0D3EA7F28FE9985D8D3" = {
+"isa" = "XCBuildConfiguration";
+"name" = "Release";
+"buildSettings" = {
+"CODE_SIGN_STYLE" = "Automatic";
+"DEVELOPMENT_TEAM" = "6L2L492NHQ";
+"GENERATE_INFOPLIST_FILE" = "YES";
+"PRODUCT_NAME" = "$(TARGET_NAME)";
+"SWIFT_VERSION" = "5.0";
+"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
+"PRODUCT_BUNDLE_IDENTIFIER" = "app.veritas.heartecho";
+"CURRENT_PROJECT_VERSION" = "5";
+"MARKETING_VERSION" = "0.4.0";
+"CODE_SIGN_ENTITLEMENTS" = "HeartEchoApp/HeartEchoApp.entitlements";
+"TARGETED_DEVICE_FAMILY" = "1";
+"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
+"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+"SUPPORTS_MACCATALYST" = "NO";
+"INFOPLIST_KEY_CFBundleDisplayName" = "Heart Echo";
+"INFOPLIST_KEY_LSApplicationCategoryType" = "public.app-category.healthcare-fitness";
+"INFOPLIST_KEY_UILaunchScreen_Generation" = "YES";
+"INFOPLIST_KEY_UIApplicationSceneManifest_Generation" = "YES";
+"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents" = "YES";
+"INFOPLIST_KEY_UISupportedInterfaceOrientations" = "UIInterfaceOrientationPortrait";
+"INFOPLIST_KEY_NSMicrophoneUsageDescription" = "Heart Echo records heart sounds for on-device BPM and murmur exploration. Audio is kept on this device only when you choose to retain it. Raw audio stays on this iPhone.";
+"INFOPLIST_KEY_NSLocalNetworkUsageDescription" = "Connect to your chosen Heart Echo care service on the same trusted Wi-Fi. Audio stays on this iPhone.";
+"INFOPLIST_FILE" = "HeartEchoApp/Info.plist";
+"INFOPLIST_KEY_NSMotionUsageDescription" = "Heart Echo uses phone motion to help identify handling noise while listening.";
+"INFOPLIST_KEY_NSHealthShareUsageDescription" = "Coordinate an optional heart-rate comparison with your paired Apple Watch.";
+"INFOPLIST_KEY_NSHealthUpdateUsageDescription" = "Ask the Watch to start a temporary measurement session. Workouts are discarded.";
+};
+};
+"5F460613C444618696CB2EEB" = {
+"isa" = "XCConfigurationList";
+"buildConfigurations" = ("FD1AE8B17F822DDBAF654AE5","DC45B0D3EA7F28FE9985D8D3");
+"defaultConfigurationIsVisible" = "0";
+"defaultConfigurationName" = "Release";
+};
+"D18B3E7F52E2651796DCAF6B" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "6DA5650218944C5A2FA3787A";
+};
+"5CA1DE26A6FC26D3D6614CAD" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "3E48235950C45DD924A873E2";
+};
+"AA4E4515F3B6E5BB63EB24C2" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "67E81B6F0C7E2610E1056701";
+};
+"1607F42BC3E858215477CFDA" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "DD76CB52756D1F618B328584";
+};
+"B67102BE97ADF5176DFB0FDE" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "115D0D44F6AB20DB99403943";
+};
+"B4578537F88B9749648CAA61" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "E8E9278B0620B2082DD7842B";
+};
+"8B88A6DB65C965713F804E8D" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "8BC27924F4E320F38C51E52D";
+};
+"A4D11D074F58828AD82E503E" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "7DA9A280D75B12F8DD66F52A";
+};
+"137DCC4EA73C7CC294BDD3A7" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "647ADE140DF41316BD572476";
+};
+"CEC5ABECC701B8A49C445DA3" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "5778B8047137FF9650712251";
+};
+"299F358576AAB6EE173FEB9C" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "ACF1DF76C2A966496A2A0ECD";
+};
+"8106FDE12FB2883B5B848F58" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "052D9C71F88B9B0F0732BF90";
+};
+"930A5BEA3D6457AD5F6B90C2" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "EAD019E9B56EC45763733C54";
+};
+"960006B702B42E77019F7F6F" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "E0F406609C0E8231E0DED2E8";
+};
+"C15733352B128FB6A85F963B" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "64FCEC53D82AEEDE046FCD0B";
+};
+"38695002FEC44BF8D318AD89" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "C71F3F32B0E036ED1306F841";
+};
+"4CE6015B3C1701C1F5A0A698" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "8EC3AA3EA0C32A14D234FF73";
+};
+"22E4C218870B0BB3AC6FE05D" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "732F541D6B0D41AFEECAAD2B";
+};
+"B8C2B568D67322831BB0D2C6" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "98865A85A5E352CE9A92374F";
+};
+"0D7F8BD36BF4F10743919102" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "32DDE6843BA7ED5DD559687F";
+};
+"75E1C568EDA500D2DF32D295" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "5D46830CBBE92B5CF950BE8D";
+};
+"DFC2824338FE9C7F1E6C52AB" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "07669706626E9A7E93C09CE3";
+};
+"BFD53523CB1AE694AB2BC970" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "A5691674FF16FADDCD8F28DA";
+};
+"44229177579B6ACEE44EF9A6" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "6EF0D726FF1FD9A9A6A69D15";
+};
+"D348B91ABF60AB6704BB3E29" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "F8EB212203BCD5E0B6AED831";
+};
+"2E0BCAF851A751A0871FAE76" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "21BC6EBA955DF77E1E301AAC";
+};
+"00BC7FA9C757F062144CA8D9" = {
+"isa" = "PBXSourcesBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ("D18B3E7F52E2651796DCAF6B","5CA1DE26A6FC26D3D6614CAD","AA4E4515F3B6E5BB63EB24C2","1607F42BC3E858215477CFDA","B67102BE97ADF5176DFB0FDE","B4578537F88B9749648CAA61","8B88A6DB65C965713F804E8D","A4D11D074F58828AD82E503E","137DCC4EA73C7CC294BDD3A7","CEC5ABECC701B8A49C445DA3","299F358576AAB6EE173FEB9C","8106FDE12FB2883B5B848F58","930A5BEA3D6457AD5F6B90C2","960006B702B42E77019F7F6F","C15733352B128FB6A85F963B","38695002FEC44BF8D318AD89","4CE6015B3C1701C1F5A0A698","22E4C218870B0BB3AC6FE05D","B8C2B568D67322831BB0D2C6","0D7F8BD36BF4F10743919102","75E1C568EDA500D2DF32D295","DFC2824338FE9C7F1E6C52AB","BFD53523CB1AE694AB2BC970","44229177579B6ACEE44EF9A6","D348B91ABF60AB6704BB3E29","2E0BCAF851A751A0871FAE76");
+"runOnlyForDeploymentPostprocessing" = "0";
+};
+"84ACADF949AC425C4C506827" = {
+"isa" = "PBXFrameworksBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ();
+"runOnlyForDeploymentPostprocessing" = "0";
+};
+"D6A3AEDE43C04AE4F92BBE17" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "8D764C411E3BD93F4DE7E548";
+};
+"03E24F86A519A213F426414D" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "815D62C2E60A461263C28A74";
+};
+"28A8F3800877916D80F3BED8" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "8E39E89713B0B90B35D0EB9F";
+};
+"50DFEB962A7D203A87F23C8D" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "FB0D71CD0AFC88785A7887C0";
+};
+"46232385FC0E42A2CC9BC6AF" = {
+"isa" = "PBXResourcesBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ("D6A3AEDE43C04AE4F92BBE17","03E24F86A519A213F426414D","28A8F3800877916D80F3BED8","50DFEB962A7D203A87F23C8D");
+"runOnlyForDeploymentPostprocessing" = "0";
+};
+"000000000000000000000005" = {
+"isa" = "PBXNativeTarget";
+"name" = "HeartEchoApp";
+"productName" = "HeartEchoApp";
+"productReference" = "7B8A5DB5FE07B8F7946DBDBD";
+"productType" = "com.apple.product-type.application";
+"buildConfigurationList" = "5F460613C444618696CB2EEB";
+"buildPhases" = ("00BC7FA9C757F062144CA8D9","84ACADF949AC425C4C506827","46232385FC0E42A2CC9BC6AF","8BCF85F9DE49BA50AD5EDC9A");
+"buildRules" = ();
+"dependencies" = ("CCC06A62180FBE37F143C88D");
+};
+"3EB7E84132CEC16846CCC825" = {
+"isa" = "XCBuildConfiguration";
+"name" = "Debug";
+"buildSettings" = {
+"CODE_SIGN_STYLE" = "Automatic";
+"DEVELOPMENT_TEAM" = "6L2L492NHQ";
+"GENERATE_INFOPLIST_FILE" = "YES";
+"PRODUCT_NAME" = "HeartEchoWatch";
+"SWIFT_VERSION" = "5.0";
+"PRODUCT_BUNDLE_IDENTIFIER" = "app.veritas.heartecho.watchkitapp";
+"SDKROOT" = "watchos";
+"SUPPORTED_PLATFORMS" = "watchos watchsimulator";
+"TARGETED_DEVICE_FAMILY" = "4";
+"WATCHOS_DEPLOYMENT_TARGET" = "10.0";
+"CURRENT_PROJECT_VERSION" = "5";
+"MARKETING_VERSION" = "0.4.0";
+"INFOPLIST_FILE" = "Watch/Info.plist";
+"INFOPLIST_KEY_CFBundleDisplayName" = "Heart Echo";
+"CODE_SIGN_ENTITLEMENTS" = "Watch/Watch.entitlements";
+};
+};
+"F8CF6312D461CF58A0477C22" = {
+"isa" = "XCBuildConfiguration";
+"name" = "Release";
+"buildSettings" = {
+"CODE_SIGN_STYLE" = "Automatic";
+"DEVELOPMENT_TEAM" = "6L2L492NHQ";
+"GENERATE_INFOPLIST_FILE" = "YES";
+"PRODUCT_NAME" = "HeartEchoWatch";
+"SWIFT_VERSION" = "5.0";
+"PRODUCT_BUNDLE_IDENTIFIER" = "app.veritas.heartecho.watchkitapp";
+"SDKROOT" = "watchos";
+"SUPPORTED_PLATFORMS" = "watchos watchsimulator";
+"TARGETED_DEVICE_FAMILY" = "4";
+"WATCHOS_DEPLOYMENT_TARGET" = "10.0";
+"CURRENT_PROJECT_VERSION" = "5";
+"MARKETING_VERSION" = "0.4.0";
+"INFOPLIST_FILE" = "Watch/Info.plist";
+"INFOPLIST_KEY_CFBundleDisplayName" = "Heart Echo";
+"CODE_SIGN_ENTITLEMENTS" = "Watch/Watch.entitlements";
+};
+};
+"BB318E83854575F1D11C0C75" = {
+"isa" = "XCConfigurationList";
+"buildConfigurations" = ("3EB7E84132CEC16846CCC825","F8CF6312D461CF58A0477C22");
+"defaultConfigurationIsVisible" = "0";
+"defaultConfigurationName" = "Release";
+};
+"DA93E4FCA43C1B82C95DDC06" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "AA13A415BACFD7D94486A29C";
+};
+"DFF5AFD80B3DBA9057F50889" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "21BC6EBA955DF77E1E301AAC";
+};
+"ABBAE8BCE6B49852FA77DFC4" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "F8EB212203BCD5E0B6AED831";
+};
+"6934056D82DEA9BB19407B5E" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "8EC3AA3EA0C32A14D234FF73";
+};
+"23B035F49ED825C2DF0A9894" = {
+"isa" = "PBXSourcesBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ("DA93E4FCA43C1B82C95DDC06","DFF5AFD80B3DBA9057F50889","ABBAE8BCE6B49852FA77DFC4","6934056D82DEA9BB19407B5E");
+"runOnlyForDeploymentPostprocessing" = "0";
+};
+"4E812C3DFC883FDED2000DCD" = {
+"isa" = "PBXFrameworksBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ();
+"runOnlyForDeploymentPostprocessing" = "0";
+};
+"F5230576D0E652FDE73EE339" = {
+"isa" = "PBXResourcesBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ();
+"runOnlyForDeploymentPostprocessing" = "0";
+};
+"7838FD9226842EF72C425A78" = {
+"isa" = "PBXNativeTarget";
+"name" = "HeartEchoWatch";
+"productName" = "HeartEchoWatch";
+"productReference" = "C8A0D894B46FC34857B4D2FA";
+"productType" = "com.apple.product-type.application";
+"buildConfigurationList" = "BB318E83854575F1D11C0C75";
+"buildPhases" = ("23B035F49ED825C2DF0A9894","4E812C3DFC883FDED2000DCD","F5230576D0E652FDE73EE339");
+"buildRules" = ();
+"dependencies" = ();
+};
+"4C8EEA60177F656A585737FD" = {
+"isa" = "PBXContainerItemProxy";
+"containerPortal" = "000000000000000000000001";
+"proxyType" = "1";
+"remoteGlobalIDString" = "000000000000000000000005";
+"remoteInfo" = "HeartEchoApp";
+};
+"E4C483FCA55C4A351D1ECFE9" = {
+"isa" = "PBXTargetDependency";
+"target" = "000000000000000000000005";
+"targetProxy" = "4C8EEA60177F656A585737FD";
+};
+"E6EA70B0198E8B25C48F3F68" = {
+"isa" = "XCBuildConfiguration";
+"name" = "Debug";
+"buildSettings" = {
+"CODE_SIGN_STYLE" = "Automatic";
+"DEVELOPMENT_TEAM" = "6L2L492NHQ";
+"GENERATE_INFOPLIST_FILE" = "YES";
+"PRODUCT_NAME" = "$(TARGET_NAME)";
+"SWIFT_VERSION" = "5.0";
+"PRODUCT_BUNDLE_IDENTIFIER" = "app.veritas.heartecho.uitests";
+"TEST_TARGET_NAME" = "HeartEchoApp";
+"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
+"TARGETED_DEVICE_FAMILY" = "1";
+};
+};
+"B706DB6B2E942AB5906B07A4" = {
+"isa" = "XCBuildConfiguration";
+"name" = "Release";
+"buildSettings" = {
+"CODE_SIGN_STYLE" = "Automatic";
+"DEVELOPMENT_TEAM" = "6L2L492NHQ";
+"GENERATE_INFOPLIST_FILE" = "YES";
+"PRODUCT_NAME" = "$(TARGET_NAME)";
+"SWIFT_VERSION" = "5.0";
+"PRODUCT_BUNDLE_IDENTIFIER" = "app.veritas.heartecho.uitests";
+"TEST_TARGET_NAME" = "HeartEchoApp";
+"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
+"TARGETED_DEVICE_FAMILY" = "1";
+};
+};
+"57A6BB766DB2706545D4BD3B" = {
+"isa" = "XCConfigurationList";
+"buildConfigurations" = ("E6EA70B0198E8B25C48F3F68","B706DB6B2E942AB5906B07A4");
+"defaultConfigurationIsVisible" = "0";
+"defaultConfigurationName" = "Release";
+};
+"87EBD4E21C496B9D4B33B451" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "0BED349E949927E1A197E2D7";
+};
+"2B371E732B44F46541133DFE" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "5B9E1075E67E6D8368FFD1EC";
+};
+"69BFF0A39FF5AE31C1FA070E" = {
+"isa" = "PBXBuildFile";
+"fileRef" = "CC3CAB1E56A4F106AC0097C9";
+};
+"45B5AF9893A09CB7D61EBF69" = {
+"isa" = "PBXSourcesBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ("87EBD4E21C496B9D4B33B451","2B371E732B44F46541133DFE","69BFF0A39FF5AE31C1FA070E");
+"runOnlyForDeploymentPostprocessing" = "0";
+};
+"A4C84ACD06FDCFA303679DF5" = {
+"isa" = "PBXFrameworksBuildPhase";
+"buildActionMask" = "2147483647";
+"files" = ();
+"runOnlyForDeploymentPostprocessing" = "0";
+};
+"739D3529FF481E9A7B0F61BC" = {
+"isa" = "PBXNativeTarget";
+"name" = "HeartEchoUITests";
+"productName" = "HeartEchoUITests";
+"productReference" = "E79634A1AB7C9A9ADF0DCBE3";
+"productType" = "com.apple.product-type.bundle.ui-testing";
+"buildConfigurationList" = "57A6BB766DB2706545D4BD3B";
+"buildPhases" = ("45B5AF9893A09CB7D61EBF69","A4C84ACD06FDCFA303679DF5");
+"buildRules" = ();
+"dependencies" = ("E4C483FCA55C4A351D1ECFE9");
+};
+"67B55C07AA5C528A540CC741" = {
+"isa" = "PBXGroup";
+"name" = "Products";
+"sourceTree" = "<group>";
+"children" = ("7B8A5DB5FE07B8F7946DBDBD","C8A0D894B46FC34857B4D2FA","E79634A1AB7C9A9ADF0DCBE3");
+};
+"AF418BD27BB7F4C3FAC9218C" = {
+"isa" = "PBXFileReference";
+"path" = "Watch/Info.plist";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "text.plist.xml";
+};
+"7DEC9FEB11D584DB810215FF" = {
+"isa" = "PBXFileReference";
+"path" = "Watch/Watch.entitlements";
+"sourceTree" = "SOURCE_ROOT";
+"lastKnownFileType" = "text.plist.entitlements";
+};
+"F32E293A7A2DE20680EA4564" = {
+"isa" = "PBXGroup";
+"name" = "App";
+"sourceTree" = "<group>";
+"children" = ("6DA5650218944C5A2FA3787A","3E48235950C45DD924A873E2","67E81B6F0C7E2610E1056701","DD76CB52756D1F618B328584","115D0D44F6AB20DB99403943","E8E9278B0620B2082DD7842B","8BC27924F4E320F38C51E52D","7DA9A280D75B12F8DD66F52A","647ADE140DF41316BD572476","5778B8047137FF9650712251","ACF1DF76C2A966496A2A0ECD","052D9C71F88B9B0F0732BF90","EAD019E9B56EC45763733C54","E0F406609C0E8231E0DED2E8");
+};
+"C3FAC384A8F41C2E4600C06C" = {
+"isa" = "PBXGroup";
+"name" = "Engine";
+"sourceTree" = "<group>";
+"children" = ("64FCEC53D82AEEDE046FCD0B","C71F3F32B0E036ED1306F841","8EC3AA3EA0C32A14D234FF73","732F541D6B0D41AFEECAAD2B","98865A85A5E352CE9A92374F","32DDE6843BA7ED5DD559687F","5D46830CBBE92B5CF950BE8D","07669706626E9A7E93C09CE3","A5691674FF16FADDCD8F28DA","6EF0D726FF1FD9A9A6A69D15","F8EB212203BCD5E0B6AED831","21BC6EBA955DF77E1E301AAC");
+};
+"C9A8CC5B7D35DAD9E4F2AAB6" = {
+"isa" = "PBXGroup";
+"name" = "Models and Samples";
+"sourceTree" = "<group>";
+"children" = ("8D764C411E3BD93F4DE7E548","815D62C2E60A461263C28A74","8E39E89713B0B90B35D0EB9F","FB0D71CD0AFC88785A7887C0");
+};
+"5A0D8BD35AFA852B51C8024C" = {
+"isa" = "PBXGroup";
+"name" = "Watch";
+"sourceTree" = "<group>";
+"children" = ("AA13A415BACFD7D94486A29C","AF418BD27BB7F4C3FAC9218C","7DEC9FEB11D584DB810215FF");
+};
+"E999664AED7B055155EB540E" = {
+"isa" = "PBXGroup";
+"name" = "UI Tests";
+"sourceTree" = "<group>";
+"children" = ("0BED349E949927E1A197E2D7","5B9E1075E67E6D8368FFD1EC","CC3CAB1E56A4F106AC0097C9");
+};
+"EB8CF0EFCAE5F409DFFE1C45" = {
+"isa" = "PBXGroup";
+"sourceTree" = "<group>";
+"children" = ("F32E293A7A2DE20680EA4564","C3FAC384A8F41C2E4600C06C","C9A8CC5B7D35DAD9E4F2AAB6","5A0D8BD35AFA852B51C8024C","E999664AED7B055155EB540E","67B55C07AA5C528A540CC741");
+};
+"53670B5B0DC778E2E95DC3EE" = {
+"isa" = "XCBuildConfiguration";
+"name" = "Debug";
+"buildSettings" = {
+"CLANG_ENABLE_MODULES" = "YES";
+"SDKROOT" = "iphoneos";
+"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
+"SWIFT_VERSION" = "5.0";
+"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+"DEBUG_INFORMATION_FORMAT" = "dwarf";
+"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG";
+};
+};
+"8B63045364CA09D592477354" = {
+"isa" = "XCBuildConfiguration";
+"name" = "Release";
+"buildSettings" = {
+"CLANG_ENABLE_MODULES" = "YES";
+"SDKROOT" = "iphoneos";
+"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
+"SWIFT_VERSION" = "5.0";
+"SWIFT_COMPILATION_MODE" = "wholemodule";
+"SWIFT_OPTIMIZATION_LEVEL" = "-O";
+"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
+};
+};
+"69D729CBAD3A736ADB489360" = {
+"isa" = "XCConfigurationList";
+"buildConfigurations" = ("53670B5B0DC778E2E95DC3EE","8B63045364CA09D592477354");
+"defaultConfigurationIsVisible" = "0";
+"defaultConfigurationName" = "Release";
+};
+"000000000000000000000001" = {
+"isa" = "PBXProject";
+"attributes" = {
+"BuildIndependentTargetsInParallel" = "YES";
+"LastUpgradeCheck" = "2720";
+"TargetAttributes" = {
+"000000000000000000000005" = {
+"CreatedOnToolsVersion" = "27.2";
+"ProvisioningStyle" = "Automatic";
+};
+"7838FD9226842EF72C425A78" = {
+"CreatedOnToolsVersion" = "27.2";
+"ProvisioningStyle" = "Automatic";
+};
+};
+};
+"buildConfigurationList" = "69D729CBAD3A736ADB489360";
+"compatibilityVersion" = "Xcode 14.0";
+"developmentRegion" = "en";
+"knownRegions" = ("en","Base");
+"mainGroup" = "EB8CF0EFCAE5F409DFFE1C45";
+"productRefGroup" = "67B55C07AA5C528A540CC741";
+"projectDirPath" = "";
+"projectRoot" = "";
+"targets" = ("000000000000000000000005","7838FD9226842EF72C425A78","739D3529FF481E9A7B0F61BC");
+};
+};
+"rootObject" = "000000000000000000000001";
+}

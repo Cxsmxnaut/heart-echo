@@ -1,0 +1,23 @@
+{
+  "tested_at": "2026-11-14T22:13:31.209Z",
+  "mode": "isolated Chrome; synthetic fixtures; real backend/MCP; guided mode",
+  "passed": true,
+  "checks": [
+    "Keyboard focus follows labeled form inputs",
+    "Loading state and source-backed synthetic provider/clinic cards",
+    "Noisy scan explained without diagnosis",
+    "Enter sends chat message",
+    "390px mobile layout has no horizontal overflow",
+    "Visible source/date, actual match reasons, and directions",
+    "Why follow-up retains the current cards",
+    "Clear scan removes the attached synthetic snapshot",
+    "Mobile jump control reaches and sends a follow-up after ten result cards",
+    "Empty results offer official directory fallback",
+    "Upstream failure is not displayed as no providers",
+    "Full reset clears chat, profile, results and scan",
+    "Failed server deletion stays visible and retries the same session ID",
+    "Model outage uses plain-language guided help with codes behind details",
+    "Request error is visible and controls recover",
+    "No browser JavaScript errors"
+  ]
+}

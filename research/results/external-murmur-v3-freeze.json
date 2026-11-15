@@ -1,0 +1,15 @@
+{
+  "model_files": {
+    "Data/com.apple.CoreML/model.mlmodel": "bb3e2cd129ddcc4377195ab79f56949244d12e7b85897e7971959be0647d8bb1",
+    "Data/com.apple.CoreML/weights/weight.bin": "76fed2c566b74e342165a649e9338ccab06a0987b65fb2fa68f32dbaedceda72",
+    "Manifest.json": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa"
+  },
+  "inference_source_sha256": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e",
+  "probe_source_sha256": "f93ea79db39f5cc63c7113d44b6fc1c008f491cbe57aa4b106c214c8137822ed",
+  "evaluator_sha256": "ba89838c6b6f3ecd68d8984d2b644bed6001ab2ad5d389f9b99352fa8ed51071",
+  "native_executable_sha256": "77280b80f04f4d23b4e847ef2e5f4eb30a84e0334772efcb1e677cdd850dff7d",
+  "archive_note": "The extra-heart-sound archive uses Atraining_extrahls internally. V3 adds those 19 controls; the original normal/murmur/artifact cases and inference are unchanged.",
+  "initial_attempt": "The initial probe was given the package instead of its containing directory and failed before producing results; corrected invocation only. Original freeze preserved.",
+  "threshold": 0.6,
+  "protocol": "Use every normal/murmur file from PASCAL A with original archive category as reference. Count short/rejected audio as unsure; report all artifact/extra-sound predictions separately. Do not tune or train on these files. Exact decoded-waveform overlap with all cached CirCor files is excluded and listed. No person IDs available; no patient-independent or clinical accuracy claim."
+}

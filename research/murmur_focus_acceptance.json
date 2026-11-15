@@ -1,0 +1,19 @@
+{
+  "candidate": "V5 sampler-only controlled experiment",
+  "predeclared_before_candidate_results": true,
+  "model_selection": "Keep V4's development-only checkpoint selection unchanged to isolate the sampler. Apply the stricter murmur-focus promotion checks after native conversion. Never choose or tune weights or thresholds using regression results.",
+  "threshold": 0.6,
+  "promotion": {
+    "sets": ["selection development", "calibration development", "consumed CirCor regression", "consumed PASCAL A source regression"],
+    "recording_and_linked_person_checks": ["Detected positives do not decrease", "Correct absent outputs do not decrease", "Positive-as-absent errors do not increase", "False alarms do not increase", "Total unsure does not increase", "Expert-unknown retention does not decrease"],
+    "improvement": "At least one additional correctly detected positive recording or linked person without violating the checks. PASCAL has no verified patient IDs; use recording-only comparisons and label person-level evidence unavailable.",
+    "controls": "All existing native silence/short/clipping/invalid-probability checks pass; report noise-control errors separately.",
+    "conversion": "Native inference and PyTorch on identical waveforms agree within .001 maximum probability difference, including real public development audio.",
+    "freeze": "Freeze selected weights, model package files, reader, native executable, evaluator, cohort and .60 rule before regression scoring. Do not change the app unless all comparisons support promotion."
+  },
+  "reliability": {
+    "status": "Not established",
+    "ambition_only_not_clinical_standard": {"answered_sensitivity": 0.99, "answered_specificity": 0.99, "coverage_of_independently_assessed_usable_recordings": 0.95, "all_positive_detection_including_unsure_denominator": 0.95, "all_negative_clearance_including_unsure_denominator": 0.95},
+    "evidence": "Previously untouched, clinician-labeled, representative phone recordings from independent people and relevant recording environments; predeclared protocol, confidence intervals and subgroup results. Reused development/regression scores cannot satisfy this requirement."
+  }
+}

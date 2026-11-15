@@ -1,0 +1,8 @@
+__pycache__/
+.venv/
+runs/
+exports/
+model-cache/
+*.safetensors
+*.gguf
+*.bin

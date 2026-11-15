@@ -1,0 +1,356 @@
+{
+  "seed": "chestbpm-beat-v2-final-patients-18142026",
+  "excluded_groups": [
+    "14241",
+    "29378",
+    "39456",
+    "46579",
+    "47002",
+    "49558",
+    "49607",
+    "49618",
+    "49627",
+    "49669",
+    "49832",
+    "49838",
+    "49839",
+    "49873",
+    "49963",
+    "49978",
+    "49994",
+    "50030",
+    "50066",
+    "50067",
+    "50076",
+    "50080",
+    "50103",
+    "50116",
+    "50119",
+    "50121",
+    "50123",
+    "50129",
+    "50136",
+    "50137",
+    "50152",
+    "50214",
+    "50217",
+    "50229",
+    "50233",
+    "50238",
+    "50258",
+    "50277",
+    "50280",
+    "50285",
+    "50296",
+    "50297",
+    "50300",
+    "50321",
+    "50326",
+    "50332",
+    "50620",
+    "50625",
+    "50628",
+    "50629",
+    "50689",
+    "50731",
+    "50748",
+    "50795",
+    "50805",
+    "50826",
+    "50829",
+    "51331",
+    "55945",
+    "57700",
+    "59536",
+    "63456",
+    "68255",
+    "68292",
+    "68347",
+    "68374",
+    "68419",
+    "68444",
+    "68702",
+    "68737",
+    "68755",
+    "68796",
+    "68831",
+    "69067",
+    "69093",
+    "69129",
+    "72283",
+    "72288",
+    "74420",
+    "76758",
+    "78582",
+    "84688",
+    "84692",
+    "84693",
+    "84724",
+    "84730",
+    "84746",
+    "84747",
+    "84761",
+    "84765",
+    "84776",
+    "84796",
+    "84831",
+    "84837",
+    "84854",
+    "84863",
+    "84875",
+    "84882",
+    "84885",
+    "84896",
+    "84919",
+    "84921",
+    "84935",
+    "84950",
+    "84962",
+    "84984",
+    "84988",
+    "84991",
+    "84995",
+    "85036",
+    "85037",
+    "85043",
+    "85057",
+    "85080",
+    "85081",
+    "85087",
+    "85169",
+    "85175",
+    "85182",
+    "85196",
+    "85198",
+    "85226",
+    "85229",
+    "85240",
+    "85243",
+    "85259",
+    "85276",
+    "85294",
+    "85300",
+    "85306",
+    "85319",
+    "85329"
+  ],
+  "records": [
+    {
+      "record": "84982_AV",
+      "group": "84982",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/84982_AV.wav": "47d536c9cea6360348de018a59a79b0e00c569133bf1139e971feaaa5ac8da19",
+        "training_data/84982_AV.tsv": "670031e417718bb9a68c5bd6403a0552597308a052a1157fb0026eb6049aecc9"
+      }
+    },
+    {
+      "record": "84870_AV",
+      "group": "84870",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/84870_AV.wav": "ce7fdb489dcd3035e71ebb597b6d6d432152691fb1139d6a6509c45042dbdeb9",
+        "training_data/84870_AV.tsv": "d33babff618cc8a9d4076b5cb47c9fce722e3b89a243a157c0849cf79b38a31e"
+      }
+    },
+    {
+      "record": "84804_MV",
+      "group": "84804",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/84804_MV.wav": "d56737ce1caa8b5f3940d5446ad2c41ba4af8ee14f10d27c8edcae55cfbb6c50",
+        "training_data/84804_MV.tsv": "d9480b1d1481766677fb9cc97eecc8e7b6c21119ddbb4d4e9bd2f8ff8fc95cc4"
+      }
+    },
+    {
+      "record": "85176_AV",
+      "group": "85176",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/85176_AV.wav": "18350db4e70ede2a5d03d9b08daee1f48c04daf2a6a6cf0e9868a8d1175d9fb2",
+        "training_data/85176_AV.tsv": "20a441bfa6abf513199cd4e5affb5edeca35143b092626d6b6c9fe5ed71a463e"
+      }
+    },
+    {
+      "record": "50284_AV",
+      "group": "50284",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/50284_AV.wav": "792216640f98d3af123d2578e64b917c85def33b69e9aa20548f9542a6d9f064",
+        "training_data/50284_AV.tsv": "2e1c1ac28c9bb45df516854f9965fbd20a996d3a9ef12663ade8dde7bfd40cfd"
+      }
+    },
+    {
+      "record": "69141_AV",
+      "group": "69141",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/69141_AV.wav": "e21a9c4e006e0c576bccb6808d08e1cd9cc694aab914c4b5e67b5089549b0ced",
+        "training_data/69141_AV.tsv": "561a1ee17a7cfcdaa98a1e5d24007d8e78316f737e7af997599fc65bdbb635b8"
+      }
+    },
+    {
+      "record": "85345_AV",
+      "group": "85345",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/85345_AV.wav": "bb847582df2752ea8aa3b1bbd10fe986522a1472d007bb023cb4fbc005c7baa3",
+        "training_data/85345_AV.tsv": "319f7456e705c2d16c67e187acff15dc25aea5780c33d5980a18b80b69294e0e"
+      }
+    },
+    {
+      "record": "80348_AV",
+      "group": "80348",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/80348_AV.wav": "bc333738f4721e60d0fc8811b972e2948ac64e3a679d5cb57dffd812bc5cfc3e",
+        "training_data/80348_AV.tsv": "5c6207fd0fbf29e9b3c22dd8ea1e1a9f3208aac94f9c5ad33cba85f46456b663"
+      }
+    },
+    {
+      "record": "50781_PV",
+      "group": "50781",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/50781_PV.wav": "5db63a4f8abc2897627ff8a387dd23362367c6c5b4d05d76a0ca4ae4895a2ec2",
+        "training_data/50781_PV.tsv": "cfe1620b8eb46972b9c85ff8b5508015edb53494faeddf0d03da1e22d08fe195"
+      }
+    },
+    {
+      "record": "85030_PV",
+      "group": "85030",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/85030_PV.wav": "5277a717ce54aa740798dd92f5e410deea505aec9f558c0285f6f8d1238e86b1",
+        "training_data/85030_PV.tsv": "752748796a122b4149a7de6590d2a6049b92f8c44d9d6f415351461003ce0cc6"
+      }
+    },
+    {
+      "record": "49824_PV",
+      "group": "49824",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/49824_PV.wav": "4d0694dbcabad434a473f4d5d9311c8cd64662bc5bfb9de4377e5641907507d4",
+        "training_data/49824_PV.tsv": "343fe7a38ed18bb2f9d876b70ad9e00970025aaa3e191ee1a524428addd1bc8c"
+      }
+    },
+    {
+      "record": "50054_MV",
+      "group": "50054",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/50054_MV.wav": "d2d87e9193504f166fcc363f9f69a0b74cb9c2089a60b6e5d8d791fe50285eb8",
+        "training_data/50054_MV.tsv": "51a1e88a6a7528242a8955dfc3f124eeb54b138b01e33998ed016398582d2c5c"
+      }
+    },
+    {
+      "record": "84732_MV",
+      "group": "84732",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/84732_MV.wav": "52afce176812053a7ea0d4cc75004c3824c12148e6e1d9308aa1038b7033f4be",
+        "training_data/84732_MV.tsv": "b421302b30723257b6e50761f2db6803078d59742e96265af80d7f35e6f0b2c9"
+      }
+    },
+    {
+      "record": "85055_PV",
+      "group": "85055",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/85055_PV.wav": "e79c0504f673e992deaa1f1e52a09ddcf2e7121ce2b6cb199c74332f946f6007",
+        "training_data/85055_PV.tsv": "d9a1adfde68e6f49ffe1811631906a680d9dd6e5d7274021186ecdc3689b4a4d"
+      }
+    },
+    {
+      "record": "13918_TV",
+      "group": "13918",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/13918_TV.wav": "eed7b9c59842b02e3082cac6523b5a9c6ff21b24b5d1d596474245f6af31d2a6",
+        "training_data/13918_TV.tsv": "0a6052f05eb9eb2901514cc6ba8326e5e04ec334c2fac1d1e3c2833acb690308"
+      }
+    },
+    {
+      "record": "50161_TV",
+      "group": "50161",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/50161_TV.wav": "b23773fec69ff411d247d0a736b3cdd2613542aaf7025711f79995669ed4b740",
+        "training_data/50161_TV.tsv": "afbb72db33608a0f3f02d6c0961692367a983dbf71570cb7ec987d55ca7de14c"
+      }
+    },
+    {
+      "record": "84983_MV",
+      "group": "84983",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/84983_MV.wav": "70f23583877cfdfe8f088b5ba1a698ed37aae6acfa9310629745ac13898c8ccb",
+        "training_data/84983_MV.tsv": "d62b4d2519b4f2bd61dead25c83f6cafae9be93df85e4ffe2d887d2662ec4434"
+      }
+    },
+    {
+      "record": "50636_AV",
+      "group": "50636",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/50636_AV.wav": "1dac9f9166afd20871ab204eb2cb814bdd2f238ba61790c7de7cd8419ec93fa8",
+        "training_data/50636_AV.tsv": "795e2c5b570dae11013f9737b226fe0873639a9c4b74845d255cbae71127abed"
+      }
+    },
+    {
+      "record": "84886_PV",
+      "group": "84886",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/84886_PV.wav": "ebfa72a527507a4139a1dfcbfc0cb472fdab7d2dfee7f5bb818dce6aa1d6234d",
+        "training_data/84886_PV.tsv": "727dfa96157d39551e7634149f7db04bea0297eefb0952110b63a631d6ffdd1e"
+      }
+    },
+    {
+      "record": "50330_AV",
+      "group": "50330",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/50330_AV.wav": "85554d129dd4cdc335032aeb8c7b77bb094b77765b59e4ab57fe60c779eee06c",
+        "training_data/50330_AV.tsv": "c2cedc16f82fcba56e57fc345b7d844d7ec214a752b5a39b458db7714917944e"
+      }
+    },
+    {
+      "record": "84720_AV",
+      "group": "84720",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/84720_AV.wav": "3520ff54b80357c6e55d056c4f2b39d4ea4c401d73e60302b8f120eed14a10a8",
+        "training_data/84720_AV.tsv": "1f06e2d3012af970582baa0180c7344e531f385705fdb753c8e284347df9d6dd"
+      }
+    },
+    {
+      "record": "50640_MV",
+      "group": "50640",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/50640_MV.wav": "4f34c1af134735155002b0ced5f23839ddb3e3e75344399ef6213b85cad0db80",
+        "training_data/50640_MV.tsv": "5a9d4cee9c8602fbc45dcbda4d6a8b1e32c9b36467cd0fa11322e489897dfc31"
+      }
+    },
+    {
+      "record": "85227_AV",
+      "group": "85227",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/85227_AV.wav": "ffb457b1a65640c40b21986235dba6a315e812b79c744e66286681ea0f180622",
+        "training_data/85227_AV.tsv": "db953af3cfd78c384d7c3203932cfd30d2b531e097f71317d60110c15ecfcb96"
+      }
+    },
+    {
+      "record": "85202_AV",
+      "group": "85202",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/85202_AV.wav": "edab85e8046040b1b2edda38d98b8f1b53c11f6fceee3264cb80564fffc63520",
+        "training_data/85202_AV.tsv": "ab9f2ec15ba75bd0e607a0b4070581a3af70c6365024dc003b2443d7518ac79e"
+      }
+    }
+  ],
+  "note": "Metadata only. Do not download waveforms or annotations until candidate weights, event metrics and sources are frozen. Labels stratify patients; no diagnostic classification is implemented."
+}

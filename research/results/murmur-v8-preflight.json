@@ -1,0 +1,9 @@
+{
+  "student_initialization_matches_v4": true,
+  "cpu_rng_preserved": true,
+  "mps_rng_api_verified": true,
+  "teacher_decomposition_maximum_probability_difference": 0.0,
+  "teacher_gradients_absent": true,
+  "student_gradients_finite": true,
+  "source_sha256": "353b3928d5be51c3a2fd7e049f9b04d879e5f4caf07af31d5ccca269e76ab5f9"
+}

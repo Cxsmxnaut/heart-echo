@@ -1,0 +1,13 @@
+{
+  "version": "1.5 (6)",
+  "selection": "raw neural timing + original audio checks; denoiser disabled after development comparison",
+  "test_groups_previously_unused": true,
+  "sha256": {
+    "ChestBPM/ChestBPM/HeartRateEstimator.swift": "d470307ab9c12e2c160c75316262e9bdfaf28322d70e4e6b4c19ad032f0928fb",
+    "ChestBPM/ChestBPM/NeuralSignal.swift": "987b89e9bacaf430021565f2c35dafcc1ccae53a379c7c886557c2a65ca8e4e0",
+    "ChestBPM/ChestBPM/NoiseAnalysis.swift": "281fae2a629d2daeda0e610cfb4baaf26b86e140952b657c4537f708646b8446",
+    "ChestBPM/ML/Models/BeatStates.mlpackage/Manifest.json": "f026b9338f030ab7e902d4e90061f69383044ae4e975f5217fb0d40f058940a1",
+    "ChestBPM/ML/Models/BeatStates.mlpackage/Data/com.apple.CoreML/model.mlmodel": "3c401436ac512fb983ddaa987dffa6c252dfa61b9d3524d84ea18f9c51730c0d",
+    "ChestBPM/ML/Models/BeatStates.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "e971a903a5fdc0736461e34d6c885abc065a1cbd27079e553f4bcf96230b9f12"
+  }
+}

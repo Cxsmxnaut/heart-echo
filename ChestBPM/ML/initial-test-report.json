@@ -1,0 +1,517 @@
+{
+  "overall": {
+    "cases": 161,
+    "records": 12,
+    "warm_frames": 1963,
+    "reference_frames": 975,
+    "missing_reference_frames": 988,
+    "bpm": {
+      "returned": 129,
+      "coverage": 0.13230769230769232,
+      "mean_absolute_error": 0.8255955016724659,
+      "maximum_absolute_error": 9.169838042801175,
+      "over_5_bpm": 2,
+      "returned_without_reference": 121
+    },
+    "legacy": {
+      "returned": 45,
+      "coverage": 0.046153846153846156,
+      "mean_absolute_error": 0.5413162139660449,
+      "maximum_absolute_error": 0.9823944074344126,
+      "over_5_bpm": 0,
+      "returned_without_reference": 46
+    },
+    "negative": {
+      "frames": 65,
+      "returned": 0
+    }
+  },
+  "by_condition": {
+    "babble_0dB": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 8,
+        "coverage": 0.10666666666666667,
+        "mean_absolute_error": 0.5470488644438731,
+        "maximum_absolute_error": 0.6571330603185146,
+        "over_5_bpm": 0,
+        "returned_without_reference": 7
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": 0.0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 4
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "babble_6dB": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 15,
+        "coverage": 0.2,
+        "mean_absolute_error": 0.7129432653400177,
+        "maximum_absolute_error": 2.9094936807759524,
+        "over_5_bpm": 0,
+        "returned_without_reference": 13
+      },
+      "legacy": {
+        "returned": 8,
+        "coverage": 0.10666666666666667,
+        "mean_absolute_error": 0.5513467643168344,
+        "maximum_absolute_error": 0.6655347129658935,
+        "over_5_bpm": 0,
+        "returned_without_reference": 6
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "babble_only": {
+      "cases": 1,
+      "records": 0,
+      "warm_frames": 0,
+      "reference_frames": 0,
+      "missing_reference_frames": 0,
+      "bpm": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "negative": {
+        "frames": 13,
+        "returned": 0
+      }
+    },
+    "brief_rub_simulated": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 10,
+        "coverage": 0.13333333333333333,
+        "mean_absolute_error": 0.46928135528084736,
+        "maximum_absolute_error": 0.9617481562450649,
+        "over_5_bpm": 0,
+        "returned_without_reference": 2
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": 0.0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 1
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "clean": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 12,
+        "coverage": 0.16,
+        "mean_absolute_error": 0.9694876004212141,
+        "maximum_absolute_error": 4.852078282625058,
+        "over_5_bpm": 0,
+        "returned_without_reference": 15
+      },
+      "legacy": {
+        "returned": 14,
+        "coverage": 0.18666666666666668,
+        "mean_absolute_error": 0.562627017263315,
+        "maximum_absolute_error": 0.9823944074344126,
+        "over_5_bpm": 0,
+        "returned_without_reference": 6
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "contact_gain_simulated": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 12,
+        "coverage": 0.16,
+        "mean_absolute_error": 1.9573924679812482,
+        "maximum_absolute_error": 9.169838042801175,
+        "over_5_bpm": 2,
+        "returned_without_reference": 12
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": 0.0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "hum_0dB": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 8,
+        "coverage": 0.10666666666666667,
+        "mean_absolute_error": 0.3807457195129764,
+        "maximum_absolute_error": 0.8622683884008211,
+        "over_5_bpm": 0,
+        "returned_without_reference": 4
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": 0.0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "hum_6dB": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 15,
+        "coverage": 0.2,
+        "mean_absolute_error": 0.5682002963576565,
+        "maximum_absolute_error": 1.0602063512064603,
+        "over_5_bpm": 0,
+        "returned_without_reference": 9
+      },
+      "legacy": {
+        "returned": 8,
+        "coverage": 0.10666666666666667,
+        "mean_absolute_error": 0.5069275004215026,
+        "maximum_absolute_error": 0.5980382124493673,
+        "over_5_bpm": 0,
+        "returned_without_reference": 4
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "hum_only": {
+      "cases": 1,
+      "records": 0,
+      "warm_frames": 0,
+      "reference_frames": 0,
+      "missing_reference_frames": 0,
+      "bpm": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "negative": {
+        "frames": 13,
+        "returned": 0
+      }
+    },
+    "lost_contact_simulated": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 15,
+        "coverage": 0.2,
+        "mean_absolute_error": 1.4339532270889104,
+        "maximum_absolute_error": 4.909250082918518,
+        "over_5_bpm": 0,
+        "returned_without_reference": 7
+      },
+      "legacy": {
+        "returned": 2,
+        "coverage": 0.02666666666666667,
+        "mean_absolute_error": 0.5327981870490888,
+        "maximum_absolute_error": 0.5435527966405971,
+        "over_5_bpm": 0,
+        "returned_without_reference": 2
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "short_taps_simulated": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 9,
+        "coverage": 0.12,
+        "mean_absolute_error": 0.5441616243635615,
+        "maximum_absolute_error": 1.380368098159522,
+        "over_5_bpm": 0,
+        "returned_without_reference": 10
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": 0.0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 2
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "silence": {
+      "cases": 1,
+      "records": 0,
+      "warm_frames": 0,
+      "reference_frames": 0,
+      "missing_reference_frames": 0,
+      "bpm": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "negative": {
+        "frames": 13,
+        "returned": 0
+      }
+    },
+    "speech_0dB": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 0,
+        "coverage": 0.0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 13
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": 0.0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 3
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "speech_6dB": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 10,
+        "coverage": 0.13333333333333333,
+        "mean_absolute_error": 0.6069139293620054,
+        "maximum_absolute_error": 0.952873858344617,
+        "over_5_bpm": 0,
+        "returned_without_reference": 14
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": 0.0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 6
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "speech_only": {
+      "cases": 1,
+      "records": 0,
+      "warm_frames": 0,
+      "reference_frames": 0,
+      "missing_reference_frames": 0,
+      "bpm": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "negative": {
+        "frames": 13,
+        "returned": 0
+      }
+    },
+    "white_0dB": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 4,
+        "coverage": 0.05333333333333334,
+        "mean_absolute_error": 0.5574519563708904,
+        "maximum_absolute_error": 0.6656981612172359,
+        "over_5_bpm": 0,
+        "returned_without_reference": 3
+      },
+      "legacy": {
+        "returned": 5,
+        "coverage": 0.06666666666666667,
+        "mean_absolute_error": 0.5713788796387661,
+        "maximum_absolute_error": 0.7133914982633343,
+        "over_5_bpm": 0,
+        "returned_without_reference": 6
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "white_6dB": {
+      "cases": 12,
+      "records": 12,
+      "warm_frames": 151,
+      "reference_frames": 75,
+      "missing_reference_frames": 76,
+      "bpm": {
+        "returned": 11,
+        "coverage": 0.14666666666666667,
+        "mean_absolute_error": 0.48556682729825823,
+        "maximum_absolute_error": 0.894548994746259,
+        "over_5_bpm": 0,
+        "returned_without_reference": 12
+      },
+      "legacy": {
+        "returned": 8,
+        "coverage": 0.10666666666666667,
+        "mean_absolute_error": 0.5117208120733636,
+        "maximum_absolute_error": 0.6323623571069703,
+        "over_5_bpm": 0,
+        "returned_without_reference": 6
+      },
+      "negative": {
+        "frames": 0,
+        "returned": 0
+      }
+    },
+    "white_only": {
+      "cases": 1,
+      "records": 0,
+      "warm_frames": 0,
+      "reference_frames": 0,
+      "missing_reference_frames": 0,
+      "bpm": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "legacy": {
+        "returned": 0,
+        "coverage": null,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "over_5_bpm": 0,
+        "returned_without_reference": 0
+      },
+      "negative": {
+        "frames": 13,
+        "returned": 0
+      }
+    }
+  }
+}

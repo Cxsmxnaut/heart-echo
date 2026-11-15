@@ -1,0 +1,90 @@
+{
+  "purpose": "Post-fit diagnostics only: no parameter fitting, threshold search or regression scoring. Training metrics are in-sample. Development was reused. No clinical probability-calibration claim.",
+  "source_sha256": "7d81200a4469ab0d24d3c44f1c9491fda43f3fe1e92d031057d8cab014985925",
+  "models": {
+    "murmur-v6-pretrained-probe/pretrained": {
+      "coefficient_replay_maximum_probability_difference": 7.748603820800781e-07,
+      "training": {
+        "records": 2356,
+        "known_records": 2238,
+        "known_label_present_probability_auc": 0.9155768225501628,
+        "three_class_log_loss": 0.6396038087097579
+      },
+      "selection": {
+        "records": 180,
+        "known_records": 170,
+        "known_label_present_probability_auc": 0.8107698961937716,
+        "three_class_log_loss": 0.7836126949525831
+      },
+      "calibration": {
+        "records": 187,
+        "known_records": 174,
+        "known_label_present_probability_auc": 0.7373188405797102,
+        "three_class_log_loss": 0.8305069568767074
+      }
+    },
+    "murmur-v6-pretrained-probe/random": {
+      "coefficient_replay_maximum_probability_difference": 8.344650268554688e-07,
+      "training": {
+        "records": 2356,
+        "known_records": 2238,
+        "known_label_present_probability_auc": 0.8735389440669107,
+        "three_class_log_loss": 0.7590120076857104
+      },
+      "selection": {
+        "records": 180,
+        "known_records": 170,
+        "known_label_present_probability_auc": 0.7884948096885813,
+        "three_class_log_loss": 0.890516733527859
+      },
+      "calibration": {
+        "records": 187,
+        "known_records": 174,
+        "known_label_present_probability_auc": 0.8510466988727858,
+        "three_class_log_loss": 0.8250974660028128
+      }
+    },
+    "murmur-v7-heartband-probe/pretrained": {
+      "coefficient_replay_maximum_probability_difference": 5.066394805908203e-07,
+      "training": {
+        "records": 2356,
+        "known_records": 2238,
+        "known_label_present_probability_auc": 0.8978953717479592,
+        "three_class_log_loss": 0.6727586436821051
+      },
+      "selection": {
+        "records": 180,
+        "known_records": 170,
+        "known_label_present_probability_auc": 0.8507785467128027,
+        "three_class_log_loss": 0.7980253159811082
+      },
+      "calibration": {
+        "records": 187,
+        "known_records": 174,
+        "known_label_present_probability_auc": 0.7753623188405797,
+        "three_class_log_loss": 0.8259881298537354
+      }
+    },
+    "murmur-v7-heartband-probe/random": {
+      "coefficient_replay_maximum_probability_difference": 4.917383193969727e-07,
+      "training": {
+        "records": 2356,
+        "known_records": 2238,
+        "known_label_present_probability_auc": 0.8908971008082351,
+        "three_class_log_loss": 0.705099482832881
+      },
+      "selection": {
+        "records": 180,
+        "known_records": 170,
+        "known_label_present_probability_auc": 0.8600778546712803,
+        "three_class_log_loss": 0.8298965706839018
+      },
+      "calibration": {
+        "records": 187,
+        "known_records": 174,
+        "known_label_present_probability_auc": 0.8681561996779387,
+        "three_class_log_loss": 0.7811955871626466
+      }
+    }
+  }
+}

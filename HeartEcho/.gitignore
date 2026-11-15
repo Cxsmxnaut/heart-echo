@@ -1,0 +1,13 @@
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+
+build-integration/
+build-phone/
+integration-backup/
+diagnostic-logs/
+__pycache__/
+*.ndjson
+*.mobileprovision

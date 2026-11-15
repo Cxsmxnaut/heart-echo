@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+.demo-pairing.local.json
+!.env.example
+.cache/
+test-results/
+playwright-report/
+*.log
+integrations/swift/.build/
+integrations/swift/.swiftpm/

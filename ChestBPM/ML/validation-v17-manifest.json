@@ -1,0 +1,252 @@
+{
+  "dataset": "CirCor DigiScope 1.0.3",
+  "license": "Open Data Commons Attribution License v1.0",
+  "citation": "https://doi.org/10.13026/tshs-mw03",
+  "base": "https://physionet.org/files/circor-heart-sound/1.0.3/",
+  "selection_seed": "chestbpm-v17-public-validation-v1",
+  "excluded_groups": [
+    "14241",
+    "29378",
+    "39456",
+    "47002",
+    "49558",
+    "49607",
+    "49618",
+    "49627",
+    "49669",
+    "49832",
+    "49838",
+    "49839",
+    "49873",
+    "49963",
+    "49978",
+    "49994",
+    "50030",
+    "50066",
+    "50067",
+    "50076",
+    "50080",
+    "50116",
+    "50119",
+    "50121",
+    "50123",
+    "50129",
+    "50136",
+    "50137",
+    "50152",
+    "50214",
+    "50229",
+    "50233",
+    "50238",
+    "50258",
+    "50277",
+    "50280",
+    "50285",
+    "50296",
+    "50297",
+    "50300",
+    "50321",
+    "50326",
+    "50332",
+    "50620",
+    "50629",
+    "50689",
+    "50731",
+    "50748",
+    "50805",
+    "50826",
+    "50829",
+    "51331",
+    "55945",
+    "57700",
+    "59536",
+    "63456",
+    "68255",
+    "68292",
+    "68347",
+    "68374",
+    "68419",
+    "68444",
+    "68702",
+    "68737",
+    "68796",
+    "68831",
+    "69067",
+    "69093",
+    "69129",
+    "72283",
+    "72288",
+    "74420",
+    "76758",
+    "78582",
+    "84688",
+    "84692",
+    "84693",
+    "84724",
+    "84730",
+    "84746",
+    "84747",
+    "84761",
+    "84765",
+    "84796",
+    "84831",
+    "84837",
+    "84854",
+    "84875",
+    "84885",
+    "84896",
+    "84919",
+    "84921",
+    "84935",
+    "84950",
+    "84962",
+    "84984",
+    "84988",
+    "84991",
+    "84995",
+    "85036",
+    "85043",
+    "85057",
+    "85080",
+    "85081",
+    "85087",
+    "85169",
+    "85175",
+    "85182",
+    "85196",
+    "85198",
+    "85229",
+    "85240",
+    "85243",
+    "85259",
+    "85276",
+    "85294",
+    "85300",
+    "85306",
+    "85319",
+    "85329"
+  ],
+  "records": [
+    {
+      "record": "84776_AV",
+      "group": "84776",
+      "split": "validation_v17",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/84776_AV.wav": "7b586814f4b63b1245055a7d18c320eb41e9e4916a3447436db8b27cfc324e5e",
+        "training_data/84776_AV.tsv": "54a23c5f3b69e357e08b1b4a5d3c6e94dd23ed17880847ea166d6f3a65226680"
+      }
+    },
+    {
+      "record": "50103_AV",
+      "group": "50103",
+      "split": "validation_v17",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/50103_AV.wav": "9dce38b2975020f93676c760089c92caaa6cef52fa192fca1d45974499027482",
+        "training_data/50103_AV.tsv": "a0f3738af5971ef77155a4cab701b0778c6efe107768bf128d278a84adcaabdd"
+      }
+    },
+    {
+      "record": "68755_AV",
+      "group": "68755",
+      "split": "validation_v17",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/68755_AV.wav": "ce7c891d357a2ec63a48c77b951cd276f870e2cfa2206f106d8efbe3b98e8f2d",
+        "training_data/68755_AV.tsv": "b8f5f3e2e4a7c166bfa911c0129950ec09d06c112059a9ecc53d8e3032c1cf74"
+      }
+    },
+    {
+      "record": "85226_MV",
+      "group": "85226",
+      "split": "validation_v17",
+      "patient_murmur_label": "Absent",
+      "files": {
+        "training_data/85226_MV.wav": "bd67d74fdccffc34892fd48e534a1f787e5efcdfc352611f10e28796e0d08ddf",
+        "training_data/85226_MV.tsv": "5756008b0ac2a4c0200f338412021e0801d51cb803d0d74d7ca84378514f685d"
+      }
+    },
+    {
+      "record": "46579_TV",
+      "group": "46579",
+      "split": "validation_v17",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/46579_TV.wav": "f5b84940c7a04af5a5a5704ebd284f8e3ccbf2c7dacb8d4432e391921ffde689",
+        "training_data/46579_TV.tsv": "999b52a9a0fa6915243a8058bc5210e8eba5db753248e457dfb1598c9d0c6adf"
+      }
+    },
+    {
+      "record": "84882_PV",
+      "group": "84882",
+      "split": "validation_v17",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/84882_PV.wav": "7db10c9039a6dcda52a4438ce91588d94abdf4c655cd23f4214b9bc29c53c2a9",
+        "training_data/84882_PV.tsv": "8ebdc2e8768bf27911816bf1da6a3d43feaf6d6e1d271f907d594dde163b0e0c"
+      }
+    },
+    {
+      "record": "84863_TV",
+      "group": "84863",
+      "split": "validation_v17",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/84863_TV.wav": "d0734ba19293d55f172fc63a257b4de4b545ff00b0464d68817214b8439a1d72",
+        "training_data/84863_TV.tsv": "295fe4e782106cf51ce2f1ec5fb6cad67e527cebf204401293ec672bc531e072"
+      }
+    },
+    {
+      "record": "85037_TV",
+      "group": "85037",
+      "split": "validation_v17",
+      "patient_murmur_label": "Present",
+      "files": {
+        "training_data/85037_TV.wav": "4e15ff41d2ef3bf4225562b985820e0231ec8585232b1626319ade58a9db962a",
+        "training_data/85037_TV.tsv": "77e9763c25efce2732aae5b7baefc32eb47a4c321a159d1fa0b6de00a58a1abb"
+      }
+    },
+    {
+      "record": "68864_MV",
+      "group": "50628",
+      "split": "validation_v17",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/68864_MV.wav": "0584d06c73001b9ecaf02bada430d233e29f176b443ee3b8efd911befde7544c",
+        "training_data/68864_MV.tsv": "43472b5166147bf7ae25ac303cba0b043f6af30765f905bd619ad96bee3fd477"
+      }
+    },
+    {
+      "record": "50795_AV",
+      "group": "50795",
+      "split": "validation_v17",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/50795_AV.wav": "27df2c7ba974d581ef8756c79ccb42b115f07f889cd0f6512498f00e69e43fe4",
+        "training_data/50795_AV.tsv": "fa2f9fee3cb61969a842ce7d876fa1b9ce63ac697ce0ddb0e7cc3c6179e17089"
+      }
+    },
+    {
+      "record": "50217_AV",
+      "group": "50217",
+      "split": "validation_v17",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/50217_AV.wav": "fe82311df5b203438295145a8ca7572fe9f70af6bf11e5489b3875e021bf5395",
+        "training_data/50217_AV.tsv": "8d98e89b98fd4a6da5869ffea61ab2d952296ba9234e9b7fa43cf82b4e58270d"
+      }
+    },
+    {
+      "record": "50625_AV",
+      "group": "50625",
+      "split": "validation_v17",
+      "patient_murmur_label": "Unknown",
+      "files": {
+        "training_data/50625_AV.wav": "708d4dc9de94503bf596967dcf712bcc23a5b6b144bd8308bf1c50ef396fafba",
+        "training_data/50625_AV.tsv": "7e20c42f199b5cd11bb7dc53d6c41b6337056d8535142df98aed08de82be55b0"
+      }
+    }
+  ],
+  "note": "Metadata-only reservation. Download/evaluate only after source and model freeze. Public patient labels stratify selection; no disease classification is implemented. Noise mixtures reuse known sources and do not constitute unseen-noise validation."
+}

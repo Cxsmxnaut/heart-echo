@@ -1,0 +1,336 @@
+{
+  "dataset": "CirCor DigiScope1.0.3",
+  "citation": "https://doi.org/10.13026/tshs-mw03",
+  "selected_epoch": 9,
+  "training_epochs": 24,
+  "conversion": {
+    "maximum_probability_difference": 2.60770320892334e-08,
+    "examples": 4
+  },
+  "validation": {
+    "split": "validation",
+    "recordings": 367,
+    "patients": 113,
+    "linked_groups": 100,
+    "record": {
+      "confusion_true_rows": [
+        [
+          186,
+          4,
+          84
+        ],
+        [
+          13,
+          42,
+          15
+        ],
+        [
+          5,
+          0,
+          18
+        ]
+      ],
+      "balanced_recall": 0.687146937480165,
+      "recall": [
+        0.6788321167883211,
+        0.6,
+        0.782608695652174
+      ],
+      "accuracy": 0.670299727520436,
+      "known_positive_cases": 70,
+      "missed_positive_as_absent": 13,
+      "positive_unsure": 15,
+      "known_negative_cases": 274,
+      "false_alarms": 4,
+      "negative_unsure": 84,
+      "decisive_sensitivity": 0.6,
+      "decisive_specificity": 0.6788321167883211,
+      "unsure": 117,
+      "total": 367
+    },
+    "patient": {
+      "confusion_true_rows": [
+        [
+          31,
+          1,
+          45
+        ],
+        [
+          3,
+          20,
+          3
+        ],
+        [
+          1,
+          0,
+          9
+        ]
+      ],
+      "balanced_recall": 0.6906093906093905,
+      "recall": [
+        0.4025974025974026,
+        0.7692307692307693,
+        0.9
+      ],
+      "accuracy": 0.5309734513274337,
+      "known_positive_cases": 26,
+      "missed_positive_as_absent": 3,
+      "positive_unsure": 3,
+      "known_negative_cases": 77,
+      "false_alarms": 1,
+      "negative_unsure": 45,
+      "decisive_sensitivity": 0.7692307692307693,
+      "decisive_specificity": 0.4025974025974026,
+      "unsure": 57,
+      "total": 113
+    },
+    "majority_absent_record_baseline": {
+      "confusion_true_rows": [
+        [
+          274,
+          0,
+          0
+        ],
+        [
+          70,
+          0,
+          0
+        ],
+        [
+          23,
+          0,
+          0
+        ]
+      ],
+      "balanced_recall": 0.3333333333333333,
+      "recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "accuracy": 0.7465940054495913,
+      "known_positive_cases": 70,
+      "missed_positive_as_absent": 70,
+      "positive_unsure": 0,
+      "known_negative_cases": 274,
+      "false_alarms": 0,
+      "negative_unsure": 0,
+      "decisive_sensitivity": 0.0,
+      "decisive_specificity": 1.0,
+      "unsure": 0,
+      "total": 367
+    },
+    "majority_absent_patient_baseline": {
+      "confusion_true_rows": [
+        [
+          77,
+          0,
+          0
+        ],
+        [
+          26,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ]
+      ],
+      "balanced_recall": 0.3333333333333333,
+      "recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "accuracy": 0.6814159292035398,
+      "known_positive_cases": 26,
+      "missed_positive_as_absent": 26,
+      "positive_unsure": 0,
+      "known_negative_cases": 77,
+      "false_alarms": 0,
+      "negative_unsure": 0,
+      "decisive_sensitivity": 0.0,
+      "decisive_specificity": 1.0,
+      "unsure": 0,
+      "total": 113
+    },
+    "negative_controls": {
+      "total": 20,
+      "decisions": {
+        "unsure": 20
+      },
+      "note": "Synthetic silence,hum,white,contact and known speech/babble sources; not unseen real-world noise."
+    },
+    "median_processing_ms": 10.579943656921387,
+    "note": "Native Core ML including real4kHzfile conversion, gates and fixed0.60decision. Patient aggregation: any present, else any unsure, else absent. Linked patients are split together. Same-dataset stethoscope evaluation, not phone or clinical validation."
+  },
+  "test": {
+    "split": "test",
+    "recordings": 440,
+    "patients": 127,
+    "linked_groups": 120,
+    "record": {
+      "confusion_true_rows": [
+        [
+          234,
+          10,
+          77
+        ],
+        [
+          6,
+          75,
+          23
+        ],
+        [
+          5,
+          0,
+          10
+        ]
+      ],
+      "balanced_recall": 0.705597491812445,
+      "recall": [
+        0.7289719626168224,
+        0.7211538461538461,
+        0.6666666666666666
+      ],
+      "accuracy": 0.725,
+      "known_positive_cases": 104,
+      "missed_positive_as_absent": 6,
+      "positive_unsure": 23,
+      "known_negative_cases": 321,
+      "false_alarms": 10,
+      "negative_unsure": 77,
+      "decisive_sensitivity": 0.7211538461538461,
+      "decisive_specificity": 0.7289719626168224,
+      "unsure": 110,
+      "total": 440
+    },
+    "patient": {
+      "confusion_true_rows": [
+        [
+          40,
+          6,
+          36
+        ],
+        [
+          1,
+          29,
+          7
+        ],
+        [
+          3,
+          0,
+          5
+        ]
+      ],
+      "balanced_recall": 0.6321962206108548,
+      "recall": [
+        0.4878048780487805,
+        0.7837837837837838,
+        0.625
+      ],
+      "accuracy": 0.5826771653543307,
+      "known_positive_cases": 37,
+      "missed_positive_as_absent": 1,
+      "positive_unsure": 7,
+      "known_negative_cases": 82,
+      "false_alarms": 6,
+      "negative_unsure": 36,
+      "decisive_sensitivity": 0.7837837837837838,
+      "decisive_specificity": 0.4878048780487805,
+      "unsure": 48,
+      "total": 127
+    },
+    "majority_absent_record_baseline": {
+      "confusion_true_rows": [
+        [
+          321,
+          0,
+          0
+        ],
+        [
+          104,
+          0,
+          0
+        ],
+        [
+          15,
+          0,
+          0
+        ]
+      ],
+      "balanced_recall": 0.3333333333333333,
+      "recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "accuracy": 0.7295454545454545,
+      "known_positive_cases": 104,
+      "missed_positive_as_absent": 104,
+      "positive_unsure": 0,
+      "known_negative_cases": 321,
+      "false_alarms": 0,
+      "negative_unsure": 0,
+      "decisive_sensitivity": 0.0,
+      "decisive_specificity": 1.0,
+      "unsure": 0,
+      "total": 440
+    },
+    "majority_absent_patient_baseline": {
+      "confusion_true_rows": [
+        [
+          82,
+          0,
+          0
+        ],
+        [
+          37,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0
+        ]
+      ],
+      "balanced_recall": 0.3333333333333333,
+      "recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "accuracy": 0.6456692913385826,
+      "known_positive_cases": 37,
+      "missed_positive_as_absent": 37,
+      "positive_unsure": 0,
+      "known_negative_cases": 82,
+      "false_alarms": 0,
+      "negative_unsure": 0,
+      "decisive_sensitivity": 0.0,
+      "decisive_specificity": 1.0,
+      "unsure": 0,
+      "total": 127
+    },
+    "negative_controls": {
+      "total": 20,
+      "decisions": {
+        "unsure": 20
+      },
+      "note": "Synthetic silence,hum,white,contact and known speech/babble sources; not unseen real-world noise."
+    },
+    "median_processing_ms": 86.08746528625488,
+    "note": "Native Core ML including real4kHzfile conversion, gates and fixed0.60decision. Patient aggregation: any present, else any unsure, else absent. Linked patients are split together. Same-dataset stethoscope evaluation, not phone or clinical validation."
+  },
+  "limitations": [
+    "Same-source public stethoscope recordings; not phone-hardware or clinical validation.",
+    "Related patient visits are grouped across splits, but remain dependent within each split.",
+    "Negative controls use known noise sources; not unseen-noise validation.",
+    "Unsure is retained in all case denominators. A negative recording does not rule out a murmur elsewhere."
+  ],
+  "model_sha256": "b5e7baebc79654a270920ec9ba535b0092990c11553b76ab5fcfc012252f632c",
+  "final_freeze_sha256": "d3470e02eee4de1bfa7befe2ff57121ab134ddff013cb5f17dc3bbcb73eb2570"
+}

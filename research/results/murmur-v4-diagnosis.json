@@ -1,0 +1,1027 @@
+{
+  "source_sha256": "f56dd935efdbdc42c78a23534ee135a97aacc3426a356d3e4478be2ab5c9cc74",
+  "baseline_freeze_sha256": "da496ca691ce073365746a1144db716c8139f91433ed7149252d0b84a8fec68f",
+  "v4_weights_sha256": "183d422b11c516ee59da6a80349e79fd282cbb5bd3b1507d1284ff6b3465ff66",
+  "training_recordings": 2356,
+  "training_groups": 652,
+  "natural_training_target_counts": {
+    "0": 1913,
+    "1": 325,
+    "2": 118
+  },
+  "actual_v4_batch_target_counts": {
+    "Absent": 8,
+    "Present": 8,
+    "Unknown_including_synthetic_noise": 14
+  },
+  "roles": {
+    "selection": {
+      "baseline": {
+        "confusion_true_rows": [
+          [
+            88,
+            1,
+            47
+          ],
+          [
+            3,
+            25,
+            6
+          ],
+          [
+            1,
+            0,
+            9
+          ]
+        ],
+        "balanced_recall": 0.7607843137254902,
+        "recall": [
+          0.6470588235294118,
+          0.7352941176470589,
+          0.9
+        ],
+        "accuracy": 0.6777777777777778,
+        "known_positive_cases": 34,
+        "missed_positive_as_absent": 3,
+        "positive_unsure": 6,
+        "known_negative_cases": 136,
+        "false_alarms": 1,
+        "negative_unsure": 47,
+        "decisive_sensitivity": 0.7352941176470589,
+        "decisive_specificity": 0.6470588235294118,
+        "unsure": 62,
+        "total": 180
+      },
+      "v4": {
+        "confusion_true_rows": [
+          [
+            84,
+            2,
+            50
+          ],
+          [
+            2,
+            25,
+            7
+          ],
+          [
+            3,
+            0,
+            7
+          ]
+        ],
+        "balanced_recall": 0.684313725490196,
+        "recall": [
+          0.6176470588235294,
+          0.7352941176470589,
+          0.7
+        ],
+        "accuracy": 0.6444444444444445,
+        "known_positive_cases": 34,
+        "missed_positive_as_absent": 2,
+        "positive_unsure": 7,
+        "known_negative_cases": 136,
+        "false_alarms": 2,
+        "negative_unsure": 50,
+        "decisive_sensitivity": 0.7352941176470589,
+        "decisive_specificity": 0.6176470588235294,
+        "unsure": 64,
+        "total": 180
+      },
+      "scipy_all": {
+        "confusion_true_rows": [
+          [
+            81,
+            3,
+            52
+          ],
+          [
+            2,
+            26,
+            6
+          ],
+          [
+            3,
+            0,
+            7
+          ]
+        ],
+        "balanced_recall": 0.686764705882353,
+        "recall": [
+          0.5955882352941176,
+          0.7647058823529411,
+          0.7
+        ],
+        "accuracy": 0.6333333333333333,
+        "known_positive_cases": 34,
+        "missed_positive_as_absent": 2,
+        "positive_unsure": 6,
+        "known_negative_cases": 136,
+        "false_alarms": 3,
+        "negative_unsure": 52,
+        "decisive_sensitivity": 0.7647058823529411,
+        "decisive_specificity": 0.5955882352941176,
+        "unsure": 65,
+        "total": 180
+      },
+      "native_all": {
+        "confusion_true_rows": [
+          [
+            84,
+            2,
+            50
+          ],
+          [
+            2,
+            25,
+            7
+          ],
+          [
+            3,
+            0,
+            7
+          ]
+        ],
+        "balanced_recall": 0.684313725490196,
+        "recall": [
+          0.6176470588235294,
+          0.7352941176470589,
+          0.7
+        ],
+        "accuracy": 0.6444444444444445,
+        "known_positive_cases": 34,
+        "missed_positive_as_absent": 2,
+        "positive_unsure": 7,
+        "known_negative_cases": 136,
+        "false_alarms": 2,
+        "negative_unsure": 50,
+        "decisive_sensitivity": 0.7352941176470589,
+        "decisive_specificity": 0.6176470588235294,
+        "unsure": 64,
+        "total": 180
+      },
+      "native_usable": {
+        "confusion_true_rows": [
+          [
+            84,
+            2,
+            50
+          ],
+          [
+            2,
+            25,
+            7
+          ],
+          [
+            3,
+            0,
+            7
+          ]
+        ],
+        "balanced_recall": 0.684313725490196,
+        "recall": [
+          0.6176470588235294,
+          0.7352941176470589,
+          0.7
+        ],
+        "accuracy": 0.6444444444444445,
+        "known_positive_cases": 34,
+        "missed_positive_as_absent": 2,
+        "positive_unsure": 7,
+        "known_negative_cases": 136,
+        "false_alarms": 2,
+        "negative_unsure": 50,
+        "decisive_sensitivity": 0.7352941176470589,
+        "decisive_specificity": 0.6176470588235294,
+        "unsure": 64,
+        "total": 180
+      },
+      "new_v4_false_alarms": [
+        "75440_MV",
+        "85299_AV"
+      ]
+    },
+    "calibration": {
+      "baseline": {
+        "confusion_true_rows": [
+          [
+            90,
+            4,
+            44
+          ],
+          [
+            5,
+            24,
+            7
+          ],
+          [
+            3,
+            2,
+            8
+          ]
+        ],
+        "balanced_recall": 0.6447417316982534,
+        "recall": [
+          0.6521739130434783,
+          0.6666666666666666,
+          0.6153846153846154
+        ],
+        "accuracy": 0.6524064171122995,
+        "known_positive_cases": 36,
+        "missed_positive_as_absent": 5,
+        "positive_unsure": 7,
+        "known_negative_cases": 138,
+        "false_alarms": 4,
+        "negative_unsure": 44,
+        "decisive_sensitivity": 0.6666666666666666,
+        "decisive_specificity": 0.6521739130434783,
+        "unsure": 59,
+        "total": 187
+      },
+      "v4": {
+        "confusion_true_rows": [
+          [
+            72,
+            8,
+            58
+          ],
+          [
+            4,
+            26,
+            6
+          ],
+          [
+            2,
+            1,
+            10
+          ]
+        ],
+        "balanced_recall": 0.6710640406292581,
+        "recall": [
+          0.5217391304347826,
+          0.7222222222222222,
+          0.7692307692307693
+        ],
+        "accuracy": 0.5775401069518716,
+        "known_positive_cases": 36,
+        "missed_positive_as_absent": 4,
+        "positive_unsure": 6,
+        "known_negative_cases": 138,
+        "false_alarms": 8,
+        "negative_unsure": 58,
+        "decisive_sensitivity": 0.7222222222222222,
+        "decisive_specificity": 0.5217391304347826,
+        "unsure": 74,
+        "total": 187
+      },
+      "scipy_all": {
+        "confusion_true_rows": [
+          [
+            69,
+            8,
+            61
+          ],
+          [
+            4,
+            26,
+            6
+          ],
+          [
+            2,
+            1,
+            10
+          ]
+        ],
+        "balanced_recall": 0.6638176638176638,
+        "recall": [
+          0.5,
+          0.7222222222222222,
+          0.7692307692307693
+        ],
+        "accuracy": 0.5614973262032086,
+        "known_positive_cases": 36,
+        "missed_positive_as_absent": 4,
+        "positive_unsure": 6,
+        "known_negative_cases": 138,
+        "false_alarms": 8,
+        "negative_unsure": 61,
+        "decisive_sensitivity": 0.7222222222222222,
+        "decisive_specificity": 0.5,
+        "unsure": 77,
+        "total": 187
+      },
+      "native_all": {
+        "confusion_true_rows": [
+          [
+            72,
+            8,
+            58
+          ],
+          [
+            4,
+            26,
+            6
+          ],
+          [
+            2,
+            1,
+            10
+          ]
+        ],
+        "balanced_recall": 0.6710640406292581,
+        "recall": [
+          0.5217391304347826,
+          0.7222222222222222,
+          0.7692307692307693
+        ],
+        "accuracy": 0.5775401069518716,
+        "known_positive_cases": 36,
+        "missed_positive_as_absent": 4,
+        "positive_unsure": 6,
+        "known_negative_cases": 138,
+        "false_alarms": 8,
+        "negative_unsure": 58,
+        "decisive_sensitivity": 0.7222222222222222,
+        "decisive_specificity": 0.5217391304347826,
+        "unsure": 74,
+        "total": 187
+      },
+      "native_usable": {
+        "confusion_true_rows": [
+          [
+            72,
+            8,
+            58
+          ],
+          [
+            4,
+            26,
+            6
+          ],
+          [
+            2,
+            1,
+            10
+          ]
+        ],
+        "balanced_recall": 0.6710640406292581,
+        "recall": [
+          0.5217391304347826,
+          0.7222222222222222,
+          0.7692307692307693
+        ],
+        "accuracy": 0.5775401069518716,
+        "known_positive_cases": 36,
+        "missed_positive_as_absent": 4,
+        "positive_unsure": 6,
+        "known_negative_cases": 138,
+        "false_alarms": 8,
+        "negative_unsure": 58,
+        "decisive_sensitivity": 0.7222222222222222,
+        "decisive_specificity": 0.5217391304347826,
+        "unsure": 74,
+        "total": 187
+      },
+      "new_v4_false_alarms": [
+        "31737_AV",
+        "31737_PV",
+        "50731_MV",
+        "50731_PV",
+        "68698_MV",
+        "84912_PV"
+      ]
+    }
+  },
+  "false_alarm_records": [
+    {
+      "record": "31737_AV",
+      "group": "31737",
+      "role": "calibration",
+      "target": 0,
+      "location": "AV",
+      "age": "Child",
+      "baseline": {
+        "finding": "unsure",
+        "probabilities": [
+          0.4232095678647359,
+          0.5459869007269541,
+          0.030803543825944264
+        ],
+        "seconds": 8.896,
+        "windows": 3
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.1192449430624644,
+          0.8057644963264465,
+          0.07499054446816444
+        ],
+        "seconds": 8.896,
+        "windows": 3
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.10331686586141586,
+          0.8239126205444336,
+          0.07277048379182816
+        ],
+        "native_all": [
+          0.11924486607313156,
+          0.8057644963264465,
+          0.0749906599521637
+        ],
+        "native_usable": [
+          0.11924486607313156,
+          0.8057644963264465,
+          0.0749906599521637
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 1.1548399925231934e-07,
+      "total_windows": 3,
+      "usable_windows": 3
+    },
+    {
+      "record": "31737_PV",
+      "group": "31737",
+      "role": "calibration",
+      "target": 0,
+      "location": "PV",
+      "age": "Child",
+      "baseline": {
+        "finding": "absent",
+        "probabilities": [
+          0.7782069146633148,
+          0.1444710623472929,
+          0.07732202764600515
+        ],
+        "seconds": 14.944,
+        "windows": 4
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.29976142942905426,
+          0.6708748638629913,
+          0.029363700654357672
+        ],
+        "seconds": 14.944,
+        "windows": 4
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.2638018727302551,
+          0.7041569352149963,
+          0.03204120695590973
+        ],
+        "native_all": [
+          0.2997598946094513,
+          0.6708765625953674,
+          0.029363522306084633
+        ],
+        "native_usable": [
+          0.2997598946094513,
+          0.6708765625953674,
+          0.029363522306084633
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 1.6987323760986328e-06,
+      "total_windows": 4,
+      "usable_windows": 4
+    },
+    {
+      "record": "45843_AV",
+      "group": "45843",
+      "role": "calibration",
+      "target": 0,
+      "location": "AV",
+      "age": "Adolescent",
+      "baseline": {
+        "finding": "present",
+        "probabilities": [
+          0.10298399006326993,
+          0.8846535583337148,
+          0.012362450594082475
+        ],
+        "seconds": 21.888,
+        "windows": 6
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.24727527517825365,
+          0.6017259061336517,
+          0.15099881899853548
+        ],
+        "seconds": 21.888,
+        "windows": 6
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.2325783222913742,
+          0.6264731287956238,
+          0.14094847440719604
+        ],
+        "native_all": [
+          0.24727536737918854,
+          0.6017245650291443,
+          0.15100012719631195
+        ],
+        "native_usable": [
+          0.24727536737918854,
+          0.6017245650291443,
+          0.15100012719631195
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 1.341104507446289e-06,
+      "total_windows": 6,
+      "usable_windows": 6
+    },
+    {
+      "record": "45843_PV",
+      "group": "45843",
+      "role": "calibration",
+      "target": 0,
+      "location": "PV",
+      "age": "Adolescent",
+      "baseline": {
+        "finding": "present",
+        "probabilities": [
+          0.05654080266443392,
+          0.941068152586619,
+          0.00239104360419636
+        ],
+        "seconds": 20.592,
+        "windows": 6
+      },
+      "v4": {
+        "finding": "unsure",
+        "probabilities": [
+          0.48216779033343,
+          0.31494514892498654,
+          0.20288709054390588
+        ],
+        "seconds": 20.592,
+        "windows": 6
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.44085565209388733,
+          0.32615259289741516,
+          0.23299171030521393
+        ],
+        "native_all": [
+          0.48216772079467773,
+          0.3149435818195343,
+          0.20288866758346558
+        ],
+        "native_usable": [
+          0.48216772079467773,
+          0.3149435818195343,
+          0.20288866758346558
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 1.5770395596914621e-06,
+      "total_windows": 6,
+      "usable_windows": 6
+    },
+    {
+      "record": "46579_AV",
+      "group": "46579",
+      "role": "calibration",
+      "target": 0,
+      "location": "AV",
+      "age": "Child",
+      "baseline": {
+        "finding": "present",
+        "probabilities": [
+          0.08579657226800919,
+          0.7809472560882569,
+          0.1332561744377017
+        ],
+        "seconds": 19.552,
+        "windows": 5
+      },
+      "v4": {
+        "finding": "unsure",
+        "probabilities": [
+          0.1515110418200493,
+          0.28456575721502303,
+          0.5639232218265533
+        ],
+        "seconds": 19.552,
+        "windows": 5
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.15353329479694366,
+          0.3089185655117035,
+          0.5375481247901917
+        ],
+        "native_all": [
+          0.15151073038578033,
+          0.28456467390060425,
+          0.5639246106147766
+        ],
+        "native_usable": [
+          0.15151073038578033,
+          0.28456467390060425,
+          0.5639246106147766
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 1.3887882233110105e-06,
+      "total_windows": 5,
+      "usable_windows": 5
+    },
+    {
+      "record": "50080_PV",
+      "group": "50080",
+      "role": "selection",
+      "target": 0,
+      "location": "PV",
+      "age": "Child",
+      "baseline": {
+        "finding": "present",
+        "probabilities": [
+          0.2394609334213393,
+          0.7564349004200527,
+          0.0041041656763159805
+        ],
+        "seconds": 26.592,
+        "windows": 7
+      },
+      "v4": {
+        "finding": "unsure",
+        "probabilities": [
+          0.3896017628056662,
+          0.5166070333548954,
+          0.09379121541444745
+        ],
+        "seconds": 26.592,
+        "windows": 7
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.34783315658569336,
+          0.5612563490867615,
+          0.09091045707464218
+        ],
+        "native_all": [
+          0.38960057497024536,
+          0.5166082978248596,
+          0.09379124641418457
+        ],
+        "native_usable": [
+          0.38960057497024536,
+          0.5166082978248596,
+          0.09379124641418457
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 1.2644699641795043e-06,
+      "total_windows": 7,
+      "usable_windows": 7
+    },
+    {
+      "record": "50731_MV",
+      "group": "50731",
+      "role": "calibration",
+      "target": 0,
+      "location": "MV",
+      "age": "nan",
+      "baseline": {
+        "finding": "unsure",
+        "probabilities": [
+          0.38817999232560396,
+          0.5964927487075329,
+          0.015327268141845707
+        ],
+        "seconds": 30.8,
+        "windows": 8
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.3336311802268028,
+          0.6258181221783161,
+          0.04055068615707569
+        ],
+        "seconds": 30.8,
+        "windows": 8
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.31378811597824097,
+          0.6449317336082458,
+          0.04128008335828781
+        ],
+        "native_all": [
+          0.3336299955844879,
+          0.6258193850517273,
+          0.04055069386959076
+        ],
+        "native_usable": [
+          0.3336299955844879,
+          0.6258193850517273,
+          0.04055069386959076
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 1.2628734111785889e-06,
+      "total_windows": 8,
+      "usable_windows": 8
+    },
+    {
+      "record": "50731_PV",
+      "group": "50731",
+      "role": "calibration",
+      "target": 0,
+      "location": "PV",
+      "age": "nan",
+      "baseline": {
+        "finding": "unsure",
+        "probabilities": [
+          0.438520192168653,
+          0.5501139927655458,
+          0.011365826649125665
+        ],
+        "seconds": 30.288,
+        "windows": 8
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.16042888385709375,
+          0.7793925441801548,
+          0.060178581727086566
+        ],
+        "seconds": 30.288,
+        "windows": 8
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.15954351425170898,
+          0.7832106947898865,
+          0.05724572390317917
+        ],
+        "native_all": [
+          0.16042844951152802,
+          0.7793930768966675,
+          0.060178469866514206
+        ],
+        "native_usable": [
+          0.16042844951152802,
+          0.7793930768966675,
+          0.060178469866514206
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 5.327165126800537e-07,
+      "total_windows": 8,
+      "usable_windows": 8
+    },
+    {
+      "record": "68698_MV",
+      "group": "68698",
+      "role": "calibration",
+      "target": 0,
+      "location": "MV",
+      "age": "Child",
+      "baseline": {
+        "finding": "unsure",
+        "probabilities": [
+          0.40162475903828937,
+          0.4208674530188243,
+          0.17750778794288635
+        ],
+        "seconds": 9.792,
+        "windows": 3
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.2381939267118772,
+          0.6138361493746439,
+          0.14796994098772606
+        ],
+        "seconds": 9.792,
+        "windows": 3
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.22783732414245605,
+          0.6288230419158936,
+          0.1433396339416504
+        ],
+        "native_all": [
+          0.2381931096315384,
+          0.6138371229171753,
+          0.1479697823524475
+        ],
+        "native_usable": [
+          0.2381931096315384,
+          0.6138371229171753,
+          0.1479697823524475
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 9.735425313683876e-07,
+      "total_windows": 3,
+      "usable_windows": 3
+    },
+    {
+      "record": "75440_MV",
+      "group": "75440",
+      "role": "selection",
+      "target": 0,
+      "location": "MV",
+      "age": "Child",
+      "baseline": {
+        "finding": "unsure",
+        "probabilities": [
+          0.15920991326371828,
+          0.48234961306055385,
+          0.35844046249985695
+        ],
+        "seconds": 21.296,
+        "windows": 6
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.1047629111756881,
+          0.7092335273822149,
+          0.1860035639256239
+        ],
+        "seconds": 21.296,
+        "windows": 6
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.09638404101133347,
+          0.7273943424224854,
+          0.17622160911560059
+        ],
+        "native_all": [
+          0.10476257652044296,
+          0.7092335820198059,
+          0.18600381910800934
+        ],
+        "native_usable": [
+          0.10476257652044296,
+          0.7092335820198059,
+          0.18600381910800934
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 3.34655245140536e-07,
+      "total_windows": 6,
+      "usable_windows": 6
+    },
+    {
+      "record": "84882_AV",
+      "group": "84882",
+      "role": "calibration",
+      "target": 0,
+      "location": "AV",
+      "age": "Child",
+      "baseline": {
+        "finding": "present",
+        "probabilities": [
+          0.12543251644819975,
+          0.8685582399368286,
+          0.00600924645550549
+        ],
+        "seconds": 19.856,
+        "windows": 5
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.17836682945489885,
+          0.672193956375122,
+          0.14943920448422432
+        ],
+        "seconds": 19.856,
+        "windows": 5
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.15505218505859375,
+          0.6908384561538696,
+          0.154109388589859
+        ],
+        "native_all": [
+          0.1783667504787445,
+          0.672193706035614,
+          0.14943952858448029
+        ],
+        "native_usable": [
+          0.1783667504787445,
+          0.672193706035614,
+          0.14943952858448029
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 3.241002559661865e-07,
+      "total_windows": 5,
+      "usable_windows": 5
+    },
+    {
+      "record": "84912_PV",
+      "group": "84912",
+      "role": "calibration",
+      "target": 0,
+      "location": "PV",
+      "age": "Child",
+      "baseline": {
+        "finding": "unsure",
+        "probabilities": [
+          0.5022781590620676,
+          0.3026928131779035,
+          0.1950290302435557
+        ],
+        "seconds": 20.704,
+        "windows": 6
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.2303672544658184,
+          0.6928283075491587,
+          0.07680445568015178
+        ],
+        "seconds": 20.704,
+        "windows": 6
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.22982347011566162,
+          0.6916114687919617,
+          0.0785650983452797
+        ],
+        "native_all": [
+          0.23036696016788483,
+          0.692828357219696,
+          0.07680469006299973
+        ],
+        "native_usable": [
+          0.23036696016788483,
+          0.692828357219696,
+          0.07680469006299973
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 2.942979335784912e-07,
+      "total_windows": 6,
+      "usable_windows": 6
+    },
+    {
+      "record": "85299_AV",
+      "group": "85299",
+      "role": "selection",
+      "target": 0,
+      "location": "AV",
+      "age": "Child",
+      "baseline": {
+        "finding": "unsure",
+        "probabilities": [
+          0.5398726860682169,
+          0.3500924011071523,
+          0.11003492151697476
+        ],
+        "seconds": 11.392,
+        "windows": 3
+      },
+      "v4": {
+        "finding": "present",
+        "probabilities": [
+          0.07598807041843732,
+          0.8954566121101379,
+          0.02855529294659694
+        ],
+        "seconds": 11.392,
+        "windows": 3
+      },
+      "paired_probabilities": {
+        "scipy_all": [
+          0.07812052220106125,
+          0.8900189399719238,
+          0.031860433518886566
+        ],
+        "native_all": [
+          0.07598807662725449,
+          0.8954564929008484,
+          0.02855549566447735
+        ],
+        "native_usable": [
+          0.07598807662725449,
+          0.8954564929008484,
+          0.02855549566447735
+        ]
+      },
+      "maximum_aligned_torch_coreml_difference": 2.0271788040912564e-07,
+      "total_windows": 3,
+      "usable_windows": 3
+    }
+  ],
+  "maximum_aligned_probability_difference": 3.5941600800004636e-06,
+  "limitations": [
+    "Selection and calibration are reused development data.",
+    "Development error inspection informs the next candidate and cannot be called independent validation.",
+    "No cause of generalization failure is established from aggregate counts alone."
+  ]
+}

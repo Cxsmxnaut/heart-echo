@@ -1,0 +1,93 @@
+
+> chest-bpm-care-assistant@0.3.0 test:browser
+> node scripts/browser-test.js
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toHaveAttribute(expected) failed
+
+Locator:  locator('#results')
+Expected: "true"
+Received: "false"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveAttribute" locator('#results') with timeout 5000ms
+  - waiting for locator('#results')
+    14 × locator resolved to <div id="results" aria-busy="false" aria-label="Care directory results">…</div>
+       - unexpected value "false"
+
+    at captureRawStack (/Users/slolakap/Documents/ChatGPT/Hackathon/care-assistant/node_modules/playwright-core/lib/coreBundle.js:9551:17)
+    at callMatcherAsStep (/Users/slolakap/Documents/ChatGPT/Hackathon/care-assistant/node_modules/playwright/lib/matchers/expect.js:13342:57)
+    at Object.toHaveAttribute (/Users/slolakap/Documents/ChatGPT/Hackathon/care-assistant/node_modules/playwright/lib/matchers/expect.js:13334:23)
+    at /Users/slolakap/Documents/ChatGPT/Hackathon/care-assistant/scripts/browser-test.js:37:42 {
+  matcherResult: {
+    name: 'toHaveAttribute',
+    expected: 'true',
+    message: 'expect(locator).toHaveAttribute(expected) failed\n' +
+      '\n' +
+      "Locator:  locator('#results')\n" +
+      'Expected: "true"\n' +
+      'Received: "false"\n' +
+      'Timeout:  5000ms\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toHaveAttribute" locator('#results') with timeout 5000ms\n` +
+      "  - waiting for locator('#results')\n" +
+      '    14 × locator resolved to <div id="results" aria-busy="false" aria-label="Care directory results">…</div>\n' +
+      '       - unexpected value "false"\n',
+    pass: false,
+    actual: 'false',
+    log: [
+      `  - Expect "toHaveAttribute" locator('#results') with timeout 5000ms`,
+      "  - waiting for locator('#results')",
+      '    14 × locator resolved to <div id="results" aria-busy="false" aria-label="Care directory results">…</div>',
+      '       - unexpected value "false"'
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- heading "Practices in your chosen category" [level=3]\n' +
+      '- text: 1 shown\n' +
+      '- paragraph: Exact ZIP 12345; not distance-ranked or a complete list.\n' +
+      '- article:\n' +
+      '  - text: Directory listing · contact to confirm\n' +
+      '  - heading "SYNTHETIC PROVIDER" [level=3]\n' +
+      '  - paragraph: Family Medicine\n' +
+      '  - paragraph: 100 SYNTHETIC WAY, SYNTHETIC CITY, NY, 123450000\n' +
+      '  - paragraph: This practice is listed in ZIP 12345 under your primary care search category.\n' +
+      '  - link "202-555-0100":\n' +
+      '    - /url: tel:2025550100\n' +
+      '  - link "CMS NPPES ↗":\n' +
+      '    - /url: https://npiregistry.cms.hhs.gov/provider-view/1234567893\n' +
+      '  - link "Directions ↗":\n' +
+      '    - /url: https://www.google.com/maps/dir/?api=1&destination=100%20SYNTHETIC%20WAY%2C%20SYNTHETIC%20CITY%2C%20NY%2C%20123450000\n' +
+      '  - paragraph\n' +
+      '  - group: Evidence & limits\n' +
+      '- heading "Health centers · ask about self-pay & sliding fees" [level=3]\n' +
+      '- text: 1 shown\n' +
+      '- paragraph: Exact ZIP 12345; site services vary. Not distance-ranked.\n' +
+      '- article:\n' +
+      '  - text: Directory listing · contact to confirm\n' +
+      '  - heading "SYNTHETIC HEALTH CENTER" [level=3]\n' +
+      '  - paragraph: HRSA-listed health center site; confirm services\n' +
+      '  - paragraph: 200 SYNTHETIC WAY, SYNTHETIC CITY, NY, 12345-0000\n' +
+      '  - paragraph: HRSA lists this health-center site in ZIP 12345. Ask about self-pay and sliding-fee options; prices and services vary.\n' +
+      '  - link "202-555-0101":\n' +
+      '    - /url: tel:2025550101\n' +
+      '  - link "HRSA Health Center Sites ↗":\n' +
+      '    - /url: https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/PrimaryHealthCareFacilities_FS/MapServer/0/1?f=pjson\n' +
+      '  - link "Directions ↗":\n' +
+      '    - /url: https://www.google.com/maps/dir/?api=1&destination=200%20SYNTHETIC%20WAY%2C%20SYNTHETIC%20CITY%2C%20NY%2C%2012345-0000\n' +
+      '  - paragraph\n' +
+      '  - group: Evidence & limits\n' +
+      '- link "Search the official NPI Registry ↗":\n' +
+      '  - /url: https://npiregistry.cms.hhs.gov/\n' +
+      '- link "HRSA Find a Health Center ↗":\n' +
+      '  - /url: https://findahealthcenter.hrsa.gov/\n' +
+      '- link "CMS National Provider Directory ↗":\n' +
+      '  - /url: https://directory.cms.gov/'
+  }
+}
+
+Node.js v25.6.0

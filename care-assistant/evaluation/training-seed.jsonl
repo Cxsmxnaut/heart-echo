@@ -1,0 +1,3 @@
+{"synthetic":true,"input":"Find family medicine in ZIP 54321.","target":{"zip":"54321","insurance":null,"specialty":"family_medicine","intent":"find_care"}}
+{"synthetic":true,"input":"payer: Example Payer; plan: Example Bronze; network: Example Local","target":{"zip":null,"insurance":{"status":"insured","payer":"Example Payer","plan":"Example Bronze","network":"Example Local"},"specialty":null,"intent":"find_care"}}
+{"synthetic":true,"input":"Does the app detect heart disease?","target":{"zip":null,"insurance":null,"specialty":null,"intent":"explain_scan"}}

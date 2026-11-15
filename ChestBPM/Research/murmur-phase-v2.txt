@@ -1,0 +1,456 @@
+Heartbeat-phase-aware murmur research — November 14, 2026
+
+Current result: phase-aware model M, installed iPhone app1.9(14)
+------------------------------------------------------
+The fixed M candidate passed every predeclared native development and
+retrospective-regression acceptance check. It improves murmur recording
+detection while adding two false alarms and reducing false-Absent results.
+It is a research prototype, not clinical validation or proven phone accuracy.
+
+Original120linked-person regression,440stethoscope recordings:
+                                   v1             M
+Positive recordings detected       75/104         87/104
+Positive called Absent              6/104          4/104
+Positive returned Unsure           23/104         13/104
+False alarms on annotatedAbsent    10/321         12/321
+Absent returned Unsure             77/321         83/321
+All recordings Unsure             110/440        106/440
+ExpertUnknown predicted A/P/U       5/0/10         5/0/10
+Known nonheart controls Unsure      20/20          20/20
+
+Positive detection83.65% versus72.12% is NOT overall accuracy. Overall
+three-label accuracy73.41% versus72.50%; balanced recall73.58% versus70.56%.
+Paired120linked-group bootstrap3000, exploratory95%percentile intervals:
+record-positive detection gain11.54percentagepoints[4.54,19.23];false-alarm
+increase0.62pp[0,1.63];Unsure difference-0.91pp[-3.20,1.24]. These intervals
+do not correct for research/model selection and do not establish transfer.
+
+Count people carefully: the127source patient/visit IDs include repeat linked
+visits. Their positive entries improve29/37to31/37, false alarms stay6/82,
+positive-asAbsent drops1to0. Collapsing AdditionalID links gives120unique
+linked people: annotatedpositive25/32to26/32detected, with1to0falseAbsent
+and6remainingUnsure; annotatedAbsent false alarms6/80unchanged, Unsure35to38.
+ExpertUnknown8linkedpeople stay[Absent3,Present0,Unsure5]. Overall unique-
+person Unsure46/120to49/120. The recording-level gain is larger than the
+person-level gain. Any-visit grouping is descriptive, not a prospective
+patient diagnosis. Both views are retained in ML/murmur-phase-report.json.
+
+Phase output accuracy86.45% only on the44.56% of first-window test frames
+with public annotations. State0/unannotated is excluded, not labelled normal.
+First4seconds/record and semi-supervised labels limit interpretation.
+
+No additional personal recording or Watch data was used. The old test set
+was already examined in v1; this is retrospective regression, not new
+independent evidence. Both50group development partitions were reused during
+research. No PASCAL audio was downloaded. Public CirCor source/licence and
+all WAV/TSV checksums are retained. The model never received reference labels,
+patient metadata, annotations, Watch readings or BPM values during inference.
+
+The fixed public demo clips were retained: annotatedAbsent nowUnsure,
+annotatedPresent stillPresent, annotatedUnknown stillUnsure. No sample was
+replaced to improve the demo. The normal clip's uncertainty is a limitation.
+
+Local integration: separate ML/PhaseModels/Murmur.mlpackage, originalv1
+ML/Models/Murmur.mlpackage preserved. Native reader/rules/BPM source unchanged.
+Release iPhone/embeddedWatch1.9(14) built and signed; strict/deep signature,
+intendedphone provisioning and exactMweight metadata checks passed.24Python
+model checks and13native rules/inference checks passed. Public-sample and
+plan-persistence UI checks passed. The unchanged general-screen case passed
+on retry (144.047seconds), completing all three unique UI scenarios. The
+first full UI run retains its one failed case; the successful retry has its
+own result bundle. The first general UI
+attempt failed while another preview app was foregrounded; no model/code
+change is made to hide that failure. Own temporary simulator first boot did
+not finish and was removed; only33old rebuildable compiler caches were
+cleared(~1.96GiB), preserving signed rollback apps, models and recordings.
+
+Physical installation completed over Wi-Fi after the user unlocked the phone.
+CoreDevice installed app.veritas.chestbpm and the exact-bundle app-info query
+confirmed version1.9,build14 on the intended iPhone16. No microphone test or
+new personal recording was requested/run. Embedded Watch1.9(14) is signed;
+separate Watch installation was not independently checked. No claim is made
+that phone physiological accuracy was tested by installing the app.
+
+Reproduction of the selected lineage
+------------------------------------
+Use the versioned manifests and the preserved v1 artifacts; do not reserve a
+new cohort. The initial v1 generation instructions are in
+Research/murmur-validation-v18.txt. These scripts refuse to overwrite model
+outputs, so retraining needs a fresh output workspace. Native export needs
+macOS/CoreML/Xcode. MPS retraining is not promised bitwise identical; the
+bundled package is the exact evaluated artifact. Different retraining choices
+need a new candidate and evaluation, not relaxed assertions or overwritten
+freezes. From ChestBPM, the selected dependency order is:
+
+  .venv-ml/bin/python ML/murmur_phase_data.py download
+  .venv-ml/bin/python ML/murmur_phase_model.py
+  swiftc -O ChestBPM/MurmurAnalysis.swift Tools/MurmurPhaseProbe.swift -o /tmp/chestbpm-murmur-phase-probe
+  .venv-ml/bin/python ML/murmur_phase_evaluate.py freeze
+  .venv-ml/bin/python ML/murmur_phase_evaluate.py selection
+  .venv-ml/bin/python ML/murmur_phase_evaluate.py calibration
+  .venv-ml/bin/python ML/murmur_timing_model.py
+  .venv-ml/bin/python ML/murmur_phase_c_evaluate.py freeze
+  .venv-ml/bin/python ML/murmur_phase_c_evaluate.py selection
+  .venv-ml/bin/python ML/murmur_phase_c_evaluate.py calibration
+  swiftc -O ChestBPM/MurmurAnalysis.swift Tools/MurmurAudioExport.swift -o /tmp/chestbpm-murmur-audio-export
+  .venv-ml/bin/python ML/murmur_native_data.py
+  .venv-ml/bin/python ML/murmur_hard_model.py
+  .venv-ml/bin/python ML/murmur_phase_j_evaluate.py freeze
+  .venv-ml/bin/python ML/murmur_phase_j_evaluate.py selection
+  .venv-ml/bin/python ML/murmur_phase_j_evaluate.py calibration
+  .venv-ml/bin/python ML/murmur_temperature_model.py
+  .venv-ml/bin/python ML/murmur_phase_k_evaluate.py freeze
+  .venv-ml/bin/python ML/murmur_phase_k_evaluate.py selection
+  .venv-ml/bin/python ML/murmur_phase_k_evaluate.py calibration
+  .venv-ml/bin/python ML/murmur_additive_model.py
+  .venv-ml/bin/python ML/murmur_phase_m_evaluate.py freeze
+  .venv-ml/bin/python ML/murmur_phase_m_evaluate.py selection
+  .venv-ml/bin/python ML/murmur_phase_m_evaluate.py calibration
+  .venv-ml/bin/python ML/murmur_phase_accept.py
+
+Only after development acceptance, freeze the candidate choice and run test,
+then acceptance --regression. Run murmur_phase_compare.py murmur-phase-m
+ROLE for selection/calibration/test, and murmur_phase_report.py to generate
+aggregate evidence after verifying the bundled package matches the evaluated
+package. Optional rejected B/D/E/G experiments have their own isolated scripts
+and protocol outputs; they are not dependencies of the shipped model.
+
+Final checks:24Python checks in test_murmur, test_murmur_phase,
+test_murmur_timing, test_murmur_evidence, test_murmur_additive;13native
+MurmurChecks assertions;3unique UI scenarios as described above; signed
+Release build and physical installed-version check. Initial UI result:
+build-v19-simulator/UI-v19.xcresult. Unchanged general-case retry:
+build-v19-simulator/UI-v19-screen-retry.xcresult. The passed public-sample
+screenshot was exported and visually reviewed. No Graphify runtime/graph is
+configured for this repository; source and frozen artifacts were checked.
+
+Candidate results and next registered experiment
+------------------------------------------------
+A selected epoch19 on the50selection groups. Native record results:
+selection:26/34 positives detected versus19/34 v1;2/136 false alarms versus1;
+60/180 Unsure for both. Calibration:25/36 positives versus23;6/138 false
+alarms versus3;62/187 Unsure versus57. The false-alarm increase is2.174
+percentage points, exceeding the predeclared2point limit. A is NOT promoted.
+First-window phase accuracy on annotated frames:82.15%selection,84.34%
+calibration. Only39.15%/44.93% of those windows' frames have phase annotations;
+these numbers do not describe all frames or murmur detection accuracy.
+
+B is one fixed equal-probability combination of frozen v1 and A, with one
+shared waveform frontend. No mixture-weight search. Conversion passed with
+maximum class difference1.87e-8 and phase difference2.39e-7. Cached native
+probability comparison predicted21/34 selection positives versus19, with the
+same1 false alarm; calibration23/36 positives versus23 with the same3 false
+alarms. This is not a clear calibration detection gain. Actual native B
+checks are separate. No original test outcomes were read to choose B.
+
+C protocol registered before its training: initialize from frozen A; add a
+zero-initialized residual dilation16 temporal convolution and a frame murmur
+head. Pool frame murmur strengths within predicted phases into a zero-start
+residual classification head. Approximate timing targets derive from public
+early/mid/late/holo timing metadata: first50%,middle50%,last50%,whole phase.
+These are WEAK targets, not expert frame-by-frame murmur truth. Missing/nan
+timing, Unknown recordings, unannotated spans and positive S1/S2 are masked.
+Known-negative annotated frames are weak-negative. Pure artifact samples
+have Unknown class, phase0 and no murmur timing. Mixed speech/babble/white
+artifact controls match known training sources, not unseen noise.
+
+Fixed seed3414,24epochs x100steps,batch48,AdamW lr0.0001. Freeze original
+backbone/global head first3epochs. Loss=recordCE+.25phaseCE+.5weakTimingBCE
+(positive weight2)+.2original-v1 teacherKL(temperature2). Select on50selection
+groups using ORIGINAL v1 comparison: maximize positive recall then balanced
+recall, subject to false-alarm increase<=2pp, Unsure<=5pp and positive-asAbsent
+increase<=2pp, fixed.60 decision threshold. C is isolated from frozen A/v1.
+Six timing checks passed, including exact initial A logits, gradients to audio
+features, missing-label masks, frame alignment and native-input output shapes.
+
+Because A calibration informed architecture B/C, that50group partition is
+now development evidence too. It must NOT be called an untouched validation
+set. Original120test groups are already inspected v1 regression evidence.
+No fresh independent phone/stethoscope clinical validation is available.
+No private audio/Watch data or additional personal recordings are used.
+
+C preparation note: the first run stopped before its first optimizer update
+because a public speech artifact clip is only3.4seconds. That initialization
+and protocol remain in generated/murmur-phase-c-preparation-failure. The
+loader now repeats short noise audio before computing its spectrum. No
+training/evaluation heart recording or dataset label was altered. The full
+17 phase/timing/baseline Python checks pass after this fix.
+
+D is an exploratory confidence calibration of frozen A, developed while C
+trains. It maps p to(1-alpha)*p+alpha*[0,0,1]; this linear mapping commutes
+with native window averaging and preserves all audio gates. Eight alpha
+values were inspected on selection ONLY:0,.025,.05,.075,.1,.125,.15,.2.
+Choose maximum positive detection among values matching original selection
+false-alarm count, positive-asAbsent no higher, Unsure rate<=v1+5pp; break
+ties by fewerFP then fewerUnsure. This fixes alpha=.025 before D calibration
+or test checks: selection25/34TP,1/136FP,65/180Unsure versus v1 19,1,60.
+This stricter selection FP constraint is exploratory, not the original A
+training criterion. D will still need native conversion/evaluation and the
+original2ppFP/5ppUnsure overall comparison limits. No old test outcomes or
+old test phase files were read to choose this setting. Conversion passed
+class error<=9.32e-9, phase<=3.58e-7 on four fixed scale examples.
+
+D native calibration FAILED:23/36 positives (same as v1),6/138 false alarms
+versus3,69/187 Unsure versus57. It is not promoted. Selection agrees with
+the linear cached calculation, maximum native average discrepancy4.07e-8.
+This records an unsuccessful calibration experiment rather than hiding it.
+
+External-data prospect (metadata only; no waveforms accessed at this point):
+PASCAL CHSC2011 Dataset A came from the iStethoscope Pro iPhone app, according
+to its original organizer page https://www.peterjbentley.com/heartchallenge/ .
+It lists31 normal,34 murmur,19 extra-heart-sound and40 artifact labelled
+recordings plus52unlabelled. This could test transfer beyond CirCor but is
+old crowd-sourced phone data, not validation of our iPhone16 app. Original
+page requests citation but provides no explicit modern redistribution
+license; do not train on or bundle it without resolving reuse terms.
+No dataset A audio has been read during candidate choice.
+
+E preparation/protocol (fixed before E training)
+----------------------------------------------
+Python training used SciPy resample_poly; the app uses AVAudioConverter.
+The old Python checkpoint-selection helper also averages windows without
+the native silence/clipping gate. Neither difference is assumed to explain
+all errors. Prepare all2723development public recordings through unchanged
+MurmurAnalyzer.audio in a separate Swift exporter, retaining at most60seconds.
+Store little-endian2kHzfloat32, feature SHA256 and native usable full-window
+starts. Native rules:four seconds, RMS>=0.00002, clipped abs>=0.999 <=1%.
+No original test or private data is passed to this exporter.
+
+Before E optimization, require matching all367development native v1 window
+counts and decisions, maximum probability difference<0.0001. This checks
+the comparison pipeline, not medical accuracy. Selection uses exactly the
+same native window set. Training uses only native-usable starts from the
+original652training groups; report excluded recordings rather than dropping
+them from evaluation. Original training/evaluation code and caches stay fixed.
+
+E starts from frozen A, uses the same phase-aware architecture and jointly
+fine-tunes for12epochs x100steps, batch48, seed5414, AdamW lr0.00005.
+Loss=recordCE(weights1.1,1,1)+.25phaseCE+.2original-v1KL(temperature2).
+Known synthetic white artifact examples stay Unknown/phase0. No timing C
+head, no extra source data, no changed native decision threshold. Select
+maximum positive recall then balanced recall under the original2ppFP,
+5ppUnsure and2pppositive-asAbsent bounds against native-equivalent v1 on
+the50selection groups. All calibration remains reused development evidence.
+
+E pipeline parity PASSED before optimization: all367development v1 decisions
+and usable-window counts exactly match frozen native outputs. Maximum class
+probability difference1.78814e-7. E epoch0 also reproduces native A selection
+26/34TP,2FP,60Unsure. This confirms removal of a measurement mismatch; it
+does not itself improve model accuracy. Both resampling and gate matching
+changed together, so do not assign the earlier difference to one alone.
+
+C finished all24epochs; selected epoch24: Python selection28/34TP,2/136FP,
+69/180Unsure against original Python v1 19TP,1FP,68Unsure. Native checks
+are separate. Three-output conversion max difference<=2.99e-7. Fixed first
+alphabetic selection example per class shows phase-path ablation changes
+class scores by.0327,.2024,.0115; removing learned timing residual changes
+scores by.00216,.00712,.00174. Both paths affect output; this is not proof
+of improved detection. Weak timing audit on original training recordings:
+1,383,088masked frames,1,256,434weaknegative and38,982weakpositive. These
+weak frame labels must not be described as dense clinical ground truth.
+
+Further development outcomes
+----------------------------
+C native selection28/34TP,2FP,60Unsure versus19,1,60. Calibration25/36TP,
+6FP,63Unsure versus23,3,57. Same failure as A on the2pp calibration FP
+limit; C NOT promoted. Annotated-frame phase accuracy84.41%selection,
+86.37%calibration; annotation coverage remains39.15/44.93%.
+E selected epoch0; every learned parameter exactly equals A. No improvement
+from fine-tuning, no promotion, no redundant native classification rerun.
+
+F exploratory fixed50/50 v1/C probabilitymean, cached native development
+arrays: selection21TP,1FP,62Unsure; calibration23TP,4FP,65Unsure. No
+calibration detection gain; not exported. H exploratory five-point mixture
+grid on selection only: Cweights0,.25,.5,.75,1 give TP19,21,21,26,28 and
+FP1,1,1,2,2. Matched-FP selection offers only21TP; no Hmodel exported.
+Agreement/minimum A/C scores were also inspected as a development diagnostic:
+the two phase models have exactly the same six calibration false-alarm
+recordings. No agreement model was exported; no test outcomes were used.
+
+G fixed evidence rule (before G development evaluation): multiply C Present
+score by min(1,evidence/.4), move removed mass to Unknown, keep Absent score
+unchanged. Evidence is the larger phase-weighted mean of C's weak frame
+murmur scores during predicted systole/diastole. On the first100alphabetic
+TRAINING examples/class, positive25th percentile is.3996 and negative
+median.2080; this motivated the single.4knot. No alternative knots searched.
+This is exploratory training-derived gating, not an independent calibration.
+Three probability/gating checks passed. CoreML conversion error<=2.39e-7.
+
+J fixed training protocol: initialize C; freeze its complete acoustic
+backbone, context convolution, phase head and weak frame murmur head.
+Train only the three record classification heads, seed7414,12epochs x100,
+batch48, AdamW lr0.0001. Rank only native-usable training negatives by C
+Present score. Half negative draws come from the top10%, half uniform;
+positive and Unknown draws remain uniform. Synthetic white artifacts remain
+Unknown. Loss=recordCE+.5positive-only C teacherKL(temp2)+.5knownnegative
+Present penalty[-log(1-pPresent)]. No validation examples enter optimization.
+Selection must MATCH original v1's one false alarm, improve positive
+detections, keep Unsure<=v1+5pp and positive-asAbsent<=v1+2pp. Then maximize
+positive recall, fewerFP, fewerUnsure. This stricter selection condition is
+registered for J before optimization, not a change to prior failure rules.
+No original test phase annotations/audio/results are used for these choices.
+
+G native outcome: selection26/34TP,2FP,62Unsure; calibration exactly C
+25/36TP,6FP,63Unsure. REJECTED: the rule did not remove shared false alarms.
+J ranked1913native-usable training negative recordings and used191 in the
+hard pool. It completed12epochs and exported; native comparison follows.
+
+K protocol fixed before K selection/calibration evaluation: use J's chosen
+checkpoint unchanged and inspect decision temperatures[.5,.6,.7,.8,.9,1,
+1.1,1.2] ONLY on the50selectiongroups. Cache logits for each native-usable
+window once, divide by temperature before softmax/window averaging, and
+keep phase/weak-murmur outputs unchanged. Require matched baselineFPcount1,
+Unsure<=v1+5pp,positive-asAbsent<=v1+2pp andstrictTPgain; maximizeTP then
+fewerFP,fewerUnsure,closestT1. This is decision calibration, not proof that
+scores are calibrated disease probabilities. The final native comparison
+must confirm the Python choice. Original test outcomes remain uninspected
+for these choices. Do not expand this grid after seeing K calibration.
+
+J selected epoch2: native selection21/34TP,0FP,61Unsure; calibration21/36TP,
+2FP,62Unsure. The calibration detection drop rejects J. All14frozen feature
+tensors exactly equal C; only12classification-head tensors changed. K chose
+temperature.7 on selection (23TP,0FP,52Unsure); native matches. Calibration
+remains21TP,2FP,59Unsure,8positive-asAbsent versus v1 6; K NOT promoted.
+Twenty combined Python checks pass. No grid expansion after K calibration.
+
+L/M fixed combination and preservation rule (before native evaluation)
+--------------------------------------------------------------------
+L exploratory fixed50/50probabilitymean C/K, from cached native record
+probabilities: selection25TP,1FP,53Unsure; calibration24TP,4FP,59Unsure.
+Both improve positive detections at comparableFP/Unsure, but calibration
+positive-asAbsent7 versus v1 6. No other Lweights searched or exported.
+
+M adds only this phase proposal's positive evidence to original v1:
+Present=max(v1Present,LPresent). Remaining mass follows original v1's
+Absent/Unknown ratio. Absent confidence cannot increase, and original
+confident positive decisions cannot be lost. This preserves useful v1
+decisions while allowing extra phase detections/uncertainty. It does not
+remove original false alarms. Shared C/J acoustic features are evaluated
+once; only the classification heads differ. No ground-truth phases enter
+inference. K temperature remains fixed.7, mixture fixed50/50, no new knob.
+
+Cached record-mean approximation (not actual per-window nonlinear fusion):
+selection25TP,1FP,60Unsure; calibration24TP,4FP,58Unsure. Actual native
+evaluation is mandatory. Four fusion checks pass. Shared-feature versus
+independent C/J paths match within1e-6. CoreML conversion checked on four
+fixed random scales and three fixed first alphabetic selection examples,
+maxclass1.20e-7,phase8.35e-7,timing3.28e-7.
+
+Before any original-test phase access, ML/murmur_phase_accept.py fixes the
+M gates for EACH selection/calibration/regression cohort: strict positive
+detection gain, FP increase<=2pp, Unsure increase<=5pp, no extra positive
+asAbsent, all20knownnoisecontrolsUnsure. Native probabilities must verify
+Absent<=v1 andPresent>=v1 within0.0001rounding tolerance. Patient positives
+must not be lost; patient positive-asAbsent must not increase. Patient false
+alarms/Unknown decisions remain explicitly reported. Only if development
+passes may M run the original120group REGRESSION. No claims of independent
+validation or measured phone accuracy follow from these results.
+
+M native development PASSED the frozen acceptance checks before test access:
+selection25/34TP vs19,1/136FP same,62/180Unsure vs60,positive-asAbsent3vs7.
+Calibration24/36TP vs23,4/138FP vs3,59/187Unsure vs57,positive-asAbsent5vs6.
+All20knownnoisecontrolsUnsure; native probability bounds hold. Patient
+selection10/12TP vs8,0missAsAbsent vs3; calibration12/14TP unchanged,
+1missAsAbsent vs2. Patient FP selection1unchanged,calibration0unchanged.
+Unknown calibration recordings are predicted[Absent3,Present2,Unsure8]
+versus v1[3,0,10]; unknown patient rows[1,2,3] versus[1,0,5]. These new
+confident results on uncertain annotations are a limitation, not verified
+new murmurs. Development cohorts were reused in research; gains can be
+optimistic. M is fixed for the original120group retrospective regression,
+with no further parameter/architecture tuning from that regression.
+
+Objective
+Improve murmur detection by explicitly supervising S1, systole, S2 and diastole,
+while retaining the working v1 classifier until a candidate improves the measured
+false-alarm/uncertainty tradeoff. No private recordings or Watch data are training
+inputs. This is not clinical validation or proof of bare-phone accuracy.
+
+Baseline preservation
+ML/murmur-freeze.json pins the v1 source, converted weights, native inference
+binary, runtime and evaluation. The original ML/Models/Murmur.mlpackage and its
+frozen source remain unchanged. Detailed v1 results are retained. BPM code and
+BeatStates weights are separate and remain unchanged too.
+
+Data and evaluation boundaries
+Public CirCor DigiScope1.0.3, Open Data Commons Attribution1.0:
+https://doi.org/10.13026/tshs-mw03
+https://doi.org/10.1109/JBHI.2021.3137048
+All annotations are checked against the published SHA256 list. Four-state timings
+are semi-supervised annotations with limitations, not perfect physiological truth.
+
+Keep the original 652 linked training groups. Split the existing 100 validation
+groups into 50 checkpoint-selection and 50 calibration/check groups using the fixed
+seed in ML/murmur-phase-manifest.json. All related visits and recordings stay
+together. Neither group is a new external validation cohort; the v1 model was
+selected using the original validation pool. The v2 checkpoint selector does not
+use the calibration group's outcomes.
+
+The original 120 test groups and 440 recordings have already been inspected in v1.
+Their use for v2 is retrospective regression, not fresh independent validation.
+No gradient, checkpoint choice or threshold choice uses that cohort. Test phase
+annotations remain unread until a selected candidate and evaluation are frozen.
+
+Annotation handling
+Use the timestamp at the center of each Fourier frame: (128+40*t)/2000 seconds.
+Train explicit phase classes noise=0,S1=1,systole=2,S2=3,diastole=4. Unannotated
+public state0 is masked out of phase loss; it is not labelled definite noise.
+Known pure synthetic artifact examples can provide phase0 supervision.
+
+Auditing all 2,723 development annotation files found one malformed file,
+50782_MV_1.tsv, containing only "0 0 28". This zero-length entry labels no audio.
+Keep that recording and its murmur target, while masking its entire unavailable
+phase target. The published file is not edited. The initial preparation failed
+before any training update; the failure and handling rule are retained. Tests
+cover this case and ensure unknown annotation spans do not become noise labels.
+
+Candidate A
+Initialize the temporal feature network and global murmur head from the exact
+frozen v1 checkpoint. Add a five-class phase head and a murmur residual head that
+pools learned features separately using the predicted S1/systole/S2/diastole
+probabilities. The residual head starts at zero, preserving v1 class outputs
+exactly before training. Ground-truth phases are never supplied during inference.
+
+For the first three epochs, freeze the old feature network/global head while the
+new phase/residual heads learn. Then jointly train all student parameters. Loss:
+murmur cross-entropy +0.5phase cross-entropy +0.2teacher distillation, temperature2.
+The frozen teacher helps retain prior sound patterns. Fixed24epochs,100steps,
+48examples/batch,AdamW learning rate0.00015,seed2414. Exact settings and source
+hashes are stored with the separate candidate weights under ignored ML/generated.
+
+Checkpoint selection is fixed before training: maximize positive detection, then
+class-balanced recall, among checkpoints with a false-alarm-rate increase no more
+than2percentagepoints, unsure-rate increase no more than5points and positive-as-
+Absent-rate increase no more than2points versus epoch0 on the same selection data.
+The original epoch0 is included as a fallback and cannot qualify as an improvement.
+These are engineering comparison bounds, not medical acceptance criteria.
+
+Native verification and promotion
+The waveform frontend and input API remain identical to v1. Export class scores
+and a separate5x194 phase score array. Native Core ML conversion must agree with
+PyTorch. The unchanged frozen Swift classifier performs class inference so that
+resampling, silence/clipping gates,0.60cutoff and recording aggregation remain
+comparable. A separate audio-only native probe exports first-window phase output
+for scoring against annotations. Neither probe receives reference labels.
+
+Freeze all candidate weights, sources, metrics, binaries and runtime before native
+evaluation. Evaluate selection/calibration first and reject unhelpful candidates
+before regression. Report record and patient/visit confusion matrices, false
+alarms, positive-as-Absent misses, positive/negative Unsure, phase confusion and
+known-noise controls. Repeated visits, locations and frames are dependent.
+
+Promotion requires measured detection improvement with comparable false alarms
+and uncertainty, verified native inference, preserved baseline artifacts, and app
+build/regression/UI checks. If a candidate fails, keep v1 and investigate further.
+No additional personal recordings are requested.
+
+Research basis
+McDonald, Gales and Agarwal (2024), A recurrent neural network and parallel hidden
+Markov model algorithm to segment and detect heart murmurs in phonocardiograms:
+https://doi.org/10.1371/journal.pdig.0000436
+This supports the use of explicit heartbeat phases and murmur timing. Our candidate
+uses our own temporal-convolution/phase-pooling implementation, not copied RNN/HSMM
+code or published challenge weights. Published scores are not our app's scores.
+
+Current results and deployment status will be appended after candidate evaluation.
+No Graphify runtime/configuration exists in this worktree; evidence uses source,
+checksums and actual model/native/test outputs. No graph refresh command applies.

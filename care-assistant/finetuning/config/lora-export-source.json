@@ -1,0 +1,10 @@
+{
+  "runtime_tag": "b12248",
+  "source_commit": "3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+  "archive_url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+  "archive_sha256": "e0c02b6e31c46a84474f75436730562024cb8edc1d2c0baa8e57cb51e1d62e23",
+  "converter_sha256": "ddb143ac34022b0646e51d9c35e9cfa3ec3d0a36091975ebc88f553dd18ca350",
+  "source_path": ".cache/finetuning-references/llama.cpp-3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+  "scope": "Official pinned LoRA converter source; no full model weights downloaded",
+  "status": "prepared; conversion not yet executed"
+}

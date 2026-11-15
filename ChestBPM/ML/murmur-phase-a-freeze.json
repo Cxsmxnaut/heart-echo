@@ -1,0 +1,28 @@
+{
+  "time": 1794709363.763711,
+  "sha256": {
+    "ChestBPM/ML/murmur_phase_evaluate.py": "73dbd689ecb6b5c4eeba49c83bf1d5ea2165a6a67b26ebacee467efc58b7ac24",
+    "ChestBPM/ML/murmur-phase-manifest.json": "a0beffce3036d5e0e0fb79d7f66869afabe66ac3f30bed9b1b3ab73c1287581e",
+    "ChestBPM/ML/murmur_phase_data.py": "7ea9e655c0c3e2cc7f9454bdc6dd0cabff04b9dd34e15fff0c0b6fc2168e4226",
+    "ChestBPM/ML/murmur_phase_model.py": "0a5396e6f00d5704fd7b9e8378967ddee8ac64bff9d15e4553387c20dfe83fdc",
+    "ChestBPM/ML/test_murmur_phase.py": "1fbe24b4396fb813b99b6eac914b8ad0ff2d79488cdeba6e13f531abba69cd39",
+    "ChestBPM/Tools/MurmurPhaseProbe.swift": "1630638ff592de207d03e9a428c4b881bf9382b2e173fa3ff901317e5bbf34f6",
+    "ChestBPM/Tools/MurmurProbe.swift": "f93ea79db39f5cc63c7113d44b6fc1c008f491cbe57aa4b106c214c8137822ed",
+    "ChestBPM/ChestBPM/MurmurAnalysis.swift": "b766346f4cc3bd045476c08801abf351fe9a7906fb5daad5e718c4404b06ca2e",
+    "ChestBPM/ML/generated/murmur-phase-a/real-conversion-and-phase-ablation.json": "6e88f20a1c2e576b744ac16990cfded80023eef7d25d0a556aacd2997f57d29b",
+    "ChestBPM/ML/generated/murmur-phase-a/training.json": "ea67eaad41645a648b4af68b534b8cebfe8871f7bc3ec48f2eb78bf24196c112",
+    "ChestBPM/ML/generated/murmur-phase-a/training-sources.json": "000ad84c827114836a06547789955dfc202b230adbcba9d7daf0e60ce8f2eee8",
+    "ChestBPM/ML/generated/murmur-phase-a/Murmur.pt": "ddc1330eb60139fd0c0a4be8914862131a2c669f75189b0efb3fc56e42eeaffc",
+    "ChestBPM/ML/generated/murmur-phase-a/protocol.json": "12783a3c3d28931ce9e82da000734ccf6ce741c9e18308da7f35897606bd5a57",
+    "ChestBPM/ML/generated/murmur-phase-a/preparation-failure.json": "1ed79863b67b67be913f3f87eea48297c67b23d12ea88c0241c5b528c162dadb",
+    "ChestBPM/ML/generated/murmur-phase-a/conversion.json": "fbf1b5ec3217e95735fa4bfa6c97a6b90f18d7a3aede580ebfc1dd9870e6d960",
+    "ChestBPM/ML/generated/murmur-phase-a/Murmur.mlpackage/Manifest.json": "ad20efb5b07ab75cda6b55396b119814a6654a7edbfea59845f743917ce4c31c",
+    "ChestBPM/ML/generated/murmur-phase-a/Murmur.mlpackage/Data/com.apple.CoreML/model.mlmodel": "0e05c2b259cdd22ed36a70bfd927aedea485720d35f53fd3b625b5451539a04b",
+    "ChestBPM/ML/generated/murmur-phase-a/Murmur.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "c40bb9732e01e097c5d9cd34f22e558e239e41936a36381a5f6346cce6884c8c",
+    "ChestBPM/ML/results/murmur-phase-a/murmur-probe": "c800e0bd3414344ed4e1646c1d6da7ba1208d311ca3044e10536ca277ec7bf3c",
+    "ChestBPM/ML/results/murmur-phase-a/phase-probe": "4522bac54b008c62bdfbd85e07ed37c2aad7ebd1f6642403aee5619480daeb54",
+    "ChestBPM/ML/results/murmur-phase-a/runtime.txt": "0af0f883884b84447a9212e8f3527df7d21dd474f543681dabff7ff0523daa2c"
+  },
+  "evaluation": "Compare fixed0.60nativepipeline on selection50/calibration50; only then old120group regression. No tuning on regression outcomes. Unknown and all abstentions retained.",
+  "comparability": "Primary: positive detection improvement, false-alarm rate increase<=2percentagepoints, unsure increase<=5points; explicitly report positive-as-Absent and unknown misclassification. Report perpatient and record, phase confusion, known noise controls. No clinical or phone accuracy claim."
+}

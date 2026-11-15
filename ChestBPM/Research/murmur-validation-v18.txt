@@ -1,0 +1,182 @@
+Murmur prototype — methods, November 14, 2026
+
+Target
+Classify sounds in a recording as Absent, Present or Unknown/unsure. These are
+experimental murmur-pattern labels, not diagnoses of valve disease or AFib.
+Negative audio does not rule out a murmur elsewhere or heart disease. BPM timing
+and Apple Watch readings never enter the murmur model or decide its eligibility.
+
+Data and split
+CirCor DigiScope 1.0.3, Oliveira et al., PhysioNet:
+https://doi.org/10.13026/tshs-mw03
+https://doi.org/10.1109/JBHI.2021.3137048
+License: Open Data Commons Attribution License 1.0.
+
+The public release contains 942 patient/visit rows and 3,163 recordings. Resolving
+Additional ID links produces 872 distinct patient groups. All visits, locations
+and derivatives of a group remain in the same split. The metadata-only manifest
+uses seed murmur-v1-21142026, source checksums and fixed label-stratified quotas.
+
+Training:   652 linked groups, 702 patient/visit rows, 2,356 recordings.
+Validation: 100 linked groups, 113 patient/visit rows,   367 recordings.
+Final test: 120 linked groups, 127 patient/visit rows,   440 recordings.
+
+Final-test groups exclude every group whose audio had been accessed during earlier
+BPM work (156 groups). Neither final-test waveforms nor their features are read by
+training, checkpoint selection or sample selection. All development downloads match
+the published checksums. Test download requires the final model/source/metric freeze.
+
+For a Present patient, only recordings at an annotated murmur location have target
+Present; recordings at other annotated recording locations have target Absent.
+Unknown murmur annotations stay Unknown. They are not declared healthy or treated
+as definite artifact. Patient/visit labels are retained separately for aggregation.
+No private audio, personal recordings, Watch measurements or clinical outcome
+labels are used for training. This model is trained from scratch.
+
+Model
+Four seconds of mono audio at 2,000 Hz. Fixed 256-sample Hann-window Fourier filters,
+40-sample hop, 32 mel bands spanning 25 to 950 Hz, log power. Fourier filtering,
+mel projection and normalization are included in the exported Core ML model, so
+the phone receives waveform samples directly. The small temporal convolutional
+network pools time features and predicts three sound-label scores. Scores are not
+calibrated probabilities of disease and are not displayed as medical confidence.
+
+Training uses 24 epochs of 100 steps, seed 2114, balanced sampling of the original
+three location labels with additional known synthetic/recorded artifacts assigned
+Unknown. Gentle log-energy perturbations and limited frequency masking preserve
+the positive label. Validation balanced recall chooses the checkpoint. Fixed
+decision: Absent or Present only if its winning mean score is at least 0.60;
+otherwise Unsure. No threshold tuning is performed on the final test.
+
+Native inference
+AVAudioFile/AVAudioConverter read at most 60 seconds and convert to mono 2,000 Hz.
+Nonoverlapping four-second windows plus a final complete frame-aligned window are
+evaluated; the final window can overlap. Incomplete, nonfinite, nearly silent or
+heavily clipped windows cannot supply an Absent/Present result. Other noise may
+still fool the model. Scores are averaged across usable windows. Empty input is
+Unsure. There is no heartbeat-regularity gate and no aggressive beat-only denoiser.
+
+Evaluation
+The same native Swift/Core ML code used by the app evaluates validation and final
+test audio, including native resampling, windowing and gates. Report every record,
+three-class confusion matrices, class recall, positive-as-Absent misses, positive
+Unsure, negative-as-Present false alarms and negative Unsure. Sensitivity and
+specificity denominators retain uncertain cases, preventing selective reporting
+only on returned decisive results. Compare an always-Absent majority baseline.
+
+Patient/visit aggregation: any Present recording gives Present; otherwise any
+Unsure gives Unsure; otherwise Absent. This matches a multiple-location experiment,
+not proof that one phone position covers every valve. Related visits remain
+dependent observations. Twenty negative controls per split cover silence, hum,
+white noise, synthetic contact and known speech/babble. The speech sources are
+reused development assets, so this is not unseen-noise or clinical validation.
+
+Public demo samples
+Three validation recordings are selected alphabetically, one per location label,
+before checking model correctness. First 20 seconds are bundled as PCM16. Exact
+original/bundled checksums, recording IDs, selection and attribution are retained
+in MurmurSamples/sources.json. No public or personal file is uploaded by the app.
+
+Phone use and limits
+The optional 20-second microphone capture is a feasibility feature, not validated
+phone screening. Temporary audio is deleted after analysis, cancellation or normal
+interruption/background handling; stale temporary captures are removed next time
+the screen initializes after a terminated process. Imported audio stays in its
+original location. Analysis runs on-device. The live recording path has not been
+physically tested in this phase because the participant requested no more tests.
+
+CirCor is primarily pediatric/young-person audio recorded using digital stethoscopes.
+Bare-phone transfer, other ages, devices, positions, noise and subtle murmurs remain
+unvalidated. Murmur detection does not determine cause, severity or clinical outcome.
+This project is a prototype and is not medical advice.
+
+Reproduction (from ChestBPM)
+  .venv-ml/bin/python ML/murmur_data.py reserve
+  .venv-ml/bin/python ML/murmur_data.py development
+  .venv-ml/bin/python ML/murmur_model.py
+  swiftc -O ChestBPM/MurmurAnalysis.swift Tools/MurmurProbe.swift -o /tmp/chestbpm-murmur-probe
+  .venv-ml/bin/python ML/murmur_evaluate.py validation
+  .venv-ml/bin/python ML/murmur_evaluate.py freeze
+  .venv-ml/bin/python ML/murmur_evaluate.py test
+  .venv-ml/bin/python ML/murmur_evaluate.py samples
+
+Reservation/training/freeze refuse overwrite. Preserve evaluated weights and freezes
+before a new experiment. Runtime, binary, source and model hashes are retained with
+the final test. Cache and detailed outputs remain ignored. Future tuning needs new
+evaluation data; the final cohort is consumed once its results are inspected.
+
+Locked native results
+Selected checkpoint: epoch 9 of 24, by the prespecified validation balanced recall.
+Native probability conversion maximum difference: 0.0000000261 on four fixed-scale
+examples. Training FFT and deployment Fourier features also pass independent parity
+checks. The full native validation balanced recall is 68.71%; validation is model
+selection evidence, not the final result.
+
+Final test: 440 recordings from 127 patient/visit rows, grouped into 120 previously
+unread people. Rows below are reference labels; columns are predicted Absent,
+Present, Unsure. All recordings and uncertain cases are included.
+
+                    Absent   Present   Unsure
+Reference Absent       234        10       77
+Reference Present        6        75       23
+Reference Unknown        5         0       10
+
+75/104 murmur-positive recordings are flagged (72.12%); 6 receive Absent and 23
+receive Unsure. Among 321 negative recordings, 234 receive Absent, 10 are false
+alarms, and 77 receive Unsure. All-class accuracy is 72.50%; class-balanced recall
+is 70.56%. The always-Absent baseline obtains 72.95% raw accuracy but detects 0/104
+positive recordings and has only 33.33% class-balanced recall. Raw accuracy alone
+is therefore a poor summary of this imbalanced task. Unsure occurs in 110/440 cases
+(25.0%); it is never removed from denominators to inflate the headline result.
+
+Aggregating multiple locations per patient/visit:
+                    Absent   Present   Unsure
+Reference Absent        40         6       36
+Reference Present        1        29        7
+Reference Unknown        3         0        5
+
+29/37 positive patient/visits are flagged; one receives Absent and seven Unsure.
+Six of 82 negative patient/visits receive a false alarm; 36 remain Unsure. Balanced
+recall is 63.22%, versus 33.33% for always-Absent. These are not 127 independent
+people; linked visits belong to 120 groups. Aggregation across multiple stethoscope
+locations cannot be quoted as one-position phone accuracy.
+
+All 20 fixed negative controls return Unsure. Native median processing time on this
+Mac during the final run is 86.09 ms per recording; concurrent Xcode builds were
+running, and this does not establish phone latency. All 460 native requests complete.
+Every source WAV matches its published checksum. The complete test occurs after
+the freeze; first test-file writes follow the completed freeze. No source, decision,
+weights or thresholds change in response to test results. This cohort is now consumed.
+
+Aggregate report: ML/murmur-report.json. Exact split: ML/murmur-manifest.json.
+Freeze: ML/murmur-freeze.json. Detailed predictions and runtime: ignored
+ML/results/murmur-v1/. Exact training and conversion artifacts: ignored
+ML/generated/murmur-v1/. The bundled ML/Models/Murmur.mlpackage matches all three
+files of the frozen converted package. Original BPM source/weights remain unchanged.
+
+Five new Python scientific checks and the 21 existing reference checks pass. Thirteen
+native murmur checks cover classification/uncertainty, invalid probabilities, silence,
+clipping, incomplete windows, frame boundaries and the actual loaded model's rejection
+of silence and short inputs. Simulator and signed-build results are recorded separately
+when complete. No new personal recordings or physical murmur tests were performed.
+
+Final build and UI checks
+Release iPhone and embedded Watch builds are 1.8 (13). Deep/strict code-signature
+verification passes; the signing profile includes the intended iPhone 16. Both
+compiled models and all three public samples, attribution manifest and license are
+present. The bundled sample bytes match their recorded hashes. Original 15 BPM
+freeze inputs and all murmur final-test freeze inputs remain unchanged.
+
+All three simulator UI tests pass, including the existing BPM/Watch-comparison
+screens and microphone-denied behavior, persisted test-plan setup, and analysis of
+all three public murmur samples with their exact expected result titles. The
+initial murmur UI test incorrectly waited for an offscreen lazy Form row before
+scrolling; the test now scrolls first. The Unsure explanation explicitly says it
+does not establish whether a murmur is present or absent. The final screenshot was
+visually reviewed. No microphone capture is used by the murmur sample UI test.
+
+Installation is pending: devicectl cannot reach the physical iPhone and returns
+CoreDeviceError4016 before installation. This build has not been installed on the
+phone. The signed app remains in build-v18/Build/Products/Release-iphoneos/ChestBPM.app.
+The existing phone app was not replaced by the failed attempt. No further personal
+recordings are requested; reconnection is needed only to install the completed build.

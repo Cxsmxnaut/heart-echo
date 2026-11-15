@@ -1,0 +1,15 @@
+{
+  "torch_index": "https://download.pytorch.org/whl/cu128/torch/",
+  "torch_linux_cp311_cp312_available": true,
+  "torch_wheel_entries": [
+    "https://download-r2.pytorch.org/whl/cu128/torch-2.11.0%2Bcu128-cp310-cp310-manylinux_2_28_x86_64.whl#sha256=72d53f3176a69cc20710c4ecb95f7dc4c6ba10c4e4eda45b8396ee79ee40f75a",
+    "https://download-r2.pytorch.org/whl/cu128/torch-2.11.0%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl#sha256=c9a7ca4c74fae10a58e6175b4b2cea953f9322bb6562bbf339ad6a05f52190ad",
+    "https://download-r2.pytorch.org/whl/cu128/torch-2.11.0%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl#sha256=d252cf975fb18c94a85336323ad425f473df56dab35a44b00399bd70c7a3b997",
+    "https://download-r2.pytorch.org/whl/cu128/torch-2.11.0%2Bcu128-cp313-cp313-manylinux_2_28_x86_64.whl#sha256=db964b33c55035a72ab3e2162287af8f1cc276039c65d015740cc88c26dcedf7",
+    "https://download-r2.pytorch.org/whl/cu128/torch-2.11.0%2Bcu128-cp313-cp313t-manylinux_2_28_x86_64.whl#sha256=74b628dbc71603977b09f4e140792c6e997081a35ef3421555f3f6e201b81210",
+    "https://download-r2.pytorch.org/whl/cu128/torch-2.11.0%2Bcu128-cp314-cp314-manylinux_2_28_x86_64.whl#sha256=d389a850677f0d24dafae1573644034428d8d3b9c80b51d55ba62fed7e6c8777",
+    "https://download-r2.pytorch.org/whl/cu128/torch-2.11.0%2Bcu128-cp314-cp314t-manylinux_2_28_x86_64.whl#sha256=169a9987e1f84f0c5eee07544b3a34827a163ac9180e23abf0c3548f1335762c"
+  ],
+  "trl": "0.28.0",
+  "note": "Metadata/index verification only; no wheel downloaded or installed. Kaggle resolver/import/GPU check still required."
+}

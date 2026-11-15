@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-14T22:29:01.300971+00:00",
+  "status": "metadata only; no weights or packages downloaded",
+  "sources": {
+    "unsloth": {
+      "url": "https://api.github.com/repos/unslothai/unsloth/commits/main",
+      "revision": "3051c0ba6b07167245ba150a0c8f1fe602d79643",
+      "model_id": null,
+      "license": null
+    },
+    "unsloth_zoo": {
+      "url": "https://api.github.com/repos/unslothai/unsloth-zoo/commits/main",
+      "revision": "fc240413f18150ae4f088599d3840907ea0e7fe2",
+      "model_id": null,
+      "license": null
+    },
+    "notebooks": {
+      "url": "https://api.github.com/repos/unslothai/notebooks/commits/main",
+      "revision": "c834e1741666c50e3b7a57f56e7f6855229ac2ac",
+      "model_id": null,
+      "license": null
+    },
+    "base_model": {
+      "url": "https://huggingface.co/api/models/unsloth/gemma-4-E4B-it",
+      "revision": "4e22d7e59e078e63a14f351efdc5232ed366b621",
+      "model_id": "unsloth/gemma-4-E4B-it",
+      "license": "apache-2.0"
+    },
+    "bnb_model": {
+      "url": "https://huggingface.co/api/models/unsloth/gemma-4-E4B-it-unsloth-bnb-4bit",
+      "revision": "6f10b2aa522ba471321d8246fd71a3dfa8c5b9a2",
+      "model_id": "unsloth/gemma-4-E4B-it-unsloth-bnb-4bit",
+      "license": "apache-2.0"
+    }
+  }
+}

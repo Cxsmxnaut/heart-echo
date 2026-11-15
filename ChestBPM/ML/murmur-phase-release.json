@@ -1,0 +1,36 @@
+{
+  "version": "1.9",
+  "build": "14",
+  "model": "phase-aware M",
+  "promoted": true,
+  "installed_on_iPhone16": true,
+  "installed_version_verified": true,
+  "embedded_watch_version": "1.9(14)",
+  "separate_watch_installation_verified": false,
+  "source_sha256": {
+    "ChestBPM/ChestBPM.xcodeproj/project.pbxproj": "58dd414f6c26fdface94ad5b99dff2e0230db9421d123099d7eea1084bccb9ef",
+    "ChestBPM/ChestBPM/MurmurView.swift": "ca79db26335e2f8fbb1b95ca1159c3b9f8db983f1c5576aa4e08052d0bc80a11",
+    "ChestBPM/UITests/ChestBPMUITests.swift": "16cfe6edbcceeecda59d210c63cf9bee2ebb0914ded4a7a6b57144589b53dd73",
+    "ChestBPM/ML/murmur-phase-m-freeze.json": "067fd9c2879f06c46cfbfc42feecfbf4cf0b9c88b584ada84ecf8fc5cbe1b90c",
+    "ChestBPM/ML/murmur-phase-report.json": "e018cc3975d3a11e52e01c96b4a284a8df8d41429563561f53ffd33612111da2",
+    "ChestBPM/ML/murmur_phase_report.py": "9aa7454b73d92e212404d6f904ad745d4a966a5c3aaff6506ee7fe2d9411c404",
+    "ChestBPM/ML/PROVENANCE.txt": "458d2eac865f5f6f0674b377234703f48b366c5f50e04bcf59af809b97e41d87",
+    "ChestBPM/Research/murmur-phase-v2.txt": "910ed9f8bde7f461bdbf0710477a2cd6893a751eeea29c14ac4ac94b764efafb",
+    "ChestBPM/README.md": "386dd1fe77b5a8a9d9fb7d409c7e56027065bc7afb80e42d91bc926fef5bb987",
+    "veritas-ai-afib-project.md": "0f735dcc87825ae9b98a7e3b2a4de0c701dfceee5bfa23882433eb5676078b35",
+    "ChestBPM/ML/PhaseModels/Murmur.mlpackage/Manifest.json": "a269ce9bb81eeba3045321550befd81387be7ce9c5226285d1002e4b9ab54dfa",
+    "ChestBPM/ML/PhaseModels/Murmur.mlpackage/Data/com.apple.CoreML/model.mlmodel": "bb3e2cd129ddcc4377195ab79f56949244d12e7b85897e7971959be0647d8bb1",
+    "ChestBPM/ML/PhaseModels/Murmur.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "76fed2c566b74e342165a649e9338ccab06a0987b65fb2fa68f32dbaedceda72"
+  },
+  "app_executable_sha256": "74e42b9f63733042824b9dca175e07cc0f1e1cfb95e163996c336409008d36b1",
+  "strict_deep_signature_verified": true,
+  "original_v1_and_BPM_freezes_verified": true,
+  "checks": {
+    "python_model_checks": 24,
+    "native_murmur_checks": 13,
+    "unique_UI_scenarios_passed": 3,
+    "UI_note": "First full run: publicsample andplanpersistence passed, generalscreen failed whileotherpreviewactive. Unchanged generalcase passed onretry; bothresultbundlesretained."
+  },
+  "privacy": "No new personal recordings; no private or Watch data trains/evaluates M. Phone app installed without starting a microphone test.",
+  "evidence": "Retrospective public-stethoscope improvement; no independent clinical or bare-phone accuracy established."
+}

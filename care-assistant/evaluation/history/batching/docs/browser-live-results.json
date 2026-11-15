@@ -1,0 +1,185 @@
+{
+  "tested_at": "2026-11-14T22:17:09.335Z",
+  "mode": "isolated Chrome; actual local Gemma 4; real MCP; LIVE public sources; synthetic user scenario only; UI completion and raw model success reported separately",
+  "passed": true,
+  "checks": [
+    {
+      "name": "Browser task: app question → ZIP → insurance → live care results",
+      "passed": true,
+      "model": "care-gemma4-e4b",
+      "response_mode": "llm",
+      "all_searches_selected_by_model": true,
+      "tool_trace": [
+        {
+          "name": "get_app_context",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ],
+      "live_cards": 9
+    },
+    {
+      "name": "Browser form: explicit future plan year and real payer-linked practice cards",
+      "passed": true,
+      "response_mode": "llm",
+      "all_calls_selected_by_model": true,
+      "effective_date": "2027-01-01",
+      "plan_period": {
+        "start": "2027-01-01T00:00:00.000Z",
+        "end": "2027-12-31T00:00:00.000Z"
+      },
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "model",
+          "arguments_basis": "server_bound_confirmed_profile"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "name": "Why follow-up explains saved live cards and visibly qualifies the unverified category",
+      "passed": true,
+      "mode": "llm",
+      "results_reused": true
+    },
+    {
+      "name": "Live payer results at 390px with no horizontal overflow",
+      "passed": true
+    }
+  ],
+  "model_observations": [
+    {
+      "stage": "scan_explanation",
+      "model": {
+        "mode": "llm",
+        "model": "care-gemma4-e4b",
+        "configured": true,
+        "tool_mode": "batch",
+        "last_success_at": "2026-11-14T22:15:58.233Z",
+        "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference.",
+        "elapsed_ms": 5069,
+        "used_this_turn": true,
+        "backend_corrected": false
+      },
+      "backend_adjustments": [],
+      "tool_trace": [
+        {
+          "name": "get_app_context",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "stage": "ask_plan",
+      "model": {
+        "mode": "llm",
+        "model": "care-gemma4-e4b",
+        "configured": true,
+        "tool_mode": "batch",
+        "last_success_at": "2026-11-14T22:16:12.708Z",
+        "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference.",
+        "used_this_turn": true,
+        "backend_corrected": false
+      },
+      "backend_adjustments": [],
+      "tool_trace": []
+    },
+    {
+      "stage": "results",
+      "model": {
+        "mode": "llm",
+        "model": "care-gemma4-e4b",
+        "configured": true,
+        "tool_mode": "batch",
+        "last_success_at": "2026-11-14T22:16:38.363Z",
+        "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference.",
+        "elapsed_ms": 12217,
+        "used_this_turn": true,
+        "backend_corrected": false
+      },
+      "backend_adjustments": [],
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "stage": "results",
+      "model": {
+        "mode": "llm",
+        "model": "care-gemma4-e4b",
+        "configured": true,
+        "tool_mode": "batch",
+        "last_success_at": "2026-11-14T22:16:52.998Z",
+        "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference.",
+        "elapsed_ms": 14638,
+        "used_this_turn": true,
+        "backend_corrected": false
+      },
+      "backend_adjustments": [],
+      "tool_trace": [
+        {
+          "name": "search_providers",
+          "status": "ok",
+          "origin": "model"
+        },
+        {
+          "name": "lookup_plan_network",
+          "status": "matched_directory",
+          "origin": "model",
+          "arguments_basis": "server_bound_confirmed_profile"
+        },
+        {
+          "name": "search_affordable_clinics",
+          "status": "ok",
+          "origin": "model"
+        }
+      ]
+    },
+    {
+      "stage": "explain_results",
+      "model": {
+        "mode": "llm",
+        "model": "care-gemma4-e4b",
+        "configured": true,
+        "tool_mode": "batch",
+        "last_success_at": "2026-11-14T22:17:07.824Z",
+        "note": "Real model routes tools and extracts supplied details. Factual replies and cards are rendered from validated data. A configured endpoint is not a readiness guarantee; last_success_at records the last valid inference.",
+        "used_this_turn": true,
+        "backend_corrected": false
+      },
+      "backend_adjustments": [],
+      "tool_trace": []
+    }
+  ]
+}

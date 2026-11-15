@@ -1,0 +1,68 @@
+{
+  "frozen_at": "2026-11-15T00:38:55.589629+00:00",
+  "status": "candidate_frozen_after_real_training",
+  "mode": "gguf_lora",
+  "training_proof": "finetuning/runs/kaggle-artifacts-v1/kaggle-seed-001/training-complete.json",
+  "adapter_path": "finetuning/runs/kaggle-artifacts-v1/kaggle-seed-001/adapter/adapter_model.safetensors",
+  "adapter_sha256": "b454e51ecf79090977bb9e1e11c406af18a95520b2c2a42218da4321cee89c4b",
+  "gguf_path": ".cache/models/e4b/gemma-4-E4B-it-Q4_K_M.gguf",
+  "gguf_sha256": "85a896a047553e842f25297ee5b031d64ff30147d9c4af17b1e4b394cd1fab87",
+  "gguf_lora_path": "finetuning/exports/care-e4b-seed001-lora-f16.gguf",
+  "gguf_lora_sha256": "513abc53c84f42116bec06877c6691de83d6c224e921f15039315121fc9ea6e3",
+  "sealed_test_sha256": "2a64d24acc5e144e7c0447b096a1f645d704d59430fabf6cf5822751f56f53c2",
+  "tools_test_sha256": "f79d8bf27f01d93d497d83e8ac57f655e326fd6ab667ad1ae1c8cfc69f8a29a7",
+  "source_hashes": {
+    "src/model.js": "47cf107e243daa99a14b5edf7dd79c35f854432b51905e902caa1211ecb0da12",
+    "src/schema.js": "18a69c98c76db289ec0862a1b68479e51ebc8fb049f7f80ffe212ae064e60887",
+    "src/conversation.js": "9e2903186ea29055296e6376b650f444cdaab3c64bea572b364f0e7bce5bdbe1",
+    "src/knowledge.js": "13c29d2f9ac2dd60870ffa84ae1891c08282639243c23e9b2836372b49e09ada",
+    "src/tools.js": "3594256d957458c2946af272b0c6629b56a80cf495ab3444e938bc2070fc3266",
+    "src/tool-client.js": "292de3af1442c4f282fb21bdb4fb6b6a1997328cdb84377b358aedbc73dcb336",
+    "src/server.js": "fde6c0d38be6f778e43e0a8e57501697575c656fc10888d3c85a514c12b4c333",
+    "public/app.js": "cd6483ac3fb43c9d91cdf7d057e79b088fd74f4c1d5215950bb95c2437c05980",
+    "public/index.html": "43660e5fbf648a958b330c6e3fe3cd48c21178a6535b2004129d3124a2fdd4c5",
+    "public/style.css": "43e306715af1ba9154891c03d62f93417f0dfcfafbb6eb728ab8db13a1a3320e",
+    "scripts/model-artifacts.js": "70e6bfe907f9b1cd8df8e07d48d7f8ecccbd9043c3c79dd676696239d446f771",
+    "scripts/start-local-model.js": "fc5e2bb99f1207cf51b98a8c7f4082fb1d28ae4afe6580c782d5b64fa2e8abf4",
+    "package.json": "18170cf9caaee1fb8851c5a9735a4f88cb5fb25841c206bcce63b5ebefe9f76f",
+    "package-lock.json": "0da52fe2cd38acf7c7cf58f697e67cf1791787ea03a7cbefd1f4db60c5777108"
+  },
+  "runtime": {
+    "tag": "b12248",
+    "binary_sha256": "e7e3c60a5e612460d095bfd219047040d6bb9d0b56466aae30a480980b676959",
+    "source": {
+      "runtime_tag": "b12248",
+      "source_commit": "3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+      "archive_url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+      "archive_sha256": "e0c02b6e31c46a84474f75436730562024cb8edc1d2c0baa8e57cb51e1d62e23",
+      "converter_sha256": "ddb143ac34022b0646e51d9c35e9cfa3ec3d0a36091975ebc88f553dd18ca350",
+      "source_path": ".cache/finetuning-references/llama.cpp-3837bf0bc02ea5d08f8ee3585fc8c7784a81bce8",
+      "scope": "Official pinned LoRA converter source; no full model weights downloaded",
+      "status": "prepared; conversion not yet executed"
+    }
+  },
+  "decoding": {
+    "model_alias": "care-gemma4-e4b",
+    "temperature": 0,
+    "top_p": 0.95,
+    "top_k": 64,
+    "thinking": false,
+    "reasoning": "off",
+    "reasoning_budget": 0,
+    "context": 8192,
+    "parallel_slots": 1,
+    "threads": 2,
+    "batch_threads": 2,
+    "cache_ram": 0,
+    "tool_mode": "batch",
+    "lora_scale": 1
+  },
+  "training_base": {
+    "url": "https://huggingface.co/api/models/unsloth/gemma-4-E4B-it-unsloth-bnb-4bit",
+    "revision": "6f10b2aa522ba471321d8246fd71a3dfa8c5b9a2",
+    "model_id": "unsloth/gemma-4-E4B-it-unsloth-bnb-4bit",
+    "license": "apache-2.0"
+  },
+  "packaging_note": "Training uses pinned bnb4bit. Runtime comparison uses the EXACT SAME existing Q4_K_M GGUF with LoRA disabled/enabled; conversion config is a normalized copy dropping only quantization_config, not changed EOS/geometry. No full base merge or retuning.",
+  "selection": "One fixed seed adapter. No tuning on sealed test; report all first outcomes. No serving-default adoption."
+}

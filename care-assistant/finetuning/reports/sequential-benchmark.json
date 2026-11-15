@@ -1,0 +1,119 @@
+{
+  "started_at": "2026-11-15T00:41:04.315503+00:00",
+  "hardware": "Apple M4, arm64 macOS, 16GiB RAM; shared machine",
+  "policy": "Exactly one E4B loaded. Same base GGUF/runtime/decoding; LoRA off/on only. Serving baseline restored in finally; no adoption.",
+  "stages": [
+    {
+      "name": "control-validation",
+      "exit_code": 0,
+      "seconds": 158.883
+    },
+    {
+      "name": "control-test",
+      "exit_code": 0,
+      "seconds": 159.687
+    },
+    {
+      "name": "control-e2e",
+      "exit_code": 0,
+      "seconds": 91.299
+    },
+    {
+      "name": "candidate-validation",
+      "exit_code": 0,
+      "seconds": 159.648
+    },
+    {
+      "name": "candidate-test",
+      "exit_code": 0,
+      "seconds": 187.926
+    },
+    {
+      "name": "candidate-e2e",
+      "exit_code": 0,
+      "seconds": 164.495
+    },
+    {
+      "name": "candidate-browser-live",
+      "exit_code": 0,
+      "seconds": 142.211
+    }
+  ],
+  "previous_model_pid": 80518,
+  "control_runtime": {
+    "pid": 19728,
+    "args": [
+      ".cache/runtime/llama-b12248/llama-server",
+      "-m",
+      ".cache/models/e4b/gemma-4-E4B-it-Q4_K_M.gguf",
+      "--alias",
+      "care-gemma4-e4b",
+      "--host",
+      "127.0.0.1",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "2",
+      "-tb",
+      "2",
+      "--cache-ram",
+      "0",
+      "--jinja",
+      "--reasoning",
+      "off",
+      "--reasoning-budget",
+      "0",
+      "--no-webui",
+      "--log-disable",
+      "--port",
+      "4324"
+    ],
+    "lora_state": []
+  },
+  "candidate_runtime": {
+    "pid": 20732,
+    "args": [
+      ".cache/runtime/llama-b12248/llama-server",
+      "-m",
+      ".cache/models/e4b/gemma-4-E4B-it-Q4_K_M.gguf",
+      "--alias",
+      "care-gemma4-e4b",
+      "--host",
+      "127.0.0.1",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "2",
+      "-tb",
+      "2",
+      "--cache-ram",
+      "0",
+      "--jinja",
+      "--reasoning",
+      "off",
+      "--reasoning-budget",
+      "0",
+      "--no-webui",
+      "--log-disable",
+      "--port",
+      "4324",
+      "--lora",
+      "finetuning/exports/care-e4b-seed001-lora-f16.gguf"
+    ],
+    "lora_state": [
+      {
+        "id": 0,
+        "path": "care-e4b-seed001-lora-f16.gguf",
+        "scale": 1.0
+      }
+    ]
+  },
+  "benchmark_completed": true,
+  "baseline_restored": true,
+  "restored_model_pid": 22705,
+  "ended_at": "2026-11-15T00:59:21.283070+00:00"
+}

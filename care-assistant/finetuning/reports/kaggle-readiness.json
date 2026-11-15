@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-14T23:08:24.863092+00:00",
+  "status": "UPLOAD_READY_NOT_EXECUTED",
+  "notebook_path": "finetuning/kaggle/care-e4b-qlora-private.ipynb",
+  "notebook_sha256": "0d6b3c92bc8d4540cdefdfdb294c1dd4335b4bb03404cd5ec19f2306f44a63cb",
+  "notebook_bytes": 149300,
+  "embedded_bundle_sha256": "9c4e9066c6d33fc4759b6f65d47531c4093d78cf3c52893033a8256927032d5a",
+  "embedded_files": 38,
+  "source_baseline_unchanged": true,
+  "sealed_test_embedded": false,
+  "private_default_metadata": true,
+  "checks": [
+    "Notebook JSON, cell IDs, empty outputs and Python syntax passed",
+    "Embedded ZIP hash/exact allowlist/path checks passed",
+    "Only train/validation task records embedded; final-test content absent",
+    "Embedded Python source syntax passed",
+    "Current local app source still matches baseline hashes"
+  ],
+  "upstream_setup_changes": "Provisional TRL 0.24 candidate updated to upstream Gemma4 minimum 0.28.0; cu128 Torch 2.11 wheels index-verified. No model/data/prompt tuning.",
+  "actual_kaggle_execution": false,
+  "package_install_or_base_download_on_mac": false,
+  "adapter_saved": false,
+  "heldout_runtime_comparison_completed": false,
+  "access_needed": "Existing signed-in PRIVATE Kaggle editor must be visible/importable with Internet, free T4/L4 GPU access and quota; coordinating chat handles UI. No local API token needed."
+}
