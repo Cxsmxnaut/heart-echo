@@ -85,6 +85,7 @@ struct RecordingDetailView: View {
                     Text("\(recording.murmur?.windows ?? 0) analyzed windows · \(recording.modelRevision)").font(.caption).foregroundStyle(.secondary)
                     NavigationLink { AssistantView(result: ScreeningResult(recording: recording)) } label: { Label("Find care with AI", systemImage: "bubble.left.and.bubble.right") }.accessibilityIdentifier("explain-saved-result")
                 }
+                ResultSummaryShareCard(result: ScreeningResult(recording: recording), accessibilityID: "saved-share-summary")
                 Footnote()
                 if let error = store.error { Text(error).foregroundStyle(.red).accessibilityIdentifier("recording-file-error") }
                 Button("Delete Recording", role: .destructive) { confirmDelete = true }
@@ -101,5 +102,29 @@ struct RecordingDetailView: View {
                 }
             }
             .onDisappear { store.stopPlayback() }
+    }
+}
+
+struct ResultSummaryShareCard: View {
+    let result: ScreeningResult
+    let accessibilityID: String
+
+    var body: some View {
+        HealthCard {
+            CardLabel(title: "Take your result with you", symbol: "square.and.arrow.up")
+            Text("Share the finding and measured values to help prepare for a conversation with a clinician.")
+                .font(.subheadline).foregroundStyle(.secondary)
+            ShareLink(item: result.shareSummary, subject: Text("Heart Echo recording summary"),
+                      preview: SharePreview("Heart Echo result summary")) {
+                Label("Share Result Summary", systemImage: "square.and.arrow.up")
+                    .font(.subheadline.weight(.semibold))
+                    .frame(maxWidth: .infinity, minHeight: 32)
+            }
+            .buttonStyle(.bordered)
+            .tint(AppStyle.accent)
+            .accessibilityIdentifier(accessibilityID)
+            .accessibilityHint("Opens the share sheet for a text summary. Audio is not attached.")
+            Text("Text only. No audio is attached.").font(.caption).foregroundStyle(.secondary)
+        }
     }
 }

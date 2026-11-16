@@ -4,6 +4,8 @@
 
 **Veritas AI Hackathon 2026 · AI + Health · Experimental prototype**
 
+Current source version: **0.4.1 (6)**. [Final validation](docs/FINAL_VALIDATION.md) records the engineering checks, UI reruns, Release evidence and submission limits.
+
 **This project is a prototype and is not medical advice.**
 
 Heart Echo explores a simple question: can a phone make heart-sound screening easier to access, while being honest when it cannot give a clear answer? It combines on-device audio models, a result-first iPhone interface, and a conversational assistant for exploring public care listings.
@@ -20,6 +22,16 @@ The intended user wants to record heart sounds, understand an experimental findi
 2. Run a trained murmur-pattern model on the iPhone. Results distinguish **murmur-like pattern**, **not detected in this recording**, and **unsure**. BPM is estimated separately when the signal supports it.
 3. Review the result before choosing **Find care with AI**. Saved results retain the actual finding and model revision.
 4. Use one shared chat for general questions and care navigation. Provider cards come from public directories, with source links and coverage limitations.
+
+## Five improvements in 0.4.1
+
+1. **Recording guidance you can act on.** A live coach explains quiet sound, clipping, contact noise and pending BPM using the engine's actual feedback.
+2. **A result you can take with you.** Share a text summary from a new or saved result. It includes the finding and available measurements; audio and private file details are not attached.
+3. **A shorter wait when care AI stalls.** Gemini wording has a shared 12-second default deadline, including fallback/rewrite attempts. A timeout stays labeled and does not remove validated directory results.
+4. **Care search without pairing.** Tap **Find care by ZIP** in Care and enter five digits. Public directory search needs internet, but no Mac connection or AI key.
+5. **One-command judge mode.** `npm run judge` starts an isolated, explicitly guided browser review without saved AI settings or model downloads. It chooses a free local port if necessary.
+
+These changes keep the shipped audio models and their decision rules unchanged. They improve the app flow; they do not establish better medical accuracy.
 
 ## How AI is used
 
@@ -39,7 +51,7 @@ The audio models were trained on public heart-sound data. The murmur model uses 
 
 The shipping murmur model detected **49 of 70 positive public development recordings**; 8 were called absent and 13 returned unsure. It raised 5 false alarms among 274 absent recordings. These are reused development results, **not independent phone accuracy**. [Baseline comparisons and evidence](docs/RESULTS.md)
 
-Software checks cover invalid audio, recording persistence, pairing, conversations, and directory validation. The care flow was also checked on a physical iPhone using sample details. These checks establish behavior, not medical effectiveness.
+Software checks cover invalid audio, recording persistence, result sharing, conversations, directory validation and large text. The care flow was also checked on a physical iPhone using sample details in the earlier build. These checks establish behavior, not medical effectiveness. The [validation record](docs/FINAL_VALIDATION.md) keeps earlier UI failures and their follow-up results visible.
 
 ## Review or run it
 

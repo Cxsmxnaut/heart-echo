@@ -73,7 +73,8 @@ struct RecordingFlowView: View {
         }.disabled(store.busy)
     }
     private var recording: some View {
-        VStack(spacing: 26) {
+        let guidance = recordingGuidance
+        return VStack(spacing: 26) {
             Text(previewStep == 1 ? "DESIGN PREVIEW · MICROPHONE OFF" : store.analyzing ? "ON-DEVICE ANALYSIS" : "MICROPHONE RECORDING").font(.caption.weight(.semibold)).tracking(1.5).foregroundStyle(.secondary)
             Text(store.analyzing ? "Reviewing the sound." : store.starting ? "Starting microphone…" : "A moment to listen.").font(.system(.largeTitle, design: .rounded, weight: .bold)).multilineTextAlignment(.center)
             ZStack {
@@ -84,13 +85,39 @@ struct RecordingFlowView: View {
                     Text(store.analyzing ? "Analyzing" : "remaining").foregroundStyle(.secondary)
                 }
             }.frame(width: 235, height: 235).padding(.vertical, 14)
-            Text(bpmText(store.live.bpm) + " BPM").font(.largeTitle.bold()).accessibilityIdentifier("live-product-bpm")
-            Text(store.live.status).font(.caption).foregroundStyle(.secondary)
-            MeasuredWaveform(values: store.live.waveform).frame(height: 74)
-            Text("Filtered audio envelope · not an ECG").font(.caption).foregroundStyle(.secondary)
+            if !store.analyzing {
+                Text(guidance.bpm.map { bpmText($0) + " BPM" } ?? (previewStep == 1 ? "Microphone off" : "Heart rate pending"))
+                    .font(.system(guidance.bpm == nil ? .title2 : .largeTitle, design: .rounded, weight: .semibold))
+                    .accessibilityIdentifier("live-product-bpm")
+            }
+            HealthCard {
+                HStack(alignment: .top, spacing: 14) {
+                    Image(systemName: guidance.symbol)
+                        .font(.title2).foregroundStyle(AppStyle.accent)
+                        .frame(width: 28).accessibilityHidden(true)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(guidance.title).font(.headline)
+                            .accessibilityIdentifier("recording-guidance-title")
+                        Text(guidance.detail).font(.callout).foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .accessibilityIdentifier("recording-guidance-detail")
+                    }
+                }
+            }
+            if !store.analyzing {
+                MeasuredWaveform(values: store.live.waveform).frame(height: 74)
+                Text("Filtered audio envelope · not an ECG").font(.caption).foregroundStyle(.secondary)
+            }
             Button("Cancel Recording", role: .destructive) { store.cancel() }
             Footnote(text: "The phone stops automatically. An unsure result is kept as unsure.")
         }.frame(maxWidth: .infinity).padding(.top, 24)
+    }
+    private var recordingGuidance: RecordingGuidance {
+        let phase: RecordingGuidance.Phase = store.analyzing ? .analyzing : store.starting ? .starting : previewStep == 1 ? .preview : .recording
+        return RecordingGuidance.assess(phase: phase, seconds: store.live.seconds,
+            level: store.live.level, clippingFraction: store.live.diagnostics.signal.clippingFraction,
+            bpm: store.live.bpm,
+            reason: store.live.diagnostics.enhanced?.reason ?? store.live.diagnostics.periodicity.reason)
     }
 }
 
@@ -148,6 +175,7 @@ struct RecordingResultView: View {
                 Text("Heart Echo can be wrong. This result is not a diagnosis. A clinician can review it and help you decide what to do next.")
                     .font(.subheadline).foregroundStyle(.secondary)
                     .accessibilityIdentifier("recording-result-reminder")
+                ResultSummaryShareCard(result: result, accessibilityID: "result-share-summary")
             }.padding(24)
         }
         .background(AppStyle.background)

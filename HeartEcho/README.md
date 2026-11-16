@@ -4,6 +4,16 @@ For judging, start with the [project overview](../README.md), [walkthrough](../d
 
 Heart Echo adopts the new native SwiftUI design and the original Chest BPM measurement features. It is a **separate app** (`app.veritas.heartecho`); Chest BPM (`app.veritas.chestbpm`), its Watch app, frozen models and personal diagnostics remain untouched.
 
+Current source version: **0.4.1 (6)**. [Final validation](../docs/FINAL_VALIDATION.md) records native assertions, UI reruns, Debug/Release builds and the Release sharing check. This pass used the iPhone Simulator; it did not install the new build on the physical phone.
+
+## Final app pass
+
+- The live recording coach turns existing engine feedback into a clear next action. Quiet input, clipping, contact noise, stale timing and pending BPM stay distinct. It does not invent a BPM or change the DSP thresholds.
+- **Share Result Summary** is available on the immediate result and in saved recording details. It opens the system share sheet with text only, preserving the actual finding, source, measured values, limitations and model revision. Audio, private paths, identifiers and raw error text are excluded.
+- Gemini wording uses one 12-second default budget across generation, fallback and rewrite attempts. Directory requests have their own timing. A model timeout is labeled, and already validated directory cards remain available.
+- Care accepts a standalone five-digit ZIP and offers **Find care by ZIP** before pairing. This is a direct public-directory path, not a generated AI reply; internet is still required.
+- `../Start Heart Echo Judge Demo.command` and `npm run judge` in `care-assistant/` start an isolated guided browser review. They do not load saved AI configuration, start a local model or change the phone's pairing.
+
 ## Current app
 
 - Summary, real 20-second microphone recording with live accepted BPM, independent on-device murmur analysis, and a persistent local recording history.
@@ -48,7 +58,7 @@ Open http://127.0.0.1:8766 on this Mac. Add `--audio` to the collector only to r
 
 ## Validation and limits
 
-See `INTEGRATION-VALIDATION.md` for checks actually completed on the current port. The original DSP and murmur model are preserved; a UI port does not establish phone accuracy. Present, absent and unsure remain distinct; a murmur-like pattern is not a diagnosis, an absent result does not rule out disease, and an unsure result is not a negative. No AFib or valve-disease detector has been added.
+See [final validation](../docs/FINAL_VALIDATION.md) for the 0.4.1 pass and `INTEGRATION-VALIDATION.md` for earlier integration observations. The initial current UI run still needs a successful rerun; do not read earlier device observations as proof that every new screen has passed. The original DSP and murmur model are preserved; a UI port does not establish phone accuracy. Present, absent and unsure remain distinct; a murmur-like pattern is not a diagnosis, an absent result does not rule out disease, and an unsure result is not a negative. No AFib or valve-disease detector has been added.
 
 
 [Archived design-preview notes and design attribution](Docs/DesignPreviewHistory.md).

@@ -103,6 +103,13 @@ struct CareChatMessage: Identifiable {
     private var sessionEndpoint: URL?
     private var generation = UUID()
     private let browser = NetServiceBrowser()
+    private let network: URLSession = {
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.timeoutIntervalForRequest = 30
+        configuration.timeoutIntervalForResource = 35
+        configuration.waitsForConnectivity = false
+        return URLSession(configuration: configuration)
+    }()
     private var services: [NetService] = []
     private let credential: [String: Any] = [kSecClass as String: kSecClassGenericPassword, kSecAttrService as String: "app.veritas.heartecho.care", kSecAttrAccount as String: "demo"]
     override init() {
@@ -167,10 +174,11 @@ struct CareChatMessage: Identifiable {
         }
     }
     private func request(_ base: URL, path: String, body: Data? = nil, method: String = "POST", authenticated: Bool = true) async throws -> Data {
-        var r = URLRequest(url: base.appendingPathComponent(path)); r.httpMethod = method; r.timeoutInterval = 150
+        var r = URLRequest(url: base.appendingPathComponent(path)); r.httpMethod = method
+        r.timeoutInterval = path == "api/pair" ? 10 : 30
         r.setValue("application/json", forHTTPHeaderField: "Content-Type"); r.httpBody = body
         if authenticated && !token.isEmpty { r.setValue("Bearer " + token, forHTTPHeaderField: "Authorization") }
-        let (data, response) = try await URLSession.shared.data(for: r)
+        let (data, response) = try await network.data(for: r)
         guard let response = response as? HTTPURLResponse else { throw CareNetworkError.response }
         guard (200...299).contains(response.statusCode) else { throw CareNetworkError.http(response.statusCode) }
         return data
@@ -228,6 +236,12 @@ struct CareChatMessage: Identifiable {
         } catch {
             if case CareNetworkError.http(410) = error { sessionID = nil; sessionEndpoint = nil }
             if case CareNetworkError.http(401) = error { connected = false; hasSavedPairing = false }
+            if let networkError = error as? URLError,
+               [.timedOut, .cannotConnectToHost, .cannotFindHost, .dnsLookupFailed, .networkConnectionLost, .notConnectedToInternet].contains(networkError.code) {
+                connected = false
+                self.error = "The saved care service could not be reached. Open Connect care AI and choose this Mac again. Check that both devices use the same Wi-Fi."
+                return nil
+            }
             self.error = error.localizedDescription; return nil
         }
     }

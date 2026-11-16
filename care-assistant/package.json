@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node --env-file-if-exists=.env --env-file-if-exists=.env.gemini.local src/server.js",
+    "judge": "node scripts/start-judge.js",
     "mcp": "node --env-file-if-exists=.env src/mcp.js",
     "test": "node --test test/*.test.js",
     "test:browser": "node scripts/browser-test.js",

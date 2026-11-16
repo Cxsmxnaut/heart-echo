@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { ChatRequest, hasExactPlan } from './schema.js';
 import { explainScan, scanState, emergencyMention, EMERGENCY, APP_CONTEXT } from './knowledge.js';
 import { createTools } from './tools.js';
-import { createModel } from './model.js';
+import { createModel, ModelError } from './model.js';
 import { supportsHealthPlan } from './healthplan.js';
 import { conversationUpdate, mergeProfile, missingInsurance, planQuestion, resultReasons } from './conversation.js';
 export { mergeProfile } from './conversation.js';
@@ -54,8 +54,30 @@ function asksForPrivateHealth(text) {
   return /\b(?:do you (?:have|experience)|are you (?:experiencing|having)|have you been diagnosed|what are your symptoms|(?:did|has) (?:a|your) (?:doctor|clinician|provider) (?:recently )?(?:mention|diagnose)|(?:tell|share with) me (?:about |your )?(?:your )?(?:symptoms?|diagnosis|medical history|recording|result))\b/i.test(text);
 }
 
-export function createService({ tools = createTools(), model = createModel(), clock = Date.now, ttlMs = 1800000 } = {}) {
+function replyBudget(value) {
+  const milliseconds = Number(value);
+  return Number.isFinite(milliseconds) && milliseconds >= 1 && milliseconds <= 120000 ? Math.ceil(milliseconds) : 12000;
+}
+
+async function withinReplyBudget(work, timeoutMs) {
+  const controller = new AbortController();
+  let timer;
+  const expired = new Promise((_, reject) => {
+    timer = setTimeout(() => {
+      const error = new ModelError('model_timeout');
+      controller.abort(error);
+      reject(error);
+    }, timeoutMs);
+  });
+  try {
+    // The race also releases the turn if an injected adapter ignores abort.
+    return await Promise.race([Promise.resolve().then(() => work(controller.signal)), expired]);
+  } finally { clearTimeout(timer); }
+}
+
+export function createService({ tools = createTools(), model = createModel(), clock = Date.now, ttlMs = 1800000, geminiReplyTimeoutMs = process.env.GEMINI_REPLY_TIMEOUT_MS ?? 12000 } = {}) {
   const sessions = new Map(); const active = new Set();
+  const wordingTimeoutMs = replyBudget(geminiReplyTimeoutMs);
   function prune() { for (const [id, s] of sessions) if (clock() - s.touched > ttlMs) sessions.delete(id); }
   return {
     model, deleteSession(id) { sessions.delete(id); },
@@ -168,11 +190,20 @@ export function createService({ tools = createTools(), model = createModel(), cl
         if (model.provider === 'gemini' && request.message && !urgent && model.configured) {
             try {
               const prompt = geminiPrompt({ request, response, update, previousStage: s.lastStage, profileChanged, explicitCare, insurerNotSupported });
-              let answer = await model.reply(prompt, s.geminiHistory || []);
-              if (unsafeGeminiReply(answer) || asksForPrivateHealth(answer)) {
-                answer = await model.reply(`${prompt}\n\nRespond generally and do not ask the person for any personal health details or assert a diagnosis or coverage.`, s.geminiHistory || []);
-              }
-              if (unsafeGeminiReply(answer) || asksForPrivateHealth(answer)) throw Object.assign(Error(), { code: 'model_unsafe_response' });
+              const answer = await withinReplyBudget(async signal => {
+                const generate = async text => {
+                  signal.throwIfAborted();
+                  const value = await model.reply(text, s.geminiHistory || [], { signal });
+                  signal.throwIfAborted();
+                  return value;
+                };
+                let value = await generate(prompt);
+                if (unsafeGeminiReply(value) || asksForPrivateHealth(value)) {
+                  value = await generate(`${prompt}\n\nRespond generally and do not ask the person for any personal health details or assert a diagnosis or coverage.`);
+                }
+                if (unsafeGeminiReply(value) || asksForPrivateHealth(value)) throw new ModelError('model_unsafe_response');
+                return value;
+              }, wordingTimeoutMs);
               message = answer; usedModel = true;
               if (insurerNotSupported && response.stage === 'results' && !/\b(?:unverified|cannot verify|can.t verify|confirm|check)\b/i.test(answer)) message += ' Insurance coverage is unverified; confirm it with your insurer and the clinic.';
               s.geminiHistory = [...(s.geminiHistory || []), { role: 'user', text: prompt }, { role: 'model', text: answer }].slice(-6);

@@ -31,3 +31,7 @@ diagnostic-logs/
 /veritas-ai-afib-project.md
 /HeartEcho/Previews/
 /care-assistant/finetuning/kaggle/cli-run/
+
+# Reproducible hackathon delivery bundles and validation builds
+/dist/
+/build-submission/

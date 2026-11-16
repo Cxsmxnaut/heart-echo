@@ -29,9 +29,19 @@ def main(args):
     deadline=args.deadline_epoch
     timer=('def remaining_time():\n'
            ' remaining='+str(deadline)+'-time.time()\n'
-           ' if remaining<=0: raise TimeoutError("User30minute TPU setup limit reached")\n'
+           ' if remaining<=0: raise TimeoutError("Bounded TPU setup window ended")\n'
            ' return max(1,int(remaining))\n') if deadline else 'def remaining_time(): return 1800\n'
-    code=('import pathlib,subprocess,sys,base64,zlib,hashlib,time\n'+timer+backend_install+
+    probe=('import importlib.util,os,glob\n'
+           'hardware={"stage":"environment_probe","python":sys.version.split()[0],'
+           '"tpu_vm_image":os.environ.get("ISTPUVM")=="1",'
+           '"visible_accel_devices":len(glob.glob("/dev/accel*")), '
+           '"visible_vfio_devices":len(glob.glob("/dev/vfio/[0-9]*")), '
+           '"preinstalled_backends":[m for m in ["torch_xla","torch_tpu"] if importlib.util.find_spec(m)]}\n'
+           'print(hardware,flush=True)\n'
+           'pathlib.Path("/kaggle/working/tpu-environment-probe.json").write_text(__import__("json").dumps(hardware,indent=2))\n'
+           'if not hardware["preinstalled_backends"] and not hardware["visible_accel_devices"] and not hardware["visible_vfio_devices"]:\n'
+           ' raise RuntimeError("No visible TPU hardware or preinstalled backend; stop before installing packages")\n') if args.preinstalled_only else ''
+    code=('import pathlib,subprocess,sys,base64,zlib,hashlib,time\n'+timer+probe+backend_install+
           'subprocess.run([sys.executable,"-m","pip","install","--no-deps",'
           '"timm==1.0.22","einops==0.8.1","nnAudio==0.3.3"],check=True,timeout=remaining_time())\n'
           'src=pathlib.Path("/kaggle/working/source");src.mkdir(exist_ok=False)\n'
@@ -47,10 +57,10 @@ def main(args):
         cells=[dict(cell_type='markdown',metadata={},source=['# Private synthetic M2D TPU speed probe\n',
               'No audio, patient metadata, private profile, clinical score or exported model.\n']),
                dict(cell_type='code',execution_count=None,metadata={},outputs=[],source=code.splitlines(keepends=True))])
-    metadata=dict(id='bhavithlolakapuri/heart-echo-m2d-tpu-speed',title='Heart Echo M2D TPU Speed',
+    metadata=dict(id=args.kernel_id,title=args.title,
         code_file='m2d-tpu-speed.ipynb',language='python',kernel_type='notebook',is_private=True,
         enable_gpu=False,enable_tpu=True,enable_internet=True,dataset_sources=[],competition_sources=[],
-        kernel_sources=[],model_sources=[])
+        kernel_sources=[],model_sources=[],machine_shape='TpuV5E8',docker_image_pinning_type='latest')
     output.mkdir(parents=True)
     (output/'m2d-tpu-speed.ipynb').write_text(json.dumps(notebook,indent=1)+'\n')
     (output/'kernel-metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
@@ -65,4 +75,8 @@ if __name__=='__main__':
     parser.add_argument('--install-tpu-backend',action='store_true')
     parser.add_argument('--deadline-epoch',type=int)
     parser.add_argument('--legacy-xla',action='store_true')
+    parser.add_argument('--preinstalled-only',action='store_true',
+                        help='Fail fast if the allocated image exposes neither TPU devices nor a backend')
+    parser.add_argument('--kernel-id',default='bhavithlolakapuri/heart-echo-m2d-tpu-speed')
+    parser.add_argument('--title',default='Heart Echo M2D TPU Speed')
     main(parser.parse_args())

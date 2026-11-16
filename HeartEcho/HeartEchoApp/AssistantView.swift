@@ -86,6 +86,19 @@ struct AssistantView: View {
                     } else {
                         ChatReplyText(text: "I can help you find care and prepare questions for a clinician. You can start with your five-digit US ZIP code.")
                             .accessibilityIdentifier("care-chat-welcome")
+                        if care.chatMessages.isEmpty {
+                            Button {
+                                composerFocused = true
+                            } label: {
+                                Label("Find care by ZIP", systemImage: "location.magnifyingglass")
+                                    .font(.subheadline.weight(.semibold))
+                                    .frame(minHeight: 32)
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(actionColor)
+                            .accessibilityIdentifier("assistant-zip-quick-start")
+                            .accessibilityHint("Enter a five-digit US ZIP code in the message field. No care-service pairing is needed.")
+                        }
                     }
                     if previewConversation {
                         PreviewMessageBubble(text: "What should I ask a provider?", isUser: true)
@@ -249,6 +262,10 @@ struct AssistantView: View {
             Task {
                 if let reply = await care.send(message: text, record: record, consent: include) {
                     care.appendChatMessage(reply.message, isUser: false)
+                } else if let request = directSearchRequest(text) {
+                    care.connectionNote = "The saved care service is unavailable. Searching public directories directly."
+                    await care.searchDirect(zip: request.zip, specialty: request.specialty, affordable: request.affordable)
+                    if let reply = care.reply { care.appendChatMessage(reply.message, isUser: false) }
                 }
             }
             return
@@ -267,13 +284,8 @@ struct AssistantView: View {
         }
     }
 
-    private func directSearchRequest(_ text: String) -> (zip: String, specialty: String, affordable: Bool)? {
-        let query = text.lowercased()
-        guard let zip = text.range(of: "(?<![0-9])[0-9]{5}(?![0-9])", options: .regularExpression),
-              ["care", "clinic", "doctor", "provider"].contains(where: query.contains) else { return nil }
-        let declinesCardiology = query.range(of: "\\b(no|not|don.t|do not|avoid|without)\\b.{0,45}cardiolog", options: .regularExpression) != nil
-        return (String(text[zip]), query.contains("cardiolog") && !declinesCardiology ? "cardiology" : "family_medicine",
-                query.contains("affordable") || query.contains("cost") || query.contains("community health"))
+    private func directSearchRequest(_ text: String) -> CareSearchIntent? {
+        CareSearchIntent.parse(text)
     }
 
 }

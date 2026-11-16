@@ -80,15 +80,23 @@ export function createGeminiModel(config, fetchImpl = fetch) {
   return {
     provider: 'gemini', configured,
     status: () => ({ mode: configured ? 'llm' : 'guided', provider: 'gemini', model: configured ? config.model : null, last_used_model: lastUsedModel, configured, last_success_at: lastSuccessAt, note: 'General chat is sent to Google. Recording summaries are not sent to Gemini.' }),
-    async reply(message, history = []) {
+    async reply(message, history = [], { signal } = {}) {
       if (!configured) throw new ModelError('model_not_configured');
+      // One deadline covers the primary and fallback model. The service can
+      // supply a shorter shared budget that also includes its safety retry.
+      const timeoutMs = Number(config.timeoutMs);
+      const timeout = AbortSignal.timeout(Number.isFinite(timeoutMs) && timeoutMs > 0 ? Math.ceil(timeoutMs) : 45000);
+      const requestSignal = signal ? AbortSignal.any([signal, timeout]) : timeout;
       const prompt = `You are the Heart Echo care assistant. Respond naturally and helpfully like a conversational assistant, addressing the person's current question instead of repeatedly asking for a ZIP. The app may substitute a private-safe workflow note for a personal message; follow it without mentioning the note or pretending to know the withheld details. You can explain general heart-health concepts, help prepare questions for a clinician, and guide a care search. Heart Echo is an experimental phone app, not a diagnosis. You cannot see any recording, result, personal medical history, insurer or ZIP unless explicitly given in the current safe message. Never invent or assert a diagnosis, a personal result, a named doctor, address, insurance coverage, a booking, or a price. The app displays verified directory cards separately; do not invent any. Most insurers' network participation cannot be verified here: never say that sharing an insurer will find in-network providers. Tell the person to check directly with their insurer and clinic when coverage is relevant. Never ask the person to share symptoms, a diagnosis, medical history, recording details, or whether a doctor mentioned a condition to them. For a follow-up, offer general information or questions for a clinician instead. Do not add emergency warnings to unrelated questions or routine greetings. If someone describes severe chest pain, trouble breathing, or fainting, say to seek emergency help immediately. Do not claim to be a clinician.`;
       const contents = [...history.slice(-6).filter(x => ['user', 'model'].includes(x.role) && typeof x.text === 'string').map(x => ({ role: x.role, parts: [{ text: x.text }] })), { role: 'user', parts: [{ text: message }] }];
       async function generate(modelName) {
+        requestSignal.throwIfAborted();
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(modelName)}:generateContent`;
-        const r = await fetchImpl(url, { method: 'POST', redirect: 'error', signal: AbortSignal.timeout(config.timeoutMs || 45000), headers: { 'Content-Type': 'application/json', 'x-goog-api-key': config.apiKey }, body: JSON.stringify({ systemInstruction: { parts: [{ text: prompt }] }, contents, generationConfig: { temperature: 0.3, maxOutputTokens: 2048 } }) });
+        const r = await fetchImpl(url, { method: 'POST', redirect: 'error', signal: requestSignal, headers: { 'Content-Type': 'application/json', 'x-goog-api-key': config.apiKey }, body: JSON.stringify({ systemInstruction: { parts: [{ text: prompt }] }, contents, generationConfig: { temperature: 0.3, maxOutputTokens: 2048 } }) });
+        requestSignal.throwIfAborted();
         if (!r.ok) throw new ModelError(`model_http_${r.status}`);
         const payload = await r.json();
+        requestSignal.throwIfAborted();
         const text = payload.candidates?.[0]?.content?.parts?.filter(x => !x.thought && typeof x.text === 'string').map(x => x.text).join('').trim();
         if (!text) throw new ModelError('model_invalid_response');
         lastSuccessAt = new Date().toISOString(); lastUsedModel = modelName;

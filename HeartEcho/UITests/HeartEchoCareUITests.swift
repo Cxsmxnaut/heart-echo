@@ -6,12 +6,32 @@ import XCTest
         let app = XCUIApplication(); app.launchArguments = ["--consumer-mode", "--ui-reset-care"]; app.launch()
         app.tabBars.buttons["Care"].tap()
         let message = app.textFields["assistant-message-input"]; XCTAssertTrue(message.waitForExistence(timeout: 10))
-        message.tap(); message.typeText("Find care in 94303")
+        message.tap(); message.typeText("94303")
         app.buttons["Send message"].tap()
         let listing = app.descendants(matching: .any)["live-care-listing"].firstMatch
         XCTAssertTrue(listing.waitForExistence(timeout: 60)); reveal(listing, in: app)
         XCTAssertTrue(app.buttons["assistant-connection-status"].label.contains("Public directories"))
-        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Standalone iPhone public care search"; shot.lifetime = .keepAlways; add(shot)
+        SubmissionEvidence.capture(app, name: "Standalone iPhone public care search", test: self)
+    }
+    func testZIPQuickStartFocusesComposerAndKeepsDraft() {
+        continueAfterFailure = false
+        let app = XCUIApplication(); app.launchArguments = ["--consumer-mode", "--ui-reset-care"]; app.launch()
+        app.tabBars.buttons["Care"].tap()
+        let shortcut = app.buttons["assistant-zip-quick-start"]
+        let message = app.textFields["assistant-message-input"]
+        let send = app.buttons["Send message"]
+        XCTAssertTrue(shortcut.waitForExistence(timeout: 10))
+        XCTAssertTrue(message.waitForExistence(timeout: 10))
+        XCTAssertFalse(send.isEnabled, "Opening the shortcut must not invent or send a message")
+        shortcut.tap()
+        // No field tap: successful typing proves the shortcut focused it.
+        message.typeText("94303")
+        XCTAssertEqual(message.value as? String, "94303")
+        reveal(shortcut, in: app); shortcut.tap()
+        XCTAssertEqual(message.value as? String, "94303", "Reopening the quick start preserves an unsent draft")
+        XCTAssertTrue(send.isEnabled)
+        XCTAssertTrue(shortcut.exists, "The quick start remains while the conversation has no sent messages")
+        SubmissionEvidence.capture(app, name: "ZIP quick start preserves unsent draft", test: self)
     }
     func testPublicResultToLiveCareWithoutBPM() async throws {
         continueAfterFailure = false
@@ -47,7 +67,7 @@ import XCTest
         let dental = app.staticTexts.matching(NSPredicate(format: "label MATCHES %@", "(?i).*\\bdent(?:al|istry|ists?)\\b.*"))
         XCTAssertFalse(dental.firstMatch.exists, "Heart-care results should not show sites explicitly named as dental")
         XCTAssertFalse(app.staticTexts["ILLUSTRATIVE LISTING"].exists)
-        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Actual public result to live directory"; shot.lifetime = .keepAlways; add(shot)
+        SubmissionEvidence.capture(app, name: "Actual public result to live directory", test: self)
     }
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<10 {

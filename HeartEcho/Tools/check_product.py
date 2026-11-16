@@ -15,6 +15,8 @@ def main():
             ('records',common+['Engine/CaptureArtifact.swift','Tests/RecordChecks.swift'],[]),
             ('storage',common+['HeartEchoApp/RecordingFiles.swift','Tests/StorageChecks.swift'],[]),
             ('care',common+['HeartEchoApp/NativeCareDirectory.swift','HeartEchoApp/CareService.swift','Tests/CareChecks.swift'],[]),
+            ('guidance',['HeartEchoApp/RecordingGuidance.swift','Tests/RecordingGuidanceChecks.swift'],[]),
+            ('care-intent',['HeartEchoApp/CareSearchIntent.swift','Tests/CareSearchIntentChecks.swift'],[]),
         ]
         for name,files,args in checks:
             binary=out/name
@@ -28,5 +30,5 @@ def main():
             result=subprocess.run(args,cwd=ROOT,capture_output=True,text=True);results.append({'check':name,'exit_code':result.returncode,'output':result.stdout+result.stderr});print(name,result.returncode,flush=True)
             if result.returncode:raise RuntimeError(result.stdout+result.stderr)
     report={'scope':'Engineering checks; no clinical/phone accuracy validation and no personal captures.','elapsed_seconds':time.time()-began,'results':results}
-    (ROOT/'Docs/product-checks-04.json').write_text(json.dumps(report,indent=2)+'\n')
+    (ROOT/'Docs/product-checks-final.json').write_text(json.dumps(report,indent=2)+'\n')
 if __name__=='__main__':main()
